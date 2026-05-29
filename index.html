@@ -1,466 +1,333 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biblioteca de Testimonios · FGDLL</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-<!-- ══════════════════════════════════════════ HERO -->
-<header class="hero" id="inicio">
-  <div class="hero-bg"></div>
-  <nav class="nav">
-    <div class="nav-brand">
-      <span class="nav-sigla">FGDLL</span>
-      <span class="nav-sep">·</span>
-      <span class="nav-nombre">Guerreros de la Luz</span>
-    </div>
-    <div class="nav-links">
-      <a href="#biblioteca">Biblioteca</a>
-      <a href="#como-usar">Cómo usar</a>
-      <button class="btn-editor" id="btnImportador">⬆ Importar base</button>
-      <button class="btn-importador" id="btnImportador">⬆ Importar base</button>
-      <button class="btn-editor" id="btnEditor">+ Nuevo tema</button>
-    </div>
-  </nav>
-
-  <div class="hero-content">
-    <p class="hero-eyebrow">Fraternidad Guerreros de la Luz</p>
-    <h1 class="hero-titulo">
-      Biblioteca de<br/>
-      <em>Testimonios</em>
-    </h1>
-    <p class="hero-subtitulo">
-      Temas con base de estudio para líderes, delegados y participantes
-    </p>
-    <p class="hero-principio">
-      <span class="principio-item">Detectar</span>
-      <span class="principio-sep">·</span>
-      <span class="principio-item">Admitir</span>
-      <span class="principio-sep">·</span>
-      <span class="principio-item">Aprender a corregir</span>
-    </p>
-    <p class="hero-descripcion">
-      Esta biblioteca ayuda a elegir y preparar temas de testimonio con base en la 
-      literatura de AA, la Guía de Apadrinamiento y la filosofía de Guerreros de la Luz.
-      El testimonio no es catarsis desordenada, sino experiencia ordenada por la 
-      literatura, la conciencia y el servicio.
-    </p>
-    <div class="hero-acciones">
-      <a href="#biblioteca" class="btn-primario">Explorar temas</a>
-      <a href="#como-usar" class="btn-secundario">Cómo preparar mi testimonio</a>
-    </div>
-  </div>
-
-  <!-- STATS -->
-  <div class="hero-stats">
-    <div class="stat" id="statTotal"><span class="stat-num">123</span><span class="stat-label">Temas</span></div>
-    <div class="stat"><span class="stat-num">97</span><span class="stat-label">Completos</span></div>
-    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Tiempos</span></div>
-    <div class="stat"><span class="stat-num">12</span><span class="stat-label">Pasos</span></div>
-  </div>
-</header>
-
-<!-- ══════════════════════════════════════════ MODOS DE USO -->
-<section class="modos" id="como-usar">
-  <div class="contenedor">
-    <div class="seccion-header">
-      <p class="seccion-eyebrow">¿Por dónde empiezo?</p>
-      <h2 class="seccion-titulo">Elige tu modo de uso</h2>
-    </div>
-    <div class="modos-grid">
-      <button class="modo-card" data-filtro='{"momento":"Inicio"}'>
-        <div class="modo-icono">◈</div>
-        <h3>Quiero elegir un tema<br/>para mi grupo</h3>
-        <p>Filtra por evento, intensidad y momento del programa</p>
-        <span class="modo-tag">Para líderes</span>
-      </button>
-      <button class="modo-card" data-filtro='{"tipoTestimonio":"Inspirador"}'>
-        <div class="modo-icono">◉</div>
-        <h3>Quiero preparar<br/>mi testimonio</h3>
-        <p>Encuentra preguntas guía y estructura para tu compartimiento</p>
-        <span class="modo-tag">Para participantes</span>
-      </button>
-      <button class="modo-card" data-filtro='{"esCatalogoBase":true}'>
-        <div class="modo-icono">◇</div>
-        <h3>Ver el catálogo<br/>base</h3>
-        <p>Temas aprobados para uso en aniversarios y eventos</p>
-        <span class="modo-tag">Catálogo oficial</span>
-      </button>
-      <button class="modo-card" data-filtro='{"sensibilidad":"sensible"}'>
-        <div class="modo-icono">△</div>
-        <h3>Temas que requieren<br/>cuidado especial</h3>
-        <p>Temas sensibles con advertencia ética para el líder</p>
-        <span class="modo-tag">Con advertencia</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════ TRES TIEMPOS -->
-<section class="tres-tiempos">
-  <div class="contenedor">
-    <div class="seccion-header">
-      <p class="seccion-eyebrow">Estructura de todo testimonio</p>
-      <h2 class="seccion-titulo">Los tres tiempos</h2>
-    </div>
-    <div class="tiempos-grid">
-      <div class="tiempo-card tiempo-1">
-        <div class="tiempo-num">01</div>
-        <h3>Antes del programa</h3>
-        <p class="tiempo-verbo">Detectar</p>
-        <p>¿Cómo era tu vida antes? ¿Qué heridas, defectos o fugas te gobernaban? ¿Qué no sabías nombrar?</p>
-      </div>
-      <div class="tiempo-conector">→</div>
-      <div class="tiempo-card tiempo-2">
-        <div class="tiempo-num">02</div>
-        <h3>Cuando llegué a Guerreros de la Luz</h3>
-        <p class="tiempo-verbo">Admitir</p>
-        <p>¿Cómo llegaste emocionalmente? ¿Qué te dolió admitir? ¿Dónde te viste reflejado?</p>
-      </div>
-      <div class="tiempo-conector">→</div>
-      <div class="tiempo-card tiempo-3">
-        <div class="tiempo-num">03</div>
-        <h3>Ahora con el programa</h3>
-        <p class="tiempo-verbo">Aprender a corregir</p>
-        <p>No desde perfección, sino desde aprendizaje y responsabilidad. ¿Qué estás corrigiendo hoy?</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════ BIBLIOTECA -->
-<section class="biblioteca" id="biblioteca">
-  <div class="contenedor">
-
-    <!-- BUSCADOR Y FILTROS -->
-    <div class="buscador-wrap">
-      <div class="buscador-top">
-        <div class="buscador-input-wrap">
-          <span class="buscador-icono">⌕</span>
-          <input
-            type="text"
-            id="buscador"
-            class="buscador-input"
-            placeholder="Buscar por título, emoción, paso, fuente, categoría..."
-            autocomplete="off"
-          />
-          <button class="buscador-limpiar" id="btnLimpiar" title="Limpiar búsqueda">✕</button>
-        </div>
-        <button class="btn-filtros-toggle" id="btnFiltrosToggle">
-          <span>Filtros</span>
-          <span class="filtros-badge" id="filtrosBadge" style="display:none">0</span>
-        </button>
-      </div>
-
-      <div class="filtros-panel" id="filtrosPanel">
-        <div class="filtros-grid">
-          <div class="filtro-grupo">
-            <label class="filtro-label">Categoría / Paso</label>
-            <select id="filtroCategoria" class="filtro-select">
-              <option value="">Todas</option>
-            </select>
-          </div>
-          <div class="filtro-grupo">
-            <label class="filtro-label">Tipo de testimonio</label>
-            <select id="filtroTipo" class="filtro-select">
-              <option value="">Todos</option>
-            </select>
-          </div>
-          <div class="filtro-grupo">
-            <label class="filtro-label">Intensidad</label>
-            <select id="filtroIntensidad" class="filtro-select">
-              <option value="">Todas</option>
-            </select>
-          </div>
-          <div class="filtro-grupo">
-            <label class="filtro-label">Momento en el evento</label>
-            <select id="filtroMomento" class="filtro-select">
-              <option value="">Cualquiera</option>
-            </select>
-          </div>
-          <div class="filtro-grupo">
-            <label class="filtro-label">Fuente principal</label>
-            <select id="filtroFuente" class="filtro-select">
-              <option value="">Todas</option>
-              <option value="AA">Literatura AA</option>
-              <option value="FGDLL">FGDLL</option>
-            </select>
-          </div>
-          <div class="filtro-grupo">
-            <label class="filtro-label">Estado del tema</label>
-            <select id="filtroEstado" class="filtro-select">
-              <option value="">Todos</option>
-              <option value="Completo">Completo</option>
-              <option value="Falta fuente">Falta fuente</option>
-              <option value="Falta preguntas">Falta preguntas</option>
-              <option value="Revisión">Revisión</option>
-            </select>
-          </div>
-          <div class="filtro-grupo">
-            <label class="filtro-label">Catálogo base</label>
-            <select id="filtroCatalogo" class="filtro-select">
-              <option value="">Todos</option>
-              <option value="true">Sólo catálogo base</option>
-              <option value="false">No catálogo</option>
-            </select>
-          </div>
-          <div class="filtro-grupo">
-            <label class="filtro-label">Sensibilidad</label>
-            <select id="filtroSensibilidad" class="filtro-select">
-              <option value="">Todas</option>
-              <option value="normal">Normal</option>
-              <option value="sensible">Sensible</option>
-              <option value="crisis">Crisis</option>
-            </select>
-          </div>
-        </div>
-        <div class="filtros-acciones">
-          <button class="btn-reset-filtros" id="btnResetFiltros">Limpiar filtros</button>
-          <span class="filtros-resultado" id="filtrosResultado"></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- TARJETAS -->
-    <div class="tarjetas-header">
-      <p class="tarjetas-count" id="tarjetasCount"></p>
-      <div class="tarjetas-orden">
-        <label>Ordenar por:</label>
-        <select id="ordenSelect" class="filtro-select">
-          <option value="prioridad">Prioridad</option>
-          <option value="titulo">Título A–Z</option>
-          <option value="intensidad">Intensidad</option>
-          <option value="estado">Estado</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="tarjetas-grid" id="tarjetasGrid">
-      <!-- Generadas por JS -->
-    </div>
-
-    <div class="sin-resultados" id="sinResultados" style="display:none">
-      <p>No se encontraron temas con estos filtros.</p>
-      <button class="btn-reset-filtros" id="btnResetSin">Ver todos los temas</button>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════ MODAL FICHA -->
-<div class="modal-overlay" id="modalOverlay" style="display:none">
-  <div class="modal" id="modal">
-    <button class="modal-cerrar" id="modalCerrar">✕</button>
-    <div class="modal-contenido" id="modalContenido">
-      <!-- Generado por JS -->
-    </div>
-    <div class="modal-exportar">
-      <p class="exportar-label">Exportar ficha:</p>
-      <div class="exportar-botones">
-        <button class="btn-exportar" id="btnCopiarGuia">📋 Copiar preguntas</button>
-        <button class="btn-exportar" id="btnCopiarWA">💬 Copiar para WhatsApp</button>
-        <button class="btn-exportar" id="btnDescargarTxt">⬇ Descargar TXT</button>
-        <button class="btn-exportar" id="btnImprimir">🖨 Imprimir</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════ PANEL EDITOR -->
-<div class="modal-overlay" id="editorOverlay" style="display:none">
-  <div class="modal editor-modal" id="editorModal">
-    <button class="modal-cerrar" id="editorCerrar">✕</button>
-    <div class="editor-contenido">
-      <h2 class="editor-titulo">Generador de nuevo tema</h2>
-      <p class="editor-desc">Llena los campos y genera el objeto JSON listo para agregar a <code>data.js</code></p>
-      
-      <div class="editor-form">
-        <div class="editor-campo">
-          <label>Título del tema *</label>
-          <input type="text" id="edTitulo" placeholder="Ej: La honestidad que me liberó" />
-        </div>
-        <div class="editor-fila">
-          <div class="editor-campo">
-            <label>Categoría / Paso</label>
-            <input type="text" id="edCategoria" placeholder="Ej: Paso 5, Familia, Cierre" />
-          </div>
-          <div class="editor-campo">
-            <label>Intensidad emocional</label>
-            <select id="edIntensidad">
-              <option>Baja</option>
-              <option selected>Media</option>
-              <option>Alta</option>
-            </select>
-          </div>
-        </div>
-        <div class="editor-fila">
-          <div class="editor-campo">
-            <label>Fuente AA</label>
-            <input type="text" id="edFuenteAA" placeholder="Ej: Libro Azul, Cap. III" />
-          </div>
-          <div class="editor-campo">
-            <label>Tipo de testimonio</label>
-            <select id="edTipo">
-              <option>Inspirador</option>
-              <option>Crudo</option>
-              <option>Didáctico</option>
-            </select>
-          </div>
-        </div>
-        <div class="editor-campo">
-          <label>Frase ancla *</label>
-          <input type="text" id="edAncla" placeholder="La frase corta que resume el tema" />
-        </div>
-        <div class="editor-campo">
-          <label>Objetivo del testimonio</label>
-          <textarea id="edObjetivo" rows="2" placeholder="¿Para qué sirve este tema?"></textarea>
-        </div>
-        <div class="editor-campo">
-          <label>Preguntas — Detectar (antes del programa)</label>
-          <textarea id="edDetectar" rows="3" placeholder="¿Cómo era tu vida antes? ¿Qué patrones repetías?"></textarea>
-        </div>
-        <div class="editor-campo">
-          <label>Preguntas — Admitir (al llegar al programa)</label>
-          <textarea id="edAdmitir" rows="3" placeholder="¿Cómo llegaste a FGDLL? ¿Qué tuviste que admitir?"></textarea>
-        </div>
-        <div class="editor-campo">
-          <label>Preguntas — Corregir (hoy)</label>
-          <textarea id="edCorregir" rows="3" placeholder="¿Qué estás aprendiendo a corregir hoy?"></textarea>
-        </div>
-        <div class="editor-fila">
-          <div class="editor-campo">
-            <label>Sensibilidad</label>
-            <select id="edSensibilidad">
-              <option value="normal">Normal</option>
-              <option value="sensible">Sensible</option>
-              <option value="crisis">Crisis</option>
-            </select>
-          </div>
-          <div class="editor-campo">
-            <label>Momento en el evento</label>
-            <select id="edMomento">
-              <option>Inicio</option>
-              <option>Mitad</option>
-              <option>Cierre</option>
-            </select>
-          </div>
-        </div>
-        <div class="editor-campo">
-          <label>Advertencia para el líder (si aplica)</label>
-          <textarea id="edAdvertencia" rows="2" placeholder="Cómo orientar este tema con cuidado ético"></textarea>
-        </div>
-      </div>
-
-      <div class="editor-acciones">
-        <button class="btn-primario" id="btnGenerarJSON">Generar JSON</button>
-      </div>
-
-      <div class="editor-resultado" id="editorResultado" style="display:none">
-        <p class="editor-resultado-label">JSON generado — copia y pega en <code>data.js</code>:</p>
-        <pre id="editorJSON"></pre>
-        <button class="btn-exportar" id="btnCopiarJSON">📋 Copiar JSON</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ══════════════════════════════════════════ PANEL IMPORTADOR -->
-<div class="modal-overlay" id="importadorOverlay" style="display:none">
-  <div class="modal importador-modal" id="importadorModal">
-    <button class="modal-cerrar" id="importadorCerrar">✕</button>
-    <div class="importador-contenido">
-
-      <!-- PASO 1: PEGAR JSON -->
-      <div class="imp-paso" id="impPaso1">
-        <div class="imp-header">
-          <span class="imp-num">01</span>
-          <div>
-            <h2 class="imp-titulo">Importar base de temas</h2>
-            <p class="imp-desc">Pega el JSON generado por Claude. El importador valida, fusiona y genera el <code>data.js</code> listo para subir a Netlify.</p>
-          </div>
-        </div>
-        <div class="imp-instrucciones">
-          <div class="imp-paso-mini"><span class="imp-mini-num">1</span><p>Usa el prompt de Claude para generar temas en formato JSON</p></div>
-          <div class="imp-paso-mini"><span class="imp-mini-num">2</span><p>Copia el resultado y pégalo aquí abajo</p></div>
-          <div class="imp-paso-mini"><span class="imp-mini-num">3</span><p>Valida, revisa y descarga el <code>data.js</code> fusionado</p></div>
-          <div class="imp-paso-mini"><span class="imp-mini-num">4</span><p>Sube el archivo a Netlify</p></div>
-        </div>
-        <div class="imp-campo">
-          <label class="imp-label">JSON generado por Claude</label>
-          <textarea id="impJsonInput" class="imp-textarea" rows="12" placeholder='Pega aquí el array JSON. Debe comenzar con [ y terminar con ]
-
-[
-  {
-    "id": "tema-124",
-    "titulo": "La honestidad que me liberó",
-    ...
-  }
-]'></textarea>
-          <p class="imp-hint">Acepta JSON puro o con backticks de markdown. Limpia el formato automáticamente.</p>
-        </div>
-        <div class="imp-acciones">
-          <button class="btn-primario" id="btnValidarJSON">Validar y previsualizar →</button>
-          <button class="btn-exportar" id="btnLimpiarImp">Limpiar</button>
-        </div>
-        <div class="imp-error" id="impError" style="display:none"></div>
-      </div>
-
-      <!-- PASO 2: PREVISUALIZACIÓN -->
-      <div class="imp-paso" id="impPaso2" style="display:none">
-        <div class="imp-header">
-          <span class="imp-num">02</span>
-          <div>
-            <h2 class="imp-titulo">Validación de temas</h2>
-            <p class="imp-desc">Revisa los temas detectados antes de fusionar con la biblioteca.</p>
-          </div>
-        </div>
-        <div class="imp-resumen" id="impResumen"></div>
-        <div class="imp-lista-temas" id="impListaTemas"></div>
-        <div class="imp-advertencia" id="impAdvertencia" style="display:none">
-          <p>⚠ Algunos temas tienen campos incompletos. Puedes continuar — se marcarán como "Revisión" en la biblioteca.</p>
-        </div>
-        <div class="imp-acciones">
-          <button class="btn-primario" id="btnFusionar">Fusionar y generar data.js →</button>
-          <button class="btn-exportar" id="btnVolverPaso1">← Corregir JSON</button>
-        </div>
-      </div>
-
-      <!-- PASO 3: DESCARGA -->
-      <div class="imp-paso" id="impPaso3" style="display:none">
-        <div class="imp-header">
-          <span class="imp-num">03</span>
-          <div>
-            <h2 class="imp-titulo">¡Base fusionada!</h2>
-            <p class="imp-desc">El archivo <code>data.js</code> está listo con todos los temas anteriores más los nuevos.</p>
-          </div>
-        </div>
-        <div class="imp-resultado" id="impResultado"></div>
-        <div class="imp-pasos-netlify">
-          <p class="imp-label" style="margin-bottom:14px">Cómo subir a Netlify:</p>
-          <div class="imp-paso-mini"><span class="imp-mini-num">A</span><p><strong>Con GitHub:</strong> reemplaza <code>data.js</code> en tu repo y Netlify despliega automáticamente.</p></div>
-          <div class="imp-paso-mini"><span class="imp-mini-num">B</span><p><strong>Sin GitHub:</strong> ve a <a href="https://app.netlify.com/drop" target="_blank" class="imp-link">app.netlify.com/drop</a> y arrastra los 4 archivos.</p></div>
-        </div>
-        <div class="imp-acciones">
-          <button class="btn-primario" id="btnDescargarDataJs">⬇ Descargar data.js</button>
-          <button class="btn-exportar" id="btnNuevaImportacion">Importar otra base</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-<script src="data.js"></script>
-<script src="app.js"></script>
-</body>
-</html>
+const TEMAS = [
+{
+"id": "tema-124","titulo": "Yo no llegué convencido, llegué cansado ",
+"tituloCorto": "Llegar cansado",
+"categoria": "Paso 1",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 1",
+"intensidad": "Media",
+"momento": "Inicio",
+"formato": "Individual",
+"tipoTestimonio": "Crudo",
+"paso": "Paso 1",
+"esCatalogoBase": false,"objetivo": "Transmitir que no se requiere fe inicial, sino el reconocimiento del agotamiento personal para iniciar la recuperación.","fraseAncla": "No llegué por fe, llegué porque ya no podía más. ",
+"variaciones": [
+"La ilusión de aguantar más",
+"El cansancio emocional"
+],"queDbeContar": "Cómo creía que no necesitaba ayuda hasta que se quedó sin energía para sostener esa forma de vivir.","notasInternas": "Enfocar en el cansancio emocional y la falta de energía como punto de quiebre, sin recrear el caos.",
+"prioridad": 50,
+"guiaTestimonio": {
+"detectar": ["¿De qué formas te engañabas creyendo que todavía podías aguantar un poco más y que no necesitabas ayuda? ",
+"¿Qué actitudes o situaciones cotidianas te demostraban que tu energía se estaba agotando rápidamente?"
+],
+"admitir": ["¿Cuál fue el momento exacto de quiebre donde te diste cuenta de que ya no tenías energía para sostener tu forma de vivir? ",
+"¿Qué sentiste al llegar al grupo no por convicción, sino por puro cansancio?"
+],
+"corregir": ["¿Cómo aceptas hoy cuando algo te rebasa para no tener que esperar a tocar fondo antes de pedir apoyo? ",
+"¿Qué pequeñas acciones tomas diariamente para no volver a llegar a ese nivel de agotamiento?"
+]
+}
+},
+{
+"id": "tema-125","titulo": "Pensé que no era para mí… y aquí estoy ",
+"tituloCorto": "Pensé que no encajaba",
+"categoria": "Paso 1",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 1",
+"intensidad": "Baja",
+"momento": "Inicio",
+"formato": "Individual",
+"tipoTestimonio": "Inspirador",
+"paso": "Paso 1",
+"esCatalogoBase": false,"objetivo": "Mostrar cómo la identificación rompe la barrera del prejuicio inicial al llegar al grupo.","fraseAncla": "No tenía que encajar, solo quedarme. ",
+"variaciones": [
+"Sentirse diferente",
+"El miedo al rechazo"
+],"queDbeContar": "El tránsito entre creer que el programa era para otros y el momento de verse reflejado en las historias de los demás.","notasInternas": "Resaltar el valor de la escucha activa y la identificación sin necesidad de estar de acuerdo en todo al principio.",
+"prioridad": 45,
+"guiaTestimonio": {
+"detectar": ["¿Por qué creías que este programa era exclusivamente para otros y no para alguien como tú? ",
+"¿De qué manera tu sentimiento de ser diferente te mantenía aislado de cualquier posible ayuda?"
+],
+"admitir": ["¿Cómo fue la experiencia de escuchar historias en el grupo donde te viste reflejado sin querer admitirlo? ",
+"¿En qué momento decidiste que podías quedarte aunque no sintieras que encajabas perfectamente?"
+],
+"corregir": ["¿De qué forma dejas de compararte hoy y te permites tomar exclusivamente lo que te sirve para tu proceso? ",
+"¿Cómo practicas la apertura mental cuando escuchas a nuevos compañeros?"
+]
+}
+},
+{
+"id": "tema-126","titulo": "Lo que yo creía que era normal ",
+"tituloCorto": "Normalizar el daño",
+"categoria": "Paso 1",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 1",
+"intensidad": "Media",
+"momento": "Inicio",
+"formato": "Panel corto",
+"tipoTestimonio": "Didáctico",
+"paso": "Paso 1",
+"esCatalogoBase": false,"objetivo": "Evidenciar cómo nos acostumbramos a dinámicas dañinas asumiéndolas como parte normal de la vida.","fraseAncla": "No todo lo habitual era sano. ",
+"variaciones": [
+"Acostumbrarse al malestar",
+"Vivir en reactividad"
+],"queDbeContar": "Cómo normalizaba el desorden y el cansancio emocional hasta que comprendió que vivir así era solo lo conocido, no lo sano.","notasInternas": "Ayudar a distinguir entre lo que es verdaderamente normal y lo que simplemente se ha vuelto costumbre por evitación.",
+"prioridad": 40,
+"guiaTestimonio": {
+"detectar": ["¿Qué actitudes de desorden, reactividad o cansancio emocional estabas normalizando en tu rutina diaria? ",
+"¿Cómo te convencías de que vivir con ese nivel de estrés o conflicto era lo que a todos les pasaba?"
+],
+"admitir": ["¿Cuál fue el punto de quiebre donde entendiste que vivir de esa manera no era normal, sino únicamente lo conocido? ",
+"¿Qué sentiste al admitir que te habías acostumbrado a hacerte daño?"
+],
+"corregir": ["¿Cómo cuestionas tus hábitos y reacciones hoy antes de volver a repetirlos de forma automática? ",
+"¿Qué nuevas rutinas o límites has establecido para proteger tu tranquilidad emocional diaria?"
+]
+}
+},
+{
+"id": "tema-127","titulo": "Creer me daba miedo, seguir igual también ",
+"tituloCorto": "Miedo a creer",
+"categoria": "Paso 2",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 2",
+"intensidad": "Media",
+"momento": "Mitad",
+"formato": "Individual",
+"tipoTestimonio": "Crudo",
+"paso": "Paso 2",
+"esCatalogoBase": false,"objetivo": "Desmitificar la necesidad de una fe absoluta y mostrar el valor de la apertura inicial basada en la necesidad.","fraseAncla": "No tengo fe absoluta, pero ya no estoy solo. ",
+"variaciones": [
+"Resistencia a confiar",
+"La mente cerrada"
+],"queDbeContar": "El conflicto interno entre la resistencia a creer o confiar y el terror de tener que seguir viviendo de la misma manera.","notasInternas": "Cuidar de no imponer conceptos espirituales ni religiosos; centrarse en la apertura mental y en confiar en el proceso del grupo.",
+"prioridad": 35,
+"guiaTestimonio": {
+"detectar": ["¿Por qué la idea de confiar o creer en algo fuera de ti te generaba tanto miedo o rechazo inicial? ",
+"¿De qué forma tu mente cerrada y tu desconfianza te mantenían atrapado en los mismos resultados?"
+],
+"admitir": ["¿Qué situación o sensación de cansancio te llevó a darte cuenta de que seguir dudando te dolía más que intentar confiar? ","¿Cómo fue esa primera experiencia donde decidiste escuchar una sugerencia en lugar de discutirla? "
+],
+"corregir": ["¿Qué haces distinto hoy para no cerrarte cuando sientes miedo o cuando no tienes las respuestas? ","¿De qué manera te apoyas actualmente en la experiencia del grupo para mantener tu claridad mental y sano juicio? "
+]
+}
+},
+{
+"id": "tema-130","titulo": "Decidí dejar de hacerlo todo a mi manera ",
+"tituloCorto": "Soltar el control",
+"categoria": "Paso 3",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 3",
+"intensidad": "Media",
+"momento": "Mitad",
+"formato": "Panel largo",
+"tipoTestimonio": "Didáctico",
+"paso": "Paso 3",
+"esCatalogoBase": false,"objetivo": "Ilustrar el Paso 3 como una decisión diaria y práctica de dejar de controlar todo y permitir ser guiado.","fraseAncla": "No siempre confío, pero ya no me peleo con todo. ",
+"variaciones": [
+"El agotamiento del control",
+"Aceptar sugerencias"
+],"queDbeContar": "Cómo la necesidad de control lo desgastaba y de qué manera empezó a soltar tomando decisiones prácticas apoyadas en sugerencias.",
+"notasInternas": "No hablar de 'entrega total' idealizada ni mística. Enfocarse en que el Paso 3 es una práctica diaria de soltar el control.",
+"prioridad": 30,
+"guiaTestimonio": {
+"detectar": ["¿De qué manera confundías la necesidad de tener el control de todo con sentirte seguro? ","¿Qué tipo de ansiedad te generaba querer resolver siempre las cosas a tu modo y sin ayuda? "
+],
+"admitir": ["¿En qué momento reconociste que intentar controlar a las personas o situaciones te estaba dejando totalmente agotado? ","¿Cómo fue la primera vez que decidiste soltar tu opinión y seguir una sugerencia del grupo aunque te incomodara? "
+],
+"corregir": ["¿Qué haces distinto hoy para detenerte y no querer imponer tu voluntad de forma inmediata? ","¿De qué forma practicas la decisión de pedir guía cuando sientes el impulso de recuperar el control absoluto? "
+]
+}
+},
+{
+"id": "tema-131","titulo": "Empecé a mirarme con honestidad ",
+"tituloCorto": "Mirarme con honestidad",
+"categoria": "Paso 4",
+"estado": "Completo",
+"sensibilidad": "sensible",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 4",
+"intensidad": "Alta",
+"momento": "Mitad",
+"formato": "Individual",
+"tipoTestimonio": "Crudo",
+"paso": "Paso 4",
+"esCatalogoBase": false,"objetivo": "Fomentar la disposición a realizar un inventario moral diferenciando la toma de conciencia de la culpa destructiva.","fraseAncla": "Verme no me destruyó, me ordenó. ",
+"variaciones": [
+"Responsabilidad sin culpa",
+"Vencer el miedo al inventario"
+],"queDbeContar": "La evolución desde evitar mirarse por miedo al castigo, hasta descubrir patrones de conducta que necesitaban atención mediante el inventario.","notasInternas": "Aclarar tajantemente que no es una confesión pública ni una lista de culpas, sino un ejercicio de responsabilidad progresiva.",
+"prioridad": 25,
+"guiaTestimonio": {
+"detectar": ["¿Por qué creías que si mirabas profundamente tus errores internos te ibas a juzgar o a hundir emocionalmente? ","¿De qué maneras evitabas mirarte con honestidad para no sentir vergüenza de quién eras en realidad? "
+],
+"admitir": ["¿Qué fue lo que finalmente te dio el valor para dejar de huir y atreverte a ser honesto contigo mismo? ","¿Cuál fue uno de los patrones repetitivos más dolorosos pero reveladores que descubriste al observarte? "
+],
+"corregir": ["¿Qué herramientas utilizas hoy para mirar tus defectos o reacciones sin caer en la culpa o el castigo? ","¿Cómo te ayuda este orden interno que ganaste a responder a las situaciones en lugar de reaccionar impulsivamente? "
+]
+}
+},
+{
+"id": "tema-132","titulo": "Decir la verdad me liberó ",
+"tituloCorto": "Decir la verdad",
+"categoria": "Paso 5",
+"estado": "Completo",
+"sensibilidad": "sensible",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 5",
+"intensidad": "Alta",
+"momento": "Mitad",
+"formato": "Individual",
+"tipoTestimonio": "Inspirador",
+"paso": "Paso 5",
+"esCatalogoBase": false,"objetivo": "Evidenciar el alivio emocional que se experimenta al romper el secreto y ser honesto con alguien de confianza.","fraseAncla": "Decir la verdad me dio paz, no castigo. ",
+"variaciones": [
+"Romper el aislamiento",
+"Soltar los secretos"
+],"queDbeContar": "El peso de vivir ocultando la verdad por miedo al rechazo y la paz encontrada al abrirse de manera responsable.","notasInternas": "Supervisar que no se den detalles morbosos ni sea una confesión de inventario en público, el enfoque es el resultado de la liberación.",
+"prioridad": 20,
+"guiaTestimonio": {
+"detectar": ["¿De qué maneras el miedo al rechazo te llevaba a vivir callando, ocultando y guardando cosas por vergüenza? ","¿Cómo te desgastaba vivir todos los días con el terror de que alguien descubriera quién eras realmente? "
+],
+"admitir": ["¿Qué situación interna o grado de dolor te hizo atreverte finalmente a romper tu aislamiento y hablar sin disfraces? ","¿Cómo fue la experiencia de sentirte escuchado por alguien de confianza sin ser corregido o juzgado? "
+],
+"corregir": ["¿Qué haces distinto hoy cuando notas que quieres volver a ocultar información o emociones por miedo? ","¿Cómo cultivas la honestidad responsable en tus relaciones actuales para no volver a cargar secretos innecesarios? "
+]
+}
+},
+{
+"id": "tema-133","titulo": "Empezar a cambiar sin forzarme ",
+"tituloCorto": "Disposición a cambiar",
+"categoria": "Paso 6",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Pasos 6 y 7",
+"intensidad": "Media",
+"momento": "Mitad",
+"formato": "Panel corto",
+"tipoTestimonio": "Didáctico",
+"paso": "Paso 6",
+"esCatalogoBase": false,"objetivo": "Mostrar que el cambio inicia con la disposición genuina de dejar de justificar los defectos y pedir ayuda para removerlos.","fraseAncla": "No he cambiado todo, pero ya no me engaño. ",
+"variaciones": [
+"Dejar de justificarme",
+"Humildad para pedir ayuda"
+],"queDbeContar": "El tránsito entre justificar los defectos diciendo 'así soy' y la aceptación humilde de necesitar ayuda para soltarlos.",
+"notasInternas": "Evitar discursos de 'ya cambié' o perfeccionismo. Se debe mostrar la disposición real y los pequeños cambios conscientes.",
+"prioridad": 15,
+"guiaTestimonio": {
+"detectar": ["¿Cómo utilizabas la frase 'así soy yo' para justificar tus defectos de carácter y defender conductas que te hacían daño? ","¿Cuáles eran tus mayores miedos o resistencias al imaginar quién serías si soltabas tus viejas actitudes? "
+],
+"admitir": ["¿En qué momento reconociste que esas defensas o defectos ya no te protegían, sino que te aislaban? ","¿Qué te impulsó a generar la disposición de pedir ayuda humilde en lugar de intentar cambiar solo con fuerza de voluntad? "
+],
+"corregir": ["¿Qué haces distinto hoy, aunque no sea de manera perfecta, cuando notas que un viejo defecto intenta dominarte? ","¿De qué manera eres más paciente contigo mismo mientras sigues en este proceso progresivo de cambio? "
+]
+}
+},
+{
+"id": "tema-134","titulo": "Hacerme responsable sin destruirme ",
+"tituloCorto": "Responsabilidad sin daño",
+"categoria": "Paso 8",
+"estado": "Completo",
+"sensibilidad": "sensible",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Pasos 8 y 9",
+"intensidad": "Alta",
+"momento": "Mitad",
+"formato": "Panel largo",
+"tipoTestimonio": "Crudo",
+"paso": "Paso 8",
+"esCatalogoBase": false,"objetivo": "Describir el proceso de asumir la responsabilidad de nuestros actos desde una postura consciente, evitando la culpa paralizante.","fraseAncla": "No puedo borrar el pasado, pero sí responder distinto hoy. ",
+"variaciones": [
+"Reconocer el impacto",
+"Dejar de minimizar"
+],"queDbeContar": "Cómo pasó de minimizar o justificar el daño causado a estar genuinamente dispuesto a modificar su forma de relacionarse.","notasInternas": "Estrictamente prohibido listar personas dañadas o forzar testimonios de reconciliaciones; el enfoque es la conciencia del impacto.",
+"prioridad": 10,
+"guiaTestimonio": {
+"detectar": ["¿De qué formas lograbas ignorar o minimizar constantemente el impacto negativo y el daño que tus acciones causaban a otros? ","¿Cómo confundías tu falta de mala intención con una excusa para no hacerte cargo del dolor que generabas? "
+],
+"admitir": ["¿Qué experiencia te hizo entender con claridad que tus acciones no solo te afectaban a ti, sino que lastimaban a quienes te rodeaban? ","¿Cómo lograste generar la disposición a reparar asumiendo tu responsabilidad sin caer en el castigo de la autoflagelación? "
+],
+"corregir": ["¿Qué acciones o límites prácticas hoy para asegurarte de cambiar tu conducta y no seguir lastimando a los demás? ","¿De qué manera te haces cargo de las consecuencias de tus errores actuales respondiendo desde la madurez y no desde la evasión? "
+]
+}
+},
+{
+"id": "tema-135","titulo": "Aprender a vivir conmigo todos los días ",
+"tituloCorto": "Vivir conmigo diario",
+"categoria": "Paso 10",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Pasos 10 y 11",
+"intensidad": "Baja",
+"momento": "Cierre",
+"formato": "Panel corto",
+"tipoTestimonio": "Didáctico",
+"paso": "Paso 10",
+"esCatalogoBase": false,"objetivo": "Enseñar la importancia de observarse diariamente para corregir pequeñas fallas y pausar antes de reaccionar impulsivamente.","fraseAncla": "No siempre hago lo correcto, pero hoy me doy cuenta antes. ",
+"variaciones": [
+"Darme cuenta a tiempo",
+"Hacer pausas"
+],"queDbeContar": "El contraste entre reaccionar en automático acumulando daño y la práctica de observarse, admitir errores y hacer contacto consciente.","notasInternas": "Evitar discursos de perfeccionismo o espiritualidad rígida. Se debe mostrar una conciencia diaria con prácticas sencillas y reales.",
+"prioridad": 8,
+"guiaTestimonio": {
+"detectar": ["¿Cómo era tu patrón de acumular pequeños errores, molestias o justificaciones diarias hasta llegar a un punto de explosión? ","¿Por qué se te dificultaba tanto detenerte a observar tus reacciones automáticas impulsadas por el enojo o el miedo? "
+],
+"admitir": ["¿Qué te hizo empezar a observar tu comportamiento y aceptar que reaccionar desde el ego o impulso te robaba la paz? ","¿Cómo fue el proceso de aprender a admitir tus equivocaciones de manera pronta, sin justificarte ni entrar en culpas largas? "
+],
+"corregir": ["¿Qué prácticas simples y reales utilizas hoy, como la pausa o la respiración, para no vivir en automático? ","¿De qué manera el pedir una disculpa rápida y oportuna te ayuda a corregir tus relaciones sin dramatizar? "
+]
+}
+},
+{
+"id": "tema-136","titulo": "Compartir sin imponer y servir sin desaparecerme ",
+"tituloCorto": "Servicio consciente",
+"categoria": "Paso 12",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 12",
+"intensidad": "Baja",
+"momento": "Cierre",
+"formato": "Individual",
+"tipoTestimonio": "Inspirador",
+"paso": "Paso 12",
+"esCatalogoBase": false,"objetivo": "Demostrar que servir y llevar el mensaje requiere coherencia, empatía, límites sanos y compartir la experiencia sin aires de superioridad.","fraseAncla": "No tengo respuestas para todos, pero puedo caminar con alguien. ",
+"variaciones": [
+"Acompañar sin dirigir",
+"Cuidarme para servir"
+],"queDbeContar": "El cambio de creer que servir era controlar, resolver vidas o cargar a otros, a entenderlo como acompañar con el propio ejemplo.","notasInternas": "Evitar posturas de 'salvar vidas' o sentirse el ejemplo perfecto. Resaltar la importancia de los límites y el autocuidado mientras se ayuda.",
+"prioridad": 5,
+"guiaTestimonio": {
+"detectar": ["¿De qué manera tu idea original de ayudar a otros se confundía con la necesidad de controlar sus procesos y decisiones? ","¿Por qué creías que para llevar el mensaje debías cargar con los problemas ajenos o dar consejos que tú mismo no aplicabas? "
+],
+"admitir": ["¿Qué situación o experiencia te hizo entender que no puedes resolverle la vida a nadie y que cada uno vive su propio proceso? ","¿Cómo lograste aceptar que servir a los demás no significa descuidarte o desaparecer emocionalmente en el dolor del otro? "
+],
+"corregir": ["¿Cómo compartes tu experiencia hoy desde la escucha activa y la empatía sin imponer tus ideas o juzgar a los demás? ","¿Qué límites sanos practicas actualmente para cuidar tu propia recuperación primero mientras acompañas a otros? "
+]
+}
+}
+];
