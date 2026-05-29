@@ -23,6 +23,8 @@
     <div class="nav-links">
       <a href="#biblioteca">Biblioteca</a>
       <a href="#como-usar">Cómo usar</a>
+      <button class="btn-editor" id="btnImportador">⬆ Importar base</button>
+      <button class="btn-importador" id="btnImportador">⬆ Importar base</button>
       <button class="btn-editor" id="btnEditor">+ Nuevo tema</button>
     </div>
   </nav>
@@ -364,6 +366,93 @@
         <pre id="editorJSON"></pre>
         <button class="btn-exportar" id="btnCopiarJSON">📋 Copiar JSON</button>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ PANEL IMPORTADOR -->
+<div class="modal-overlay" id="importadorOverlay" style="display:none">
+  <div class="modal importador-modal" id="importadorModal">
+    <button class="modal-cerrar" id="importadorCerrar">✕</button>
+    <div class="importador-contenido">
+
+      <!-- PASO 1: PEGAR JSON -->
+      <div class="imp-paso" id="impPaso1">
+        <div class="imp-header">
+          <span class="imp-num">01</span>
+          <div>
+            <h2 class="imp-titulo">Importar base de temas</h2>
+            <p class="imp-desc">Pega el JSON generado por Claude. El importador valida, fusiona y genera el <code>data.js</code> listo para subir a Netlify.</p>
+          </div>
+        </div>
+        <div class="imp-instrucciones">
+          <div class="imp-paso-mini"><span class="imp-mini-num">1</span><p>Usa el prompt de Claude para generar temas en formato JSON</p></div>
+          <div class="imp-paso-mini"><span class="imp-mini-num">2</span><p>Copia el resultado y pégalo aquí abajo</p></div>
+          <div class="imp-paso-mini"><span class="imp-mini-num">3</span><p>Valida, revisa y descarga el <code>data.js</code> fusionado</p></div>
+          <div class="imp-paso-mini"><span class="imp-mini-num">4</span><p>Sube el archivo a Netlify</p></div>
+        </div>
+        <div class="imp-campo">
+          <label class="imp-label">JSON generado por Claude</label>
+          <textarea id="impJsonInput" class="imp-textarea" rows="12" placeholder='Pega aquí el array JSON. Debe comenzar con [ y terminar con ]
+
+[
+  {
+    "id": "tema-124",
+    "titulo": "La honestidad que me liberó",
+    ...
+  }
+]'></textarea>
+          <p class="imp-hint">Acepta JSON puro o con backticks de markdown. Limpia el formato automáticamente.</p>
+        </div>
+        <div class="imp-acciones">
+          <button class="btn-primario" id="btnValidarJSON">Validar y previsualizar →</button>
+          <button class="btn-exportar" id="btnLimpiarImp">Limpiar</button>
+        </div>
+        <div class="imp-error" id="impError" style="display:none"></div>
+      </div>
+
+      <!-- PASO 2: PREVISUALIZACIÓN -->
+      <div class="imp-paso" id="impPaso2" style="display:none">
+        <div class="imp-header">
+          <span class="imp-num">02</span>
+          <div>
+            <h2 class="imp-titulo">Validación de temas</h2>
+            <p class="imp-desc">Revisa los temas detectados antes de fusionar con la biblioteca.</p>
+          </div>
+        </div>
+        <div class="imp-resumen" id="impResumen"></div>
+        <div class="imp-lista-temas" id="impListaTemas"></div>
+        <div class="imp-advertencia" id="impAdvertencia" style="display:none">
+          <p>⚠ Algunos temas tienen campos incompletos. Puedes continuar — se marcarán como "Revisión" en la biblioteca.</p>
+        </div>
+        <div class="imp-acciones">
+          <button class="btn-primario" id="btnFusionar">Fusionar y generar data.js →</button>
+          <button class="btn-exportar" id="btnVolverPaso1">← Corregir JSON</button>
+        </div>
+      </div>
+
+      <!-- PASO 3: DESCARGA -->
+      <div class="imp-paso" id="impPaso3" style="display:none">
+        <div class="imp-header">
+          <span class="imp-num">03</span>
+          <div>
+            <h2 class="imp-titulo">¡Base fusionada!</h2>
+            <p class="imp-desc">El archivo <code>data.js</code> está listo con todos los temas anteriores más los nuevos.</p>
+          </div>
+        </div>
+        <div class="imp-resultado" id="impResultado"></div>
+        <div class="imp-pasos-netlify">
+          <p class="imp-label" style="margin-bottom:14px">Cómo subir a Netlify:</p>
+          <div class="imp-paso-mini"><span class="imp-mini-num">A</span><p><strong>Con GitHub:</strong> reemplaza <code>data.js</code> en tu repo y Netlify despliega automáticamente.</p></div>
+          <div class="imp-paso-mini"><span class="imp-mini-num">B</span><p><strong>Sin GitHub:</strong> ve a <a href="https://app.netlify.com/drop" target="_blank" class="imp-link">app.netlify.com/drop</a> y arrastra los 4 archivos.</p></div>
+        </div>
+        <div class="imp-acciones">
+          <button class="btn-primario" id="btnDescargarDataJs">⬇ Descargar data.js</button>
+          <button class="btn-exportar" id="btnNuevaImportacion">Importar otra base</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

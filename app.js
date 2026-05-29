@@ -674,3 +674,259 @@ function bindEventos() {
 
 // Arrancar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', init);
+
+/* ══════════════════════════════════════════════════════════
+   IMPORTADOR DE BASES DE TEMAS
+   Flujo: pegar JSON → validar → previsualizar → fusionar → descargar
+══════════════════════════════════════════════════════════ */
+
+const Importador = {
+  temasNuevos: [],      // los temas parseados del JSON pegado
+  temasValidados: [],   // con metadatos de validación
+};
+
+// ── Abrir / cerrar ─────────────────────────────────────────
+function abrirImportador() {
+  impIrPaso(1);
+  document.getElementById('impJsonInput').value = '';
+  document.getElementById('impError').style.display = 'none';
+  document.getElementById('importadorOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarImportador() {
+  document.getElementById('importadorOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function impIrPaso(n) {
+  [1, 2, 3].forEach(i => {
+    document.getElementById(`impPaso${i}`).style.display = i === n ? 'block' : 'none';
+  });
+}
+
+// ── Limpiar formato markdown del JSON ─────────────────────
+function limpiarJSON(raw) {
+  let txt = raw.trim();
+  // Quitar bloques de código markdown ```json ... ``` o ``` ... ```
+  txt = txt.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
+  // Si hay texto antes del primer [ (explicaciones de Claude), cortarlo
+  const idx = txt.indexOf('[');
+  if (idx > 0) txt = txt.slice(idx);
+  // Si hay texto después del último ]
+  const lastIdx = txt.lastIndexOf(']');
+  if (lastIdx !== -1 && lastIdx < txt.length - 1) txt = txt.slice(0, lastIdx + 1);
+  return txt.trim();
+}
+
+// ── Validar un tema individual ─────────────────────────────
+function validarTema(tema) {
+  const issues = [];
+  const campos = ['titulo', 'fraseAncla', 'objetivo', 'categoria'];
+  campos.forEach(c => { if (!tema[c] || !String(tema[c]).trim()) issues.push(c); });
+
+  const g = tema.guiaTestimonio || {};
+  if (!g.detectar || g.detectar.length === 0) issues.push('guia:detectar');
+  if (!g.admitir  || g.admitir.length === 0)  issues.push('guia:admitir');
+  if (!g.corregir || g.corregir.length === 0)  issues.push('guia:corregir');
+
+  if (!tema.fuenteAA && (!tema.fuentePrincipal || tema.fuentePrincipal === 'FGDLL'))
+    issues.push('fuenteAA');
+
+  return issues;
+}
+
+// ── Calcular estado de un tema ─────────────────────────────
+function calcularEstado(tema, issues) {
+  if (issues.length === 0) return 'Completo';
+  if (issues.some(i => i.startsWith('guia:'))) return 'Falta preguntas';
+  if (issues.includes('fuenteAA')) return 'Falta fuente';
+  return 'Revisión';
+}
+
+// ── Asignar IDs únicos a los temas nuevos ─────────────────
+function asignarIds(temasNuevos) {
+  const idsExistentes = new Set(TEMAS.map(t => t.id));
+  let contador = TEMAS.length + 1;
+
+  return temasNuevos.map(tema => {
+    if (!tema.id || idsExistentes.has(tema.id)) {
+      // Generar ID nuevo que no colisione
+      while (idsExistentes.has(`tema-${String(contador).padStart(3,'0')}`)) contador++;
+      tema.id = `tema-${String(contador).padStart(3,'0')}`;
+      contador++;
+    }
+    idsExistentes.add(tema.id);
+    return tema;
+  });
+}
+
+// ── PASO 1 → PASO 2: Validar y previsualizar ──────────────
+function validarYPrevisualizar() {
+  const raw = document.getElementById('impJsonInput').value;
+  const errorEl = document.getElementById('impError');
+  errorEl.style.display = 'none';
+
+  if (!raw.trim()) {
+    errorEl.textContent = 'Pega el JSON generado por Claude antes de continuar.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  let parsed;
+  try {
+    const limpio = limpiarJSON(raw);
+    parsed = JSON.parse(limpio);
+  } catch (e) {
+    errorEl.innerHTML = `
+      <strong>Error al parsear el JSON:</strong> ${e.message}<br><br>
+      Asegúrate de que el texto sea un array JSON válido (comienza con <code>[</code> y termina con <code>]</code>).
+      Si Claude agregó explicaciones al inicio o al final, elimínalas.
+    `;
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  if (!Array.isArray(parsed) || parsed.length === 0) {
+    errorEl.textContent = 'El JSON debe ser un array con al menos un tema. Verifica el formato.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  // Asignar IDs y validar cada tema
+  const conIds = asignarIds(parsed);
+  Importador.temasValidados = conIds.map(tema => {
+    const issues = validarTema(tema);
+    const estadoCalculado = calcularEstado(tema, issues);
+    return { ...tema, estado: estadoCalculado, _issues: issues };
+  });
+
+  Importador.temasNuevos = Importador.temasValidados;
+
+  // Renderizar paso 2
+  renderPrevisualizacion();
+  impIrPaso(2);
+}
+
+function renderPrevisualizacion() {
+  const temas = Importador.temasValidados;
+  const completos  = temas.filter(t => t.estado === 'Completo').length;
+  const revision   = temas.filter(t => t.estado === 'Revisión').length;
+  const incompletos = temas.filter(t => t.estado !== 'Completo' && t.estado !== 'Revisión').length;
+  const hayIssues  = temas.some(t => t._issues.length > 0);
+
+  // Resumen
+  document.getElementById('impResumen').innerHTML = `
+    <div class="imp-stat"><span class="imp-stat-num total">${temas.length}</span><span class="imp-stat-label">Temas nuevos</span></div>
+    <div class="imp-stat"><span class="imp-stat-num total">${TEMAS.length}</span><span class="imp-stat-label">En biblioteca</span></div>
+    <div class="imp-stat"><span class="imp-stat-num total">${TEMAS.length + temas.length}</span><span class="imp-stat-label">Total final</span></div>
+    <div class="imp-stat"><span class="imp-stat-num ok">${completos}</span><span class="imp-stat-label">Completos</span></div>
+    ${revision > 0 ? `<div class="imp-stat"><span class="imp-stat-num warn">${revision}</span><span class="imp-stat-label">Revisión</span></div>` : ''}
+    ${incompletos > 0 ? `<div class="imp-stat"><span class="imp-stat-num err">${incompletos}</span><span class="imp-stat-label">Con issues</span></div>` : ''}
+  `;
+
+  // Lista de temas
+  const lista = document.getElementById('impListaTemas');
+  lista.innerHTML = temas.map(t => {
+    const estadoClase = t.estado === 'Completo' ? 'completo' : (t.estado === 'Revisión' ? 'revision' : 'incompleto');
+    const issuesStr = t._issues.length > 0 ? `Falta: ${t._issues.join(', ')}` : '';
+    return `
+      <div class="imp-tema-fila">
+        <span class="imp-tema-id">${t.id}</span>
+        <span class="imp-tema-titulo">${t.titulo || '(sin título)'}</span>
+        <span class="imp-tema-issues">${issuesStr}</span>
+        <span class="imp-tema-estado ${estadoClase}">${t.estado}</span>
+      </div>
+    `;
+  }).join('');
+
+  // Advertencia si hay incompletos
+  document.getElementById('impAdvertencia').style.display = hayIssues ? 'block' : 'none';
+}
+
+// ── PASO 2 → PASO 3: Fusionar y generar data.js ───────────
+function fusionarYGenerar() {
+  const temasFinales = [...TEMAS, ...Importador.temasNuevos];
+
+  // Generar contenido del data.js
+  const contenido = `/* ══════════════════════════════════════════════════════════
+   BIBLIOTECA DE TESTIMONIOS FGDLL — data.js
+   Generado: ${new Date().toLocaleString('es-MX')}
+   Total de temas: ${temasFinales.length}
+   (${TEMAS.length} anteriores + ${Importador.temasNuevos.length} importados)
+══════════════════════════════════════════════════════════ */
+
+const TEMAS = ${JSON.stringify(temasFinales, null, 2)};
+`;
+
+  // Guardar en Importador para la descarga
+  Importador.dataJsGenerado = contenido;
+  Importador.totalFinal = temasFinales.length;
+
+  // Renderizar paso 3
+  document.getElementById('impResultado').innerHTML = `
+    <p class="imp-resultado-titulo">✓ ${temasFinales.length} temas listos</p>
+    <p>
+      <strong>${TEMAS.length}</strong> temas existentes +
+      <strong>${Importador.temasNuevos.length}</strong> temas nuevos =
+      <strong>${temasFinales.length} temas totales</strong> en la nueva biblioteca.
+    </p>
+    <p style="margin-top:10px">
+      De los nuevos: 
+      <strong style="color:#70b080">${Importador.temasNuevos.filter(t=>t.estado==='Completo').length} completos</strong>,
+      ${Importador.temasNuevos.filter(t=>t.estado!=='Completo').length > 0 
+        ? `<strong style="color:var(--dorado)">${Importador.temasNuevos.filter(t=>t.estado!=='Completo').length} para revisión</strong>.` 
+        : 'todos completos.'}
+    </p>
+    <p style="margin-top:10px;font-size:13px;color:var(--gris-medio)">
+      Tamaño aproximado del archivo: ${Math.round(contenido.length / 1024)} KB
+    </p>
+  `;
+
+  impIrPaso(3);
+}
+
+// ── Descarga del data.js generado ─────────────────────────
+function descargarDataJs() {
+  if (!Importador.dataJsGenerado) return;
+  const blob = new Blob([Importador.dataJsGenerado], { type: 'application/javascript;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'data.js';
+  a.click();
+  URL.revokeObjectURL(url);
+  mostrarToast('data.js descargado ✓ — súbelo a Netlify');
+}
+
+// ── Reiniciar importador ───────────────────────────────────
+function reiniciarImportador() {
+  Importador.temasNuevos = [];
+  Importador.temasValidados = [];
+  Importador.dataJsGenerado = null;
+  document.getElementById('impJsonInput').value = '';
+  document.getElementById('impError').style.display = 'none';
+  impIrPaso(1);
+}
+
+// ── Bind eventos del importador ────────────────────────────
+function bindEventosImportador() {
+  document.getElementById('btnImportador')?.addEventListener('click', abrirImportador);
+  document.getElementById('importadorCerrar')?.addEventListener('click', cerrarImportador);
+  document.getElementById('importadorOverlay')?.addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) cerrarImportador();
+  });
+  document.getElementById('btnValidarJSON')?.addEventListener('click', validarYPrevisualizar);
+  document.getElementById('btnLimpiarImp')?.addEventListener('click', () => {
+    document.getElementById('impJsonInput').value = '';
+    document.getElementById('impError').style.display = 'none';
+  });
+  document.getElementById('btnVolverPaso1')?.addEventListener('click', () => impIrPaso(1));
+  document.getElementById('btnFusionar')?.addEventListener('click', fusionarYGenerar);
+  document.getElementById('btnDescargarDataJs')?.addEventListener('click', descargarDataJs);
+  document.getElementById('btnNuevaImportacion')?.addEventListener('click', reiniciarImportador);
+}
+
+// Extender el init original para incluir el importador
+const _initOriginal = init;
+document.addEventListener('DOMContentLoaded', bindEventosImportador);
