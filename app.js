@@ -1,11 +1,11 @@
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   BIBLIOTECA DE TESTIMONIOS FGDLL â€” app.js
-   Arquitectura: filtros dinÃ¡micos, modal, exportaciones
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════════
+   BIBLIOTECA DE TESTIMONIOS FGDLL — app.js
+   Arquitectura: filtros dinámicos, modal, exportaciones
+══════════════════════════════════════════════════════════ */
 
 'use strict';
 
-// â”€â”€ ESTADO GLOBAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── ESTADO GLOBAL ─────────────────────────────────────────
 const Estado = {
   filtros: {
     texto: '',
@@ -23,7 +23,7 @@ const Estado = {
   filtrosModoActivo: null,
 };
 
-// â”€â”€ UTILIDADES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── UTILIDADES ────────────────────────────────────────────
 function normalizar(str) {
   return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
@@ -37,7 +37,7 @@ function mostrarToast(msg) {
 
 function getTagClaseEstado(estado) {
   if (estado === 'Completo') return 'tag-estado-completo';
-  if (estado === 'RevisiÃ³n') return 'tag-estado-revision';
+  if (estado === 'Revisión') return 'tag-estado-revision';
   return 'tag-estado-falta';
 }
 
@@ -49,7 +49,7 @@ function getTagClaseTipo(tipo) {
   return '';
 }
 
-// â”€â”€ FILTROS DINÃMICOS DESDE DATOS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── FILTROS DINÁMICOS DESDE DATOS ─────────────────────────
 function poblarSelectsDesdeData() {
   const categorias = [...new Set(TEMAS.map(t => t.categoria).filter(Boolean))].sort();
   const tipos = [...new Set(TEMAS.map(t => t.tipoTestimonio).filter(Boolean))].sort();
@@ -73,13 +73,13 @@ function poblarSelectsDesdeData() {
   llenar('filtroMomento', momentos);
 }
 
-// â”€â”€ LÃ“GICA DE FILTRADO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── LÓGICA DE FILTRADO ─────────────────────────────────────
 function filtrarTemas() {
   const f = Estado.filtros;
   const txt = normalizar(f.texto);
 
   return TEMAS.filter(t => {
-    // BÃºsqueda de texto
+    // Búsqueda de texto
     if (txt) {
       const haystack = normalizar([
         t.titulo, t.tituloCorto, t.categoria, t.objetivo,
@@ -121,7 +121,7 @@ function ordenarTemas(temas) {
   return copia;
 }
 
-// â”€â”€ RENDERIZADO DE TARJETAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── RENDERIZADO DE TARJETAS ────────────────────────────────
 function renderTarjetas() {
   const grid = document.getElementById('tarjetasGrid');
   const sinRes = document.getElementById('sinResultados');
@@ -186,7 +186,7 @@ function crearTarjeta(tema, idx) {
     </div>
     <div class="tarjeta-pie">
       <button class="btn-ver" data-id="${tema.id}">Ver ficha completa</button>
-      <button class="btn-copiar-rapido" data-id="${tema.id}" title="Copiar preguntas guÃ­a">ðŸ“‹</button>
+      <button class="btn-copiar-rapido" data-id="${tema.id}" title="Copiar preguntas guía">📋</button>
     </div>
   `;
 
@@ -199,13 +199,13 @@ function crearTarjeta(tema, idx) {
   div.querySelector('.btn-copiar-rapido').addEventListener('click', (e) => {
     e.stopPropagation();
     copiarPreguntas(tema);
-    mostrarToast('Preguntas copiadas âœ“');
+    mostrarToast('Preguntas copiadas ✓');
   });
 
   return div;
 }
 
-// â”€â”€ MODAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── MODAL ─────────────────────────────────────────────────
 function abrirModal(id) {
   const tema = TEMAS.find(t => t.id === id);
   if (!tema) return;
@@ -230,17 +230,17 @@ function generarFichaHTML(tema) {
   const estadoClase = getTagClaseEstado(tema.estado);
 
   let tagsHtml = `<span class="tag tag-categoria">${tema.categoria || 'General'}</span>`;
-  if (tema.esCatalogoBase) tagsHtml += `<span class="tag tag-base">CatÃ¡logo base</span>`;
+  if (tema.esCatalogoBase) tagsHtml += `<span class="tag tag-base">Catálogo base</span>`;
   if (tema.tipoTestimonio) tagsHtml += `<span class="tag ${tipoClase}">${tema.tipoTestimonio}</span>`;
-  if (tema.sensibilidad !== 'normal') tagsHtml += `<span class="tag tag-${tema.sensibilidad}">${tema.sensibilidad === 'crisis' ? 'âš  Crisis' : 'Sensible'}</span>`;
+  if (tema.sensibilidad !== 'normal') tagsHtml += `<span class="tag tag-${tema.sensibilidad}">${tema.sensibilidad === 'crisis' ? '⚠ Crisis' : 'Sensible'}</span>`;
   tagsHtml += `<span class="tag ${estadoClase}">${tema.estado}</span>`;
 
   // Alerta para sensibles/crisis
   let alertaHtml = '';
   if (tema.sensibilidad === 'crisis') {
-    alertaHtml = `<div class="ficha-alerta"><strong>Tema de crisis:</strong> Este tema requiere acompaÃ±amiento especializado. No use en grupos sin apoyo de un servidor preparado. Si un participante estÃ¡ en crisis activa, priorice la contenciÃ³n y los recursos de salud mental.</div>`;
+    alertaHtml = `<div class="ficha-alerta"><strong>Tema de crisis:</strong> Este tema requiere acompañamiento especializado. No use en grupos sin apoyo de un servidor preparado. Si un participante está en crisis activa, priorice la contención y los recursos de salud mental.</div>`;
   } else if (tema.sensibilidad === 'sensible') {
-    alertaHtml = `<div class="ficha-alerta"><strong>Tema sensible:</strong> Oriente este tema hacia verdad, responsabilidad y libertad emocional. No use para juzgar, confrontar o forzar perdÃ³n.</div>`;
+    alertaHtml = `<div class="ficha-alerta"><strong>Tema sensible:</strong> Oriente este tema hacia verdad, responsabilidad y libertad emocional. No use para juzgar, confrontar o forzar perdón.</div>`;
   }
 
   // Fuente de estudio
@@ -248,30 +248,30 @@ function generarFichaHTML(tema) {
   if (tema.fuenteAA || tema.referencia) {
     fuenteHtml = `
       <div class="ficha-seccion">
-        <p class="ficha-seccion-titulo">Base de estudio â€” Literatura AA</p>
+        <p class="ficha-seccion-titulo">Base de estudio — Literatura AA</p>
         ${tema.fuenteAA ? `<p class="ficha-fuente"><span class="ficha-fuente-titulo">${tema.fuenteAA}</span></p>` : ''}
         ${tema.referencia ? `<p class="ficha-fuente">${tema.referencia}</p>` : ''}
       </div>
     `;
   }
 
-  // Notas para el lÃ­der
+  // Notas para el líder
   let notasHtml = '';
   if (tema.notasInternas) {
     notasHtml = `
       <div class="ficha-seccion">
-        <p class="ficha-seccion-titulo">Nota para el lÃ­der</p>
+        <p class="ficha-seccion-titulo">Nota para el líder</p>
         <p class="ficha-texto">${tema.notasInternas}</p>
       </div>
     `;
   }
 
-  // QuÃ© debe contar
+  // Qué debe contar
   let queContarHtml = '';
   if (tema.queDbeContar) {
     queContarHtml = `
       <div class="ficha-seccion">
-        <p class="ficha-seccion-titulo">QuÃ© debe incluir el testimonio</p>
+        <p class="ficha-seccion-titulo">Qué debe incluir el testimonio</p>
         <p class="ficha-texto">${tema.queDbeContar}</p>
       </div>
     `;
@@ -289,7 +289,7 @@ function generarFichaHTML(tema) {
     `;
   }
 
-  // GuÃ­a de testimonio â€” tres tiempos
+  // Guía de testimonio — tres tiempos
   const g = tema.guiaTestimonio || {};
   const detectar = g.detectar || [];
   const admitir = g.admitir || [];
@@ -314,7 +314,7 @@ function generarFichaHTML(tema) {
 
   const guiaHtml = `
     <div class="ficha-seccion">
-      <p class="ficha-seccion-titulo">Preguntas guÃ­a para preparar el testimonio</p>
+      <p class="ficha-seccion-titulo">Preguntas guía para preparar el testimonio</p>
       ${bloque(1, '1', 'Antes del programa', 'Detectar', detectar)}
       ${bloque(2, '2', 'Al llegar a Guerreros de la Luz', 'Admitir', admitir)}
       ${bloque(3, '3', 'Ahora con el programa', 'Aprender a corregir', corregir)}
@@ -341,31 +341,31 @@ function generarFichaHTML(tema) {
     <div class="ficha-seccion" style="padding-top:8px;border-top:1px solid rgba(255,255,255,0.06)">
       <p class="ficha-seccion-titulo">Metadatos</p>
       <p class="ficha-fuente" style="font-size:13px;color:#666">
-        ID: ${tema.id} Â· Prioridad: ${tema.prioridad} Â· 
-        Formato: ${tema.formato || 'No especificado'} Â· 
+        ID: ${tema.id} · Prioridad: ${tema.prioridad} · 
+        Formato: ${tema.formato || 'No especificado'} · 
         Momento: ${tema.momento || 'Flexible'}
       </p>
     </div>
   `;
 }
 
-// â”€â”€ EXPORTACIONES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── EXPORTACIONES ─────────────────────────────────────────
 function copiarPreguntas(tema) {
   const g = tema.guiaTestimonio || {};
   const partes = [];
 
   if (g.detectar?.length) {
-    partes.push('ANTES DEL PROGRAMA â€” DETECTAR');
+    partes.push('ANTES DEL PROGRAMA — DETECTAR');
     g.detectar.forEach(q => partes.push(q));
     partes.push('');
   }
   if (g.admitir?.length) {
-    partes.push('AL LLEGAR A GUERREROS DE LA LUZ â€” ADMITIR');
+    partes.push('AL LLEGAR A GUERREROS DE LA LUZ — ADMITIR');
     g.admitir.forEach(q => partes.push(q));
     partes.push('');
   }
   if (g.corregir?.length) {
-    partes.push('AHORA CON EL PROGRAMA â€” APRENDER A CORREGIR');
+    partes.push('AHORA CON EL PROGRAMA — APRENDER A CORREGIR');
     g.corregir.forEach(q => partes.push(q));
   }
 
@@ -379,89 +379,89 @@ function copiarWhatsApp(tema) {
     `_${tema.fraseAncla || ''}_`,
     '',
     `*Detectar (antes del programa):*`,
-    ...(g.detectar || []).map(q => `â€¢ ${q}`),
+    ...(g.detectar || []).map(q => `• ${q}`),
     '',
     `*Admitir (al llegar a Guerreros):*`,
-    ...(g.admitir || []).map(q => `â€¢ ${q}`),
+    ...(g.admitir || []).map(q => `• ${q}`),
     '',
     `*Aprender a corregir (hoy):*`,
-    ...(g.corregir || []).map(q => `â€¢ ${q}`),
+    ...(g.corregir || []).map(q => `• ${q}`),
     '',
     `_Fuente: ${tema.fuenteAA || 'FGDLL'}_`,
     `_Biblioteca de Testimonios FGDLL_`,
   ];
   navigator.clipboard.writeText(lineas.join('\n'));
-  mostrarToast('Copiado para WhatsApp âœ“');
+  mostrarToast('Copiado para WhatsApp ✓');
 }
 
 function descargarTxt(tema) {
   const g = tema.guiaTestimonio || {};
   const lineas = [
-    'â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•',
+    '═══════════════════════════════════════════',
     `BIBLIOTECA DE TESTIMONIOS FGDLL`,
-    'â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•',
+    '═══════════════════════════════════════════',
     '',
     `TEMA: ${tema.titulo}`,
-    `CATEGORÃA: ${tema.categoria}`,
+    `CATEGORÍA: ${tema.categoria}`,
     `TIPO: ${tema.tipoTestimonio}`,
     `INTENSIDAD: ${tema.intensidad}`,
     `ESTADO: ${tema.estado}`,
     '',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
+    '───────────────────────────────────────────',
     'FRASE ANCLA',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
+    '───────────────────────────────────────────',
     `"${tema.fraseAncla || 'Sin frase ancla'}"`,
     '',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
+    '───────────────────────────────────────────',
     'OBJETIVO DEL TESTIMONIO',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
+    '───────────────────────────────────────────',
     tema.objetivo || 'Sin objetivo definido',
     '',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
+    '───────────────────────────────────────────',
     'FUENTE DE ESTUDIO',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
-    tema.fuenteAA || 'FGDLL / GuÃ­a de Apadrinamiento',
+    '───────────────────────────────────────────',
+    tema.fuenteAA || 'FGDLL / Guía de Apadrinamiento',
     tema.referencia || '',
     '',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
-    'PREGUNTAS GUÃA â€” LOS TRES TIEMPOS',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
+    '───────────────────────────────────────────',
+    'PREGUNTAS GUÍA — LOS TRES TIEMPOS',
+    '───────────────────────────────────────────',
     '',
-    '[ 01 ] ANTES DEL PROGRAMA â€” DETECTAR',
+    '[ 01 ] ANTES DEL PROGRAMA — DETECTAR',
     ...(g.detectar || []).map(q => `   ${q}`),
     '',
-    '[ 02 ] AL LLEGAR A GUERREROS DE LA LUZ â€” ADMITIR',
+    '[ 02 ] AL LLEGAR A GUERREROS DE LA LUZ — ADMITIR',
     ...(g.admitir || []).map(q => `   ${q}`),
     '',
-    '[ 03 ] AHORA CON EL PROGRAMA â€” APRENDER A CORREGIR',
+    '[ 03 ] AHORA CON EL PROGRAMA — APRENDER A CORREGIR',
     ...(g.corregir || []).map(q => `   ${q}`),
     '',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
-    'QUÃ‰ DEBE INCLUIR EL TESTIMONIO',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
-    tema.queDbeContar || 'â€”',
+    '───────────────────────────────────────────',
+    'QUÉ DEBE INCLUIR EL TESTIMONIO',
+    '───────────────────────────────────────────',
+    tema.queDbeContar || '—',
     '',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
-    'NOTA PARA EL LÃDER',
-    'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€',
-    tema.notasInternas || 'â€”',
+    '───────────────────────────────────────────',
+    'NOTA PARA EL LÍDER',
+    '───────────────────────────────────────────',
+    tema.notasInternas || '—',
     '',
-    'â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•',
-    'Biblioteca de Testimonios â€” Fraternidad Guerreros de la Luz',
+    '═══════════════════════════════════════════',
+    'Biblioteca de Testimonios — Fraternidad Guerreros de la Luz',
     `El testimonio no es catarsis desordenada,`,
     `sino experiencia ordenada por la literatura,`,
     `la conciencia y el servicio.`,
-    'â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•',
+    '═══════════════════════════════════════════',
   ];
 
   const blob = new Blob([lineas.join('\n')], { type: 'text/plain;charset=utf-8' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `FGDLL-${tema.id}-${tema.titulo.replace(/[^a-zA-ZÃ¡Ã©Ã­Ã³ÃºÃÃ‰ÃÃ“ÃšÃ±Ã‘0-9]/g, '_').slice(0, 40)}.txt`;
+  a.download = `FGDLL-${tema.id}-${tema.titulo.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ0-9]/g, '_').slice(0, 40)}.txt`;
   a.click();
   URL.revokeObjectURL(url);
-  mostrarToast('Archivo descargado âœ“');
+  mostrarToast('Archivo descargado ✓');
 }
 
 function imprimirFicha(tema) {
@@ -471,7 +471,7 @@ function imprimirFicha(tema) {
   overlay.classList.remove('printing');
 }
 
-// â”€â”€ MODOS DE USO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── MODOS DE USO ─────────────────────────────────────────
 function aplicarModo(filtroJSON) {
   try {
     const filtro = JSON.parse(filtroJSON);
@@ -486,7 +486,7 @@ function aplicarModo(filtroJSON) {
   } catch(e) {}
 }
 
-// â”€â”€ RESET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── RESET ─────────────────────────────────────────────────
 function resetFiltros(render = true) {
   Object.keys(Estado.filtros).forEach(k => Estado.filtros[k] = '');
   ['filtroCategoria','filtroTipo','filtroIntensidad','filtroMomento',
@@ -497,7 +497,7 @@ function resetFiltros(render = true) {
   if (render) renderTarjetas();
 }
 
-// â”€â”€ EDITOR JSON â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── EDITOR JSON ────────────────────────────────────────────
 function generarJSONNuevoTema() {
   const val = id => document.getElementById(id)?.value?.trim() || '';
   const textarea = id => {
@@ -506,7 +506,7 @@ function generarJSONNuevoTema() {
   };
 
   const titulo = val('edTitulo');
-  if (!titulo) { mostrarToast('Agrega un tÃ­tulo'); return; }
+  if (!titulo) { mostrarToast('Agrega un título'); return; }
 
   const nuevoId = `tema-${String(Date.now()).slice(-6)}`;
   const obj = {
@@ -514,7 +514,7 @@ function generarJSONNuevoTema() {
     titulo,
     tituloCorto: '',
     categoria: val('edCategoria'),
-    estado: val('edFuenteAA') && val('edAncla') ? 'Completo' : 'RevisiÃ³n',
+    estado: val('edFuenteAA') && val('edAncla') ? 'Completo' : 'Revisión',
     sensibilidad: val('edSensibilidad'),
     fuentePrincipal: val('edFuenteAA') ? 'AA' : 'FGDLL',
     fuenteAA: val('edFuenteAA'),
@@ -546,7 +546,7 @@ function generarJSONNuevoTema() {
   resultado.scrollIntoView({ behavior: 'smooth' });
 }
 
-// â”€â”€ INICIALIZACIÃ“N â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── INICIALIZACIÓN ─────────────────────────────────────────
 function init() {
   poblarSelectsDesdeData();
   renderTarjetas();
@@ -621,7 +621,7 @@ function bindEventos() {
   document.getElementById('btnCopiarGuia')?.addEventListener('click', () => {
     if (!Estado.temaActivo) return;
     copiarPreguntas(Estado.temaActivo);
-    mostrarToast('Preguntas copiadas âœ“');
+    mostrarToast('Preguntas copiadas ✓');
   });
   document.getElementById('btnCopiarWA')?.addEventListener('click', () => {
     if (!Estado.temaActivo) return;
@@ -667,25 +667,25 @@ function bindEventos() {
     const txt = document.getElementById('editorJSON')?.textContent;
     if (txt) {
       navigator.clipboard.writeText(txt);
-      mostrarToast('JSON copiado âœ“');
+      mostrarToast('JSON copiado ✓');
     }
   });
 }
 
-// Arrancar cuando el DOM estÃ© listo
+// Arrancar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', init);
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    IMPORTADOR DE BASES DE TEMAS
-   Flujo: pegar JSON â†’ validar â†’ previsualizar â†’ fusionar â†’ descargar
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   Flujo: pegar JSON → validar → previsualizar → fusionar → descargar
+══════════════════════════════════════════════════════════ */
 
 const Importador = {
   temasNuevos: [],      // los temas parseados del JSON pegado
-  temasValidados: [],   // con metadatos de validaciÃ³n
+  temasValidados: [],   // con metadatos de validación
 };
 
-// â”€â”€ Abrir / cerrar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Abrir / cerrar ─────────────────────────────────────────
 function abrirImportador() {
   impIrPaso(1);
   document.getElementById('impJsonInput').value = '';
@@ -705,10 +705,10 @@ function impIrPaso(n) {
   });
 }
 
-// â”€â”€ Limpiar formato markdown del JSON â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Limpiar formato markdown del JSON ─────────────────────
 function limpiarJSON(raw) {
   let txt = raw.trim();
-  // Quitar bloques de cÃ³digo markdown ```json ... ``` o ``` ... ```
+  // Quitar bloques de código markdown ```json ... ``` o ``` ... ```
   txt = txt.replace(/^
 http://googleusercontent.com/immersive_entry_chip/0
 
@@ -717,11 +717,11 @@ http://googleusercontent.com/immersive_entry_chip/0
 ### 4. `styles.css`
 
 ```css
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    BIBLIOTECA DE TESTIMONIOS FGDLL
-   Identidad visual: Institucional Â· Espiritual Â· Profunda
-   Paleta: Negro carbÃ³n / Dorado viejo / Blanco cÃ¡lido
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   Identidad visual: Institucional · Espiritual · Profunda
+   Paleta: Negro carbón / Dorado viejo / Blanco cálido
+══════════════════════════════════════════════════════════ */
 
 :root {
   --negro:        #0d0d0d;
@@ -748,9 +748,9 @@ http://googleusercontent.com/immersive_entry_chip/0
   --verde:        #2d5a3a;
   --azul-oscuro:  #1a2a3a;
 
-  --tiempo-1:     #c9a84c;   /* Detectar â€” dorado */
-  --tiempo-2:     #6a7a8a;   /* Admitir â€” gris azulado */
-  --tiempo-3:     #5a7a5a;   /* Corregir â€” verde profundo */
+  --tiempo-1:     #c9a84c;   /* Detectar — dorado */
+  --tiempo-2:     #6a7a8a;   /* Admitir — gris azulado */
+  --tiempo-3:     #5a7a5a;   /* Corregir — verde profundo */
 
   --fuente-titulo: 'Cormorant Garamond', Georgia, serif;
   --fuente-texto:  'DM Sans', system-ui, sans-serif;
@@ -763,7 +763,7 @@ http://googleusercontent.com/immersive_entry_chip/0
   --transicion:   0.25s ease;
 }
 
-/* â”€â”€ RESET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── RESET ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -779,7 +779,7 @@ button { cursor: pointer; font-family: var(--fuente-texto); border: none; backgr
 select, input, textarea { font-family: var(--fuente-texto); }
 img { display: block; max-width: 100%; }
 
-/* â”€â”€ CONTENEDOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── CONTENEDOR ─────────────────────────────────────────── */
 .contenedor {
   width: 100%;
   max-width: 1280px;
@@ -787,9 +787,9 @@ img { display: block; max-width: 100%; }
   padding: 0 24px;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    NAV
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -846,9 +846,9 @@ img { display: block; max-width: 100%; }
   border-color: var(--dorado);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    HERO
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -935,7 +935,7 @@ img { display: block; max-width: 100%; }
   flex-wrap: wrap;
 }
 
-/* â”€â”€ BOTONES PRINCIPALES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── BOTONES PRINCIPALES ─────────────────────────────────── */
 .btn-primario {
   display: inline-block;
   padding: 14px 32px;
@@ -968,7 +968,7 @@ img { display: block; max-width: 100%; }
   color: var(--dorado);
 }
 
-/* â”€â”€ STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── STATS ───────────────────────────────────────────────── */
 .hero-stats {
   position: relative;
   display: flex;
@@ -997,9 +997,9 @@ img { display: block; max-width: 100%; }
   margin-top: 6px;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   SECCIÃ“N MODOS DE USO
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════════
+   SECCIÓN MODOS DE USO
+══════════════════════════════════════════════════════════ */
 .modos {
   padding: 96px 0;
   background: var(--negro-suave);
@@ -1073,9 +1073,9 @@ img { display: block; max-width: 100%; }
   border-radius: 4px;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    TRES TIEMPOS
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 .tres-tiempos {
   padding: 80px 0;
   background: var(--negro);
@@ -1133,15 +1133,15 @@ img { display: block; max-width: 100%; }
   opacity: 0.5;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    BIBLIOTECA
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 .biblioteca {
   padding: 80px 0 120px;
   background: var(--negro-medio);
 }
 
-/* â”€â”€ BUSCADOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── BUSCADOR ─────────────────────────────────────────────── */
 .buscador-wrap {
   margin-bottom: 40px;
 }
@@ -1272,7 +1272,7 @@ img { display: block; max-width: 100%; }
   color: var(--gris-texto);
 }
 
-/* â”€â”€ CABECERA TARJETAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── CABECERA TARJETAS ───────────────────────────────────── */
 .tarjetas-header {
   display: flex;
   align-items: center;
@@ -1293,7 +1293,7 @@ img { display: block; max-width: 100%; }
   color: var(--gris-texto);
 }
 
-/* â”€â”€ TARJETAS GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── TARJETAS GRID ───────────────────────────────────────── */
 .tarjetas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1425,7 +1425,7 @@ img { display: block; max-width: 100%; }
 }
 .btn-copiar-rapido:hover { color: var(--dorado); border-color: var(--dorado); }
 
-/* â”€â”€ SIN RESULTADOS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── SIN RESULTADOS ─────────────────────────────────────── */
 .sin-resultados {
   text-align: center;
   padding: 80px 0;
@@ -1433,9 +1433,9 @@ img { display: block; max-width: 100%; }
 }
 .sin-resultados p { margin-bottom: 20px; font-size: 16px; }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    MODAL
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1521,7 +1521,7 @@ img { display: block; max-width: 100%; }
   font-size: 14px;
   color: #d08080;
 }
-.ficha-alerta::before { content: 'âš  '; }
+.ficha-alerta::before { content: '⚠ '; }
 
 .ficha-seccion {
   margin-bottom: 28px;
@@ -1550,7 +1550,7 @@ img { display: block; max-width: 100%; }
 .ficha-fuente:last-child { border-bottom: none; }
 .ficha-fuente-titulo { font-weight: 600; color: var(--blanco-frio); }
 
-/* PREGUNTAS GUÃA - TRES TIEMPOS */
+/* PREGUNTAS GUÍA - TRES TIEMPOS */
 .guia-bloque {
   border-radius: var(--radio);
   overflow: hidden;
@@ -1637,9 +1637,9 @@ img { display: block; max-width: 100%; }
   border-color: var(--dorado-dark);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    EDITOR MODAL
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 .editor-modal {
   max-width: 700px;
 }
@@ -1714,9 +1714,9 @@ img { display: block; max-width: 100%; }
   margin-bottom: 12px;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    TOAST
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 .toast {
   position: fixed;
   bottom: 24px;
@@ -1737,9 +1737,9 @@ img { display: block; max-width: 100%; }
   transform: translateX(-50%) translateY(0);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    RESPONSIVE
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .nav { padding: 12px 20px; }
   .nav-nombre { display: none; }
@@ -1784,7 +1784,7 @@ img { display: block; max-width: 100%; }
   .hero-titulo { font-size: 42px; }
 }
 
-/* â”€â”€ ANIMACIONES ENTRADA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── ANIMACIONES ENTRADA ────────────────────────────────── */
 .tarjeta {
   animation: fadeInUp 0.4s ease both;
 }
@@ -1805,7 +1805,7 @@ img { display: block; max-width: 100%; }
 .tarjeta:nth-child(9)  { animation-delay: 0.32s; }
 .tarjeta:nth-child(n+10) { animation-delay: 0.36s; }
 
-/* â”€â”€ PRINT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── PRINT ─────────────────────────────────────────────── */
 @media print {
   .nav, .hero, .modos, .tres-tiempos, .buscador-wrap,
   .tarjetas-header, .tarjetas-grid, .modal-overlay:not(.printing),
@@ -1824,9 +1824,9 @@ img { display: block; max-width: 100%; }
   .ficha-titulo, .ficha-texto, .guia-pregunta { color: black !important; }
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════════
    IMPORTADOR DE BASES
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+══════════════════════════════════════════════════════════ */
 .btn-importador {
   font-size: 13px;
   padding: 8px 16px;
@@ -1978,7 +1978,7 @@ img { display: block; max-width: 100%; }
   border-radius: 3px;
 }
 
-/* Resumen de validaciÃ³n */
+/* Resumen de validación */
 .imp-resumen {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -2011,7 +2011,7 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.08em;
 }
 
-/* Lista de temas en previsualizaciÃ³n */
+/* Lista de temas en previsualización */
 .imp-lista-temas {
   max-height: 280px;
   overflow-y: auto;
