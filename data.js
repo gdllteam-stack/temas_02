@@ -1,8 +1,8 @@
 [
 {
-"id": "tema-N01",
-"titulo": "Yo no llegué convencido, llegué cansado y sin energía",
-"tituloCorto": "Llegar cansado al grupo",
+"id": "tema-124",
+"titulo": "Yo no llegué convencido, llegué cansado ",
+"tituloCorto": "Llegar cansado",
 "categoria": "Paso 1",
 "estado": "Completo",
 "sensibilidad": "normal",
@@ -15,79 +15,153 @@
 "tipoTestimonio": "Crudo",
 "paso": "Paso 1",
 "esCatalogoBase": false,
-"objetivo": "Mostrar que no se necesita convicción absoluta para iniciar la recuperación, basta con reconocer el agotamiento de intentar controlar la vida.",
-"fraseAncla": "No llegué por fe, llegué porque ya no podía más.",
+"objetivo": "Transmitir que no se requiere fe inicial, sino el reconocimiento del agotamiento personal para iniciar la recuperación.",
+"fraseAncla": "No llegué por fe, llegué porque ya no podía más. ",
 "variaciones": [
-"La ilusión de control",
-"Normalizar el daño"
+"La ilusión de aguantar más",
+"El cansancio emocional"
 ],
-"queDbeContar": "Debe contar cómo intentaba sostener una forma de vida insostenible y el momento exacto en que reconoció su cansancio para dejar de pelear.",
-"notasInternas": "Enfocar en la toma de conciencia del agotamiento emocional, evitando recrear el caos o justificar el consumo del pasado.",
+"queDbeContar": "Cómo creía que no necesitaba ayuda hasta que se quedó sin energía para sostener esa forma de vivir.",
+"notasInternas": "Enfocar en el cansancio emocional y la falta de energía como punto de quiebre, sin recrear el caos.",
 "prioridad": 50,
 "guiaTestimonio": {
 "detectar": [
-"¿De qué formas te engañabas pensando que todavía podías aguantar tu ritmo de vida un poco más?",
-"¿Qué consecuencias o actitudes dañinas estabas normalizando en tu día a día?",
-"¿Cómo intentabas controlar tus emociones, tiempos o a las personas para sentir una falsa seguridad?"
+"¿De qué formas te engañabas creyendo que todavía podías aguantar un poco más y que no necesitabas ayuda? ",
+"¿Qué actitudes o situaciones cotidianas te demostraban que tu energía se estaba agotando rápidamente?"
 ],
 "admitir": [
-"¿Cuál fue el punto de quiebre donde te diste cuenta de que ya no tenías energía para seguir sosteniendo esa fachada?",
-"¿Cómo fue el proceso de aceptar que tu manera de resolver las cosas estaba fallando?",
-"¿Qué sentiste al llegar a la Fraternidad y escuchar historias donde te viste reflejado sin querer admitirlo?"
+"¿Cuál fue el momento exacto de quiebre donde te diste cuenta de que ya no tenías energía para sostener tu forma de vivir? ",
+"¿Qué sentiste al llegar al grupo no por convicción, sino por puro cansancio?"
 ],
 "corregir": [
-"¿Qué acciones distintas haces hoy cuando sientes que una situación te rebasa emocionalmente?",
-"¿De qué manera aplicas el Primer Paso para pedir ayuda sin sentir que pedirla te quita valor?",
-"¿Cómo logras detenerte hoy antes de volver a la urgencia de querer controlar todo?"
+"¿Cómo aceptas hoy cuando algo te rebasa para no tener que esperar a tocar fondo antes de pedir apoyo? ",
+"¿Qué pequeñas acciones tomas diariamente para no volver a llegar a ese nivel de agotamiento?"
 ]
 }
 },
 {
-"id": "tema-N02",
-"titulo": "Creer me daba miedo, pero seguir igual también",
-"tituloCorto": "Apertura sin fe perfecta",
+"id": "tema-125",
+"titulo": "Pensé que no era para mí… y aquí estoy ",
+"tituloCorto": "Pensé que no encajaba",
+"categoria": "Paso 1",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 1",
+"intensidad": "Baja",
+"momento": "Inicio",
+"formato": "Individual",
+"tipoTestimonio": "Inspirador",
+"paso": "Paso 1",
+"esCatalogoBase": false,
+"objetivo": "Mostrar cómo la identificación rompe la barrera del prejuicio inicial al llegar al grupo.",
+"fraseAncla": "No tenía que encajar, solo quedarme. ",
+"variaciones": [
+"Sentirse diferente",
+"El miedo al rechazo"
+],
+"queDbeContar": "El tránsito entre creer que el programa era para otros y el momento de verse reflejado en las historias de los demás.",
+"notasInternas": "Resaltar el valor de la escucha activa y la identificación sin necesidad de estar de acuerdo en todo al principio.",
+"prioridad": 45,
+"guiaTestimonio": {
+"detectar": [
+"¿Por qué creías que este programa era exclusivamente para otros y no para alguien como tú? ",
+"¿De qué manera tu sentimiento de ser diferente te mantenía aislado de cualquier posible ayuda?"
+],
+"admitir": [
+"¿Cómo fue la experiencia de escuchar historias en el grupo donde te viste reflejado sin querer admitirlo? ",
+"¿En qué momento decidiste que podías quedarte aunque no sintieras que encajabas perfectamente?"
+],
+"corregir": [
+"¿De qué forma dejas de compararte hoy y te permites tomar exclusivamente lo que te sirve para tu proceso? ",
+"¿Cómo practicas la apertura mental cuando escuchas a nuevos compañeros?"
+]
+}
+},
+{
+"id": "tema-126",
+"titulo": "Lo que yo creía que era normal ",
+"tituloCorto": "Normalizar el daño",
+"categoria": "Paso 1",
+"estado": "Completo",
+"sensibilidad": "normal",
+"fuentePrincipal": "FGDLL",
+"fuenteAA": "Alcohólicos Anónimos",
+"referencia": "Paso 1",
+"intensidad": "Media",
+"momento": "Inicio",
+"formato": "Panel corto",
+"tipoTestimonio": "Didáctico",
+"paso": "Paso 1",
+"esCatalogoBase": false,
+"objetivo": "Evidenciar cómo nos acostumbramos a dinámicas dañinas asumiéndolas como parte normal de la vida.",
+"fraseAncla": "No todo lo habitual era sano. ",
+"variaciones": [
+"Acostumbrarse al malestar",
+"Vivir en reactividad"
+],
+"queDbeContar": "Cómo normalizaba el desorden y el cansancio emocional hasta que comprendió que vivir así era solo lo conocido, no lo sano.",
+"notasInternas": "Ayudar a distinguir entre lo que es verdaderamente normal y lo que simplemente se ha vuelto costumbre por evitación.",
+"prioridad": 40,
+"guiaTestimonio": {
+"detectar": [
+"¿Qué actitudes de desorden, reactividad o cansancio emocional estabas normalizando en tu rutina diaria? ",
+"¿Cómo te convencías de que vivir con ese nivel de estrés o conflicto era lo que a todos les pasaba?"
+],
+"admitir": [
+"¿Cuál fue el punto de quiebre donde entendiste que vivir de esa manera no era normal, sino únicamente lo conocido? ",
+"¿Qué sentiste al admitir que te habías acostumbrado a hacerte daño?"
+],
+"corregir": [
+"¿Cómo cuestionas tus hábitos y reacciones hoy antes de volver a repetirlos de forma automática? ",
+"¿Qué nuevas rutinas o límites has establecido para proteger tu tranquilidad emocional diaria?"
+]
+}
+},
+{
+"id": "tema-127",
+"titulo": "Creer me daba miedo, seguir igual también ",
+"tituloCorto": "Miedo a creer",
 "categoria": "Paso 2",
 "estado": "Completo",
 "sensibilidad": "normal",
 "fuentePrincipal": "FGDLL",
 "fuenteAA": "Alcohólicos Anónimos",
 "referencia": "Paso 2",
-"intensidad": "Baja",
+"intensidad": "Media",
 "momento": "Mitad",
 "formato": "Individual",
-"tipoTestimonio": "Inspirador",
+"tipoTestimonio": "Crudo",
 "paso": "Paso 2",
 "esCatalogoBase": false,
-"objetivo": "Desmitificar el Paso 2 demostrando que recuperar el sano juicio comienza con pequeñas acciones de apertura y confianza práctica.",
-"fraseAncla": "No tenía fe absoluta, pero dejarme ayudar fue el inicio del cambio.",
+"objetivo": "Desmitificar la necesidad de una fe absoluta y mostrar el valor de la apertura inicial basada en la necesidad.",
+"fraseAncla": "No tengo fe absoluta, pero ya no estoy solo. ",
 "variaciones": [
-"Resistencia a creer",
-"Confiar en el proceso"
+"Resistencia a confiar",
+"La mente cerrada"
 ],
-"queDbeContar": "El proceso de pasar del aislamiento y la mente cerrada a permitirse seguir sugerencias simples en el grupo.",
-"notasInternas": "Cuidar de no imponer conceptos religiosos; el enfoque debe ser en la apertura mental y en apoyarse en el grupo como poder superior inicial.",
-"prioridad": 45,
+"queDbeContar": "El conflicto interno entre la resistencia a creer o confiar y el terror de tener que seguir viviendo de la misma manera.",
+"notasInternas": "Cuidar de no imponer conceptos espirituales ni religiosos; centrarse en la apertura mental y en confiar en el proceso del grupo.",
+"prioridad": 35,
 "guiaTestimonio": {
 "detectar": [
-"¿Por qué creías que pedir ayuda o confiar en algo fuera de ti era una señal de debilidad?",
-"¿De qué manera tu mente cerrada y tus miedos te mantenían aislado de los demás?",
-"¿Cómo te afectaba reaccionar a todo basándote únicamente en tus impulsos y opiniones?"
+"¿Por qué la idea de confiar o creer en algo fuera de ti te generaba tanto miedo o rechazo inicial? ",
+"¿De qué forma tu mente cerrada y tu desconfianza te mantenían atrapado en los mismos resultados?"
 ],
 "admitir": [
-"¿Qué situación te llevó a darte cuenta de que tu propio juicio ya no te estaba protegiendo?",
-"¿Cómo fue esa primera vez que decidiste escuchar una sugerencia en lugar de discutirla?",
-"¿De qué forma empezaste a ver al grupo como algo más grande que tú en lo que podías confiar?"
+"¿Qué situación o sensación de cansancio te llevó a darte cuenta de que seguir dudando te dolía más que intentar confiar? ",
+"¿Cómo fue esa primera experiencia donde decidiste escuchar una sugerencia en lugar de discutirla? "
 ],
 "corregir": [
-"¿Qué haces hoy para pausar y pensar antes de reaccionar impulsivamente?",
-"¿De qué forma notas que estás recuperando claridad en tus decisiones cotidianas?",
-"¿Cómo logras mantenerte abierto y receptivo incluso en los días en que sientes dudas?"
+"¿Qué haces distinto hoy para no cerrarte cuando sientes miedo o cuando no tienes las respuestas? ",
+"¿De qué manera te apoyas actualmente en la experiencia del grupo para mantener tu claridad mental y sano juicio? "
 ]
 }
 },
 {
-"id": "tema-N03",
-"titulo": "Decidí dejar de hacerlo todo a mi manera",
+"id": "tema-130",
+"titulo": "Decidí dejar de hacerlo todo a mi manera ",
 "tituloCorto": "Soltar el control",
 "categoria": "Paso 3",
 "estado": "Completo",
@@ -97,41 +171,38 @@
 "referencia": "Paso 3",
 "intensidad": "Media",
 "momento": "Mitad",
-"formato": "Individual",
+"formato": "Panel largo",
 "tipoTestimonio": "Didáctico",
 "paso": "Paso 3",
 "esCatalogoBase": false,
-"objetivo": "Ilustrar que el Paso 3 es una decisión práctica y diaria de dejar de forzar resultados y comenzar a seguir sugerencias constructivas.",
-"fraseAncla": "No siempre confío, pero ya no me peleo con todo.",
+"objetivo": "Ilustrar el Paso 3 como una decisión diaria y práctica de dejar de controlar todo y permitir ser guiado.",
+"fraseAncla": "No siempre confío, pero ya no me peleo con todo. ",
 "variaciones": [
-"El miedo a soltar",
-"Elegir no decidir solo"
+"El agotamiento del control",
+"Aceptar sugerencias"
 ],
-"queDbeContar": "Cómo vivía con la ansiedad de querer resolver todo solo, y qué acciones tomó para empezar a dejarse guiar en lo cotidiano.",
-"notasInternas": "Evitar conceptos de 'entrega mística'. Centrarse en el cambio de actitud hacia las sugerencias del grupo y la reducción de la ansiedad de control.",
-"prioridad": 40,
+"queDbeContar": "Cómo la necesidad de control lo desgastaba y de qué manera empezó a soltar tomando decisiones prácticas apoyadas en sugerencias.",
+"notasInternas": "No hablar de 'entrega total' idealizada ni mística. Enfocarse en que el Paso 3 es una práctica diaria de soltar el control.",
+"prioridad": 30,
 "guiaTestimonio": {
 "detectar": [
-"¿De qué manera confundías tener el control de las cosas con tener seguridad en tu vida?",
-"¿Qué sentías internamente cuando las cosas no salían exactamente a tu modo?",
-"¿Cómo te desgastaba la necesidad constante de tener siempre la razón?"
+"¿De qué manera confundías la necesidad de tener el control de todo con sentirte seguro? ",
+"¿Qué tipo de ansiedad te generaba querer resolver siempre las cosas a tu modo y sin ayuda? "
 ],
 "admitir": [
-"¿En qué momento reconociste que seguir haciendo las cosas a tu manera solo te generaba más agotamiento?",
-"¿Cuáles eran tus mayores miedos al pensar en soltar el control y dejarte guiar por otros?",
-"¿Cómo fue tu experiencia la primera vez que decidiste seguir una indicación aunque no estabas del todo convencido?"
+"¿En qué momento reconociste que intentar controlar a las personas o situaciones te estaba dejando totalmente agotado? ",
+"¿Cómo fue la primera vez que decidiste soltar tu opinión y seguir una sugerencia del grupo aunque te incomodara? "
 ],
 "corregir": [
-"¿Qué límites te pones hoy para no volver a tomar decisiones importantes desde la urgencia o el enojo?",
-"¿De qué forma practicas consultar tus inquietudes con alguien más antes de actuar?",
-"¿Qué haces ahora cuando sientes el impulso automático de querer volver a controlar una situación?"
+"¿Qué haces distinto hoy para detenerte y no querer imponer tu voluntad de forma inmediata? ",
+"¿De qué forma practicas la decisión de pedir guía cuando sientes el impulso de recuperar el control absoluto? "
 ]
 }
 },
 {
-"id": "tema-N04",
-"titulo": "Empecé a mirarme con honestidad sin destruirme",
-"tituloCorto": "Inventario sin castigo",
+"id": "tema-131",
+"titulo": "Empecé a mirarme con honestidad ",
+"tituloCorto": "Mirarme con honestidad",
 "categoria": "Paso 4",
 "estado": "Completo",
 "sensibilidad": "sensible",
@@ -140,40 +211,37 @@
 "referencia": "Paso 4",
 "intensidad": "Alta",
 "momento": "Mitad",
-"formato": "Panel largo",
+"formato": "Individual",
 "tipoTestimonio": "Crudo",
 "paso": "Paso 4",
 "esCatalogoBase": false,
-"objetivo": "Compartir la experiencia de hacer un inventario moral diferenciando claramente la toma de responsabilidad consciente de la culpa paralizante.",
-"fraseAncla": "Verme por dentro no me destruyó, me ordenó.",
+"objetivo": "Fomentar la disposición a realizar un inventario moral diferenciando la toma de conciencia de la culpa destructiva.",
+"fraseAncla": "Verme no me destruyó, me ordenó. ",
 "variaciones": [
 "Responsabilidad sin culpa",
-"Reconocer mis patrones"
+"Vencer el miedo al inventario"
 ],
-"queDbeContar": "La resistencia inicial a enfrentar la propia historia y cómo el atreverse a ver los propios defectos trajo orden en lugar de vergüenza.",
-"notasInternas": "Supervisar que el joven no comparta una 'lista de culpas' explícita ni detalles morbosos. El foco es la liberación que da el autoconocimiento.",
-"prioridad": 35,
+"queDbeContar": "La evolución desde evitar mirarse por miedo al castigo, hasta descubrir patrones de conducta que necesitaban atención mediante el inventario.",
+"notasInternas": "Aclarar tajantemente que no es una confesión pública ni una lista de culpas, sino un ejercicio de responsabilidad progresiva.",
+"prioridad": 25,
 "guiaTestimonio": {
 "detectar": [
-"¿De qué maneras evitabas mirarte internamente por el miedo a descubrir quién eras realmente?",
-"¿Cómo confundías constantemente la culpa con la verdadera responsabilidad?",
-"¿Cuáles eran las excusas más frecuentes que usabas para justificar tus reacciones o defectos?"
+"¿Por qué creías que si mirabas profundamente tus errores internos te ibas a juzgar o a hundir emocionalmente? ",
+"¿De qué maneras evitabas mirarte con honestidad para no sentir vergüenza de quién eras en realidad? "
 ],
 "admitir": [
-"¿Qué situación o patrón repetitivo te hizo ver que no podías seguir huyendo de ti mismo?",
-"¿Qué fue lo más doloroso pero necesario que tuviste que aceptar sobre tus propias actitudes?",
-"¿Cómo lograste dar el paso de empezar a mirar tus errores sin llegar al castigo emocional?"
+"¿Qué fue lo que finalmente te dio el valor para dejar de huir y atreverte a ser honesto contigo mismo? ",
+"¿Cuál fue uno de los patrones repetitivos más dolorosos pero reveladores que descubriste al observarte? "
 ],
 "corregir": [
-"¿Cómo respondes hoy a las situaciones difíciles en lugar de simplemente reaccionar desde tus viejas defensas?",
-"¿Qué herramientas prácticas usas para observarte en el día a día sin juzgarte con dureza?",
-"¿De qué forma este autoconocimiento te ayuda hoy a ser más compasivo contigo mismo?"
+"¿Qué herramientas utilizas hoy para mirar tus defectos o reacciones sin caer en la culpa o el castigo? ",
+"¿Cómo te ayuda este orden interno que ganaste a responder a las situaciones en lugar de reaccionar impulsivamente? "
 ]
 }
 },
 {
-"id": "tema-N05",
-"titulo": "Romper el aislamiento: Decir la verdad me liberó",
+"id": "tema-132",
+"titulo": "Decir la verdad me liberó ",
 "tituloCorto": "Decir la verdad",
 "categoria": "Paso 5",
 "estado": "Completo",
@@ -187,295 +255,154 @@
 "tipoTestimonio": "Inspirador",
 "paso": "Paso 5",
 "esCatalogoBase": false,
-"objetivo": "Resaltar el alivio emocional que se experimenta al romper el silencio y compartir la propia naturaleza con alguien de confianza.",
-"fraseAncla": "Decir la verdad me dio paz, no castigo.",
+"objetivo": "Evidenciar el alivio emocional que se experimenta al romper el secreto y ser honesto con alguien de confianza.",
+"fraseAncla": "Decir la verdad me dio paz, no castigo. ",
 "variaciones": [
-"El peso de los secretos",
-"Hablar sin máscaras"
+"Romper el aislamiento",
+"Soltar los secretos"
 ],
-"queDbeContar": "Cómo el miedo al rechazo lo mantenía en silencio, y el sentido de conexión y alivio al hablar honestamente con otro ser humano.",
-"notasInternas": "Aclarar que el testimonio no es hacer el Quinto Paso en público, sino hablar del RESULTADO de haber sido honesto en privado.",
-"prioridad": 30,
+"queDbeContar": "El peso de vivir ocultando la verdad por miedo al rechazo y la paz encontrada al abrirse de manera responsable.",
+"notasInternas": "Supervisar que no se den detalles morbosos ni sea una confesión de inventario en público, el enfoque es el resultado de la liberación.",
+"prioridad": 20,
 "guiaTestimonio": {
 "detectar": [
-"¿Cuáles eran tus mayores miedos al pensar en mostrarte tal y como eras frente a otra persona?",
-"¿De qué maneras el guardar secretos o vivir con máscaras afectaba tu tranquilidad diaria?",
-"¿Cómo te convencías de que nadie podría entenderte o que serías rechazado si decías la verdad?"
+"¿De qué maneras el miedo al rechazo te llevaba a vivir callando, ocultando y guardando cosas por vergüenza? ",
+"¿Cómo te desgastaba vivir todos los días con el terror de que alguien descubriera quién eras realmente? "
 ],
 "admitir": [
-"¿Qué te impulsó finalmente a romper tu aislamiento y hablar sin disfraces?",
-"¿Cómo fue la experiencia de sentirte escuchado sin ser juzgado ni corregido?",
-"¿Qué sentiste física y emocionalmente al soltar esa carga de cosas que nunca habías dicho?"
+"¿Qué situación interna o grado de dolor te hizo atreverte finalmente a romper tu aislamiento y hablar sin disfraces? ",
+"¿Cómo fue la experiencia de sentirte escuchado por alguien de confianza sin ser corregido o juzgado? "
 ],
 "corregir": [
-"¿Qué haces diferente hoy cuando sientes la tentación de volver a guardarte algo por vergüenza?",
-"¿Cómo ha cambiado tu forma de relacionarte ahora que lo haces desde una mayor honestidad?",
-"¿De qué manera mantienes el hábito de pedir ayuda y hablar de lo que sientes antes de saturarte?"
+"¿Qué haces distinto hoy cuando notas que quieres volver a ocultar información o emociones por miedo? ",
+"¿Cómo cultivas la honestidad responsable en tus relaciones actuales para no volver a cargar secretos innecesarios? "
 ]
 }
 },
 {
-"id": "tema-N06",
-"titulo": "Dejar de justificarme: Disposición a soltar mis defensas",
+"id": "tema-133",
+"titulo": "Empezar a cambiar sin forzarme ",
 "tituloCorto": "Disposición a cambiar",
 "categoria": "Paso 6",
 "estado": "Completo",
 "sensibilidad": "normal",
 "fuentePrincipal": "FGDLL",
 "fuenteAA": "Alcohólicos Anónimos",
-"referencia": "Paso 6",
+"referencia": "Pasos 6 y 7",
 "intensidad": "Media",
 "momento": "Mitad",
 "formato": "Panel corto",
 "tipoTestimonio": "Didáctico",
 "paso": "Paso 6",
 "esCatalogoBase": false,
-"objetivo": "Enseñar que el cambio empieza por dejar de defender los defectos de carácter y estar genuinamente dispuesto a hacer las cosas distinto.",
-"fraseAncla": "No he cambiado todo, pero ya no me engaño defendiendo lo que me daña.",
+"objetivo": "Mostrar que el cambio inicia con la disposición genuina de dejar de justificar los defectos y pedir ayuda para removerlos.",
+"fraseAncla": "No he cambiado todo, pero ya no me engaño. ",
 "variaciones": [
-"Soltar lo que ya no sirve",
-"Reconocer las excusas"
+"Dejar de justificarme",
+"Humildad para pedir ayuda"
 ],
-"queDbeContar": "El tránsito entre decir 'yo soy así' para justificar actitudes dañinas, y el aceptar que esas defensas ya no le son útiles.",
-"notasInternas": "Mantener la idea de que la disposición no significa cambiar de un día para otro, sino el fin de la negación funcional.",
-"prioridad": 25,
+"queDbeContar": "El tránsito entre justificar los defectos diciendo 'así soy' y la aceptación humilde de necesitar ayuda para soltarlos.",
+"notasInternas": "Evitar discursos de 'ya cambié' o perfeccionismo. Se debe mostrar la disposición real y los pequeños cambios conscientes.",
+"prioridad": 15,
 "guiaTestimonio": {
 "detectar": [
-"¿De qué forma usabas la frase 'así soy yo' para evitar cambiar aspectos de tu personalidad que lastimaban?",
-"¿Qué falsas promesas o protecciones sentías que te daban tus defectos de carácter?",
-"¿Por qué te daba tanto miedo pensar en quién serías si soltabas esas viejas conductas?"
+"¿Cómo utilizabas la frase 'así soy yo' para justificar tus defectos de carácter y defender conductas que te hacían daño? ",
+"¿Cuáles eran tus mayores miedos o resistencias al imaginar quién serías si soltabas tus viejas actitudes? "
 ],
 "admitir": [
-"¿Cuál fue el momento en que te diste cuenta del alto precio que estabas pagando por mantener esas actitudes?",
-"¿Cómo lograste aceptar que la manera en que te defendías ya no te estaba cuidando, sino aislando?",
-"¿Cómo fue el proceso de dejar de pelear contigo mismo y aceptar que necesitabas ayuda para cambiar?"
+"¿En qué momento reconociste que esas defensas o defectos ya no te protegían, sino que te aislaban? ",
+"¿Qué te impulsó a generar la disposición de pedir ayuda humilde en lugar de intentar cambiar solo con fuerza de voluntad? "
 ],
 "corregir": [
-"¿Qué haces hoy cuando notas que un viejo defecto o patrón intenta tomar el control de tu respuesta?",
-"¿Cómo actúas ahora para pausar y elegir una actitud diferente, aunque sea un esfuerzo pequeño?",
-"¿De qué manera practicas ser paciente y no exigirte resultados inmediatos en tu proceso de cambio?"
+"¿Qué haces distinto hoy, aunque no sea de manera perfecta, cuando notas que un viejo defecto intenta dominarte? ",
+"¿De qué manera eres más paciente contigo mismo mientras sigues en este proceso progresivo de cambio? "
 ]
 }
 },
 {
-"id": "tema-N07",
-"titulo": "Pedir ayuda sin humillarme: Humildad en lo cotidiano",
-"tituloCorto": "Humildad práctica",
-"categoria": "Paso 7",
-"estado": "Completo",
-"sensibilidad": "normal",
-"fuentePrincipal": "FGDLL",
-"fuenteAA": "Alcohólicos Anónimos",
-"referencia": "Paso 7",
-"intensidad": "Media",
-"momento": "Mitad",
-"formato": "Individual",
-"tipoTestimonio": "Didáctico",
-"paso": "Paso 7",
-"esCatalogoBase": false,
-"objetivo": "Mostrar la humildad no como una derrota personal, sino como una herramienta activa para pedir orientación y modificar actitudes.",
-"fraseAncla": "Pedir ayuda no me quitó valor, me dio herramientas reales.",
-"variaciones": [
-"Aceptar correcciones",
-"El orgullo defensivo"
-],
-"queDbeContar": "Cómo superó el orgullo de querer resolver todo solo y aprendió a pedir guía aceptando que no tiene todas las respuestas.",
-"notasInternas": "Enfocar en que pedir ayuda es una acción de responsabilidad, desvinculando la humildad del concepto de humillación o debilidad.",
-"prioridad": 20,
-"guiaTestimonio": {
-"detectar": [
-"¿De qué maneras el orgullo te convencía de que podías resolver tus problemas internos sin depender de nadie?",
-"¿Por qué creías que pedir orientación o aceptar que te equivocabas era una señal de fracaso?",
-"¿Cómo reaccionabas anteriormente cuando alguien te hacía una corrección o te sugería algo distinto?"
-],
-"admitir": [
-"¿Qué te hizo darte cuenta de que tu esfuerzo individual no era suficiente para cambiar tus patrones más arraigados?",
-"¿Cómo te atreviste a pedir ayuda con honestidad, reconociendo finalmente tus límites?",
-"¿Qué aprendiste al aceptar sugerencias en áreas de tu vida donde antes siempre querías tener la razón?"
-],
-"corregir": [
-"¿Cómo practicas la humildad hoy al momento de escuchar a otros antes de dar una respuesta defensiva?",
-"¿Qué acciones tomas hoy para admitir tus errores a tiempo en lugar de ocultarlos por orgullo?",
-"¿De qué manera sigues pidiendo ayuda en lo cotidiano reconociendo que tu aprendizaje no ha terminado?"
-]
-}
-},
-{
-"id": "tema-N08",
-"titulo": "Hacerme responsable sin destruirme al ver mi impacto",
-"tituloCorto": "Responsabilidad al dañar",
+"id": "tema-134",
+"titulo": "Hacerme responsable sin destruirme ",
+"tituloCorto": "Responsabilidad sin daño",
 "categoria": "Paso 8",
 "estado": "Completo",
 "sensibilidad": "sensible",
 "fuentePrincipal": "FGDLL",
 "fuenteAA": "Alcohólicos Anónimos",
-"referencia": "Paso 8",
+"referencia": "Pasos 8 y 9",
 "intensidad": "Alta",
 "momento": "Mitad",
-"formato": "Panel corto",
+"formato": "Panel largo",
 "tipoTestimonio": "Crudo",
 "paso": "Paso 8",
 "esCatalogoBase": false,
-"objetivo": "Describir el proceso de tomar conciencia sobre cómo nuestras acciones han afectado a otros, asumiendo la responsabilidad desde una postura adulta.",
-"fraseAncla": "No puedo borrar el pasado, pero sí decidir responder distinto hoy.",
+"objetivo": "Describir el proceso de asumir la responsabilidad de nuestros actos desde una postura consciente, evitando la culpa paralizante.",
+"fraseAncla": "No puedo borrar el pasado, pero sí responder distinto hoy. ",
 "variaciones": [
-"Dejar de minimizar el impacto",
-"Separar intención de daño real"
+"Reconocer el impacto",
+"Dejar de minimizar"
 ],
-"queDbeContar": "El cambio de minimizar o justificar el daño causado a los demás hacia una disposición real de enmendar a través de la conciencia.",
-"notasInternas": "El orador no debe listar a las personas que dañó, sino enfocarse en el cambio de actitud de la evasión hacia la responsabilidad.",
-"prioridad": 15,
-"guiaTestimonio": {
-"detectar": [
-"¿Cómo lograbas ignorar, justificar o minimizar el impacto negativo de tus acciones en las personas cercanas?",
-"¿De qué forma confundías tu buena intención con el daño real que terminabas causando?",
-"¿Qué te paralizaba más: el miedo a enfrentar las consecuencias o el peso de la culpa?"
-],
-"admitir": [
-"¿En qué momento empezaste a ver con claridad que no solo te lastimabas a ti, sino que afectabas a tu entorno?",
-"¿Cómo fue el proceso de salir del rol de víctima para empezar a mirar tu historia asumiendo tu parte?",
-"¿Qué te permitió generar la disposición interna de querer reparar, sin castigarte ni destruirte emocionalmente?"
-],
-"corregir": [
-"¿Qué precauciones tomas hoy antes de actuar para no repetir los patrones que dañaban tus relaciones?",
-"¿De qué manera asumes las consecuencias de tus errores actuales sin necesidad de victimizarte?",
-"¿Cómo mantienes viva la disposición de enmendar a través de cambios reales en tus actitudes diarias?"
-]
-}
-},
-{
-"id": "tema-N09",
-"titulo": "Reparar con hechos, cuidando de no lastimar más",
-"tituloCorto": "Reparación con hechos",
-"categoria": "Paso 9",
-"estado": "Completo",
-"sensibilidad": "sensible",
-"fuentePrincipal": "FGDLL",
-"fuenteAA": "Alcohólicos Anónimos",
-"referencia": "Paso 9",
-"intensidad": "Alta",
-"momento": "Cierre",
-"formato": "Individual",
-"tipoTestimonio": "Inspirador",
-"paso": "Paso 9",
-"esCatalogoBase": false,
-"objetivo": "Ilustrar que una verdadera reparación va más allá de las palabras; implica cambios de conducta sostenidos y el respeto por los límites del otro.",
-"fraseAncla": "Reparar es cambiar de actitud, no solo soltar mi culpa pidiendo perdón.",
-"variaciones": [
-"Cambios en la forma de tratar",
-"Reparación indirecta o sana"
-],
-"queDbeContar": "Cómo entendió que pedir perdón no era suficiente y qué acciones concretas ha modificado para no volver a causar el mismo daño.",
-"notasInternas": "Importante evitar testimonios que fuerzan reconciliaciones tóxicas. Subrayar que poner límites y cambiar conductas es también una forma de reparar.",
+"queDbeContar": "Cómo pasó de minimizar o justificar el daño causado a estar genuinamente dispuesto a modificar su forma de relacionarse.",
+"notasInternas": "Estrictamente prohibido listar personas dañadas o forzar testimonios de reconciliaciones; el enfoque es la conciencia del impacto.",
 "prioridad": 10,
 "guiaTestimonio": {
 "detectar": [
-"¿Por qué creías que decir 'lo siento' o dar una disculpa rápida arreglaba mágicamente el daño causado?",
-"¿De qué manera buscabas reparar a los demás desde tu propia prisa emocional por sentir alivio?",
-"¿Cómo evitabas hacer reparaciones genuinas por miedo a no recibir el perdón de la otra persona?"
+"¿De qué formas lograbas ignorar o minimizar constantemente el impacto negativo y el daño que tus acciones causaban a otros? ",
+"¿Cómo confundías tu falta de mala intención con una excusa para no hacerte cargo del dolor que generabas? "
 ],
 "admitir": [
-"¿Qué te ayudó a comprender que reparar verdaderamente implicaba cambiar tu forma de conducirte y relacionarte?",
-"¿Cómo aprendiste a soltar el control y aceptar que la reparación no garantiza que la otra persona reaccione como tú esperas?",
-"¿En qué momento entendiste que dar espacio o alejarte también puede ser un acto de reparación directa?"
+"¿Qué experiencia te hizo entender con claridad que tus acciones no solo te afectaban a ti, sino que lastimaban a quienes te rodeaban? ",
+"¿Cómo lograste generar la disposición a reparar asumiendo tu responsabilidad sin caer en el castigo de la autoflagelación? "
 ],
 "corregir": [
-"¿De qué manera sostienes hoy los cambios de conducta para demostrar con hechos que no quieres volver a lastimar?",
-"¿Qué haces ahora cuando te equivocas para corregir tu error de inmediato sin crear un nuevo drama?",
-"¿Cómo aplicas el respeto hacia ti mismo y hacia los demás para cuidar tus vínculos en la actualidad?"
+"¿Qué acciones o límites prácticas hoy para asegurarte de cambiar tu conducta y no seguir lastimando a los demás? ",
+"¿De qué manera te haces cargo de las consecuencias de tus errores actuales respondiendo desde la madurez y no desde la evasión? "
 ]
 }
 },
 {
-"id": "tema-N10",
-"titulo": "Aprender a vivir conmigo: Darme cuenta a tiempo",
-"tituloCorto": "Conciencia cotidiana",
+"id": "tema-135",
+"titulo": "Aprender a vivir conmigo todos los días ",
+"tituloCorto": "Vivir conmigo diario",
 "categoria": "Paso 10",
 "estado": "Completo",
 "sensibilidad": "normal",
 "fuentePrincipal": "FGDLL",
 "fuenteAA": "Alcohólicos Anónimos",
-"referencia": "Paso 10",
+"referencia": "Pasos 10 y 11",
 "intensidad": "Baja",
 "momento": "Cierre",
 "formato": "Panel corto",
 "tipoTestimonio": "Didáctico",
 "paso": "Paso 10",
 "esCatalogoBase": false,
-"objetivo": "Demostrar la utilidad práctica de observarse diariamente para corregir pequeñas desviaciones antes de que se conviertan en crisis.",
-"fraseAncla": "No siempre hago lo correcto, pero hoy me doy cuenta antes de lastimar.",
+"objetivo": "Enseñar la importancia de observarse diariamente para corregir pequeñas fallas y pausar antes de reaccionar impulsivamente.",
+"fraseAncla": "No siempre hago lo correcto, pero hoy me doy cuenta antes. ",
 "variaciones": [
-"Corregir sin castigarme",
-"Prevención antes que reacción"
+"Darme cuenta a tiempo",
+"Hacer pausas"
 ],
-"queDbeContar": "El contraste entre acumular resentimientos o errores en el pasado y la práctica actual de detectarlos y admitirlos al momento.",
-"notasInternas": "Evitar un tono de perfeccionismo. La meta es mostrar que el error ocurre, pero la diferencia está en la admisión pronta y sana.",
-"prioridad": 9,
-"guiaTestimonio": {
-"detectar": [
-"¿De qué forma solías acumular pequeñas molestias, justificaciones o errores hasta que explotabas?",
-"¿Cómo era tu patrón para evitar hacerte cargo de tus equivocaciones menores en el día a día?",
-"¿Por qué esperabas hasta sentirte muy mal emocionalmente para empezar a revisar qué estabas haciendo mal?"
-],
-"admitir": [
-"¿Qué te hizo ver que no admitir tus errores rápidamente te estaba robando la tranquilidad cotidiana?",
-"¿Cómo empezaste a separar la intención de la acción para reconocer tus fallas sin entrar en procesos de culpa?",
-"¿Cuál fue tu experiencia al empezar a decir 'me equivoqué' sin tener que dar explicaciones largas o ponerte a la defensiva?"
-],
-"corregir": [
-"¿Qué prácticas sencillas utilizas hoy para revisar tus reacciones y pensamientos al final o a lo largo de tu día?",
-"¿Cómo haces un ajuste rápido de conducta cuando te das cuenta de que el orgullo o el enojo te están dominando?",
-"¿De qué manera pedir una disculpa oportuna te ayuda a no dejar pendientes emocionales en tus relaciones actuales?"
-]
-}
-},
-{
-"id": "tema-N11",
-"titulo": "Hacer pausas para no vivir en automático",
-"tituloCorto": "Contacto consciente",
-"categoria": "Paso 11",
-"estado": "Completo",
-"sensibilidad": "normal",
-"fuentePrincipal": "FGDLL",
-"fuenteAA": "Alcohólicos Anónimos",
-"referencia": "Paso 11",
-"intensidad": "Baja",
-"momento": "Cierre",
-"formato": "Individual",
-"tipoTestimonio": "Didáctico",
-"paso": "Paso 11",
-"esCatalogoBase": false,
-"objetivo": "Aterrizar la meditación y la conexión espiritual en herramientas prácticas para detener la mente ansiosa y buscar claridad.",
-"fraseAncla": "Pausar un segundo para escuchar algo más que mis impulsos.",
-"variaciones": [
-"Conectar sin complicarme",
-"Buscar claridad, no magia"
-],
-"queDbeContar": "Cómo pasó de resistirse a prácticas espirituales o meditativas a usarlas funcionalmente para encontrar calma y decidir mejor.",
-"notasInternas": "Totalmente libre de imposiciones religiosas. Enfocar el Paso 11 como el espacio de silencio, respiración y claridad interna para no reaccionar.",
+"queDbeContar": "El contraste entre reaccionar en automático acumulando daño y la práctica de observarse, admitir errores y hacer contacto consciente.",
+"notasInternas": "Evitar discursos de perfeccionismo o espiritualidad rígida. Se debe mostrar una conciencia diaria con prácticas sencillas y reales.",
 "prioridad": 8,
 "guiaTestimonio": {
 "detectar": [
-"¿Por qué creías que no sabías cómo hacer un alto, o qué expectativas irreales tenías sobre meditar o pedir guía?",
-"¿De qué maneras intentabas tapar tu ruido interno o tu ansiedad reaccionando o manteniéndote siempre ocupado?",
-"¿Cómo era tu tendencia a tomar decisiones importantes impulsado únicamente por el miedo o el enojo del momento?"
+"¿Cómo era tu patrón de acumular pequeños errores, molestias o justificaciones diarias hasta llegar a un punto de explosión? ",
+"¿Por qué se te dificultaba tanto detenerte a observar tus reacciones automáticas impulsadas por el enojo o el miedo? "
 ],
 "admitir": [
-"¿En qué punto te diste cuenta de que necesitabas aprender a detenerte antes de seguir arruinando las cosas por impulsividad?",
-"¿Cómo fue ese proceso de soltar el perfeccionismo y empezar a buscar momentos breves de silencio o conexión de forma sencilla?",
-"¿Qué sentiste al aprender a pedir claridad para ver tu siguiente paso en lugar de exigir soluciones inmediatas a tus problemas?"
+"¿Qué te hizo empezar a observar tu comportamiento y aceptar que reaccionar desde el ego o impulso te robaba la paz? ",
+"¿Cómo fue el proceso de aprender a admitir tus equivocaciones de manera pronta, sin justificarte ni entrar en culpas largas? "
 ],
 "corregir": [
-"¿Cuáles son las formas prácticas y cotidianas en las que logras hacer una pausa hoy antes de tener una reacción?",
-"¿De qué manera te ayuda tu disciplina actual de escritura, respiración o lectura para mantener tu estabilidad emocional?",
-"¿Cómo logras aceptar con mayor paz mental las situaciones diarias sobre las que no tienes el control absoluto?"
+"¿Qué prácticas simples y reales utilizas hoy, como la pausa o la respiración, para no vivir en automático? ",
+"¿De qué manera el pedir una disculpa rápida y oportuna te ayuda a corregir tus relaciones sin dramatizar? "
 ]
 }
 },
 {
-"id": "tema-N12",
-"titulo": "Compartir sin imponer y servir sin desaparecerme",
-"tituloCorto": "Servicio con límites sanos",
+"id": "tema-136",
+"titulo": "Compartir sin imponer y servir sin desaparecerme ",
+"tituloCorto": "Servicio consciente",
 "categoria": "Paso 12",
 "estado": "Completo",
 "sensibilidad": "normal",
@@ -488,30 +415,27 @@
 "tipoTestimonio": "Inspirador",
 "paso": "Paso 12",
 "esCatalogoBase": false,
-"objetivo": "Enseñar que llevar el mensaje es compartir la propia experiencia y servir con responsabilidad sin descuidar el proceso ni los límites personales.",
-"fraseAncla": "No tengo respuestas para todos, pero puedo caminar con alguien.",
+"objetivo": "Demostrar que servir y llevar el mensaje requiere coherencia, empatía, límites sanos y compartir la experiencia sin aires de superioridad.",
+"fraseAncla": "No tengo respuestas para todos, pero puedo caminar con alguien. ",
 "variaciones": [
-"Vivir el mensaje, no predicarlo",
-"Ayudar sin tratar de controlar"
+"Acompañar sin dirigir",
+"Cuidarme para servir"
 ],
-"queDbeContar": "El tránsito de querer dar consejos, resolver vidas ajenas o buscar reconocimiento, hacia un acompañamiento basado en la empatía y los límites.",
-"notasInternas": "Diferenciar claramente el servicio del rol de salvador. El testimonio debe proyectar humildad y cuidado propio mientras se acompaña a otros.",
+"queDbeContar": "El cambio de creer que servir era controlar, resolver vidas o cargar a otros, a entenderlo como acompañar con el propio ejemplo.",
+"notasInternas": "Evitar posturas de 'salvar vidas' o sentirse el ejemplo perfecto. Resaltar la importancia de los límites y el autocuidado mientras se ayuda.",
 "prioridad": 5,
 "guiaTestimonio": {
 "detectar": [
-"¿De qué manera confundías el querer ayudar a otros con la necesidad de controlar su proceso o sus decisiones?",
-"¿Por qué llegaste a pensar que para servir debías mostrarte como alguien fuerte que ya tenía todas las respuestas?",
-"¿Cómo el intentar cargar con las emociones o problemas de otros te llevó a descuidar tu propia estabilidad?"
+"¿De qué manera tu idea original de ayudar a otros se confundía con la necesidad de controlar sus procesos y decisiones? ",
+"¿Por qué creías que para llevar el mensaje debías cargar con los problemas ajenos o dar consejos que tú mismo no aplicabas? "
 ],
 "admitir": [
-"¿Qué situación te ayudó a darte cuenta de que ser testimonio no se trata de dar sermones, sino de compartir desde tu vulnerabilidad?",
-"¿Cómo lograste aceptar que no puedes resolverle la vida a nadie y que cada quien necesita vivir sus propias experiencias?",
-"¿Qué aprendiste sobre la importancia de poner límites sanos para no absorber un dolor que no te corresponde?"
+"¿Qué situación o experiencia te hizo entender que no puedes resolverle la vida a nadie y que cada uno vive su propio proceso? ",
+"¿Cómo lograste aceptar que servir a los demás no significa descuidarte o desaparecer emocionalmente en el dolor del otro? "
 ],
 "corregir": [
-"¿Cómo aplicas hoy el acompañar a alguien más desde la escucha abierta, sin la intención de corregirlo o dirigirlo?",
-"¿De qué forma te cuidas actualmente para mantener tu recuperación como prioridad mientras sigues apoyando en el grupo?",
-"¿Qué acciones prácticas realizas fuera del grupo para intentar vivir los principios de manera congruente en tus relaciones diarias?"
+"¿Cómo compartes tu experiencia hoy desde la escucha activa y la empatía sin imponer tus ideas o juzgar a los demás? ",
+"¿Qué límites sanos practicas actualmente para cuidar tu propia recuperación primero mientras acompañas a otros? "
 ]
 }
 }
