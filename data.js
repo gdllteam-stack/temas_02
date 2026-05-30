@@ -504,5 +504,3 @@ const TEMAS = [
     "relacionados": []
   }
 ];
-
-```
