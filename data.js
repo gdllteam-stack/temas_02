@@ -1,6 +1,3 @@
-Aquí tienes el archivo data.js actualizado, utilizando exclusivamente los ejes temáticos, libros y manuales de las fuentes que acabas de compartir (Llegamos a Creer, Menú Juvenil, Nuestros Grupos, Lenguaje del Corazón, Como lo ve Bill, El Joven en AA, Dr. Bob y los buenos veteranos, AA Llega a la Mayoría de Edad).
-He respetado absolutamente todos los lineamientos doctrinales, las advertencias éticas, los tres tiempos (Detectar, Admitir, Corregir) y el formato exacto requerido para que funcione perfectamente con tu aplicación.
-```javascript
 const TEMAS = [
   // ==========================================
   // FUENTE: LLEGAMOS A CREER
