@@ -1,560 +1,1972 @@
-Aquí tienes el código completo del archivo `seleccionar_temas_guerreras.html` con toda su estructura original (diseño, estilos y funciones) y con la lista de temas actualizada, incluyendo los 12 temas iniciales y los 20 nuevos temas para el Día del Padre con la frase corta exactamente como la solicitaste.
-
-Puedes copiar todo este bloque de código y reemplazar por completo el contenido de tu archivo actual:
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selección de Temas - Guerreras de la Luz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #7B2D8B;
-            --primary-light: #C9A0DC;
-            --primary-bg: #f8f4fa;
-            --text-dark: #333333;
-            --text-muted: #666666;
-            --bg-color: #faf8f5;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 6px rgba(0,0,0,0.05);
-            --shadow-hover: 0 10px 15px rgba(123, 45, 139, 0.15);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca de Testimonios · FGDLL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Paleta Doctrinal */
+      --bg-dark: #0a0a0a;
+      --bg-panel: #141414;
+      --bg-card: #1c1c1c;
+      --gold: #d4af37;
+      --gold-dim: #9e8226;
+      --gold-light: #f3dca1;
+      --text-main: #f0f0f0;
+      --text-muted: #a0a0a0;
+      --danger: #8b0000;
+      --danger-light: #ff4c4c;
+      --warning: #cc7a00;
+      --success: #2e8b57;
+      
+      /* Tipografía */
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-sans: 'Inter', sans-serif;
+      
+      --radius: 8px;
+      --transition: 0.3s ease;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    /* === NAVBAR === */
+    header {
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+    }
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+    .logo-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    nav button {
+      background: transparent;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    nav button:hover, nav button.active {
+      background: var(--gold);
+      color: var(--bg-dark);
+    }
+    .btn-outline-light {
+      border-color: #555 !important;
+      color: #ccc !important;
+    }
+    .btn-outline-light:hover {
+      background: #333 !important;
+      color: #fff !important;
+    }
 
-        header h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.2rem;
-            font-weight: 700;
-        }
+    /* === HERO === */
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-dark) 100%);
+      border-bottom: 1px solid #222;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--gold); font-style: italic; }
+    .hero p.tagline {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .hero .principles {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--gold-light);
+    }
 
-        header p {
-            margin: 0;
-            font-size: 1.1rem;
-            font-weight: 300;
-            opacity: 0.9;
-        }
+    /* === FILTROS & CONTENIDO === */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .filters-panel {
+      background: var(--bg-panel);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid #333;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    .filters-panel h3 {
+      font-family: var(--font-serif);
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+    }
+    .filter-group { margin-bottom: 1.2rem; }
+    .filter-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .filter-group select, .filter-group input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid #444;
+      color: var(--text-main);
+      padding: 0.6rem;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+    }
+    .filter-group select:focus, .filter-group input:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
 
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
+    /* === GRID DE TARJETAS === */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid #333;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .card-top-bar {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 4px;
+    }
+    .bar-normal { background: var(--gold); }
+    .bar-sensible { background: var(--warning); }
+    .bar-crisis { background: var(--danger); }
 
-        .counter {
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+    }
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .tag-cat { background: rgba(212, 175, 55, 0.15); color: var(--gold); }
+    .tag-sensible { background: rgba(204, 122, 0, 0.15); color: #ffaa33; }
+    .tag-crisis { background: rgba(139, 0, 0, 0.2); color: #ff6b6b; border: 1px solid var(--danger); }
+    
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+    .card-quote {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      border-left: 2px solid var(--gold-dim);
+      padding-left: 0.8rem;
+    }
+    .card-meta {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .card-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #333;
+      padding-top: 1rem;
+    }
+    .btn-read {
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .btn-read:hover { background: var(--gold); color: var(--bg-dark); }
+    .btn-fav {
+      background: none;
+      border: none;
+      color: #555;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-fav.active { color: var(--gold); }
+    .btn-fav:hover { transform: scale(1.1); }
 
-        .btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    /* === MODALES GENERALES === */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(5px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 2rem;
+    }
+    .modal-content {
+      background: var(--bg-panel);
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: var(--radius);
+      border: 1px solid #333;
+      position: relative;
+    }
+    .modal-header {
+      padding: 2rem 2.5rem;
+      border-bottom: 1px solid #333;
+      position: relative;
+    }
+    .close-modal {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: none; border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    
+    .alert-box {
+      margin: 1.5rem 2.5rem 0;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .alert-crisis { background: rgba(139,0,0,0.15); border-left: 4px solid var(--danger); color: #ffcccc; }
+    .alert-sensible { background: rgba(204,122,0,0.1); border-left: 4px solid var(--warning); color: #ffebcc; }
 
-        .btn:hover {
-            background-color: #5a1e66;
-        }
+    .modal-body {
+      padding: 2rem 2.5rem;
+    }
+    
+    .ficha-section { margin-bottom: 2rem; }
+    .ficha-section h4 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed #444;
+      padding-bottom: 0.3rem;
+    }
+    .ficha-text {
+      color: #ddd;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-            padding-bottom: 80px;
-        }
+    /* Los 3 tiempos */
+    .tiempos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .tiempo-col {
+      background: var(--bg-card);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid #333;
+    }
+    .tiempo-col h5 {
+      color: var(--gold);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .tiempo-col ul { list-style: none; }
+    .tiempo-col li {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .tiempo-col li::before {
+      content: "•";
+      color: var(--gold-dim);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
 
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: var(--shadow);
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
+    .sources-list {
+      background: #111;
+      padding: 1rem;
+      border-radius: 4px;
+      border-left: 2px solid var(--gold-dim);
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary-light);
-        }
+    .modal-footer {
+      padding: 1.5rem 2.5rem;
+      background: #111;
+      border-top: 1px solid #333;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-action {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid #444;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-action:hover {
+      background: var(--gold);
+      color: var(--bg-dark);
+      border-color: var(--gold);
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg-dark);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+    }
 
-        .card.selected {
-            border-color: var(--primary);
-            background-color: var(--primary-bg);
-        }
+    /* === FORMULARIOS (EDITOR & IMPORTADOR) === */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      background: var(--bg-dark);
+      border: 1px solid #444;
+      color: var(--text-main);
+      padding: 0.8rem;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .code-preview {
+      background: #000;
+      color: var(--gold-light);
+      padding: 1rem;
+      border-radius: 4px;
+      border: 1px solid #333;
+      font-family: monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      max-height: 250px;
+      overflow-y: auto;
+      margin-top: 1rem;
+    }
+    .validation-list {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: var(--bg-dark);
+      border-radius: 4px;
+      border: 1px solid #333;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .val-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem;
+      border-bottom: 1px solid #222;
+      font-size: 0.85rem;
+    }
+    .val-item:last-child { border-bottom: none; }
+    .val-ok { color: var(--success); }
+    .val-warn { color: var(--warning); }
+    .val-err { color: var(--danger-light); }
 
-        .card-checkbox {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 24px;
-            height: 24px;
-            border: 2px solid #ccc;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-        }
+    .success-actions {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(46, 139, 87, 0.1);
+      border: 1px solid var(--success);
+      border-radius: var(--radius);
+    }
 
-        .card.selected .card-checkbox {
-            background-color: var(--primary);
-            border-color: var(--primary);
-        }
+    /* Mensaje Toast */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--gold);
+      color: var(--bg-dark);
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 2000;
+    }
+    #toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
 
-        .card.selected .card-checkbox::after {
-            content: '✓';
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-        }
+    /* Print Styles */
+    @media print {
+      body * { visibility: hidden; }
+      .modal-content, .modal-content * {
+        visibility: visible;
+        color: #000 !important;
+        background: #fff !important;
+      }
+      .modal-content {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; border: none;
+      }
+      .modal-footer, .close-modal { display: none; }
+    }
 
-        .theme-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 0 0 15px 0;
-            padding-right: 30px;
-        }
-
-        .theme-text {
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-
-        .theme-source {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-style: italic;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-            margin-top: auto;
-        }
-
-        .short-phrase {
-            font-weight: 600;
-            color: #555;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .modal-content h2 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-
-        .modal-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .modal-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            font-size: 0.95rem;
-        }
-
-        .modal-buttons {
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        .btn-outline:hover {
-            background: var(--primary-bg);
-        }
-
-    </style>
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .filters-panel { position: relative; top: 0; }
+      .tiempos-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Guerreras de la Luz</h1>
-        <p>Selecciona los temas y reflexiones que deseas estudiar o compartir hoy</p>
-    </header>
+  <header>
+    <div class="logo-container">
+      <div class="logo">FGDLL</div>
+      <div class="logo-subtitle">Biblioteca de Testimonios</div>
+    </div>
+    <nav>
+      <button class="btn-outline-light" id="btn-open-importador">⬆ Importar JSON</button>
+      <button class="btn-outline-light" id="btn-open-editor">+ Nuevo Tema</button>
+      <button id="btn-favs">⭐ Mis Favoritos</button>
+    </nav>
+  </header>
 
-    <div class="container">
-        <div class="controls">
-            <div class="counter"><span id="count">0</span> temas seleccionados</div>
-            <button class="btn" onclick="verSeleccion()">Ver Selección</button>
+  <section class="hero">
+    <h1>El testimonio no es catarsis desordenada,<br><span>es experiencia ordenada.</span></h1>
+    <p class="tagline">Temas con base de estudio para líderes, delegados y participantes de la Fraternidad Guerreros de la Luz.</p>
+    <div class="principles">
+      <span>Detectar</span> • <span>Admitir</span> • <span>Corregir</span>
+    </div>
+  </section>
+
+  <div class="container" id="filters">
+    <!-- BARRA LATERAL DE FILTROS -->
+    <aside class="filters-panel">
+      <h3>Filtros de Búsqueda</h3>
+      
+      <div class="filter-group">
+        <label>Búsqueda Libre</label>
+        <input type="text" id="f-search" placeholder="Buscar por título o palabra clave...">
+      </div>
+
+      <div class="filter-group">
+        <label>Categoría</label>
+        <select id="f-cat">
+          <option value="all">Todas las categorías</option>
+          <option value="Aniversario">Aniversario</option>
+          <option value="Semana de los Padres">Semana de los Padres</option>
+          <option value="Semana de las Madres">Semana de las Madres</option>
+          <option value="Semana de la Juventud">Semana de la Juventud</option>
+          <option value="Diversidad">Diversidad</option>
+          <option value="Suicidio">Concientización del suicidio (Crisis)</option>
+          <option value="Navidad">Navidad y cierre de año</option>
+          <option value="Semana del Guerrero">Semana del Guerrero</option>
+          <option value="Pasos">Pasos</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Sensibilidad</label>
+        <select id="f-sens">
+          <option value="all">Cualquiera</option>
+          <option value="normal">Normal</option>
+          <option value="sensible">Sensible</option>
+          <option value="crisis">Crisis (Requiere cuidado)</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Momento del Evento</label>
+        <select id="f-momento">
+          <option value="all">Cualquiera</option>
+          <option value="Inicio">Inicio (Apertura)</option>
+          <option value="Mitad">Mitad (Desarrollo)</option>
+          <option value="Cierre">Cierre (Fondo/Esperanza)</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Intensidad</label>
+        <select id="f-intensidad">
+          <option value="all">Cualquiera</option>
+          <option value="Baja">Baja</option>
+          <option value="Media">Media</option>
+          <option value="Alta">Alta</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- ÁREA DE TARJETAS -->
+    <main>
+      <div id="grid" class="grid">
+        <!-- Las tarjetas se inyectan por JS -->
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL DE FICHA TÉCNICA (DETALLE DEL TEMA) -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-modal" id="close-modal">&times;</button>
+        <div id="modal-tags" class="card-tags"></div>
+        <h2 class="modal-title" id="m-title">Título</h2>
+        <p class="card-quote" id="m-quote" style="font-size: 1.1rem; margin-top: 1rem;"></p>
+      </div>
+      
+      <div id="m-alerts"></div>
+
+      <div class="modal-body">
+        <div class="ficha-section">
+          <h4>Objetivo del Testimonio</h4>
+          <p class="ficha-text" id="m-obj"></p>
         </div>
 
-        <div class="grid" id="card-container">
+        <div class="ficha-section">
+          <h4>Guía de los Tres Tiempos</h4>
+          <p class="ficha-text" style="color:var(--text-muted); font-size:0.85rem;">Utiliza estas preguntas para organizar la experiencia. No es necesario responder todas, son una guía de estructura.</p>
+          <div class="tiempos-grid">
+            <div class="tiempo-col">
+              <h5>1. Detectar</h5>
+              <p style="font-size:0.8rem; color:#888; text-align:center; margin-bottom:1rem;">Antes del programa</p>
+              <ul id="m-detectar"></ul>
             </div>
-    </div>
-
-    <div class="modal-overlay" id="modal">
-        <div class="modal-content">
-            <h2>Tus Temas Seleccionados</h2>
-            <ul class="modal-list" id="modal-list"></ul>
-            <div class="modal-buttons">
-                <button class="btn btn-outline" onclick="cerrarModal()">Cerrar</button>
-                <button class="btn" onclick="copiarTexto()">Copiar Texto</button>
+            <div class="tiempo-col">
+              <h5>2. Admitir</h5>
+              <p style="font-size:0.8rem; color:#888; text-align:center; margin-bottom:1rem;">Llegada a Guerreros</p>
+              <ul id="m-admitir"></ul>
             </div>
+            <div class="tiempo-col">
+              <h5>3. Corregir</h5>
+              <p style="font-size:0.8rem; color:#888; text-align:center; margin-bottom:1rem;">Hoy en recuperación</p>
+              <ul id="m-corregir"></ul>
+            </div>
+          </div>
         </div>
+
+        <div class="ficha-section">
+          <h4>Manejo Doctrinal para el Líder</h4>
+          <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+            <div style="flex:1; min-width: 250px;">
+              <p style="color:var(--gold-dim); font-weight:bold; font-size:0.9rem;">⚠️ ADVERTENCIA ÉTICA / NOTAS</p>
+              <p class="ficha-text" id="m-adv"></p>
+            </div>
+            <div style="flex:1; min-width: 250px;">
+              <p style="color:var(--danger-light); font-weight:bold; font-size:0.9rem;">🚫 NO USAR PARA:</p>
+              <ul id="m-nousar" style="list-style:square; padding-left:1.2rem; color:#ccc; font-size:0.9rem;"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="ficha-section">
+          <h4>Fuentes de Estudio</h4>
+          <div class="sources-list" id="m-sources"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-action" id="btn-copy-wp">📱 Copiar para WhatsApp</button>
+        <button class="btn-action" id="btn-copy-q">📋 Copiar Preguntas Guía</button>
+        <button class="btn-action" id="btn-download">💾 Descargar Ficha (TXT)</button>
+        <button class="btn-action" id="btn-print">🖨️ Imprimir</button>
+      </div>
     </div>
+  </div>
 
-    <script>
-        const temas = [
-            {
-                title: "Poner límites sin culpa",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a poner límites sin culpa",
-                text: "Soy mujer y estoy aprendiendo a poner límites, reconociendo que 'mi dignidad es mi tope' y que poner un límite sano no es levantar un muro para aislarme, sino poner 'una puerta con llave' donde yo decido quién entra para protegerme.",
-                source: "(Dónde estudiarlo: Reflexiones Diarias de FGDLL, Día 15 y Día 107)."
-            },
-            {
-                title: "Decir no",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a decir no",
-                text: "Soy mujer y estoy aprendiendo a decir no sin sentir culpa, dejando atrás la vieja costumbre de la 'casa enredada' donde separar mi propia vida y mis decisiones se sentía como una traición. Hoy entiendo que decir 'no' por mi paz no me hace una mala persona.",
-                source: "(Dónde estudiarlo: Guía de Apadrinamiento - Familias Amalgamadas)."
-            },
-            {
-                title: "Escuchar mi enojo como guía",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a escuchar mi enojo como guía",
-                text: "Soy mujer y estoy aprendiendo a escuchar mi enojo, usándolo no como un arma para explotar o destruir, sino como información valiosa y un defensor natural que me avisa cuando un límite ha sido cruzado o estoy viviendo una injusticia.",
-                source: "(Dónde estudiarlo: Las 5 emociones del cerco FGDLL y Reflexiones Diarias, Día 95)."
-            },
-            {
-                title: "Soltar el control",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a soltar el control",
-                text: "Soy mujer y estoy aprendiendo a soltar el control, practicando el axioma de 'Vive y deja vivir' y entregando el volante a una guía superior, porque entiendo que intentar ganar paz a fuerza de tensión solo me enferma, y que mi libertad empieza cuando dejo de controlar a otros.",
-                source: "(Dónde estudiarlo: Como lo ve Bill y Reflexiones Diarias sobre el Tercer Paso)."
-            },
-            {
-                title: "Dejar de traicionarme",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a dejar de traicionarme",
-                text: "Soy mujer y estoy aprendiendo a no traicionarme, porque a veces la traición hacia mí misma empieza con un 'sí' dicho por miedo, por un límite no puesto o por romperme solo para agradar o pertenecer. Hoy elijo mi dignidad primero.",
-                source: "(Dónde estudiarlo: Reflexiones Diarias, Día 101 - Dónde me traiciono)."
-            },
-            {
-                title: "Aceptar la realidad",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a aceptar la realidad",
-                text: "Soy mujer y estoy aprendiendo a aceptar la realidad, comprendiendo que aceptar no significa aprobar lo que me lastimó ni rendirme pasivamente, sino dejar de pelear y discutir con los hechos para poder decidir, desde la paz, qué voy a hacer a partir de hoy.",
-                source: "(Dónde estudiarlo: El Lenguaje del Corazón y Reflexiones Diarias, Día 11)."
-            },
-            {
-                title: "Ser paciente conmigo misma",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a ser paciente conmigo misma",
-                text: "Soy mujer y estoy aprendiendo a ser paciente conmigo misma, recordando la sugerencia 'Tómalo con calma' y aceptando que soy un ser humano en proceso. Hoy renuncio al 'mito de la perfección', sabiendo que la recuperación es progreso, no perfección.",
-                source: "(Dónde estudiarlo: Folletos del Padre Pfau - Tómalo con calma y El mito de la perfección)."
-            },
-            {
-                title: "Perdonar",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a perdonar",
-                text: "Soy mujer y estoy aprendiendo a perdonar, descubriendo que el perdón no significa olvidar o justificar a quien me lastimó, sino soltar la guerra interna, drenar el veneno del resentimiento y liberarme del control emocional que el pasado tenía sobre mí.",
-                source: "(Dónde estudiarlo: Folleto Resentimientos del Padre Pfau y Reflexiones Diarias, Día 123)."
-            },
-            {
-                title: "Ser útil sin controlar",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a ser útil sin controlar",
-                text: "Soy mujer y estoy aprendiendo a tener una vida útil y feliz, transformación mi historia en un puente para servir a otros. He descubierto que cuando la mente se enreda, la utilidad me salva y que mi trabajo no es ser la 'salvadora' de nadie, sino ser útil sin intentar controlar los resultados.",
-                source: "(Dónde estudiarlo: Reflexiones Diarias, Día 153 y Día 214)."
-            },
-            {
-                title: "Amar sin depender",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a amar sin depender",
-                text: "Soy mujer y estoy aprendiendo a amar sin depender, desaprendiendo los patrones tóxicos que me enseñaron a amar desde el apego o el control. Hoy construyo vínculos basados en la libertad para ser una misma, recordando que amar a los demás siempre comienza por cultivar el amor propio.",
-                source: "(Dónde estudiarlo: Sesiones de Estudio FGDLL - La Maestría del Amor)."
-            },
-            {
-                title: "Pedir ayuda",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a pedir ayuda",
-                text: "Soy mujer y estoy aprendiendo a pedir ayuda, rompiendo con el orgullo y la autosuficiencia peligrosa que me aislaba. Hoy sé que pedir un 'puente' o levantar la mano para decir 'necesito apoyo' no es debilidad ni molestia, sino el primer acto de inteligencia y valentía de una guerrera.",
-                source: "(Dónde estudiarlo: Reflexiones Diarias, Día 146 y Día 20)."
-            },
-            {
-                title: "Mostrarme vulnerable",
-                short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a mostrarme vulnerable",
-                text: "Soy mujer y estoy aprendiendo a mostrarme vulnerable, quitándome la pesada máscara del 'yo todo lo puedo' y del 'estoy bien'. Ahora sé que mostrar mis heridas me hace humana, y que en este 'mundo de los iguales' mi historia puede ser escuchada con dignidad y sin juicios.",
-                source: "(Dónde estudiarlo: Guía de Apadrinamiento - El puente de vulnerabilidad y Reflexiones Diarias, Día 126)."
-            },
-            { title: "Confiar en mí", short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a confiar en mí", text: "", source: "" },
-            { title: "Priorizar mi paz", short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a priorizar mi paz", text: "", source: "" },
-            { title: "Soltar el pasado", short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a soltar el pasado", text: "", source: "" },
-            { title: "Vivir el presente", short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a vivir el presente", text: "", source: "" },
-            { title: "Reconocer mi valor", short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a reconocer mi valor", text: "", source: "" },
-            { title: "Dejar de complacer a todos", short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a dejar de complacer a todos", text: "", source: "" },
-            { title: "Cuidar mi energía", short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a cuidar mi energía", text: "", source: "" },
-            { title: "Construir relaciones sanas", short: "Soy mamá y soy guerrera de la luz, estoy aprendiendo a construir relaciones sanas", text: "", source: "" },
-            
-            // --- TEMAS PARA EL DÍA DEL PADRE ---
-            {
-                title: "Estar verdaderamente presente",
-                short: "Soy papá y estoy aprendiendo a estar verdaderamente presente",
-                text: "Soy hombre y estoy aprendiendo a estar presente, comprendiendo que mi familia no solo necesita que yo sea un proveedor material o una figura de autoridad, sino que requiere mi presencia física, emocional y espiritual. Hoy sé que el mejor regalo que puedo darles es mi sobriedad y mi atención consciente.",
-                source: "(Dónde estudiarlo: Libro Grande, Cap. 9 'La familia después')."
-            },
-            {
-                title: "Pedir perdón sin justificarme",
-                short: "Soy papá y estoy aprendiendo a pedir perdón sin justificarme",
-                text: "Soy hombre y estoy aprendiendo a reparar el daño causado a mis hijos sin añadir un 'pero'. Entiendo que el Noveno Paso me pide asumir mi responsabilidad completa por mi ausencia, mis miedos o mis arranques, para así limpiar verdaderamente el terreno de nuestra relación.",
-                source: "(Dónde estudiarlo: Doce Pasos y Doce Tradiciones, Paso 9)."
-            },
-            {
-                title: "Romper el machismo y ser vulnerable",
-                short: "Soy papá y estoy aprendiendo a mostrarme vulnerable",
-                text: "Soy hombre y estoy aprendiendo a mostrar mis verdaderos sentimientos. Me quito la armadura del falso orgullo que me impedía llorar o decir 'tengo miedo' frente a los míos. Hoy entiendo que mostrar mi vulnerabilidad a mis hijos no me hace débil, sino que es un acto de verdadero valor.",
-                source: "(Dónde estudiarlo: Doce Pasos y Doce Tradiciones, Paso 4)."
-            },
-            {
-                title: "Soltar el control sobre la vida de mis hijos",
-                short: "Soy papá y estoy aprendiendo a soltar el control sobre mis hijos",
-                text: "Soy hombre y estoy aprendiendo a amar sin dominar. A través del Tercer Paso, devuelvo a mis hijos al cuidado de un Poder Superior, aceptando que ellos tienen su propio camino y que mi rol es guiar con el ejemplo, no gobernar sus destinos mediante la imposición o el miedo.",
-                source: "(Dónde estudiarlo: Doce Pasos y Doce Tradiciones, Paso 3)."
-            },
-            {
-                title: "Perdonar a mi propio padre",
-                short: "Soy papá y estoy aprendiendo a perdonar a mi propio padre",
-                text: "Soy hombre y estoy aprendiendo a ver a mi padre no como el gigante que me falló, sino como un ser humano enfermo o herido que hizo lo que pudo con lo que tenía. Rompo la cadena del resentimiento para no heredarle ese mismo veneno a mis hijos.",
-                source: "(Dónde estudiarlo: Doce Pasos y Doce Tradiciones, Paso 8 y Reflexiones Diarias)."
-            },
-            {
-                title: "Guiar con el ejemplo, no con sermones",
-                short: "Soy papá y estoy aprendiendo a guiar con el ejemplo",
-                text: "Soy hombre y estoy aprendiendo que mis acciones gritan más fuerte que mis palabras. Hoy busco que mi hogar se rija por la atracción de mi nueva conducta y mi sobriedad, en lugar de intentar promover la disciplina mediante gritos o exigencias que yo mismo no cumplo.",
-                source: "(Dónde estudiarlo: Libro Grande, Cap. 9 'La familia después' y Tradición 11)."
-            },
-            {
-                title: "Amar sin intentar comprar el afecto",
-                short: "Soy papá y estoy aprendiendo a amar sin comprar el afecto",
-                text: "Soy hombre y estoy aprendiendo a no usar el dinero ni los regalos para tapar mi culpa por los años de alcoholismo, inmadurez o ausencia. Comprendo que la verdadera reparación de daños se hace con tiempo, paciencia y cambios reales de actitud.",
-                source: "(Dónde estudiarlo: Doce Pasos y Doce Tradiciones, Paso 9)."
-            },
-            {
-                title: "Ser paciente con la sanación de mi familia",
-                short: "Soy papá y estoy aprendiendo a respetar el tiempo de sanación",
-                text: "Soy hombre y estoy aprendiendo a no exigir que mis hijos o mi pareja confíen en mí de la noche a la mañana solo porque dejé de beber. Tengo que tomarlo con calma y aceptar humildemente que el daño tomó años en hacerse y tomará tiempo en sanar.",
-                source: "(Dónde estudiarlo: Libro Grande, Cap. 9 'La familia después')."
-            },
-            {
-                title: "Escuchar antes de reaccionar",
-                short: "Soy papá y estoy aprendiendo a escuchar antes de reaccionar",
-                text: "Soy hombre y estoy aprendiendo a hacer una pausa. Antes, mi ira y mi ego me hacían explotar ante cualquier error de mis hijos. Hoy, gracias al Décimo Paso, practico la contención de la lengua y busco entender sus emociones antes de imponer mi voluntad.",
-                source: "(Dónde estudiarlo: Doce Pasos y Doce Tradiciones, Paso 10)."
-            },
-            {
-                title: "Admitir rápidamente mis errores",
-                short: "Soy papá y estoy aprendiendo a admitir mis errores ante mis hijos",
-                text: "Soy hombre y estoy aprendiendo que pedir disculpas a mis hijos no me resta autoridad, sino que me da integridad. Cuando me equivoco, soy injusto o pierdo los estribos, lo admito inmediatamente, enseñándoles con ello el valor de la honestidad.",
-                source: "(Dónde estudiarlo: Libro Grande, Cap. 5 'Cómo funciona', Paso 10)."
-            },
-            {
-                title: "No proyectar mis frustraciones en mi familia",
-                short: "Soy papá y estoy aprendiendo a no proyectar mis frustraciones",
-                text: "Soy hombre y estoy aprendiendo a hacerme cargo de mis propias emociones. El inventario me enseñó que muchas veces castigaba a mis hijos por mis propios miedos, complejos o fracasos. Hoy busco mi equilibrio espiritual para no desquitarme con ellos.",
-                source: "(Dónde estudiarlo: Doce Pasos y Doce Tradiciones, Paso 4)."
-            },
-            {
-                title: "Proveer sobriedad emocional",
-                short: "Soy papá y estoy aprendiendo a proveer sobriedad emocional",
-                text: "Soy hombre y estoy aprendiendo que la abstinencia física no es suficiente. Mi familia necesita que yo no sea un 'borracho seco' inestable. Mi meta es la madurez y la sobriedad emocional, para que mi hogar respire verdadera paz, congruencia y seguridad.",
-                source: "(Dónde estudiarlo: Artículo 'La próxima frontera: la sobriedad emocional', Bill W.)."
-            },
-            {
-                title: "Renunciar a la ira como método de disciplina",
-                short: "Soy papá y estoy aprendiendo a educar sin ira",
-                text: "Soy hombre y estoy aprendiendo a dejar ir el resentimiento y la rabia. El programa me ha enseñado que el enojo justificado es un lujo destructivo que no puedo darme, especialmente con mis hijos. Elijo la firmeza con amor, no la violencia verbal ni psicológica.",
-                source: "(Dónde estudiarlo: Como lo ve Bill, sección sobre la Ira)."
-            },
-            {
-                title: "Demostrar afecto físico y verbal sin vergüenza",
-                short: "Soy papá y estoy aprendiendo a expresar mi amor abiertamente",
-                text: "Soy hombre y estoy aprendiendo a abrazar a mis hijos y decirles 'te quiero' sin sentir que pierdo hombría. Rompo el aislamiento y la frialdad que la enfermedad me impuso, permitiendo que el lenguaje del corazón fluya libremente en mi hogar.",
-                source: "(Dónde estudiarlo: El Lenguaje del Corazón)."
-            },
-            {
-                title: "Respetar la individualidad de mis hijos",
-                short: "Soy papá y estoy aprendiendo que mis hijos no son mi propiedad",
-                text: "Soy hombre y estoy aprendiendo que mis hijos son seres con sus propios defectos, virtudes y propósitos. Dejo de verlos como extensiones de mi propio ego o trofeos para lucir ante otros, y aplico el principio de 'Vive y deja vivir', amándolos por quienes son.",
-                source: "(Dónde estudiarlo: Viviendo Sobrio y Paso 3)."
-            },
-            {
-                title: "Perdonarme a mí mismo como padre",
-                short: "Soy papá y estoy aprendiendo a perdonarme a mí mismo",
-                text: "Soy hombre y estoy aprendiendo a soltar la culpa aplastante por el padre ausente o errático que fui en el pasado. Entiendo que castigarme no les sirve a mis hijos; lo que ellos necesitan es que yo sea un hombre en recuperación, útil, sobrio y feliz el día de hoy.",
-                source: "(Dónde estudiarlo: Reflexiones Diarias y Doce Pasos y Doce Tradiciones, Paso 8)."
-            },
-            {
-                title: "Hacer de mi hogar un lugar de paz",
-                short: "Soy papá y estoy aprendiendo a ser un instrumento de paz",
-                text: "Soy hombre y estoy aprendiendo a llevar los principios espirituales a todos mis asuntos. A través del Undécimo Paso, pido que donde haya discordia, gritos o tensión en mi familia, yo tenga la sabiduría para sembrar armonía, amor y comprensión.",
-                source: "(Dónde estudiarlo: Doce Pasos y Doce Tradiciones, Paso 11)."
-            },
-            {
-                title: "Superar el miedo a no ser suficiente",
-                short: "Soy papá y estoy aprendiendo a superar el miedo como padre",
-                text: "Soy hombre y estoy aprendiendo a entregar mis inseguridades. La enfermedad me decía que yo no servía para ser padre, pero apoyándome en mi grupo y en mi Poder Superior, descubro que mi honestidad, mi servicio y mi esfuerzo diario son más que suficientes.",
-                source: "(Dónde estudiarlo: Libro Grande, Cap. 5 'Cómo funciona', sobre el miedo)."
-            },
-            {
-                title: "Ser un padre sobrio, un día a la vez",
-                short: "Soy papá y estoy aprendiendo a ser padre un día a la vez",
-                text: "Soy hombre y estoy aprendiendo a no abrumarme por el futuro incierto de mis hijos ni por los años que perdí. Aplico el plan de las 24 horas a mi paternidad: solo por hoy los escucharé, solo por hoy no explotaré, solo por hoy estaré para ellos.",
-                source: "(Dónde estudiarlo: Viviendo Sobrio)."
-            },
-            {
-                title: "Trascender la autoridad para ser un compañero",
-                short: "Soy papá y estoy aprendiendo a caminar junto a mi familia",
-                text: "Soy hombre y estoy aprendiendo a bajar de mi pedestal de autoridad intocable. El programa me enseñó que no soy el director del universo, y eso incluye a mi familia. Hoy camino a su lado en igualdad, respeto y servicio desinteresado.",
-                source: "(Dónde estudiarlo: Libro Grande, Cap. 9 'La familia después')."
+  <!-- MODAL DEL EDITOR DE TEMAS (GENERAR JSON) -->
+  <div class="modal-overlay" id="editor-modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-modal" id="close-editor">&times;</button>
+        <h2 class="modal-title">Generador de Nuevo Tema</h2>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Llena los campos para generar la estructura JSON validada y agregarla a la base de datos.</p>
+      </div>
+      <div class="modal-body">
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label>Título del tema *</label>
+            <input type="text" id="ed-titulo" placeholder="Ej: La honestidad que me liberó">
+          </div>
+          <div class="form-group">
+            <label>Categoría</label>
+            <input type="text" id="ed-categoria" placeholder="Ej: Paso 5, Familia, Aniversario">
+          </div>
+          <div class="form-group">
+            <label>Sensibilidad</label>
+            <select id="ed-sensibilidad">
+              <option value="normal">Normal</option>
+              <option value="sensible">Sensible</option>
+              <option value="crisis">Crisis (Riesgo)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Intensidad</label>
+            <select id="ed-intensidad">
+              <option value="Baja">Baja</option>
+              <option value="Media" selected>Media</option>
+              <option value="Alta">Alta</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Momento recomendado</label>
+            <select id="ed-momento">
+              <option value="Inicio">Inicio</option>
+              <option value="Mitad" selected>Mitad</option>
+              <option value="Cierre">Cierre</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label>Frase Ancla *</label>
+            <input type="text" id="ed-ancla" placeholder="Frase corta de impacto">
+          </div>
+          <div class="form-group full-width">
+            <label>Objetivo</label>
+            <input type="text" id="ed-objetivo" placeholder="¿Para qué sirve este testimonio?">
+          </div>
+          <div class="form-group full-width">
+            <label>Preguntas: Detectar (Separar por saltos de línea)</label>
+            <textarea id="ed-detectar" rows="3" placeholder="¿Cómo era tu vida antes?"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label>Preguntas: Admitir (Separar por saltos de línea)</label>
+            <textarea id="ed-admitir" rows="3" placeholder="¿Qué sentiste al llegar?"></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label>Preguntas: Corregir (Separar por saltos de línea)</label>
+            <textarea id="ed-corregir" rows="3" placeholder="¿Qué estás aprendiendo hoy?"></textarea>
+          </div>
+        </div>
+
+        <div id="editor-result-container" class="success-actions">
+          <h4 style="color:var(--success); margin-bottom:0.5rem;">✅ JSON Generado</h4>
+          <p style="font-size: 0.85rem; color:#ccc; margin-bottom:1rem;">
+            Copia este código y <strong>pégalo al final de tu arreglo `dataTemas`</strong> en el archivo HTML, justo antes del <code>];</code> final.
+          </p>
+          <pre class="code-preview" id="editor-preview" style="margin-top:0; border-color:var(--success);"></pre>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-action btn-primary" id="btn-generate-json">Generar Código JSON</button>
+        <button class="btn-action" id="btn-copy-json" style="display:none;">📋 Copiar para pegar al final</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DEL IMPORTADOR (PEGAR Y VALIDAR JSON) -->
+  <div class="modal-overlay" id="importador-modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-modal" id="close-importador">&times;</button>
+        <h2 class="modal-title">Importador y Validador</h2>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Pega el arreglo JSON generado por Claude para validarlo e integrarlo. Después podrás copiar el código listo para guardarlo permanentemente.</p>
+      </div>
+      <div class="modal-body">
+        <div class="form-group full-width">
+          <label>Pega aquí el código JSON</label>
+          <textarea id="imp-textarea" rows="10" placeholder='[\n  {\n    "id": "tema-N01",\n    "titulo": "...",\n    ...\n  }\n]'></textarea>
+        </div>
+        
+        <div id="imp-validation-results" class="validation-list" style="display:none;">
+          <!-- Resultados de validación aquí -->
+        </div>
+
+        <!-- PANEL DE ACCIONES DE ÉXITO (Para exportar y guardar permanente) -->
+        <div id="imp-success-actions" class="success-actions">
+          <h4 style="color:var(--success); margin-bottom:0.5rem;">✅ Temas integrados en memoria</h4>
+          <p style="font-size: 0.85rem; color:#ccc; margin-bottom:1rem;">
+            Los temas ya aparecen en la interfaz. <strong>Para hacer este cambio permanente en tu código, elige una opción:</strong>
+          </p>
+          <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn-action" id="btn-copy-new-only" title="Copia solo los temas nuevos listos para pegar al final de tu dataTemas">
+              📋 Copiar SOLO lo nuevo (Para pegar al final)
+            </button>
+            <button class="btn-action" id="btn-download-json" title="Descarga un archivo con toda la base de datos actualizada">
+              💾 Descargar Base Completa (.js)
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn-action btn-primary" id="btn-validate-json">Validar JSON</button>
+        <button class="btn-action" id="btn-merge-json" style="display:none;">Añadir a la Biblioteca Temporal</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast">Acción completada</div>
+
+  <!-- SCRIPT CON DATOS Y LÓGICA -->
+  <script>
+    // ============================================================================
+    // BASE DE DATOS DOCTRINAL (50 Temas Institucionales)
+    // ============================================================================
+    // Se usa 'let' para permitir agregar temas dinámicamente vía el Importador.
+    let dataTemas = [
+      // === ANIVERSARIOS (7) ===
+      {
+        id: "tema-001", titulo: "¿Por qué me quedé en Guerreros de la Luz?", tituloCorto: "¿Por qué me quedé?", estado: "Completo", sensibilidad: "normal",
+        categoria: "Aniversario", evento: ["Aniversario de grupo"], publico: ["Participantes"], intensidad: "Media", momento: "Cierre", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Gratitud", pasos: ["Paso 12"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "Cap. Una visión para ti", uso: "Muestra la promesa de comunidad." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Transmitir la gratitud por la fraternidad y cómo el grupo curó el aislamiento.",
+        fraseAncla: "No me quedé porque ya era fuerte, me quedé porque aquí me enseñaron a no pelear solo.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo era tu soledad antes de conocer la fraternidad?", "¿Cómo intentabas encajar en lugares donde te hacías daño?"],
+          admitir: ["¿Qué fue lo primero que sentiste al llegar a tu primer junta?", "¿Con qué historia te viste reflejado y dejaste de sentirte bicho raro?"],
+          corregir: ["¿Qué significa para ti la pertenencia hoy?", "¿Cómo devuelves al grupo lo que se te dio de gracia?"]
+        },
+        variaciones: ["La familia elegida", "El fin del aislamiento"], palabrasClave: ["pertenencia", "gratitud"],
+        advertenciaEtica: "", advertenciaLider: "Cuidar que no se convierta en adulación a personas, sino al programa.", noUsarPara: ["Endiosar a un padrino", "Atacar otros grupos"],
+        esCatalogoBase: true, prioridad: 10, relacionados: []
+      },
+      {
+        id: "tema-002", titulo: "Una sensación de pertenecer", tituloCorto: "Sentido de pertenencia", estado: "Completo", sensibilidad: "normal",
+        categoria: "Aniversario", evento: ["Aniversario de grupo"], publico: ["Participantes"], intensidad: "Baja", momento: "Inicio", formato: "Panel corto", tipoTestimonio: "Inspirador", emocion: "Alegría", pasos: ["Tradición 1"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "12 Pasos y 12 Tradiciones", referencia: "Tradición 1", uso: "Bienestar común." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Explicar cómo el sentido de pertenencia salva vidas.",
+        fraseAncla: "Por fin encontré un lugar donde no tenía que fingir para ser aceptado.",
+        guiaTestimonio: {
+          detectar: ["¿Qué máscaras usabas para ser aceptado?", "¿Cuánto te desgastaba fingir ser alguien que no eras?"],
+          admitir: ["¿Qué sentiste cuando escuchaste a alguien contar tus mismos defectos sin ser juzgado?", "¿Qué barreras mentales tuviste que soltar para integrarte?"],
+          corregir: ["¿Cómo practicas la honestidad en el grupo hoy?", "¿Cómo recibes al recién llegado?"]
+        },
+        variaciones: ["Dejé las máscaras", "El terreno común"], palabrasClave: ["aceptación", "máscaras"], advertenciaEtica: "", advertenciaLider: "Enfocar en la inclusión.", noUsarPara: ["Fomentar exclusividad"], esCatalogoBase: true, prioridad: 20, relacionados: []
+      },
+      {
+        id: "tema-003", titulo: "Un refugio seguro", tituloCorto: "El grupo como refugio", estado: "Completo", sensibilidad: "normal",
+        categoria: "Aniversario", evento: ["Aniversario de grupo"], publico: ["Participantes"], intensidad: "Media", momento: "Mitad", formato: "Individual", tipoTestimonio: "Didáctico", emocion: "Paz", pasos: ["Paso 2"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía de Apadrinamiento", seccion: "El poder del grupo", uso: "Grupo como poder superior inicial." }], librosRecomendados: [],
+        objetivo: "Describir el proceso de encontrar seguridad emocional en las salas.",
+        fraseAncla: "Las cuatro paredes del grupo fueron mi primer lugar seguro en años.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo era vivir a la defensiva todo el tiempo?", "¿De qué huías antes de llegar?"],
+          admitir: ["¿Cuándo te diste cuenta de que en el grupo no necesitabas armadura?", "¿Qué significa para ti que el grupo sea un refugio?"],
+          corregir: ["¿Cómo ayudas a mantener el grupo como un lugar seguro para otros?", "¿Cómo aplicas esta paz en tu casa?"]
+        },
+        variaciones: [], palabrasClave: ["seguridad", "refugio"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Usar el grupo para evadir responsabilidades externas"], esCatalogoBase: true, prioridad: 30, relacionados: []
+      },
+      {
+        id: "tema-004", titulo: "De las tinieblas a la luz", tituloCorto: "Hacia la luz", estado: "Completo", sensibilidad: "normal",
+        categoria: "Aniversario", evento: ["Aniversario de grupo"], publico: ["Participantes"], intensidad: "Alta", momento: "Cierre", formato: "Individual", tipoTestimonio: "Crudo", emocion: "Esperanza", pasos: ["Paso 1"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "Cap. Hay una solución", uso: "La salida de la desesperanza." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Contrastar el fondo de sufrimiento con el despertar espiritual de la recuperación.",
+        fraseAncla: "No sabía que vivía a oscuras hasta que el programa encendió la luz.",
+        guiaTestimonio: {
+          detectar: ["¿Cuál fue la etapa más oscura de tu ingobernabilidad?", "¿Cómo te autoengañabas en la oscuridad?"],
+          admitir: ["¿Cuál fue el momento exacto en que dejaste entrar la ayuda?", "¿Qué luz te dio el programa al principio?"],
+          corregir: ["¿Cómo mantienes hoy tu contacto consciente?", "¿Qué haces cuando sientes que regresan viejas sombras?"]
+        },
+        variaciones: [], palabrasClave: ["despertar", "fondo", "luz"], advertenciaEtica: "", advertenciaLider: "Evitar que la descripción del fondo se vuelva una apología de la destrucción.", noUsarPara: ["Glorificar el fondo"], esCatalogoBase: true, prioridad: 40, relacionados: []
+      },
+      {
+        id: "tema-005", titulo: "Yo soy un milagro", tituloCorto: "El milagro de hoy", estado: "Completo", sensibilidad: "normal",
+        categoria: "Aniversario", evento: ["Aniversario de grupo"], publico: ["Participantes"], intensidad: "Alta", momento: "Cierre", formato: "Panel largo", tipoTestimonio: "Inspirador", emocion: "Gratitud", pasos: ["Paso 12"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "El Lenguaje del Corazón", referencia: "Milagros de AA", uso: "La transformación radical." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Reconocer que la sobriedad emocional es un milagro diario producto del trabajo en el programa.",
+        fraseAncla: "El milagro no es que no tenga problemas, el milagro es que hoy sé cómo enfrentarlos.",
+        guiaTestimonio: {
+          detectar: ["¿Por qué tu vida anterior parecía no tener arreglo?", "¿Qué pronóstico fatal tenías sobre ti mismo?"],
+          admitir: ["¿Cuándo te diste cuenta de que habías dejado de obsesionarte con tus viejos patrones?", "¿A qué o quién atribuyes este milagro inicial?"],
+          corregir: ["¿Qué acciones diarias sostienen tu milagro hoy?", "¿Cómo transmites este milagro al que llega sufriendo?"]
+        },
+        variaciones: [], palabrasClave: ["milagro", "transformación"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Fomentar pensamiento mágico sin acción"], esCatalogoBase: true, prioridad: 50, relacionados: []
+      },
+      {
+        id: "tema-006", titulo: "El grato privilegio de servir", tituloCorto: "Privilegio de servir", estado: "Completo", sensibilidad: "normal",
+        categoria: "Aniversario", evento: ["Aniversario de grupo"], publico: ["Líderes", "Participantes"], intensidad: "Media", momento: "Mitad", formato: "Didáctico", tipoTestimonio: "Didáctico", emocion: "Compromiso", pasos: ["Paso 12"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "El Manual de Servicio de AA", referencia: "El legado del servicio", uso: "Importancia de dar lo recibido." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Demostrar que el servicio es la columna vertebral de la recuperación personal.",
+        fraseAncla: "Curé mis propias heridas el día que me ocupé de vendar las de alguien más.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo era tu nivel de egocentrismo antes de servir?", "¿De qué manera solo pensabas en tu propio dolor?"],
+          admitir: ["¿Cómo fue tu primera experiencia en el servicio de la Fraternidad?", "¿Qué descubriste de ti al ayudar a otro?"],
+          corregir: ["¿Cómo el servicio mantiene a raya tu ego hoy?", "¿De qué forma equilibras el servicio con tu vida personal?"]
+        },
+        variaciones: [], palabrasClave: ["servicio", "ego", "ayuda"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Fomentar el servicio como escape de problemas en casa"], esCatalogoBase: true, prioridad: 60, relacionados: []
+      },
+      {
+        id: "tema-007", titulo: "La sangre hace parientes, la lealtad hace familias", tituloCorto: "Lealtad y familia", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Aniversario", evento: ["Aniversario de grupo"], publico: ["Participantes"], intensidad: "Alta", momento: "Cierre", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Amor", pasos: ["Tradición 2"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Principios FGDLL", seccion: "Fraternidad", uso: "Los vínculos por elección." }], librosRecomendados: [],
+        objetivo: "Reconocer el valor de los vínculos forjados en la recuperación.",
+        fraseAncla: "Llegué buscando dejar de sufrir y encontré hermanos de batalla.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo estaban rotos tus vínculos familiares originales?", "¿Por qué desconfiabas de la lealtad de las personas?"],
+          admitir: ["¿Qué te demostró el grupo sobre la verdadera lealtad?", "¿Cómo te ganaste la confianza de tus compañeros?"],
+          corregir: ["¿Cómo eres leal a tu fraternidad hoy?", "¿Cómo has trasladado esa lealtad sana a tu familia de sangre?"]
+        },
+        variaciones: [], palabrasClave: ["lealtad", "fraternidad"], advertenciaEtica: "No utilizar para hablar mal de la familia de origen. El foco es la construcción de la familia espiritual.", advertenciaLider: "", noUsarPara: ["Despreciar a la familia biológica"], esCatalogoBase: true, prioridad: 70, relacionados: []
+      },
+
+      // === SEMANA DE LOS PADRES (7) ===
+      {
+        id: "tema-008", titulo: "Hijo huérfano de padres vivos", tituloCorto: "Huérfano de padres vivos", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de los Padres", evento: ["Semana de los Padres"], publico: ["Padres", "Hijos"], intensidad: "Alta", momento: "Inicio", formato: "Individual", tipoTestimonio: "Crudo", emocion: "Tristeza", pasos: ["Paso 4"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía de Apadrinamiento", seccion: "Heridas de infancia", uso: "Identificar la herida de abandono." }], librosRecomendados: [],
+        objetivo: "Abordar el dolor del abandono emocional estando físicamente presentes.",
+        fraseAncla: "Tenía un padre en la misma casa, pero una silla vacía en el corazón.",
+        guiaTestimonio: {
+          detectar: ["¿De qué formas experimentabas el abandono aunque tu padre estuviera presente?", "¿Cómo intentaste llamar su atención de formas destructivas?"],
+          admitir: ["¿Cómo llegaste al grupo cargando el resentimiento hacia tu figura paterna?", "¿Qué herramientas te dio el programa para entender su incapacidad emocional?"],
+          corregir: ["¿Cómo te haces cargo de ti mismo hoy, siendo tu propio adulto responsable?", "¿Cómo rompiste ese patrón con tus propios hijos (si aplica)?"]
+        },
+        variaciones: [], palabrasClave: ["abandono", "ausencia emocional"], advertenciaEtica: "Tema profundo de herida paterna. Orientar siempre a la responsabilidad propia (Paso 4), no a la eterna victimización.", advertenciaLider: "", noUsarPara: ["Fomentar el odio hacia el padre"], esCatalogoBase: true, prioridad: 10, relacionados: []
+      },
+      {
+        id: "tema-009", titulo: "El padre que tuve y el padre que necesité", tituloCorto: "El padre que tuve", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de los Padres", evento: ["Semana de los Padres"], publico: ["Hijos", "Padres"], intensidad: "Alta", momento: "Mitad", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Aceptación", pasos: ["Paso 8", "Paso 9"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "La Familia Después", uso: "Aceptar a la familia con sus defectos." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Desmitificar la figura paterna idealizada y aceptar al humano detrás del rol.",
+        fraseAncla: "Dejé de exigir el padre que soñaba para poder perdonar al hombre real que me tocó.",
+        guiaTestimonio: {
+          detectar: ["¿Qué expectativas irreales tenías sobre cómo debía ser tu padre?", "¿Cuánto dolor te causaba la brecha entre la expectativa y la realidad?"],
+          admitir: ["¿Cómo el programa te ayudó a ver a tu padre como un hombre enfermo o herido también?", "¿Qué papel jugó tu propio ego en este resentimiento?"],
+          corregir: ["¿Cómo has soltado la exigencia hacia él hoy?", "¿Qué haces con el amor que sí puede darte, a su manera?"]
+        },
+        variaciones: [], palabrasClave: ["expectativas", "aceptación", "padre real"], advertenciaEtica: "Si hubo abuso grave, no se debe forzar la convivencia ni justificar el daño, solo trabajar el desprendimiento interior.", advertenciaLider: "", noUsarPara: ["Justificar abusos"], esCatalogoBase: true, prioridad: 20, relacionados: []
+      },
+      {
+        id: "tema-010", titulo: "Padre proveedor, corazón ausente", tituloCorto: "Proveedor ausente", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de los Padres", evento: ["Semana de los Padres"], publico: ["Padres"], intensidad: "Media", momento: "Mitad", formato: "Panel corto", tipoTestimonio: "Didáctico", emocion: "Culpa", pasos: ["Paso 10"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Literatura Interna FGDLL", seccion: "El rol del varón", uso: "Deconstruir que dar dinero es dar amor." }], librosRecomendados: [],
+        objetivo: "Para padres: reconocer que proveer económicamente no suple la presencia emocional.",
+        fraseAncla: "Llené la casa de cosas para que no notaran que yo no estaba.",
+        guiaTestimonio: {
+          detectar: ["Como padre, ¿cómo usabas el dinero o el trabajo para evadir la intimidad familiar?", "¿Qué excusas te dabas a ti mismo?"],
+          admitir: ["¿Cuándo te diste cuenta del daño que causó tu ausencia afectiva?", "¿Qué tuviste que derribar de tu machismo o ego para acercarte a tus hijos?"],
+          corregir: ["¿Cómo provees presencia emocional hoy?", "¿Cómo lidias con la culpa de los años perdidos de forma responsable?"]
+        },
+        variaciones: [], palabrasClave: ["proveedor", "dinero", "ausencia", "padres"], advertenciaEtica: "Evitar el auto-flagelo excesivo. El programa es de acción, no de culpa.", advertenciaLider: "", noUsarPara: ["Victimizarse como mártir del trabajo"], esCatalogoBase: true, prioridad: 30, relacionados: []
+      },
+      {
+        id: "tema-011", titulo: "Papá también fue hijo", tituloCorto: "Papá fue hijo", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de los Padres", evento: ["Semana de los Padres"], publico: ["Padres", "Hijos"], intensidad: "Alta", momento: "Cierre", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Empatía", pasos: ["Paso 4", "Paso 8"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía de Apadrinamiento", seccion: "Cadenas generacionales", uso: "Entender el daño transgeneracional." }], librosRecomendados: [],
+        objetivo: "Crear empatía al entender la historia de origen del padre.",
+        fraseAncla: "Pude perdonar a mi padre cuando conocí al niño roto que lleva dentro.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo juzgabas los errores de tu padre sin conocer su historia?", "¿Qué patrones destructivos heredaste de él?"],
+          admitir: ["¿Qué descubriste sobre la infancia o las carencias de tu papá al llegar a FGDLL?", "¿Cómo esto cambió tu visión de juez a un ser empático?"],
+          corregir: ["¿Cómo rompes tú esa cadena generacional de dolor hoy?", "¿Cómo te relacionas con la humanidad de tu padre, viva o muerta?"]
+        },
+        variaciones: [], palabrasClave: ["empatía", "generacional"], advertenciaEtica: "La empatía no borra la responsabilidad del padre, pero libera al hijo del resentimiento.", advertenciaLider: "", noUsarPara: ["Minimizar el daño recibido"], esCatalogoBase: true, prioridad: 40, relacionados: []
+      },
+      {
+        id: "tema-012", titulo: "El hombre que no aprendió a llorar", tituloCorto: "El hombre que no llora", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de los Padres", evento: ["Semana de los Padres"], publico: ["Padres", "Hombres"], intensidad: "Media", momento: "Inicio", formato: "Individual", tipoTestimonio: "Didáctico", emocion: "Vulnerabilidad", pasos: ["Paso 1"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Charlas institucionales", seccion: "Ego masculino", uso: "Permiso para ser vulnerable." }], librosRecomendados: [],
+        objetivo: "Desmitificar la fuerza masculina basada en la represión de emociones.",
+        fraseAncla: "Me enseñaron que llorar era de débiles, y ese falso orgullo casi me mata.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo te enseñaron a reprimir tus emociones por ser hombre?", "¿En qué conductas destructivas desahogabas lo que no podías llorar?"],
+          admitir: ["¿Cómo fue la primera vez que te permitiste ser vulnerable en un grupo de Guerreros?", "¿Qué se sintió soltar la armadura?"],
+          corregir: ["¿Cómo gestionas tu enojo y tu tristeza hoy?", "¿Cómo le enseñas a tus hijos/compañeros una masculinidad sana?"]
+        },
+        variaciones: [], palabrasClave: ["vulnerabilidad", "machismo", "llorar"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 50, relacionados: []
+      },
+      {
+        id: "tema-013", titulo: "Ser padre sin haberse sentido hijo", tituloCorto: "Padre sin ser hijo", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de los Padres", evento: ["Semana de los Padres"], publico: ["Padres"], intensidad: "Alta", momento: "Mitad", formato: "Individual", tipoTestimonio: "Crudo", emocion: "Miedo", pasos: ["Paso 4"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía de Apadrinamiento", seccion: "Carencias", uso: "La proyección en la paternidad." }], librosRecomendados: [],
+        objetivo: "El reto de dar amor paternal cuando nunca se recibió.",
+        fraseAncla: "Tenía terror de ser padre porque nadie me enseñó cómo ser hijo.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo el vacío de tu propia infancia te paralizaba en tu rol de padre?", "¿Qué errores cometiste por miedo a repetir la historia de tu padre?"],
+          admitir: ["¿En qué momento pediste ayuda en el programa para aprender a criar sin proyectar tus vacíos?", "¿Qué tuviste que desaprender?"],
+          corregir: ["¿Qué herramientas usas hoy para no cobrarle a tus hijos tus facturas del pasado?", "¿Cómo aprendes a ser padre hoy, un día a la vez?"]
+        },
+        variaciones: [], palabrasClave: ["paternidad", "carencias", "proyección"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 60, relacionados: []
+      },
+      {
+        id: "tema-014", titulo: "Honrar sin negar mi historia", tituloCorto: "Honrar sin negar", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de los Padres", evento: ["Semana de los Padres"], publico: ["Hijos"], intensidad: "Media", momento: "Cierre", formato: "Didáctico", tipoTestimonio: "Didáctico", emocion: "Paz", pasos: ["Paso 12"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "La Familia Después", uso: "Cómo reconstruir el respeto." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Aprender el significado sano de honrar a los padres, no mediante sumisión ciega, sino mediante el respeto y límites sanos.",
+        fraseAncla: "Honrar a mi padre no es aplaudir sus defectos, es no usar sus errores como excusa para arruinar mi vida.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo confundías honrar a tus padres con soportar abusos o ser sumiso?", "¿De qué forma usabas la historia de tu padre como excusa para tus propios fracasos?"],
+          admitir: ["¿Cómo aprendiste en el programa a poner límites con amor y respeto?", "¿Qué significa realmente perdonar en el contexto de FGDLL?"],
+          corregir: ["¿Cómo honras hoy a tus padres desde tu propia sobriedad y adultez?", "¿Cómo mantienes los límites sin caer en el resentimiento?"]
+        },
+        variaciones: [], palabrasClave: ["honrar", "límites", "respeto"], advertenciaEtica: "Crucial: Honrar no significa someterse al abuso. El líder debe validar el derecho a la distancia sana.", advertenciaLider: "", noUsarPara: ["Obligar a vivir con padres abusivos"], esCatalogoBase: true, prioridad: 70, relacionados: []
+      },
+
+      // === SEMANA DE LAS MADRES (7) ===
+      {
+        id: "tema-015", titulo: "La madre que tuve y la madre que necesité", tituloCorto: "La madre que tuve", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de las Madres", evento: ["Semana de las Madres"], publico: ["Hijos", "Madres"], intensidad: "Alta", momento: "Inicio", formato: "Individual", tipoTestimonio: "Crudo", emocion: "Tristeza", pasos: ["Paso 4"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía de Apadrinamiento", seccion: "La herida materna", uso: "Abordar el vacío materno." }], librosRecomendados: [],
+        objetivo: "Sanar la expectativa del amor incondicional materno y aceptar a la mujer humana.",
+        fraseAncla: "Esperaba que mi madre me salvara de todo, y tuve que aceptar que ella también necesitaba salvarse.",
+        guiaTestimonio: {
+          detectar: ["¿Qué le exigías a tu madre que ella emocionalmente no podía darte?", "¿Cómo reaccionabas ante esa carencia afectiva (fugas, rebeldía)?"],
+          admitir: ["¿Cómo te confrontó el programa con la idealización de la maternidad?", "¿Qué tuviste que perdonarle a su humanidad imperfecta?"],
+          corregir: ["¿Cómo te provees a ti mismo el cuidado materno que te faltó?", "¿Cómo es tu relación con ella hoy, basada en la realidad y no en la fantasía?"]
+        },
+        variaciones: [], palabrasClave: ["madre", "expectativa", "herida"], advertenciaEtica: "Cuidado de no satanizar a la madre. Centrar la responsabilidad en el hijo que se aferra a la queja.", advertenciaLider: "", noUsarPara: ["Culpabilizar a las madres"], esCatalogoBase: true, prioridad: 10, relacionados: []
+      },
+      {
+        id: "tema-016", titulo: "Mamá también fue hija", tituloCorto: "Mamá fue hija", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de las Madres", evento: ["Semana de las Madres"], publico: ["Hijos"], intensidad: "Media", momento: "Mitad", formato: "Panel corto", tipoTestimonio: "Inspirador", emocion: "Empatía", pasos: ["Paso 8"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía", seccion: "Cadenas generacionales", uso: "Romper juicios." }], librosRecomendados: [],
+        objetivo: "Crear empatía hacia la historia de sufrimiento de la madre para disolver el resentimiento.",
+        fraseAncla: "Cuando entendí lo rota que estaba la niña que fue mi madre, el resentimiento se volvió compasión.",
+        guiaTestimonio: {
+          detectar: ["¿Por qué juzgabas tan duramente los errores de tu mamá?", "¿Qué ignorabas de su propia historia de sufrimiento?"],
+          admitir: ["¿Qué te reveló hacer tu inventario sobre las carencias que tu madre sufrió en su infancia?", "¿Cómo dolió ver a tu madre desde la empatía y no desde la exigencia?"],
+          corregir: ["¿Cómo le demuestras compasión hoy, sin permitir que te dañe si es el caso?", "¿Qué patrones maternos estás rompiendo conscientemente?"]
+        },
+        variaciones: [], palabrasClave: ["empatía", "compasión", "historia"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 20, relacionados: []
+      },
+      {
+        id: "tema-017", titulo: "Amor o necesidad", tituloCorto: "Amor vs Necesidad", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de las Madres", evento: ["Semana de las Madres"], publico: ["Madres", "Hijos"], intensidad: "Alta", momento: "Mitad", formato: "Individual", tipoTestimonio: "Crudo", emocion: "Miedo", pasos: ["Paso 4"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Doce Pasos", referencia: "Paso 4", uso: "Dependencia oculta como amor." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Diferenciar el amor genuino de la necesidad asfixiante de control hacia los hijos.",
+        fraseAncla: "Le llamaba amor de madre a lo que en realidad era terror a quedarme sola.",
+        guiaTestimonio: {
+          detectar: ["Como madre/hijo, ¿cómo disfrazabas la manipulación y el control como 'preocupación excesiva'?", "¿De qué manera ahogabas la libertad del otro por tu propia inseguridad?"],
+          admitir: ["¿Cuándo colapsó esta dinámica enfermiza y buscaste ayuda en FGDLL?", "¿Qué tuviste que admitir sobre tu egoísmo disfrazado de amor?"],
+          corregir: ["¿Cómo practicas el verdadero amor hoy, que implica dar libertad?", "¿Qué haces con tu propia ansiedad sin cargarla a tus hijos?"]
+        },
+        variaciones: [], palabrasClave: ["control", "manipulación", "apego"], advertenciaEtica: "Requiere honestidad brutal por parte de la madre que comparte. Debe ser un testimonio de recuperación, no de justificación.", advertenciaLider: "", noUsarPara: ["Normalizar la sobreprotección tóxica"], esCatalogoBase: true, prioridad: 30, relacionados: []
+      },
+      {
+        id: "tema-018", titulo: "Dependencia emocional y síndrome del nido vacío", tituloCorto: "El nido vacío", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de las Madres", evento: ["Semana de las Madres"], publico: ["Madres"], intensidad: "Media", momento: "Cierre", formato: "Didáctico", tipoTestimonio: "Didáctico", emocion: "Tristeza", pasos: ["Paso 3", "Paso 11"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía", seccion: "Desprendimiento", uso: "La vida propia." }], librosRecomendados: [],
+        objetivo: "Ayudar a las madres a encontrar un propósito de vida más allá de sus hijos.",
+        fraseAncla: "Tuve que dejar que mis hijos volaran para recordar que yo también tenía alas.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo hiciste de tus hijos tu único proyecto de vida?", "¿Qué sentiste cuando comenzaron a hacer su propia vida y ya no te necesitaban igual?"],
+          admitir: ["¿Cómo el programa te ayudó a enfrentar el vacío interior y la pérdida de identidad?", "¿Qué tuviste que soltar de las riendas (Paso 3)?"],
+          corregir: ["¿Qué propósito has encontrado para ti misma hoy?", "¿Cómo te relacionas con tus hijos adultos desde el respeto y no desde la demanda de atención?"]
+        },
+        variaciones: [], palabrasClave: ["nido vacío", "desprendimiento", "identidad"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 40, relacionados: []
+      },
+      {
+        id: "tema-019", titulo: "Aprendiendo a soltar con amor", tituloCorto: "Soltar con amor", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de las Madres", evento: ["Semana de las Madres"], publico: ["Madres"], intensidad: "Alta", momento: "Cierre", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Paz", pasos: ["Paso 3", "Paso 12"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "El grupo familiar", referencia: "Al-Anon principios", uso: "Desprendimiento emocional." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "El doloroso pero necesario proceso de permitir que los hijos vivan sus propias consecuencias.",
+        fraseAncla: "La prueba más grande de amor no fue salvar a mi hijo, fue soltarlo para que él pudiera salvarse a sí mismo.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo la codependencia te llevaba a resolverle todos los problemas a tu hijo adicto o ingobernable?", "¿Cuánto te destruiste a ti misma intentando salvarlo?"],
+          admitir: ["¿Cuál fue tu fondo de sufrimiento que te hizo aceptar que tú no eras su Poder Superior?", "¿Qué herramientas te dio el programa para practicar el desprendimiento?"],
+          corregir: ["¿Cómo sueltas con amor hoy, sin que signifique abandono?", "¿Cómo vives tu propia recuperación mientras él vive su proceso?"]
+        },
+        variaciones: [], palabrasClave: ["soltar", "codependencia", "amor duro"], advertenciaEtica: "Es un tema de desprendimiento para madres de hijos con conductas destructivas. Evitar dar consejos médicos o legales.", advertenciaLider: "", noUsarPara: ["Recomendar abandonar hijos menores"], esCatalogoBase: true, prioridad: 50, relacionados: []
+      },
+      {
+        id: "tema-020", titulo: "Culpa de madre, culpa de hijo", tituloCorto: "El ciclo de la culpa", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de las Madres", evento: ["Semana de las Madres"], publico: ["Madres", "Hijos"], intensidad: "Alta", momento: "Mitad", formato: "Panel largo", tipoTestimonio: "Crudo", emocion: "Culpa", pasos: ["Paso 8", "Paso 9"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "La Familia Después", uso: "Reparación de daños." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Romper el ciclo tóxico donde la madre sufre culpa por sus errores y el hijo la usa para manipular.",
+        fraseAncla: "Ni mi culpa reparaba el pasado, ni sus reproches le garantizaban el futuro.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo usabas la culpa (tuya o de tu madre) como moneda de cambio para manipular?", "¿De qué manera esta culpa estancaba a ambos en el dolor?"],
+          admitir: ["¿Cómo el inventario moral te enseñó que la culpa es egoísmo disfrazado?", "¿Cómo decidiste hacer reparaciones reales en lugar de solo pedir perdón llorando?"],
+          corregir: ["¿Cómo pones límites hoy al chantaje emocional?", "¿Qué acciones concretas realizas para enmendar sin caer en servilismo?"]
+        },
+        variaciones: [], palabrasClave: ["culpa", "chantaje", "manipulación"], advertenciaEtica: "No presentar el perdón como obligación. Enseñar a salir del rol de víctima/victimario.", advertenciaLider: "", noUsarPara: ["Justificar la manipulación"], esCatalogoBase: true, prioridad: 60, relacionados: []
+      },
+      {
+        id: "tema-021", titulo: "La familia después", tituloCorto: "La familia sanando", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de las Madres", evento: ["Semana de las Madres"], publico: ["General"], intensidad: "Media", momento: "Cierre", formato: "Didáctico", tipoTestimonio: "Inspirador", emocion: "Esperanza", pasos: ["Paso 12"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "Cap. La Familia Después", uso: "La reconstrucción del hogar." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Mostrar la esperanza y el trabajo continuo de reconstruir una familia tras la llegada al programa.",
+        fraseAncla: "La recuperación no hizo a mi familia perfecta, pero la hizo un lugar donde se puede respirar.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo era el infierno en tu casa antes del programa (gritos, silencios, tensión)?", "¿Cómo perdiste la esperanza de tener un hogar en paz?"],
+          admitir: ["¿Qué cambios empezaron a notarse en casa cuando TÚ empezaste a cambiar tu actitud en el programa?", "¿Cómo fue el proceso de paciencia para que los demás empezaran a confiar?"],
+          corregir: ["¿Cómo resuelven los conflictos hoy en tu familia utilizando los principios del programa?", "¿Cuál es el regalo más grande que han recibido como familia recuperada?"]
+        },
+        variaciones: [], palabrasClave: ["reconstrucción", "esperanza", "hogar"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Vender la idea de una familia perfecta sin problemas"], esCatalogoBase: true, prioridad: 70, relacionados: []
+      },
+
+      // === SEMANA DE LA JUVENTUD (7) ===
+      {
+        id: "tema-022", titulo: "De joven rebelde a líder de servicio", tituloCorto: "De rebelde a líder", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de la Juventud", evento: ["Semana de la Juventud"], publico: ["Jóvenes"], intensidad: "Media", momento: "Cierre", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Propósito", pasos: ["Paso 12"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Literatura de Liderazgo", seccion: "El joven en servicio", uso: "Canalizar la energía." }], librosRecomendados: [],
+        objetivo: "Motivar a los jóvenes a encontrar propósito a través del servicio en la Fraternidad.",
+        fraseAncla: "Toda la energía que usaba para destruirme, el programa me enseñó a usarla para levantar a otros.",
+        guiaTestimonio: {
+          detectar: ["¿Contra qué te rebelabas realmente y cómo eso te vaciaba por dentro?", "¿Cómo confundías la rebeldía con la libertad?"],
+          admitir: ["¿Qué viste en los líderes del grupo que te inspiró a dejar tu actitud a la defensiva?", "¿Qué se sintió la primera vez que se te confió una responsabilidad en el grupo?"],
+          corregir: ["¿Cómo ejerces el liderazgo hoy sin que se te suba el ego?", "¿De qué manera el servicio te mantiene a salvo de volver a tus viejas fugas?"]
+        },
+        variaciones: [], palabrasClave: ["liderazgo", "rebeldía", "servicio"], advertenciaEtica: "", advertenciaLider: "No endiosar al líder joven, mantener el enfoque en la gratitud.", noUsarPara: ["Fomentar egos en el servicio"], esCatalogoBase: true, prioridad: 10, relacionados: []
+      },
+      {
+        id: "tema-023", titulo: "Castillos en el aire: Las falsas expectativas", tituloCorto: "Castillos en el aire", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de la Juventud", evento: ["Semana de la Juventud"], publico: ["Jóvenes"], intensidad: "Media", momento: "Mitad", formato: "Didáctico", tipoTestimonio: "Didáctico", emocion: "Frustración", pasos: ["Paso 3", "Paso 4"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía Juvenil FGDLL", seccion: "Fantasías vs Realidad", uso: "Pisar tierra." }], librosRecomendados: [],
+        objetivo: "Abordar cómo las expectativas irreales destru বহুমestruyen el presente del joven.",
+        fraseAncla: "Vivía tan frustrado por la vida que soñaba, que me estaba perdiendo la vida que tenía.",
+        guiaTestimonio: {
+          detectar: ["¿Qué exigencias irreales tenías sobre ti mismo, tu futuro o tu familia?", "¿Cómo te evadías en la fantasía o las redes sociales para no lidiar con tu realidad?"],
+          admitir: ["¿Cómo te ayudó el grupo a pisar tierra y aceptar tu realidad (Paso 1 y 2)?", "¿Qué dolió de romper esas fantasías?"],
+          corregir: ["¿Cómo construyes tu vida hoy paso a paso, basado en la realidad?", "¿Qué significa para ti 'Solo por hoy' en tus metas personales?"]
+        },
+        variaciones: [], palabrasClave: ["expectativas", "fantasía", "realidad"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 20, relacionados: []
+      },
+      {
+        id: "tema-024", titulo: "Ansiedad: la fuga silenciosa", tituloCorto: "Ansiedad como fuga", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana de la Juventud", evento: ["Semana de la Juventud"], publico: ["Jóvenes"], intensidad: "Alta", momento: "Mitad", formato: "Panel corto", tipoTestimonio: "Crudo", emocion: "Miedo", pasos: ["Paso 10", "Paso 11"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Folletos FGDLL", seccion: "Salud Mental y Programa", uso: "La ansiedad de control." }], librosRecomendados: [],
+        objetivo: "Reconocer la ansiedad no solo como un diagnóstico, sino como el defecto de querer controlar el futuro.",
+        fraseAncla: "La ansiedad me devoraba porque quería tener el control de cosas que solo le corresponden a un Poder Superior.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo se manifestaba tu ansiedad en conductas destructivas (aislamiento, compulsiones, fugas)?", "¿Cómo querías controlar el futuro a toda costa?"],
+          admitir: ["¿En qué momento la ansiedad te puso de rodillas y pediste ayuda?", "¿Cómo el Paso 3 te enseñó a soltar lo que no puedes controlar?"],
+          corregir: ["¿Qué herramientas (respiración, juntas, tribuna, contacto consciente) usas hoy para frenar la ansiedad?", "¿Cómo vives el desprendimiento de los resultados hoy?"]
+        },
+        variaciones: [], palabrasClave: ["ansiedad", "control", "futuro"], advertenciaEtica: "No dar consejos médicos. Si alguien requiere medicación psiquiátrica, el grupo lo respeta y apoya, no lo juzga.", advertenciaLider: "Cuidar que no se usen diagnósticos clínicos complejos como excusa para no hacer inventario.", noUsarPara: ["Sustituir terapia o psiquiatra con tribuna"], esCatalogoBase: true, prioridad: 30, relacionados: []
+      },
+      {
+        id: "tema-025", titulo: "Autoestima: Valorarme sin inflar mi ego", tituloCorto: "Sana autoestima", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de la Juventud", evento: ["Semana de la Juventud"], publico: ["Jóvenes"], intensidad: "Media", momento: "Inicio", formato: "Individual", tipoTestimonio: "Didáctico", emocion: "Paz", pasos: ["Paso 7"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "12 Pasos y 12 Tradiciones", referencia: "Paso 7", uso: "La verdadera humildad vs inferioridad." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Diferenciar entre la soberbia y el sano amor propio basado en la humildad.",
+        fraseAncla: "Descubrí que sentirme la peor basura del mundo era otra forma de soberbia.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo oscilabas entre creerte superior a todos y sentirte que no valías nada?", "¿De qué formas te lastimababas por tu falta de valor personal?"],
+          admitir: ["¿Qué te enseñó el programa sobre la verdadera humildad (ser de un tamaño real)?", "¿Cómo aprendiste a aceptarte con tus defectos sin condenarte?"],
+          corregir: ["¿Cómo practicas el respeto hacia ti mismo hoy?", "¿De qué manera el servicio te ayuda a mantener una autoestima sana sin inflar el ego?"]
+        },
+        variaciones: [], palabrasClave: ["autoestima", "ego", "humildad"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Fomentar actitudes narcisistas"], esCatalogoBase: true, prioridad: 40, relacionados: []
+      },
+      {
+        id: "tema-026", titulo: "Mi oportunidad de vivir", tituloCorto: "Oportunidad de vivir", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de la Juventud", evento: ["Semana de la Juventud"], publico: ["Jóvenes"], intensidad: "Alta", momento: "Cierre", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Gratitud", pasos: ["Paso 12"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Principios", seccion: "Juventud y rescate", uso: "Gratitud por haber llegado joven." }], librosRecomendados: [],
+        objetivo: "La inmensa gratitud de haber encontrado la Fraternidad antes de perder más años de vida.",
+        fraseAncla: "Llegué creyendo que mi vida se había acabado, y el programa me regaló la juventud que no supe vivir.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo sentías que habías echado a perder tu juventud antes de tiempo?", "¿Qué cosas valiosas estabas a punto de perder para siempre?"],
+          admitir: ["¿Cómo asimilaste que no era 'demasiado tarde' para ti?", "¿Cómo fue rodearte de jóvenes que se estaban recuperando y divirtiendo sanamente?"],
+          corregir: ["¿Qué sueños estás construyendo hoy gracias a tu sobriedad emocional?", "¿Cómo le transmites al joven que recién llega que sí hay una salida?"]
+        },
+        variaciones: [], palabrasClave: ["oportunidad", "juventud", "gratitud"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 50, relacionados: []
+      },
+      {
+        id: "tema-027", titulo: "El dolor del crecimiento", tituloCorto: "Dolor del crecimiento", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de la Juventud", evento: ["Semana de la Juventud"], publico: ["Jóvenes"], intensidad: "Media", momento: "Mitad", formato: "Panel corto", tipoTestimonio: "Didáctico", emocion: "Aceptación", pasos: ["Paso 6", "Paso 10"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Como lo ve Bill", referencia: "Dolor: piedra de toque", uso: "El dolor como maestro." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Aceptar que madurar emocionalmente duele, pero es un dolor constructivo.",
+        fraseAncla: "El dolor ya no es mi enemigo; hoy entiendo que es la cuota que pago por madurar.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo evitabas cualquier tipo de frustración o dolor a través de fugas?", "¿De qué manera tu inmadurez te mantenía estancado?"],
+          admitir: ["¿Cuándo entendiste que los problemas en el programa eran oportunidades de crecimiento?", "¿Qué defecto de carácter te ha dolido más soltar?"],
+          corregir: ["¿Cómo enfrentas las frustraciones de la vida diaria hoy, sin huir?", "¿Cómo el Paso 10 te mantiene creciendo continuamente?"]
+        },
+        variaciones: [], palabrasClave: ["madurez", "dolor", "crecimiento"], advertenciaEtica: "", advertenciaLider: "Distinguir entre dolor sano (crecimiento) y sufrimiento opcional (victimización).", noUsarPara: ["Fomentar el masoquismo emocional"], esCatalogoBase: true, prioridad: 60, relacionados: []
+      },
+      {
+        id: "tema-028", titulo: "Diversión sin anestesia", tituloCorto: "Diversión sana", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana de la Juventud", evento: ["Semana de la Juventud"], publico: ["Jóvenes"], intensidad: "Baja", momento: "Inicio", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Alegría", pasos: ["Paso 12"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "Una visión para ti", uso: "La alegría de vivir libres." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Derribar el mito de que la vida en el programa es aburrida o gris.",
+        fraseAncla: "Descubrí que me podía reír hasta llorar sin necesidad de estar anestesiado.",
+        guiaTestimonio: {
+          detectar: ["¿Por qué creías que para divertirte o socializar necesitabas una máscara, fugas o excesos?", "¿Cómo era tu 'diversión' y cómo terminaba siempre (vacío, cruda moral)?"],
+          admitir: ["¿Cómo fue tu primera convivencia sana en la Fraternidad?", "¿Qué sentiste al experimentar alegría pura y recordar todo al día siguiente?"],
+          corregir: ["¿Cómo es tu vida social hoy?", "¿De qué manera demuestras que el programa es disfrutar la vida y no un castigo?"]
+        },
+        variaciones: [], palabrasClave: ["alegría", "convivencia", "anestesia"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 70, relacionados: []
+      },
+
+      // === DIVERSIDAD CON DIGNIDAD (5) ===
+      {
+        id: "tema-029", titulo: "Un refugio seguro para todos", tituloCorto: "Refugio inclusivo", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Diversidad", evento: ["Junta especial", "Aniversario"], publico: ["General"], intensidad: "Media", momento: "Inicio", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Paz", pasos: ["Tradición 3"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "12 Pasos y 12 Tradiciones", referencia: "Tradición 3", uso: "El único requisito es el deseo." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Transmitir que en el grupo no importa la orientación, el género ni el origen; el único requisito es querer recuperarse.",
+        fraseAncla: "Aquí no me preguntaron a quién amaba, me preguntaron si quería dejar de sufrir.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo la discriminación o el miedo al rechazo alimentaron tus defectos, fugas o aislamiento?", "¿De qué maneras te escondías para encajar en la sociedad?"],
+          admitir: ["¿Cómo fue la experiencia de llegar a FGDLL y ser tratado con dignidad y respeto absoluto?", "¿Qué significó para ti la Tercera Tradición?"],
+          corregir: ["¿Cómo ayudas a mantener el grupo libre de prejuicios hoy?", "¿De qué manera abrazas tu identidad completa desde la recuperación?"]
+        },
+        variaciones: [], palabrasClave: ["diversidad", "inclusión", "tradición 3"], advertenciaEtica: "Tema de extrema dignidad. No se permiten juicios morales, comentarios denigrantes o chistes sobre diversidad sexual o identidad.", advertenciaLider: "Cortar tajantemente cualquier falta de respeto en tribuna. FGDLL respeta la dignidad de todo ser humano.", noUsarPara: ["Debates políticos o religiosos sobre diversidad"], esCatalogoBase: true, prioridad: 10, relacionados: []
+      },
+      {
+        id: "tema-030", titulo: "La dignidad no se negocia", tituloCorto: "Dignidad intacta", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Diversidad", evento: ["General"], publico: ["General"], intensidad: "Alta", momento: "Mitad", formato: "Panel corto", tipoTestimonio: "Crudo", emocion: "Resiliencia", pasos: ["Paso 4", "Paso 8"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía de Apadrinamiento", seccion: "Respeto a la dignidad", uso: "Recuperar el valor personal." }], librosRecomendados: [],
+        objetivo: "Reconstruir la autoestima y la dignidad tras años de rechazo social o familiar.",
+        fraseAncla: "Mendigué amor en lugares equivocados, hasta que aquí aprendí que mi dignidad no tiene precio.",
+        guiaTestimonio: {
+          detectar: ["¿A qué abusos o humillaciones te sometiste por la necesidad desesperada de no ser rechazado?", "¿Cómo internalizaste el odio que la sociedad o tu familia proyectaba en ti?"],
+          admitir: ["¿Cómo te ayudó tu Poder Superior y el programa a limpiar esa vergüenza tóxica (Paso 4)?", "¿Qué se siente saberte un hijo amado y digno?"],
+          corregir: ["¿Cómo pones límites hoy a quienes no respetan tu dignidad?", "¿De qué forma usas tu resiliencia para ayudar a otros a valorarse?"]
+        },
+        variaciones: [], palabrasClave: ["dignidad", "autoestima", "rechazo"], advertenciaEtica: "Cuidar que el compartimiento no ataque directamente a instituciones (iglesias, estado), sino que se enfoque en la sanación interior del individuo.", advertenciaLider: "", noUsarPara: ["Generar resentimiento institucional"], esCatalogoBase: true, prioridad: 20, relacionados: []
+      },
+      {
+        id: "tema-031", titulo: "El dolor de esconderme", tituloCorto: "Dejar de esconderme", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Diversidad", evento: ["General"], publico: ["General"], intensidad: "Alta", momento: "Mitad", formato: "Individual", tipoTestimonio: "Crudo", emocion: "Miedo", pasos: ["Paso 5"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Doce Pasos", referencia: "Paso 5", uso: "El peso de los secretos." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "El poder liberador del Quinto Paso al contar nuestra verdad más profunda y ser aceptados.",
+        fraseAncla: "El clóset más oscuro en el que viví fue el miedo a que descubrieran quién era realmente.",
+        guiaTestimonio: {
+          detectar: ["¿Cuánto daño emocional y físico te causó llevar una doble vida o guardar secretos por miedo?", "¿Cómo esto alimentaba tus defectos de carácter (mentira, aislamiento)?"],
+          admitir: ["¿Cómo fue la experiencia liberadora de hacer tu Quinto Paso con alguien que no te juzgó?", "¿Qué peso se fue de tus hombros al decir tu verdad?"],
+          corregir: ["¿Cómo vives hoy en integridad y honestidad?", "¿Cómo cuidas de no volver a usar las mentiras como mecanismo de defensa?"]
+        },
+        variaciones: [], palabrasClave: ["secretos", "verdad", "quinto paso"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Forzar a otros a salir del clóset si no están listos"], esCatalogoBase: true, prioridad: 30, relacionados: []
+      },
+      {
+        id: "tema-032", titulo: "Ser visto sin ser juzgado", tituloCorto: "Visto sin juicio", estado: "Completo", sensibilidad: "normal",
+        categoria: "Diversidad", evento: ["General"], publico: ["General"], intensidad: "Media", momento: "Cierre", formato: "Panel largo", tipoTestimonio: "Inspirador", emocion: "Paz", pasos: ["Paso 2"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Principios", seccion: "Empatía", uso: "El poder del testimonio cruzado." }], librosRecomendados: [],
+        objetivo: "La sanación que ocurre cuando la comunidad valora a la persona por su interior.",
+        fraseAncla: "Vine buscando sanar un defecto y me encontré con personas que me vieron el alma.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo sentías que solo eras juzgado por tu apariencia, etiqueta u orientación?", "¿De qué forma te habías vuelto un juez duro de los demás también?"],
+          admitir: ["¿Cuándo sentiste la mirada amorosa y sin juicio del grupo hacia ti?", "¿Cómo esto te ayudó a dejar de juzgar a los demás compañeros?"],
+          corregir: ["¿Cómo practicas la tolerancia y la empatía en tus relaciones diarias?", "¿Cómo logras ver más allá de las diferencias superficiales en las personas?"]
+        },
+        variaciones: [], palabrasClave: ["juicio", "empatía", "alma"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 40, relacionados: []
+      },
+      {
+        id: "tema-033", titulo: "El terreno de los iguales", tituloCorto: "Terreno de iguales", estado: "Completo", sensibilidad: "normal",
+        categoria: "Diversidad", evento: ["General"], publico: ["General"], intensidad: "Baja", momento: "Inicio", formato: "Didáctico", tipoTestimonio: "Didáctico", emocion: "Unidad", pasos: ["Tradición 1"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "12 Tradiciones", referencia: "Tradición 1 y 2", uso: "Nadie es más ni menos." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Comprender que la enfermedad emocional iguala a todos; no hay estratos en la recuperación.",
+        fraseAncla: "El dolor nos igualó en el fondo, pero el programa nos unió en la recuperación.",
+        guiaTestimonio: {
+          detectar: ["¿De qué formas la soberbia te hacía sentir distinto o 'mejor' que los demás por tus etiquetas externas?", "¿O cómo el complejo de inferioridad te aislaba?"],
+          admitir: ["¿En qué momento entendiste que tu sufrimiento emocional era idéntico al de cualquier otro compañero en la sala?", "¿Qué barreras derribó esa revelación?"],
+          corregir: ["¿Cómo fomentas la unidad en tu grupo base hoy?", "¿Cómo te mantienes en el 'terreno de los iguales' sin creerte superior a nadie?"]
+        },
+        variaciones: [], palabrasClave: ["igualdad", "unidad", "soberbia"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Fomentar lucha de clases o identidades en el grupo"], esCatalogoBase: true, prioridad: 50, relacionados: []
+      },
+
+      // === CONCIENTIZACIÓN DEL SUICIDIO (CRISIS) (5) ===
+      {
+        id: "tema-034", titulo: "Cuando la muerte y la locura tocan la puerta", tituloCorto: "El fondo más oscuro", estado: "Completo", sensibilidad: "crisis",
+        categoria: "Suicidio", evento: ["Prevención", "Semana del Guerrero"], publico: ["General"], intensidad: "Alta", momento: "Mitad", formato: "Individual", tipoTestimonio: "Crudo", emocion: "Miedo", pasos: ["Paso 1"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "Hay una solución", uso: "La desesperanza total." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Poner en palabras el abismo de la depresión o la ideación suicida, y mostrar que pedir ayuda salva vidas.",
+        fraseAncla: "Estuve a un segundo de rendirme para siempre, pero el dolor me hizo pedir ayuda una última vez.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo se sentía el peso de la desesperanza absoluta que te llevó a contemplar no querer vivir?", "¿Qué voces o mentiras te decía tu enfermedad (que no valías, que no había salida)?"],
+          admitir: ["¿Cuál fue el milagro, la persona o el destello de luz que detuvo tu mano y te llevó al programa?", "¿Qué alivio sentiste al decir en voz alta 'ya no quiero vivir, ayúdenme' y no ser juzgado?"],
+          corregir: ["¿Qué herramientas de emergencia usas hoy cuando la oscuridad intenta volver?", "¿Cómo el servicio y los Pasos te mantienen amarrado a la vida?"]
+        },
+        variaciones: [], palabrasClave: ["suicidio", "depresión", "fondo"], advertenciaEtica: "CRÍTICO: No describir métodos suicidas. Solo hablar del dolor emocional y de la SALIDA. Reiterar que la depresión clínica requiere atención profesional.", advertenciaLider: "Estar alerta a la reacción del grupo. Ofrecer contacto de ayuda al final de la junta.", noUsarPara: ["Dar detalles morbosos de intentos", "Sugerir que rezar sustituye la terapia psiquiátrica en crisis agudas"], esCatalogoBase: true, prioridad: 10, relacionados: []
+      },
+      {
+        id: "tema-035", titulo: "Quédate un día más", tituloCorto: "Quédate un día más", estado: "Completo", sensibilidad: "crisis",
+        categoria: "Suicidio", evento: ["Prevención"], publico: ["General"], intensidad: "Alta", momento: "Cierre", formato: "Inspirador", tipoTestimonio: "Inspirador", emocion: "Esperanza", pasos: ["Paso 11"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Literatura de Apoyo", seccion: "Solo por hoy", uso: "La magia de postergar la destrucción." }], librosRecomendados: [],
+        objetivo: "Transmitir la fuerza del programa de 'Solo por Hoy' a personas en crisis.",
+        fraseAncla: "Me prometí que si mañana seguía doliendo igual, me iría. Pero el programa me enseñó a quedarme solo por hoy, y el mañana cambió.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo la idea de vivir el resto de tu vida con ese dolor te resultaba insoportable?", "¿Cómo el futuro se veía como un muro negro sin salida?"],
+          admitir: ["¿Cómo te enseñaron a fragmentar tu vida en 24 horas para hacerla soportable?", "¿Qué personas te sostuvieron esos primeros días donde cada minuto pesaba?"],
+          corregir: ["¿De qué maravillas de tu vida actual te habrías perdido si no te hubieras quedado?", "¿Cómo es tu pacto diario con la vida hoy?"]
+        },
+        variaciones: [], palabrasClave: ["solo por hoy", "24 horas", "esperanza"], advertenciaEtica: "Enfocar 100% en la esperanza y en la filosofía de 24 horas aplicadas a la supervivencia emocional.", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 20, relacionados: []
+      },
+      {
+        id: "tema-036", titulo: "No eres una carga, el mundo es mejor contigo", tituloCorto: "No eres una carga", estado: "Completo", sensibilidad: "crisis",
+        categoria: "Suicidio", evento: ["Prevención"], publico: ["General"], intensidad: "Alta", momento: "Mitad", formato: "Panel corto", tipoTestimonio: "Didáctico", emocion: "Amor", pasos: ["Paso 2"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Folletos FGDLL", seccion: "Autoengaños", uso: "Romper la mentira de la depresión." }], librosRecomendados: [],
+        objetivo: "Desmontar la mentira central de la depresión: creer que los demás estarían mejor sin uno.",
+        fraseAncla: "La depresión me convenció de que yo era un estorbo; el grupo me demostró que yo era necesario.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo la enfermedad te convencía de que eras una carga para tu familia y amigos?", "¿Cómo usabas esa culpa para alimentar tu deseo de desaparecer?"],
+          admitir: ["¿Cómo el padrino o el grupo rompieron esa mentira al darte amor incondicional?", "¿Qué significó sentirte útil por primera vez en el grupo?"],
+          corregir: ["¿Cómo silencias hoy esa voz destructiva cuando intenta regresar?", "¿Cómo le demuestras a alguien que llega que su vida es valiosa para ti?"]
+        },
+        variaciones: [], palabrasClave: ["carga", "depresión", "valor"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Hacer sentir culpables a quienes tienen estos pensamientos"], esCatalogoBase: true, prioridad: 30, relacionados: []
+      },
+      {
+        id: "tema-037", titulo: "Una razón para creer", tituloCorto: "Razón para creer", estado: "Completo", sensibilidad: "crisis",
+        categoria: "Suicidio", evento: ["Prevención"], publico: ["General"], intensidad: "Media", momento: "Mitad", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Paz", pasos: ["Paso 2", "Paso 3"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "12 Pasos", referencia: "Paso 2", uso: "La devolución del sano juicio." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Cómo el recuperar un Poder Superior da un ancla para no atentar contra la vida.",
+        fraseAncla: "Cuando yo no tuve fuerzas para creer en mí, me apoyé en la fe de los que ya habían sobrevivido.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo el vacío espiritual te dejó sin defensas ante las crisis de la vida?", "¿De qué manera intentaste llenar ese vacío (fugas) hasta que no funcionó más?"],
+          admitir: ["¿Cómo encontraste un Poder Superior que tenía sentido para ti (el grupo, el amor, Dios)?", "¿Cómo esa creencia te quitó la obsesión de destruirte?"],
+          corregir: ["¿Cómo tu vida espiritual te protege hoy del abismo?", "¿Qué acciones te mantienen conectado a la vida?"]
+        },
+        variaciones: [], palabrasClave: ["poder superior", "fe", "salvación"], advertenciaEtica: "El Poder Superior debe ser libre y no impuesto, acorde a la literatura.", advertenciaLider: "", noUsarPara: ["Imponer dogmas religiosos para curar la depresión"], esCatalogoBase: true, prioridad: 40, relacionados: []
+      },
+      {
+        id: "tema-038", titulo: "La vida útil y feliz es posible", tituloCorto: "Vida útil y feliz", estado: "Completo", sensibilidad: "crisis",
+        categoria: "Suicidio", evento: ["Prevención"], publico: ["General"], intensidad: "Alta", momento: "Cierre", formato: "Panel largo", tipoTestimonio: "Inspirador", emocion: "Alegría", pasos: ["Paso 12"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Libro Azul", referencia: "Promesas", uso: "La promesa cumplida tras el dolor." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "El testimonio final de triunfo: pasar del borde de la muerte a una vida plena y llena de servicio.",
+        fraseAncla: "Si me hubiera ido aquel día, jamás habría conocido las promesas que el programa tenía para mí.",
+        guiaTestimonio: {
+          detectar: ["Brevemente: ¿Qué tan profundo era el agujero en el que estabas?", "¿Cómo se veía tu 'callejón sin salida'?"],
+          admitir: ["¿Qué milagros empezaron a ocurrir en tu interior al trabajar los Pasos?", "¿Cómo fue regresar a la vida, sentir alegría de nuevo?"],
+          corregir: ["¿Qué aspecto de tu vida actual, de paz o de familia, es un testimonio vivo de recuperación?", "¿Cuál es tu mensaje para quien hoy está sentado pensando que no hay salida?"]
+        },
+        variaciones: [], palabrasClave: ["promesas", "felicidad", "vida útil"], advertenciaEtica: "", advertenciaLider: "Es un tema de clausura para eventos de prevención. Debe ser sumamente luminoso y centrado en la solución.", noUsarPara: [], esCatalogoBase: true, prioridad: 50, relacionados: []
+      },
+
+      // === NAVIDAD Y CIERRE DE AÑO (5) ===
+      {
+        id: "tema-039", titulo: "La silla vacía en Navidad", tituloCorto: "La silla vacía", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Navidad", evento: ["Posada", "Cierre de año"], publico: ["General"], intensidad: "Alta", momento: "Mitad", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Tristeza", pasos: ["Paso 11"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía de Duelo", seccion: "Pérdidas y festividades", uso: "Cómo transitar el dolor en fechas clave." }], librosRecomendados: [],
+        objetivo: "Transitar el duelo por la pérdida (muerte, ruptura, separación) durante las fiestas decembrinas en sobriedad.",
+        fraseAncla: "Aprendí a abrazar mi dolor sin tener que anestesiarlo para soportar las fiestas.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo usabas las fiestas antes para fugarte del dolor de tus pérdidas?", "¿De qué manera el ambiente festivo te hacía sentir más solo?"],
+          admitir: ["¿Cómo fue la primera Navidad sobrio/consciente enfrentando la realidad de una silla vacía?", "¿Qué apoyo encontraste en tus compañeros del grupo?"],
+          corregir: ["¿Cómo honras hoy a quienes ya no están sin destruir tu propio presente?", "¿Qué rituales sanos tienes ahora para pasar estas fechas en paz?"]
+        },
+        variaciones: [], palabrasClave: ["duelo", "navidad", "ausencia"], advertenciaEtica: "Validar el dolor del duelo. No usar positivismo tóxico ('no llores, está en un lugar mejor').", advertenciaLider: "", noUsarPara: ["Obligar a la gente a estar feliz en Navidad"], esCatalogoBase: true, prioridad: 10, relacionados: []
+      },
+      {
+        id: "tema-040", titulo: "Cuando diciembre duele", tituloCorto: "Cuando diciembre duele", estado: "Completo", sensibilidad: "normal",
+        categoria: "Navidad", evento: ["Junta de diciembre"], publico: ["General"], intensidad: "Media", momento: "Inicio", formato: "Didáctico", tipoTestimonio: "Crudo", emocion: "Tristeza", pasos: ["Paso 1"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Grapevine", referencia: "Artículos de época navideña", uso: "La melancolía de fin de año." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Abordar la melancolía estacional y evitar recaídas emocionales o físicas en fin de año.",
+        fraseAncla: "La presión de tener que ser feliz en diciembre casi me hace recaer; tuve que aceptar que tenía derecho a no estar bien.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo la presión social de las festividades disparaba tu ansiedad o tus ganas de fugarte?", "¿Qué expectativas irreales tenías de cómo 'debía ser' la Navidad?"],
+          admitir: ["¿En qué momento aceptaste que diciembre es solo un mes más y no tienes obligación de tener la familia perfecta de los comerciales?", "¿Cómo el grupo te sirvió de refugio cuando las calles eran puro exceso?"],
+          corregir: ["¿Cómo cuidas tus límites y tu sobriedad en eventos sociales hoy?", "¿De qué manera vives estas fechas un día a la vez?"]
+        },
+        variaciones: [], palabrasClave: ["melancolía", "presión", "diciembre"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 20, relacionados: []
+      },
+      {
+        id: "tema-041", titulo: "Cerrando ciclos: El balance de un año", tituloCorto: "Cerrando ciclos", estado: "Completo", sensibilidad: "normal",
+        categoria: "Navidad", evento: ["Junta de fin de año"], publico: ["General"], intensidad: "Baja", momento: "Mitad", formato: "Didáctico", tipoTestimonio: "Didáctico", emocion: "Paz", pasos: ["Paso 10"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Doce Pasos", referencia: "Paso 10", uso: "Inventario continuo." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Enseñar a hacer un balance emocional del año sin culpas, reconociendo el crecimiento.",
+        fraseAncla: "Cerrar un ciclo no es borrar el pasado, es quedarme con la lección y soltar el dolor.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo solías terminar los años antes del programa (lleno de deudas emocionales, promesas vacías, remordimientos)?", "¿Qué tanto te castigabas por lo que no habías logrado?"],
+          admitir: ["¿Cómo el programa te enseñó a hacer un inventario constructivo y perdonarte los errores de este año?", "¿Qué fue lo más difícil de soltar este ciclo?"],
+          corregir: ["¿Cómo cierras el año hoy en paz con tu Poder Superior y tus compañeros?", "¿Qué propósitos reales, espirituales y no materiales tienes para tu próximo día 24 horas?"]
+        },
+        variaciones: [], palabrasClave: ["ciclos", "balance", "paso 10"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 30, relacionados: []
+      },
+      {
+        id: "tema-042", titulo: "Aprendiendo a perder", tituloCorto: "Aprender a perder", estado: "Completo", sensibilidad: "normal",
+        categoria: "Navidad", evento: ["Cierre de año"], publico: ["General"], intensidad: "Media", momento: "Mitad", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Aceptación", pasos: ["Paso 3"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Folletos FGDLL", seccion: "Aceptación", uso: "Soltar la derrota." }], librosRecomendados: [],
+        objetivo: "Aceptar las pérdidas materiales, de relaciones o estatus del año como parte del proceso de la vida.",
+        fraseAncla: "Mi mayor victoria este año fue aprender a soltar lo que ya no me pertenecía sin destruirme.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo reaccionabas antes ante la pérdida (berrinches, victimización, fugas)?", "¿Cómo tu ego te impedía aceptar que las cosas no salieran a tu manera?"],
+          admitir: ["¿Qué pérdida significativa tuviste este año y cómo la manejaste con las herramientas del programa?", "¿Cómo dolió someter la voluntad?"],
+          corregir: ["¿Qué libertad has encontrado al dejar de pelear contra la realidad?", "¿Cómo agradeces hoy incluso aquello que se fue?"]
+        },
+        variaciones: [], palabrasClave: ["pérdida", "aceptación", "derrota"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 40, relacionados: []
+      },
+      {
+        id: "tema-043", titulo: "No todo lo perdido fue fracaso", tituloCorto: "No todo fue fracaso", estado: "Completo", sensibilidad: "normal",
+        categoria: "Navidad", evento: ["Cierre de año"], publico: ["General"], intensidad: "Baja", momento: "Cierre", formato: "Inspirador", tipoTestimonio: "Inspirador", emocion: "Gratitud", pasos: ["Paso 11"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Principios", seccion: "Resiliencia", uso: "Reencuadrar la historia." }], librosRecomendados: [],
+        objetivo: "Cerrar el año con gratitud, comprendiendo que a veces los planes arruinados son protección.",
+        fraseAncla: "Agradezco a mi Poder Superior por las puertas que me cerró este año, porque no me convenían.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo tu visión de túnel te hacía creer que un plan frustrado era el fin del mundo?", "¿Cuánto sufrías por intentar forzar situaciones que te hacían daño?"],
+          admitir: ["¿En qué momento de este año te diste cuenta de que una aparente 'tragedia' fue en realidad una bendición disfrazada?", "¿Cómo el grupo te ayudó a ver el lado espiritual del problema?"],
+          corregir: ["¿Cómo enfrentas el año nuevo con fe en lugar de miedo?", "¿Cómo es tu relación de confianza con la vida hoy?"]
+        },
+        variaciones: [], palabrasClave: ["fracaso", "gratitud", "fe"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 50, relacionados: []
+      },
+
+      // === SEMANA DEL GUERRERO DE LA LUZ (5) ===
+      {
+        id: "tema-044", titulo: "Todo guerrero tuvo miedo", tituloCorto: "Todo guerrero tuvo miedo", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana del Guerrero", evento: ["Semana del Guerrero"], publico: ["Participantes"], intensidad: "Media", momento: "Inicio", formato: "Individual", tipoTestimonio: "Inspirador", emocion: "Valor", pasos: ["Paso 4"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Identidad del Guerrero", seccion: "El Miedo", uso: "Desmitificar al valiente." }], librosRecomendados: [],
+        objetivo: "Explicar que la verdadera valentía (ser Guerrero de la Luz) no es la ausencia de miedo, sino actuar a pesar de él.",
+        fraseAncla: "Ser un Guerrero no significa no tener miedo; significa hacer lo correcto aunque me tiemblen las piernas.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo el miedo paralizaba tu vida (miedo al fracaso, al rechazo, a la soledad)?", "¿Qué máscaras de 'fuerte' te ponías para que nadie viera tu terror interno?"],
+          admitir: ["¿Cómo te demostró el programa que está bien tener miedo?", "¿Cuál fue tu primer acto de valor real dentro del grupo (hablar en tribuna, pedir un servicio)?"],
+          corregir: ["¿Cómo enfrentas tus miedos hoy con la literatura y el apoyo de tus compañeros?", "¿De qué manera conviertes hoy el miedo en acción constructiva?"]
+        },
+        variaciones: [], palabrasClave: ["miedo", "valentía", "guerrero"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Fomentar actitudes temerarias o irresponsables"], esCatalogoBase: true, prioridad: 10, relacionados: []
+      },
+      {
+        id: "tema-045", titulo: "Ya no soy culpable, soy responsable", tituloCorto: "Responsable, no culpable", estado: "Completo", sensibilidad: "sensible",
+        categoria: "Semana del Guerrero", evento: ["Semana del Guerrero"], publico: ["Participantes"], intensidad: "Alta", momento: "Mitad", formato: "Didáctico", tipoTestimonio: "Didáctico", emocion: "Paz", pasos: ["Paso 8"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Guía FGDLL", seccion: "Responsabilidad", uso: "Diferenciar culpa de responsabilidad." }], librosRecomendados: [],
+        objetivo: "Transición crucial de la culpa paralizante hacia la responsabilidad activa que repara el daño.",
+        fraseAncla: "La culpa me mantenía llorando en el piso; la responsabilidad me levantó a pedir perdón y cambiar.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo usabas la culpa como un pretexto perfecto para no cambiar tus actitudes?", "¿De qué manera el auto-castigo te hacía sentir que ya estabas 'pagando' tus errores?"],
+          admitir: ["¿Cuándo entendiste la diferencia gigante entre sentirte culpable y hacerte responsable?", "¿Cómo fue el proceso de perdonarte a ti mismo en tu inventario?"],
+          corregir: ["¿Qué acciones tomas hoy inmediatamente cuando te equivocas?", "¿Cómo tu sentido de responsabilidad ha sanado tus relaciones actuales?"]
+        },
+        variaciones: [], palabrasClave: ["culpa", "responsabilidad", "cambio"], advertenciaEtica: "La culpa es egoísmo; el líder debe reforzar que la fraternidad busca acciones de cambio, no golpes de pecho.", advertenciaLider: "", noUsarPara: ["Promover autoflagelación"], esCatalogoBase: true, prioridad: 20, relacionados: []
+      },
+      {
+        id: "tema-046", titulo: "Caminar a través del fuego", tituloCorto: "Caminar el fuego", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana del Guerrero", evento: ["Semana del Guerrero"], publico: ["Participantes"], intensidad: "Media", momento: "Mitad", formato: "Panel corto", tipoTestimonio: "Crudo", emocion: "Resiliencia", pasos: ["Paso 10"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "Grapevine", referencia: "Problemas en sobriedad", uso: "Enfrentar la vida sin evadirse." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Compartir cómo se atraviesan las crisis de la vida real (problemas económicos, enfermedades) utilizando los principios.",
+        fraseAncla: "Antes, un problema pequeño me mandaba a la lona. Hoy crucé el fuego sin quemarme y sin fugarme.",
+        guiaTestimonio: {
+          detectar: ["¿Cuál era tu mecanismo de fuga favorito al primer síntoma de un problema real?", "¿Cómo dejabas todo a medias por falta de tolerancia a la frustración?"],
+          admitir: ["¿Qué crisis viviste ya estando en el programa y cómo fue enfrentarla 'a capella' (consciente)?", "¿De qué manera el grupo fue tu soporte en esa prueba de fuego?"],
+          corregir: ["¿Cómo es tu resiliencia hoy ante las adversidades?", "¿Qué lección de fe te dejó caminar ese problema de la mano de tu Poder Superior?"]
+        },
+        variaciones: [], palabrasClave: ["resiliencia", "crisis", "adversidad"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 30, relacionados: []
+      },
+      {
+        id: "tema-047", titulo: "La rendición del ego: La espada del Guerrero", tituloCorto: "Rendición del ego", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana del Guerrero", evento: ["Semana del Guerrero"], publico: ["Líderes", "Participantes"], intensidad: "Media", momento: "Cierre", formato: "Individual", tipoTestimonio: "Didáctico", emocion: "Paz", pasos: ["Paso 3", "Paso 7"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "12 Pasos", referencia: "Paso 7", uso: "La humildad como fuerza." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Entender que la verdadera fuerza de un Guerrero de la Luz reside en su humildad y rendición ante su Poder Superior.",
+        fraseAncla: "Gané la batalla más importante de mi vida el día que bajé las armas y me declaré derrotado.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo tu ego te mantenía en constante guerra con el mundo, queriendo tener siempre la razón?", "¿Cuánto cansancio físico y mental te causaba esa pelea absurda?"],
+          admitir: ["¿Cómo fue la experiencia de soltar el control (Paso 3)?", "¿Qué se sintió dejar de pelear contigo mismo y con los demás?"],
+          corregir: ["¿Cómo practicas la rendición diaria hoy en situaciones que te molestan?", "¿Qué significa para ti hoy tener 'humildad'?"]
+        },
+        variaciones: [], palabrasClave: ["rendición", "ego", "humildad"], advertenciaEtica: "", advertenciaLider: "Rendirse en este contexto significa soltar la terquedad, no fomentar el conformismo.", noUsarPara: [], esCatalogoBase: true, prioridad: 40, relacionados: []
+      },
+      {
+        id: "tema-048", titulo: "Manos que dan jamás quedan vacías", tituloCorto: "Manos que dan", estado: "Completo", sensibilidad: "normal",
+        categoria: "Semana del Guerrero", evento: ["Semana del Guerrero"], publico: ["General"], intensidad: "Baja", momento: "Cierre", formato: "Inspirador", tipoTestimonio: "Inspirador", emocion: "Amor", pasos: ["Paso 12"],
+        fuentePrincipal: "FGDLL", fuenteAA: [], fuenteFGDLL: [{ obra: "Identidad", seccion: "El Servicio", uso: "Dar lo que se nos dio." }], librosRecomendados: [],
+        objetivo: "Cerrar la semana inspirando a la acción: el servicio a los demás es la máxima expresión del Guerrero.",
+        fraseAncla: "Llegué a esta Fraternidad con las manos vacías, y se me llenaron cuando empecé a dárselas a otros.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo era tu vida cuando giraba egoístamente solo en torno a tus propias necesidades?", "¿Cómo eso te dejaba un vacío insaciable?"],
+          admitir: ["¿Qué te enseñaron los servidores más veteranos cuando llegaste destrozado?", "¿Cuál fue el primer acto de servicio desinteresado que hiciste en tu vida?"],
+          corregir: ["¿Cómo vives hoy la promesa del Paso 12 (llevar el mensaje)?", "¿De qué manera dar amor a otros está curando hoy tu propia vida?"]
+        },
+        variaciones: [], palabrasClave: ["servicio", "dar", "propósito"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: [], esCatalogoBase: true, prioridad: 50, relacionados: []
+      },
+
+      // === PASOS 1 Y 2 (Extras para completar 50) ===
+      {
+        id: "tema-049", titulo: "Mi fondo de sufrimiento no tuvo que ser la muerte", tituloCorto: "Elevar el fondo", estado: "Completo", sensibilidad: "normal",
+        categoria: "Pasos", evento: ["Paso 1"], publico: ["General"], intensidad: "Media", momento: "Inicio", formato: "Individual", tipoTestimonio: "Didáctico", emocion: "Aceptación", pasos: ["Paso 1"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "12 Pasos", referencia: "Paso 1", uso: "Fondo emocional vs fondo físico." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Ayudar a quienes dudan si 'han sufrido suficiente' a reconocer el fondo emocional.",
+        fraseAncla: "No tuve que perderlo todo en la calle para darme cuenta de que por dentro ya estaba muerto.",
+        guiaTestimonio: {
+          detectar: ["¿Cómo te autoengañabas diciendo 'yo no estoy tan mal como los demás'?", "¿Cuáles fueron las pérdidas invisibles (confianza, respeto, paz) que normalizaste?"],
+          admitir: ["¿Cuál fue el momento de claridad donde el dolor emocional te doblegó?", "¿Qué sentiste al admitir tu derrota frente a tu forma de vivir?"],
+          corregir: ["¿Cómo mantienes viva la memoria de tu fondo hoy para no regresar?", "¿Cómo evitas jugar con fuego en el presente?"]
+        },
+        variaciones: [], palabrasClave: ["fondo", "negación", "Paso 1"], advertenciaEtica: "", advertenciaLider: "", noUsarPara: ["Minimizar la experiencia de otros"], esCatalogoBase: true, prioridad: 60, relacionados: []
+      },
+      {
+        id: "tema-050", titulo: "Un poder superior que sí me entiende", tituloCorto: "Poder Superior comprensivo", estado: "Completo", sensibilidad: "normal",
+        categoria: "Pasos", evento: ["Paso 2", "Paso 3"], publico: ["General"], intensidad: "Media", momento: "Mitad", formato: "Inspirador", tipoTestimonio: "Inspirador", emocion: "Paz", pasos: ["Paso 2"],
+        fuentePrincipal: "AA", fuenteAA: [{ obra: "12 Pasos", referencia: "Paso 2", uso: "Dios como cada quien lo conciba." }], fuenteFGDLL: [], librosRecomendados: [],
+        objetivo: "Desmitificar al Dios castigador de la infancia y encontrar un Poder Superior amoroso.",
+        fraseAncla: "Me reconcilié con la vida cuando dejé de temerle a un Dios que castiga y empecé a confiar en un Poder que ama.",
+        guiaTestimonio: {
+          detectar: ["¿Qué ideas tóxicas o de castigo tenías sobre Dios o la espiritualidad?", "¿Cómo tu resentimiento te alejó de buscar apoyo espiritual?"],
+          admitir: ["¿Cómo el grupo te funcionó como tu primer Poder Superior tangible?", "¿Cómo empezaste a concebir un Dios (o Fuerza) que sí funcionaba para ti?"],
+          corregir: ["¿Cómo es tu relación de confianza con ese Poder hoy en tu día a día?", "¿Qué diferencia notas al enfrentar los problemas sabiendo que no estás solo?"]
+        },
+        variaciones: [], palabrasClave: ["poder superior", "espiritualidad", "Paso 2"], advertenciaEtica: "Respetar absolutamente todas las creencias. No promover religiones específicas en el grupo.", advertenciaLider: "FGDLL es espiritual, no religioso.", noUsarPara: ["Evangelizar o imponer dogmas"], esCatalogoBase: true, prioridad: 70, relacionados: []
+      }
+    ];
+
+    // ============================================================================
+    // ESTADO Y LÓGICA DE LA APLICACIÓN
+    // ============================================================================
+    let favorites = JSON.parse(localStorage.getItem('fgdll_favs')) || [];
+    let isShowingFavs = false;
+
+    // Elementos DOM Filtros y Grid
+    const grid = document.getElementById('grid');
+    const fSearch = document.getElementById('f-search');
+    const fCat = document.getElementById('f-cat');
+    const fSens = document.getElementById('f-sens');
+    const fMomento = document.getElementById('f-momento');
+    const fIntensidad = document.getElementById('f-intensidad');
+    const btnFavs = document.getElementById('btn-favs');
+    
+    // Elementos Modal Detalle
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('close-modal');
+    let currentTema = null;
+
+    // Elementos Editor
+    const editorModalOverlay = document.getElementById('editor-modal-overlay');
+    const btnOpenEditor = document.getElementById('btn-open-editor');
+    const closeEditor = document.getElementById('close-editor');
+    
+    // Elementos Importador
+    const importadorModalOverlay = document.getElementById('importador-modal-overlay');
+    const btnOpenImportador = document.getElementById('btn-open-importador');
+    const closeImportador = document.getElementById('close-importador');
+    let pendingImportedThemes = [];
+
+    // Inicializar
+    function init() {
+      renderCards();
+      setupEventListeners();
+    }
+
+    // Renderizar Tarjetas
+    function renderCards() {
+      const sTerm = fSearch.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const sCat = fCat.value;
+      const sSens = fSens.value;
+      const sMomento = fMomento.value;
+      const sInten = fIntensidad.value;
+
+      grid.innerHTML = '';
+      let count = 0;
+
+      dataTemas.forEach(tema => {
+        // Favoritos filter
+        if (isShowingFavs && !favorites.includes(tema.id)) return;
+
+        // Búsqueda textual
+        const textToSearch = `${tema.titulo} ${tema.fraseAncla} ${tema.palabrasClave?.join(' ')} ${tema.categoria}`.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        if (sTerm && !textToSearch.includes(sTerm)) return;
+        
+        // Dropdowns
+        if (sCat !== 'all' && tema.categoria !== sCat) return;
+        if (sSens !== 'all' && tema.sensibilidad !== sSens) return;
+        if (sMomento !== 'all' && tema.momento !== sMomento) return;
+        if (sInten !== 'all' && tema.intensidad !== sInten) return;
+
+        // Crear Tarjeta
+        const isFav = favorites.includes(tema.id);
+        const barClass = tema.sensibilidad === 'crisis' ? 'bar-crisis' : (tema.sensibilidad === 'sensible' ? 'bar-sensible' : 'bar-normal');
+        
+        let tagsHtml = `<span class="tag tag-cat">${tema.categoria}</span>`;
+        if (tema.sensibilidad === 'crisis') tagsHtml += `<span class="tag tag-crisis">Crisis / Riesgo</span>`;
+        else if (tema.sensibilidad === 'sensible') tagsHtml += `<span class="tag tag-sensible">Tema Sensible</span>`;
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="card-top-bar ${barClass}"></div>
+          <div class="card-tags">${tagsHtml}</div>
+          <h3 class="card-title">${tema.titulo}</h3>
+          <p class="card-quote">"${tema.fraseAncla}"</p>
+          <div class="card-meta">
+            Intensidad: <strong>${tema.intensidad}</strong> &nbsp;•&nbsp; 
+            Momento: <strong>${tema.momento}</strong><br>
+            Paso/Tradición: <strong>${tema.pasos?.join(', ') || 'N/A'}</strong>
+          </div>
+          <div class="card-actions">
+            <button class="btn-read" onclick="openModal('${tema.id}')">Ver Ficha y Preguntas</button>
+            <button class="btn-fav ${isFav ? 'active' : ''}" onclick="toggleFav('${tema.id}', this)" title="Guardar a favoritos">
+              ${isFav ? '★' : '☆'}
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+        count++;
+      });
+
+      if(count === 0) {
+        grid.innerHTML = '<p style="color:var(--text-muted); font-style:italic;">No se encontraron temas con esos criterios.</p>';
+      }
+    }
+
+    // Eventos
+    function setupEventListeners() {
+      fSearch.addEventListener('input', renderCards);
+      fCat.addEventListener('change', renderCards);
+      fSens.addEventListener('change', renderCards);
+      fMomento.addEventListener('change', renderCards);
+      fIntensidad.addEventListener('change', renderCards);
+
+      btnFavs.addEventListener('click', () => {
+        isShowingFavs = !isShowingFavs;
+        btnFavs.classList.toggle('active', isShowingFavs);
+        renderCards();
+      });
+
+      // Cerrar Modales
+      closeModal.addEventListener('click', () => modal.style.display = 'none');
+      closeEditor.addEventListener('click', () => editorModalOverlay.style.display = 'none');
+      closeImportador.addEventListener('click', () => {
+        importadorModalOverlay.style.display = 'none';
+        document.getElementById('imp-success-actions').style.display = 'none';
+      });
+      
+      [modal, editorModalOverlay, importadorModalOverlay].forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+          if(e.target === overlay) {
+            overlay.style.display = 'none';
+            if (overlay === importadorModalOverlay) {
+              document.getElementById('imp-success-actions').style.display = 'none';
             }
-        ];
-
-        let seleccionados = new Set();
-        const container = document.getElementById('card-container');
-        const countSpan = document.getElementById('count');
-
-        // Renderizar las tarjetas
-        temas.forEach((tema, index) => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.dataset.index = index;
-            card.onclick = () => toggleCard(card, index);
-
-            let html = `
-                <div class="card-checkbox"></div>
-                <h3 class="theme-title">${tema.title}</h3>
-                <div class="short-phrase">"${tema.short}"</div>
-            `;
-            
-            if(tema.text) {
-                html += `<div class="theme-text">${tema.text}</div>`;
-            }
-            if(tema.source) {
-                html += `<div class="theme-source">${tema.source}</div>`;
-            }
-
-            card.innerHTML = html;
-            container.appendChild(card);
+          }
         });
+      });
 
-        function toggleCard(card, index) {
-            card.classList.toggle('selected');
-            if (seleccionados.has(index)) {
-                seleccionados.delete(index);
-            } else {
-                seleccionados.add(index);
-            }
-            countSpan.textContent = seleccionados.size;
+      // Abrir Editor / Importador
+      btnOpenEditor.addEventListener('click', () => editorModalOverlay.style.display = 'flex');
+      btnOpenImportador.addEventListener('click', () => importadorModalOverlay.style.display = 'flex');
+
+      // Botones Exportación Ficha Detalle
+      document.getElementById('btn-copy-wp').addEventListener('click', copyForWP);
+      document.getElementById('btn-copy-q').addEventListener('click', copyQuestions);
+      document.getElementById('btn-download').addEventListener('click', downloadTXT);
+      document.getElementById('btn-print').addEventListener('click', () => window.print());
+
+      // Editor Actions
+      document.getElementById('btn-generate-json').addEventListener('click', generateNewThemeJSON);
+      document.getElementById('btn-copy-json').addEventListener('click', copyGeneratedJSON);
+
+      // Importador Actions
+      document.getElementById('btn-validate-json').addEventListener('click', validatePastedJSON);
+      document.getElementById('btn-merge-json').addEventListener('click', mergeImportedThemes);
+    }
+
+    // Funciones Favoritos
+    window.toggleFav = function(id, btnElement) {
+      if(favorites.includes(id)) {
+        favorites = favorites.filter(favId => favId !== id);
+        btnElement.innerHTML = '☆';
+        btnElement.classList.remove('active');
+        showToast("Eliminado de favoritos");
+      } else {
+        favorites.push(id);
+        btnElement.innerHTML = '★';
+        btnElement.classList.add('active');
+        showToast("Guardado en favoritos");
+      }
+      localStorage.setItem('fgdll_favs', JSON.stringify(favorites));
+      if(isShowingFavs) renderCards();
+    };
+
+    // Abrir Ficha Técnica
+    window.openModal = function(id) {
+      currentTema = dataTemas.find(t => t.id === id);
+      if(!currentTema) return;
+
+      // Tags
+      let tagsHtml = `<span class="tag tag-cat">${currentTema.categoria}</span>`;
+      if (currentTema.sensibilidad === 'crisis') tagsHtml += `<span class="tag tag-crisis">Crisis / Riesgo</span>`;
+      else if (currentTema.sensibilidad === 'sensible') tagsHtml += `<span class="tag tag-sensible">Tema Sensible</span>`;
+      document.getElementById('modal-tags').innerHTML = tagsHtml;
+
+      document.getElementById('m-title').innerText = currentTema.titulo;
+      document.getElementById('m-quote').innerText = `"${currentTema.fraseAncla}"`;
+      document.getElementById('m-obj').innerText = currentTema.objetivo;
+
+      // Alertas
+      let alertsHtml = '';
+      if(currentTema.sensibilidad === 'crisis') {
+        alertsHtml += `<div class="alert-box alert-crisis"><strong>⚠️ ATENCIÓN DE CRISIS:</strong> Los temas relacionados con ideación suicida, violencia, abuso o riesgo de daño no sustituyen atención profesional. Si una persona expresa intención de hacerse daño, debe buscarse ayuda inmediata.</div>`;
+      } else if(currentTema.sensibilidad === 'sensible') {
+        alertsHtml += `<div class="alert-box alert-sensible"><strong>⚠️ TEMA SENSIBLE:</strong> Manejar con extremo cuidado doctrinal. No emitir juicios, no forzar perdón, respetar proceso personal.</div>`;
+      }
+      document.getElementById('m-alerts').innerHTML = alertsHtml;
+
+      // Tiempos (Maneja arrays o fallbacks si el JSON es básico)
+      const parseList = (list) => Array.isArray(list) ? list.map(q => `<li>${q}</li>`).join('') : '<li>No hay preguntas definidas.</li>';
+      document.getElementById('m-detectar').innerHTML = parseList(currentTema.guiaTestimonio?.detectar);
+      document.getElementById('m-admitir').innerHTML = parseList(currentTema.guiaTestimonio?.admitir);
+      document.getElementById('m-corregir').innerHTML = parseList(currentTema.guiaTestimonio?.corregir);
+
+      // Doctrina
+      document.getElementById('m-adv').innerText = currentTema.advertenciaLider || currentTema.notasInternas || "Aplica directrices generales de FGDLL. Evitar consejo terapéutico.";
+      
+      const arrNoUsar = currentTema.noUsarPara || [];
+      document.getElementById('m-nousar').innerHTML = arrNoUsar.length > 0 
+        ? arrNoUsar.map(n => `<li>${n}</li>`).join('') 
+        : '<li>No aplica restricciones especiales más allá de las bases generales.</li>';
+
+      // Fuentes
+      let sourcesHtml = '';
+      if(Array.isArray(currentTema.fuenteAA)) {
+        currentTema.fuenteAA.forEach(f => {
+          sourcesHtml += `<p style="color:var(--text-main); font-size:0.9rem; margin-bottom:0.5rem;">📘 <strong>${f.obra}</strong> (${f.referencia})<br><span style="color:#aaa;">Uso: ${f.uso}</span></p>`;
+        });
+      }
+      if(Array.isArray(currentTema.fuenteFGDLL)) {
+        currentTema.fuenteFGDLL.forEach(f => {
+          sourcesHtml += `<p style="color:var(--gold); font-size:0.9rem; margin-bottom:0.5rem;">📜 <strong>${f.obra}</strong> (${f.seccion})<br><span style="color:#aaa;">Uso: ${f.uso}</span></p>`;
+        });
+      }
+      document.getElementById('m-sources').innerHTML = sourcesHtml || `<p style="color:#aaa; font-style:italic;">Fuente Principal: ${currentTema.fuentePrincipal || 'N/A'}</p>`;
+
+      modal.style.display = 'flex';
+    };
+
+    // ============================================================================
+    // FUNCIONES DEL EDITOR DE NUEVOS TEMAS
+    // ============================================================================
+    function generateNewThemeJSON() {
+      const getVal = (id) => document.getElementById(id).value.trim();
+      const getArray = (id) => getVal(id).split('\n').filter(l => l.trim().length > 0);
+
+      const title = getVal('ed-titulo');
+      const ancla = getVal('ed-ancla');
+
+      if(!title || !ancla) {
+        showToast("Error: Título y Frase Ancla son obligatorios.");
+        return;
+      }
+
+      const newTheme = {
+        id: "tema-" + Math.floor(Math.random() * 10000).toString().padStart(4, '0'),
+        titulo: title,
+        tituloCorto: "",
+        estado: "Completo",
+        sensibilidad: getVal('ed-sensibilidad'),
+        categoria: getVal('ed-categoria') || "General",
+        evento: [],
+        publico: [],
+        intensidad: getVal('ed-intensidad'),
+        momento: getVal('ed-momento'),
+        formato: "Individual",
+        tipoTestimonio: "Inspirador",
+        emocion: "",
+        pasos: [],
+        fuentePrincipal: "FGDLL",
+        fuenteAA: [],
+        fuenteFGDLL: [],
+        librosRecomendados: [],
+        objetivo: getVal('ed-objetivo'),
+        fraseAncla: ancla,
+        guiaTestimonio: {
+          detectar: getArray('ed-detectar'),
+          admitir: getArray('ed-admitir'),
+          corregir: getArray('ed-corregir')
+        },
+        variaciones: [],
+        palabrasClave: [],
+        advertenciaEtica: "",
+        advertenciaLider: "",
+        noUsarPara: [],
+        esCatalogoBase: false,
+        prioridad: 50,
+        relacionados: []
+      };
+
+      // Le añadimos una coma al principio para que sea facil de añadir "al final del código"
+      const jsonStr = ",\n" + JSON.stringify(newTheme, null, 2);
+      document.getElementById('editor-preview').textContent = jsonStr;
+      document.getElementById('editor-result-container').style.display = 'block';
+      document.getElementById('btn-copy-json').style.display = 'flex';
+    }
+
+    function copyGeneratedJSON() {
+      const jsonStr = document.getElementById('editor-preview').textContent;
+      copyToClipboard(jsonStr, "Código copiado. Pégalo al final de tu arreglo.");
+    }
+
+    // ============================================================================
+    // FUNCIONES DEL IMPORTADOR (PEGAR Y VALIDAR JSON)
+    // ============================================================================
+    function validatePastedJSON() {
+      const rawText = document.getElementById('imp-textarea').value.trim();
+      const resultsDiv = document.getElementById('imp-validation-results');
+      const btnMerge = document.getElementById('btn-merge-json');
+      
+      resultsDiv.style.display = 'block';
+      resultsDiv.innerHTML = '';
+      btnMerge.style.display = 'none';
+      document.getElementById('imp-success-actions').style.display = 'none';
+      pendingImportedThemes = [];
+
+      if(!rawText) {
+        resultsDiv.innerHTML = '<div class="val-item val-err">Por favor pega el código JSON antes de validar.</div>';
+        return;
+      }
+
+      // Limpiar texto (quitar marcas markdown si el usuario pegó directo de Claude)
+      let cleanText = rawText.replace(/^```(json)?\s*/i, '').replace(/\s*```$/i, '');
+      const firstBracket = cleanText.indexOf('[');
+      const lastBracket = cleanText.lastIndexOf(']');
+      
+      if(firstBracket === -1 || lastBracket === -1) {
+        resultsDiv.innerHTML = '<div class="val-item val-err">Error de formato: El texto no parece contener un arreglo JSON válido (no se encontraron [ ]).</div>';
+        return;
+      }
+      
+      cleanText = cleanText.substring(firstBracket, lastBracket + 1);
+
+      let parsedData;
+      try {
+        parsedData = JSON.parse(cleanText);
+      } catch(e) {
+        resultsDiv.innerHTML = `<div class="val-item val-err">Error crítico de parseo JSON: ${e.message}</div>`;
+        return;
+      }
+
+      if(!Array.isArray(parsedData)) {
+        resultsDiv.innerHTML = '<div class="val-item val-err">El JSON debe ser un arreglo de objetos.</div>';
+        return;
+      }
+
+      let allValid = true;
+      parsedData.forEach((tema, index) => {
+        let statusClass = 'val-ok';
+        let statusMsg = `Tema "${tema.titulo || 'Sin título'}": Validación correcta.`;
+
+        if(!tema.titulo) {
+          statusClass = 'val-err'; statusMsg = `Item [${index}]: Falta Título.`; allValid = false;
+        } else if(!tema.guiaTestimonio || !tema.guiaTestimonio.detectar) {
+          statusClass = 'val-warn'; statusMsg = `Tema "${tema.titulo}": Faltan partes de la guía (Detectar/Admitir/Corregir).`;
         }
+        
+        // Asignar IDs si no traen para evitar colisiones
+        if(!tema.id) tema.id = "tema-imp-" + Math.floor(Math.random() * 10000);
 
-        function verSeleccion() {
-            if (seleccionados.size === 0) {
-                alert('Por favor selecciona al menos un tema.');
-                return;
-            }
-            const modal = document.getElementById('modal');
-            const lista = document.getElementById('modal-list');
-            lista.innerHTML = '';
-            
-            seleccionados.forEach(index => {
-                const tema = temas[index];
-                const li = document.createElement('li');
-                li.innerHTML = `<strong>${tema.title}</strong><br>
-                                ${tema.text ? tema.text + '<br><small>' + tema.source + '</small>' : '<em>' + tema.short + '</em>'}`;
-                lista.appendChild(li);
-            });
-            
-            modal.style.display = 'flex';
+        resultsDiv.innerHTML += `<div class="val-item ${statusClass}">${statusMsg}</div>`;
+      });
+
+      if(allValid && parsedData.length > 0) {
+        pendingImportedThemes = parsedData;
+        btnMerge.style.display = 'flex';
+        resultsDiv.innerHTML += `<div class="val-item val-ok" style="font-weight:bold; margin-top:1rem;">✅ Se encontraron ${parsedData.length} temas listos para añadir.</div>`;
+      }
+    }
+
+    function mergeImportedThemes() {
+      if(pendingImportedThemes.length === 0) return;
+      
+      // Añadir a la base de datos principal al final
+      dataTemas = [...dataTemas, ...pendingImportedThemes];
+      
+      // Renderizar la vista
+      renderCards();
+      
+      // Construir el string "Appendable" (quitando los corchetes [] del arreglo importado y añadiendo una coma al inicio)
+      let importedJSONStr = JSON.stringify(pendingImportedThemes, null, 2);
+      let appendableStr = importedJSONStr.substring(1, importedJSONStr.length - 1).trim();
+      appendableStr = ",\n" + appendableStr;
+
+      // Configurar botones de copia
+      document.getElementById('btn-copy-new-only').onclick = () => {
+        copyToClipboard(appendableStr, "Solo nuevos temas copiados. Pégalos antes del `];` final.");
+      };
+
+      document.getElementById('btn-download-json').onclick = () => {
+        const fullContent = "let dataTemas = " + JSON.stringify(dataTemas, null, 2) + ";";
+        const blob = new Blob([fullContent], {type: "text/javascript;charset=utf-8"});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `dataTemas_${new Date().getTime()}.js`;
+        link.click();
+        URL.revokeObjectURL(url);
+        showToast("Archivo .js descargado");
+      };
+
+      // Cambiar de vista en el modal
+      document.getElementById('imp-validation-results').style.display = 'none';
+      document.getElementById('btn-merge-json').style.display = 'none';
+      document.getElementById('imp-success-actions').style.display = 'block';
+      document.getElementById('imp-textarea').value = '';
+      
+      showToast(`${pendingImportedThemes.length} temas añadidos a la vista actual.`);
+    }
+
+
+    // ============================================================================
+    // UTILIDADES DE EXPORTACIÓN (WhatsApp, Copiar, TXT)
+    // ============================================================================
+    function copyForWP() {
+      if(!currentTema) return;
+      const wpText = `*${currentTema.titulo}*\n_${currentTema.fraseAncla}_\n\n*Objetivo:* ${currentTema.objetivo}\n\n*GUÍA DE PREGUNTAS:*\n\n1️⃣ *DETECTAR:*\n${(currentTema.guiaTestimonio.detectar || []).map(q=>`• ${q}`).join('\n')}\n\n2️⃣ *ADMITIR:*\n${(currentTema.guiaTestimonio.admitir || []).map(q=>`• ${q}`).join('\n')}\n\n3️⃣ *CORREGIR:*\n${(currentTema.guiaTestimonio.corregir || []).map(q=>`• ${q}`).join('\n')}\n\n_📖 Fuente: Biblioteca FGDLL_`;
+      copyToClipboard(wpText, "Copiado para WhatsApp");
+    }
+
+    function copyQuestions() {
+      if(!currentTema) return;
+      const qText = `Detectar (Antes):\n${(currentTema.guiaTestimonio.detectar || []).map(q=>`- ${q}`).join('\n')}\n\nAdmitir (Llegada):\n${(currentTema.guiaTestimonio.admitir || []).map(q=>`- ${q}`).join('\n')}\n\nCorregir (Hoy):\n${(currentTema.guiaTestimonio.corregir || []).map(q=>`- ${q}`).join('\n')}`;
+      copyToClipboard(qText, "Preguntas copiadas al portapapeles");
+    }
+
+    function downloadTXT() {
+      if(!currentTema) return;
+      let text = `BIBLIOTECA FGDLL - FICHA TÉCNICA\n==========================================\n\n`;
+      text += `TÍTULO: ${currentTema.titulo}\n`;
+      text += `ANCLA: "${currentTema.fraseAncla}"\n`;
+      text += `CATEGORÍA: ${currentTema.categoria} | PASOS: ${currentTema.pasos?.join(', ') || 'N/A'}\n\n`;
+      text += `OBJETIVO: ${currentTema.objetivo}\n\n`;
+      text += `PREGUNTAS GUÍA\n------------------------------------------\n`;
+      text += `[1] DETECTAR:\n${(currentTema.guiaTestimonio.detectar || []).map(q=>` - ${q}`).join('\n')}\n\n`;
+      text += `[2] ADMITIR:\n${(currentTema.guiaTestimonio.admitir || []).map(q=>` - ${q}`).join('\n')}\n\n`;
+      text += `[3] CORREGIR:\n${(currentTema.guiaTestimonio.corregir || []).map(q=>` - ${q}`).join('\n')}\n\n`;
+      text += `MANEJO DOCTRINAL (Líderes)\n------------------------------------------\n`;
+      text += `Advertencia: ${currentTema.advertenciaLider || 'N/A'}\n`;
+      text += `No usar para: ${(currentTema.noUsarPara || []).join(', ') || 'N/A'}\n\n`;
+      text += `==========================================\nEl testimonio no es catarsis desordenada, es experiencia ordenada.\n`;
+
+      const blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `FGDLL_Tema_${currentTema.id}.txt`;
+      link.click();
+      URL.revokeObjectURL(url);
+      showToast("Ficha descargada en TXT");
+    }
+
+    function copyToClipboard(text, msg) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(msg);
+      }).catch(err => {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          showToast(msg);
+        } catch (err) {
+          console.error('Fallback copy failed', err);
         }
+        document.body.removeChild(textArea);
+      });
+    }
 
-        function cerrarModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.innerText = message;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 3000);
+    }
 
-        function copiarTexto() {
-            let textoFinal = "MIS TEMAS SELECCIONADOS:\n\n";
-            seleccionados.forEach(index => {
-                const tema = temas[index];
-                textoFinal += `--- ${tema.title.toUpperCase()} ---\n`;
-                if(tema.text) {
-                    textoFinal += `${tema.text}\n${tema.source}\n\n`;
-                } else {
-                    textoFinal += `${tema.short}\n\n`;
-                }
-            });
+    // Arrancar la app
+    init();
 
-            navigator.clipboard.writeText(textoFinal).then(() => {
-                alert('¡Texto copiado al portapapeles!');
-            }).catch(err => {
-                console.error('Error al copiar:', err);
-                alert('Hubo un error al copiar el texto.');
-            });
-        }
-    </script>
+  </script>
 </body>
 </html>
 
-```
