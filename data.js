@@ -1,3 +1,8 @@
+/* ==========================================================================
+   BIBLIOTECA DE TESTIMONIOS FGDLL — data.js
+   Base de datos estática de temas estructurados.
+========================================================================== */
+
 const TEMAS = [
   // ==========================================
   // FUENTE: LLEGAMOS A CREER
@@ -25,9 +30,7 @@ const TEMAS = [
         "uso": "Mostrar cómo la derrota total abrió la puerta a una mente dispuesta."
       }
     ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
-    "objetivo": "Transmitir que no se necesita entender a Dios para empezar a sanar, solo dejar de luchar.",
+    "objetivo": "Transmitir que no se necesita entender a un Poder Superior para empezar a sanar, solo dejar de luchar.",
     "fraseAncla": "Cuando dejé de pelear contra el mundo, pude por fin escuchar.",
     "guiaTestimonio": {
       "detectar": [
@@ -47,13 +50,8 @@ const TEMAS = [
     "palabrasClave": ["despertar", "rendición", "fe", "esperanza"],
     "advertenciaEtica": "",
     "advertenciaLider": "Evitar imponer conceptos religiosos. Enfocar en el grupo como el primer 'poder superior' comprensible.",
-    "noUsarPara": [
-      "Juzgar creencias ajenas",
-      "Forzar conceptos religiosos"
-    ],
     "esCatalogoBase": true,
-    "prioridad": 10,
-    "relacionados": []
+    "prioridad": 10
   },
   {
     "id": "tema-creer-02",
@@ -78,8 +76,6 @@ const TEMAS = [
         "uso": "Ilustrar cómo la acción y la confianza en el proceso desplazan al terror paralizante."
       }
     ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
     "objetivo": "Ayudar a identificar cómo el miedo fabricaba excusas para no accionar.",
     "fraseAncla": "El miedo me mintió diciéndome que estaba a salvo mientras me destruía.",
     "guiaTestimonio": {
@@ -92,21 +88,16 @@ const TEMAS = [
         "¿Cómo te ayudó el grupo a caminar a través del miedo en lugar de huir?"
       ],
       "corregir": [
-        "¿Qué herramientas (pausa, tribuna, apadrinamiento) usas hoy cuando el miedo aparece?",
+        "¿Qué herramientas (pausa, tribuna, servicio) usas hoy cuando el miedo aparece?",
         "¿Cómo aplicas el Tercer Paso para accionar a pesar de la incertidumbre?"
       ]
     },
     "variaciones": ["Caminar con miedo", "Confiar en el proceso"],
     "palabrasClave": ["miedo", "acción", "confianza", "paso 3"],
-    "advertenciaEtica": "Validar el miedo de los nuevos sin minimizarlo, enfocándose en la acción constructiva.",
+    "advertenciaEtica": "Validar el miedo de los nuevos sin minimizarlos, enfocándose en la acción constructiva.",
     "advertenciaLider": "Cuidar que el compartimiento no se vuelva una lista de fobias, sino de soluciones.",
-    "noUsarPara": [
-      "Minimizar las emociones de los demás",
-      "Fomentar el perfeccionismo"
-    ],
     "esCatalogoBase": true,
-    "prioridad": 15,
-    "relacionados": []
+    "prioridad": 15
   },
 
   // ==========================================
@@ -135,8 +126,6 @@ const TEMAS = [
         "uso": "Desmitificar la idea de que se necesita perder familia o trabajo para tocar fondo."
       }
     ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
     "objetivo": "Demostrar que la bancarrota emocional y espiritual llega antes que la material.",
     "fraseAncla": "No perdí casas ni trabajos, pero perdí las ganas de vivir antes de los veinte.",
     "guiaTestimonio": {
@@ -149,21 +138,16 @@ const TEMAS = [
         "¿Qué se sintió escuchar a alguien mayor contar una historia emocionalmente idéntica a la tuya?"
       ],
       "corregir": [
-        "¿Cómo construyes hoy tu identidad sin necesidad de complacer las expectativas de otros jóvenes?",
+        "¿Cómo construyes hoy tu identidad sin necesidad de complacer las expectativas destructivas de otros?",
         "¿De qué manera vives tu juventud hoy en libertad y sin fugas?"
       ]
     },
     "variaciones": ["El mito de la edad", "Juventud y dolor"],
     "palabrasClave": ["juventud", "fondo emocional", "rebeldía", "identificación"],
     "advertenciaEtica": "",
-    "advertenciaLider": "Evitar que los miembros mayores minimicen el fondo del joven (el 'tú no sufriste nada'). Fomentar empatía.",
-    "noUsarPara": [
-      "Comparar sufrimientos materiales",
-      "Invalidar el dolor juvenil"
-    ],
+    "advertenciaLider": "Evitar que los miembros mayores minimicen el fondo del joven (el clásico 'tú no sufriste nada'). Fomentar empatía.",
     "esCatalogoBase": true,
-    "prioridad": 20,
-    "relacionados": []
+    "prioridad": 20
   },
   {
     "id": "tema-joven-02",
@@ -180,7 +164,7 @@ const TEMAS = [
     "tipoTestimonio": "Didáctico",
     "emocion": "Frustración",
     "pasos": ["Paso 4"],
-    "fuentePrincipal": "AA",
+    "fuentePrincipal": "FGDLL",
     "fuenteAA": [
       {
         "obra": "Menú de Temas Juvenil",
@@ -188,13 +172,11 @@ const TEMAS = [
         "uso": "Identificar la fantasía y los planes irreales como mecanismo de evasión."
       }
     ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
     "objetivo": "Aterrizar la mente del joven a la realidad del 'Solo por hoy' abandonando la fantasía.",
     "fraseAncla": "Hacía planes gigantes para el futuro porque no soportaba habitar mi presente.",
     "guiaTestimonio": {
       "detectar": [
-        "¿De qué manera te refugiabas en planes grandiosos o fantasías para no enfrentar tus responsabilidades diarias?",
+        "¿De qué manera te refugiabas en planes grandiosos para no enfrentar tus responsabilidades diarias?",
         "¿Qué frustración sentías cuando tus 'castillos en el aire' chocaban con la realidad?"
       ],
       "admitir": [
@@ -210,13 +192,8 @@ const TEMAS = [
     "palabrasClave": ["fantasía", "realidad", "evasión", "solo por hoy"],
     "advertenciaEtica": "",
     "advertenciaLider": "Guiar para que el joven entienda que soñar es válido, pero evadir el presente destruye.",
-    "noUsarPara": [
-      "Aplastar las aspiraciones de los jóvenes",
-      "Burlarse de las metas de vida"
-    ],
     "esCatalogoBase": true,
-    "prioridad": 25,
-    "relacionados": []
+    "prioridad": 25
   },
 
   // ==========================================
@@ -229,7 +206,7 @@ const TEMAS = [
     "estado": "Completo",
     "sensibilidad": "sensible",
     "categoria": "Desarrollo",
-    "evento": ["Convenciones"],
+    "evento": ["Convenciones", "Semana del Guerrero"],
     "publico": ["Participantes", "Líderes"],
     "intensidad": "Alta",
     "momento": "Cierre",
@@ -245,8 +222,6 @@ const TEMAS = [
         "uso": "Aceptar que las crisis emocionales en recuperación son oportunidades, no fracasos."
       }
     ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
     "objetivo": "Enseñar a no huir del dolor en la recuperación, sino a usarlo para evolucionar.",
     "fraseAncla": "El dolor ya no es mi enemigo; hoy es el maestro que me avisa dónde debo crecer.",
     "guiaTestimonio": {
@@ -267,13 +242,54 @@ const TEMAS = [
     "palabrasClave": ["dolor", "crecimiento", "crisis", "aceptación"],
     "advertenciaEtica": "Orientar el tema a la madurez emocional, sin hacer apología del sufrimiento innecesario.",
     "advertenciaLider": "Cuidar que no se convierta en una catarsis desoladora, debe cerrar con crecimiento.",
-    "noUsarPara": [
-      "Justificar el quedarse sufriendo",
-      "Minimizar depresiones clínicas"
-    ],
     "esCatalogoBase": true,
-    "prioridad": 30,
-    "relacionados": []
+    "prioridad": 30
+  },
+  {
+    "id": "tema-corazon-02",
+    "titulo": "Cuando la muerte y la locura tocan la puerta",
+    "tituloCorto": "Al borde del abismo",
+    "estado": "Completo",
+    "sensibilidad": "crisis",
+    "categoria": "Crisis",
+    "evento": [],
+    "publico": ["Participantes"],
+    "intensidad": "Alta",
+    "momento": "Mitad",
+    "formato": "Individual",
+    "tipoTestimonio": "Crudo",
+    "emocion": "Desesperación",
+    "pasos": ["Paso 1"],
+    "fuentePrincipal": "AA",
+    "fuenteAA": [
+      {
+        "obra": "El Lenguaje del Corazón",
+        "referencia": "Artículos sobre la depresión profunda de Bill W.",
+        "uso": "Visibilizar que la depresión y la ideación suicida son reales y requieren ayuda extrema."
+      }
+    ],
+    "objetivo": "Visibilizar el dolor extremo que lleva al borde, y mostrar que pedir ayuda a tiempo salva vidas.",
+    "fraseAncla": "El dolor era tan grande que no quería morir, solo quería dejar de sufrir.",
+    "guiaTestimonio": {
+      "detectar": [
+        "¿Cómo el dolor emocional cerró todas tus salidas, aislándote en la oscuridad?",
+        "¿De qué manera el silencio te convenció de que no había más esperanza?"
+      ],
+      "admitir": [
+        "¿Cuál fue la mano tendida o la frase en el grupo que te ancló de regreso a la vida?",
+        "¿Cómo fue admitir que ya no podías gobernar tus pensamientos?"
+      ],
+      "corregir": [
+        "¿A quién llamas inmediatamente hoy cuando tus pensamientos se oscurecen?",
+        "¿De qué manera la agrupación se ha vuelto tu red de seguridad?"
+      ]
+    },
+    "variaciones": ["El abismo de la depresión", "El rescate silencioso"],
+    "palabrasClave": ["crisis", "suicidio", "depresión", "rescate"],
+    "advertenciaEtica": "CRÍTICO: No permita detalles metodológicos de intentos de suicidio. El enfoque DEBE estar en la desesperación que llevó allí, y cómo el rescate fue pedir ayuda. Si alguien expresa intenciones activas, referir a ayuda profesional de emergencia.",
+    "advertenciaLider": "Tema de crisis extrema. Debe ser guiado con extremo cuidado para inspirar esperanza y contención, no morbo.",
+    "esCatalogoBase": true,
+    "prioridad": 1
   },
 
   // ==========================================
@@ -302,8 +318,6 @@ const TEMAS = [
         "uso": "Mostrar cómo guardar ofensas pasadas anula la paz presente."
       }
     ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
     "objetivo": "Visualizar el resentimiento como un veneno interno que se debe soltar para sobrevivir.",
     "fraseAncla": "El resentimiento era un veneno que yo me tomaba, esperando que el otro muriera.",
     "guiaTestimonio": {
@@ -324,183 +338,34 @@ const TEMAS = [
     "palabrasClave": ["resentimiento", "inventario", "perdón", "víctima"],
     "advertenciaEtica": "El perdón es un proceso personal de liberación de resentimiento, NO se debe forzar a convivir con agresores.",
     "advertenciaLider": "Asegurar que el participante se enfoque en SU reacción al resentimiento, no en la lista de culpas del ofensor.",
-    "noUsarPara": [
-      "Obligar a perdonar abusos graves",
-      "Generar culpa a quien aún siente enojo"
-    ],
     "esCatalogoBase": true,
-    "prioridad": 35,
-    "relacionados": []
+    "prioridad": 35
   },
-
-  // ==========================================
-  // FUENTE: NUESTROS GRUPOS NUESTRA FORTALEZA
-  // ==========================================
   {
-    "id": "tema-grupos-01",
-    "titulo": "El bienestar común debe tener la preferencia",
-    "tituloCorto": "El bienestar común",
-    "estado": "Completo",
-    "sensibilidad": "normal",
-    "categoria": "Servicio",
-    "evento": ["Aniversario de grupo", "Juntas de trabajo"],
-    "publico": ["Líderes", "Delegados"],
-    "intensidad": "Media",
-    "momento": "Mitad",
-    "formato": "Didáctico",
-    "tipoTestimonio": "Didáctico",
-    "emocion": "Orgullo",
-    "pasos": ["Tradición 1"],
-    "fuentePrincipal": "AA",
-    "fuenteAA": [
-      {
-        "obra": "Nuestros Grupos Nuestra Fortaleza",
-        "referencia": "Tradición Primera",
-        "uso": "Bajar el ego personal para cuidar la unidad del grupo."
-      }
-    ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
-    "objetivo": "Enseñar que la supervivencia personal depende directamente de la unidad del grupo.",
-    "fraseAncla": "Cuando quise imponer mi razón, perdí mi paz; cuando cedí por el grupo, gané libertad.",
-    "guiaTestimonio": {
-      "detectar": [
-        "¿Cómo tu necesidad de tener la razón, figurar o mandar generaba conflictos y división?",
-        "¿De qué forma el 'yo' siempre estaba por encima del 'nosotros' en tus decisiones?"
-      ],
-      "admitir": [
-        "¿Qué situación grupal te enseñó que si el barco se hunde, tú también te ahogas?",
-        "¿Cómo dolió soltar el deseo de control y acatar la conciencia del grupo aunque no estuvieras de acuerdo?"
-      ],
-      "corregir": [
-        "¿Cómo practicas hoy la tolerancia hacia las ideas de tus compañeros en el servicio?",
-        "¿De qué manera aportas a la unidad del grupo sin buscar aplausos ni reconocimientos?"
-      ]
-    },
-    "variaciones": ["Ceder la razón", "Unidad del grupo"],
-    "palabrasClave": ["unidad", "tradición 1", "bienestar común", "ego"],
-    "advertenciaEtica": "",
-    "advertenciaLider": "Cuidar que no se convierta en una queja sobre las dinámicas actuales del grupo. Enfocar en la actitud personal.",
-    "noUsarPara": [
-      "Criticar las decisiones del grupo",
-      "Exponer conflictos de la mesa de servicio"
-    ],
-    "esCatalogoBase": true,
-    "prioridad": 40,
-    "relacionados": []
-  },
-
-  // ==========================================
-  // FUENTE: DR. BOB Y LOS BUENOS VETERANOS
-  // ==========================================
-  {
-    "id": "tema-bob-01",
-    "titulo": "Amor y Servicio: Mantenerlo simple",
-    "tituloCorto": "Mantenerlo simple",
-    "estado": "Completo",
-    "sensibilidad": "normal",
-    "categoria": "Servicio",
-    "evento": ["Semana del Guerrero", "Aniversarios"],
-    "publico": ["Participantes"],
-    "intensidad": "Baja",
-    "momento": "Cierre",
-    "formato": "Individual",
-    "tipoTestimonio": "Inspirador",
-    "emocion": "Gratitud",
-    "pasos": ["Paso 12"],
-    "fuentePrincipal": "AA",
-    "fuenteAA": [
-      {
-        "obra": "Dr. Bob y los buenos veteranos",
-        "referencia": "El último mensaje del Dr. Bob",
-        "uso": "Recordar que la esencia de la recuperación no es la teoría complicada, sino el amor y servicio mutuo."
-      }
-    ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
-    "objetivo": "Evitar la arrogancia intelectual en el programa y regresar a las acciones de servicio simples.",
-    "fraseAncla": "Quise entender el programa con la mente, pero solo funcionó cuando lo apliqué con las manos.",
-    "guiaTestimonio": {
-      "detectar": [
-        "¿Cómo complicabas tu vida antes tratando de racionalizar todo en lugar de actuar?",
-        "¿Qué excusas intelectuales usabas para no servir o no involucrarte con los demás?"
-      ],
-      "admitir": [
-        "¿Cuándo te diste cuenta de que hacer un café o tender una silla valía más que un discurso perfecto?",
-        "¿Cómo la simplicidad del servicio te sacó de la depresión o la auto-obsesión?"
-      ],
-      "corregir": [
-        "¿Cómo mantienes tu recuperación sencilla el día de hoy, sin complicarte la existencia?",
-        "¿Qué actos de amor y servicio anónimos haces para mantener viva tu gratitud?"
-      ]
-    },
-    "variaciones": ["Acción sobre teoría", "El servicio que sana"],
-    "palabrasClave": ["simplicidad", "servicio", "dr bob", "acción"],
-    "advertenciaEtica": "",
-    "advertenciaLider": "Fomentar el mensaje de que menos debate y más servicio es la clave.",
-    "noUsarPara": [
-      "Juzgar el nivel de entendimiento de otros",
-      "Fomentar mediocridad en el estudio"
-    ],
-    "esCatalogoBase": true,
-    "prioridad": 45,
-    "relacionados": []
-  },
-
-  // ==========================================
-  // FUENTE: AA LLEGA A LA MAYORÍA DE EDAD
-  // ==========================================
-  {
-    "id": "tema-mayoria-01",
-    "titulo": "El anonimato como sacrificio personal",
-    "tituloCorto": "Sacrificio del anonimato",
+    "id": "tema-bill-02",
+    "titulo": "Aceptación: La llave que abre todas las puertas",
+    "tituloCorto": "La llave de la aceptación",
     "estado": "Completo",
     "sensibilidad": "normal",
     "categoria": "Desarrollo",
     "evento": ["Cualquiera"],
-    "publico": ["Líderes", "Participantes"],
+    "publico": ["Participantes"],
     "intensidad": "Media",
-    "momento": "Cierre",
-    "formato": "Panel corto",
-    "tipoTestimonio": "Didáctico",
-    "emocion": "Humildad",
-    "pasos": ["Tradición 12"],
+    "momento": "Inicio",
+    "formato": "Individual",
+    "tipoTestimonio": "Inspirador",
+    "emocion": "Aceptación",
+    "pasos": ["Paso 1", "Paso 3"],
     "fuentePrincipal": "AA",
     "fuenteAA": [
       {
-        "obra": "AA Llega a la Mayoría de Edad",
-        "referencia": "El desarrollo de las Tradiciones",
-        "uso": "El anonimato espiritual como la renuncia a la fama, el prestigio y el reconocimiento."
+        "obra": "Como lo ve Bill",
+        "referencia": "Aceptación",
+        "uso": "Aceptar a las personas, lugares y cosas tal como son, no como quisiéramos que fueran."
       }
     ],
-    "fuenteFGDLL": [],
-    "librosRecomendados": [],
-    "objetivo": "Comprender que la recuperación florece en el silencio del ego y la humildad de no ser el protagonista.",
-    "fraseAncla": "El anonimato me enseñó que puedo ser útil sin necesidad de ser importante.",
+    "objetivo": "Dejar de sufrir por lo que no podemos controlar.",
+    "fraseAncla": "La paz no llegó cuando el mundo cambió, llegó cuando yo lo acepté.",
     "guiaTestimonio": {
       "detectar": [
-        "¿De qué maneras vivías mendigando el aplauso y el reconocimiento de otros en todo lo que hacías?",
-        "¿Cómo el ego te lastimaba cuando sentías que no eras valorado o visto como 'el mejor'?"
-      ],
-      "admitir": [
-        "¿Qué situación en el servicio o el grupo te demostró que buscar protagonismo destruía el mensaje?",
-        "¿Cómo fue el proceso de aprender a ayudar en secreto, sin que nadie te diera las gracias?"
-      ],
-      "corregir": [
-        "¿Cómo sacrificas hoy el deseo de figurar para priorizar los principios por encima de las personalidades?",
-        "¿De qué forma practicas la humildad diaria en tu familia y en tu grupo sin anunciar tus buenas obras?"
-      ]
-    },
-    "variaciones": ["Silenciar el ego", "Principios sobre personalidades"],
-    "palabrasClave": ["anonimato", "humildad", "sacrificio", "tradición 12"],
-    "advertenciaEtica": "",
-    "advertenciaLider": "Este tema es fundamental para los servidores. Evitar que suene como un regaño para los nuevos.",
-    "noUsarPara": [
-      "Evadir responsabilidades ('soy anónimo')",
-      "Atacar a servidores visibles"
-    ],
-    "esCatalogoBase": true,
-    "prioridad": 50,
-    "relacionados": []
-  }
-];
+        "¿Cómo peleabas contra la realidad exigiendo que las personas y situaciones
