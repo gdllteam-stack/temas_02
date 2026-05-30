@@ -1,21 +1,249 @@
-<div class="filtros-panel" id="filtrosPanel">
-  <div class="filtros-header-movil">
-    <h3>Filtros de Búsqueda</h3>
-    <button class="modal-cerrar" id="btnCerrarFiltrosMovil">✕</button>
-  </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca de Testimonios · FGDLL</title>
   
-  <div class="filtros-grid">
-    <div class="filtro-grupo"><label class="filtro-label">Categoría / Paso</label><select id="filtroCategoria" class="filtro-select"><option value="">Todas</option></select></div>
-    <div class="filtro-grupo"><label class="filtro-label">Tipo de testimonio</label><select id="filtroTipo" class="filtro-select"><option value="">Todos</option></select></div>
-    <div class="filtro-grupo"><label class="filtro-label">Intensidad</label><select id="filtroIntensidad" class="filtro-select"><option value="">Todas</option></select></div>
-    <div class="filtro-grupo"><label class="filtro-label">Momento en el evento</label><select id="filtroMomento" class="filtro-select"><option value="">Cualquiera</option></select></div>
-    <div class="filtro-grupo"><label class="filtro-label">Estado del tema</label><select id="filtroEstado" class="filtro-select"><option value="">Todos</option><option value="Completo">Completo</option><option value="Revisión">Revisión</option></select></div>
-    <div class="filtro-grupo"><label class="filtro-label">Sensibilidad</label><select id="filtroSensibilidad" class="filtro-select"><option value="">Todas</option><option value="normal">Normal</option><option value="sensible">Sensible</option><option value="crisis">Crisis</option></select></div>
-  </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   
-  <div class="filtros-acciones">
-    <button class="btn-reset-filtros" id="btnResetFiltros">Limpiar filtros</button>
-    <button class="btn-primario btn-aplicar-movil" id="btnAplicarFiltrosMovil">Ver resultados</button>
-    <span class="filtros-resultado" id="filtrosResultado"></span>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  
+  <nav class="nav">
+    <div class="nav-brand">
+      <span class="nav-sigla">FGDLL</span>
+      <span class="nav-sep">·</span>
+      <span class="nav-nombre">Guerreros de la Luz</span>
+    </div>
+    <div class="nav-links">
+      <a href="#biblioteca">Biblioteca</a>
+      <a href="#como-usar">Cómo preparar mi testimonio</a>
+    </div>
+  </nav>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Fraternidad Guerreros de la Luz</p>
+    <h1 class="hero-titulo">
+      Biblioteca de<br/>
+      <em>Testimonios</em>
+    </h1>
+    <p class="hero-subtitulo">
+      Temas con base de estudio para líderes, delegados y participantes
+    </p>
+    
+    <p class="hero-principio">
+      <span class="principio-item">Detectar</span>
+      <span class="principio-sep">·</span>
+      <span class="principio-item">Admitir</span>
+      <span class="principio-sep">·</span>
+      <span class="principio-item">Aprender a corregir</span>
+    </p>
+    
+    <p class="hero-descripcion">
+      Esta biblioteca ayuda a elegir y preparar temas de testimonio con base en la 
+      literatura aprobada. El testimonio no es catarsis desordenada, sino experiencia 
+      ordenada por la literatura, la conciencia y el servicio.
+    </p>
+    
+    <div class="hero-acciones">
+      <a href="#biblioteca" class="btn-primario">Explorar temas</a>
+      <a href="#tres-tiempos" class="btn-secundario">Ver estructura base</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Temas</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Con Fuente</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Tiempos</span></div>
+    <div class="stat"><span class="stat-num">12</span><span class="stat-label">Pasos</span></div>
+  </div>
+</header>
+
+<section class="modos" id="como-usar">
+  <div class="contenedor">
+    <div class="seccion-header">
+      <p class="seccion-eyebrow">¿Por dónde empiezo?</p>
+      <h2 class="seccion-titulo">Elige tu modo de uso</h2>
+    </div>
+    <div class="modos-grid">
+      <button class="modo-card" data-filtro='{"momento":"Inicio"}'>
+        <div class="modo-icono">◈</div>
+        <h3>Quiero elegir un tema<br/>para mi grupo</h3>
+        <p>Filtra por evento, intensidad y momento del programa</p>
+        <span class="modo-tag">Para líderes</span>
+      </button>
+      <button class="modo-card" data-filtro='{"tipoTestimonio":"Inspirador"}'>
+        <div class="modo-icono">◉</div>
+        <h3>Quiero preparar<br/>mi testimonio</h3>
+        <p>Encuentra preguntas guía y estructura para tu compartimiento</p>
+        <span class="modo-tag">Para participantes</span>
+      </button>
+      <button class="modo-card" data-filtro='{"esCatalogoBase":true}'>
+        <div class="modo-icono">◇</div>
+        <h3>Ver el catálogo<br/>base</h3>
+        <p>Temas aprobados para uso en aniversarios y eventos</p>
+        <span class="modo-tag">Catálogo oficial</span>
+      </button>
+      <button class="modo-card" data-filtro='{"sensibilidad":"sensible"}'>
+        <div class="modo-icono">△</div>
+        <h3>Temas que requieren<br/>cuidado especial</h3>
+        <p>Temas sensibles con advertencia ética para el líder</p>
+        <span class="modo-tag">Con advertencia</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="tres-tiempos" id="tres-tiempos">
+  <div class="contenedor">
+    <div class="seccion-header">
+      <p class="seccion-eyebrow">Estructura de todo testimonio</p>
+      <h2 class="seccion-titulo">Los Tres Tiempos</h2>
+    </div>
+    <div class="tiempos-grid">
+      <div class="tiempo-card tiempo-1">
+        <div class="tiempo-num">01</div>
+        <h3>Antes del programa</h3>
+        <p class="tiempo-verbo">Detectar</p>
+        <p>¿Cómo era tu vida antes? ¿Qué heridas, defectos o fugas te gobernaban? ¿Qué no sabías nombrar?</p>
+      </div>
+      <div class="tiempo-conector">→</div>
+      <div class="tiempo-card tiempo-2">
+        <div class="tiempo-num">02</div>
+        <h3>Cuando llegué al grupo</h3>
+        <p class="tiempo-verbo">Admitir</p>
+        <p>¿Cómo llegaste emocionalmente? ¿Qué te dolió admitir? ¿Dónde te viste reflejado?</p>
+      </div>
+      <div class="tiempo-conector">→</div>
+      <div class="tiempo-card tiempo-3">
+        <div class="tiempo-num">03</div>
+        <h3>Hoy con el programa</h3>
+        <p class="tiempo-verbo">Aprender a corregir</p>
+        <p>No desde la perfección, sino desde la responsabilidad diaria. ¿Qué estás corrigiendo hoy?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="biblioteca" id="biblioteca">
+  <div class="contenedor">
+
+    <div class="buscador-wrap">
+      <div class="buscador-top">
+        <div class="buscador-input-wrap">
+          <span class="buscador-icono">⌕</span>
+          <input type="text" id="buscador" class="buscador-input" placeholder="Buscar por título, emoción, paso, literatura..." autocomplete="off" />
+          <button class="buscador-limpiar" id="btnLimpiar" title="Limpiar búsqueda">✕</button>
+        </div>
+        <button class="btn-filtros-toggle" id="btnFiltrosToggle">
+          <span>Filtros</span>
+          <span class="filtros-badge" id="filtrosBadge" style="display:none">0</span>
+        </button>
+      </div>
+
+      <div class="filtros-panel" id="filtrosPanel">
+        <div class="filtros-header-movil">
+          <h3>Filtros de Búsqueda</h3>
+          <button class="modal-cerrar" id="btnCerrarFiltrosMovil">✕</button>
+        </div>
+
+        <div class="filtros-grid">
+          <div class="filtro-grupo">
+            <label class="filtro-label">Categoría / Paso</label>
+            <select id="filtroCategoria" class="filtro-select"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-grupo">
+            <label class="filtro-label">Tipo de testimonio</label>
+            <select id="filtroTipo" class="filtro-select"><option value="">Todos</option></select>
+          </div>
+          <div class="filtro-grupo">
+            <label class="filtro-label">Intensidad</label>
+            <select id="filtroIntensidad" class="filtro-select"><option value="">Todas</option></select>
+          </div>
+          <div class="filtro-grupo">
+            <label class="filtro-label">Momento en el evento</label>
+            <select id="filtroMomento" class="filtro-select"><option value="">Cualquiera</option></select>
+          </div>
+          <div class="filtro-grupo">
+            <label class="filtro-label">Estado del tema</label>
+            <select id="filtroEstado" class="filtro-select">
+              <option value="">Todos</option>
+              <option value="Completo">Completo</option>
+              <option value="Revisión">Revisión</option>
+            </select>
+          </div>
+          <div class="filtro-grupo">
+            <label class="filtro-label">Sensibilidad</label>
+            <select id="filtroSensibilidad" class="filtro-select">
+              <option value="">Todas</option>
+              <option value="normal">Normal</option>
+              <option value="sensible">Sensible</option>
+              <option value="crisis">Crisis (Suicidio/Violencia)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filtros-acciones">
+          <button class="btn-reset-filtros" id="btnResetFiltros">Limpiar filtros</button>
+          <button class="btn-primario btn-aplicar-movil" id="btnAplicarFiltrosMovil">Ver resultados</button>
+          <span class="filtros-resultado" id="filtrosResultado"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjetas-header">
+      <p class="tarjetas-count" id="tarjetasCount"></p>
+      <div class="tarjetas-orden">
+        <label>Ordenar por:</label>
+        <select id="ordenSelect" class="filtro-select">
+          <option value="prioridad">Prioridad / Recomendado</option>
+          <option value="titulo">Título (A–Z)</option>
+          <option value="intensidad">Intensidad Emocional</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="tarjetas-grid" id="tarjetasGrid">
+      </div>
+
+    <div class="sin-resultados" id="sinResultados" style="display:none">
+      <p>No se encontraron temas con estos filtros.</p>
+      <button class="btn-reset-filtros" id="btnResetSin">Ver todos los temas</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalOverlay" style="display:none">
+  <div class="modal" id="modal">
+    <button class="modal-cerrar" id="modalCerrar">✕</button>
+    
+    <div class="modal-contenido" id="modalContenido">
+      </div>
+    
+    <div class="modal-exportar">
+      <p class="exportar-label">Exportar / Guardar ficha:</p>
+      <div class="exportar-botones">
+        <button class="btn-exportar" id="btnCopiarGuia">📋 Copiar preguntas</button>
+        <button class="btn-exportar" id="btnCopiarWA">💬 Copiar para WhatsApp</button>
+        <button class="btn-exportar" id="btnDescargarTxt">⬇ Descargar TXT</button>
+        <button class="btn-exportar" id="btnImprimir">🖨 Imprimir</button>
+      </div>
+    </div>
   </div>
 </div>
+
+<div id="toast" class="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
