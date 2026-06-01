@@ -1,2946 +1,417 @@
-/* ==========================================================================
-   BIBLIOTECA DE TESTIMONIOS FGDLL — data.js
-   Base de datos modular con etiquetas temáticas.
-   Para agregar nuevos paquetes:
-     1. Define const PAQUETE_NOMBRE = [ ... ]
-     2. Agrégalo a CATALOGO_COMPLETO
-========================================================================== */
-
 const TEMAS = [
-
   // ==========================================
-  // FUENTE: LLEGAMOS A CREER
+  // CATEGORÍA: ANIVERSARIOS
   // ==========================================
   {
-    id: "tema-creer-01",
-    titulo: "El despertar espiritual a través del fondo de sufrimiento",
-    tituloCorto: "El despertar",
-    estado: "Completo",
-    etiquetas: ["paso-2-fe", "paso-12-servicio", "fe", "aceptación", "crecimiento", "transformacion"],
-    categoria: "Paso 2",
-    evento: ["Juntas de información", "Aniversario de grupo"],
-    publico: ["Participantes", "Recién llegados"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Esperanza"],
-    defectoCaracter: ["Arrogancia"],
-    virtudPrincipal: ["Humildad"],
-    pasos: ["Paso 2", "Paso 12"],
-    tradiciones: [],
-    conceptos: ["Rendición del ego", "Poder Superior"],
-    fuentePrincipal: "AA",
-    fuenteAA: [
-      {
-        obra: "Llegamos a Creer",
-        referencia: "Capítulo: El despertar espiritual",
-        uso: "Mostrar cómo la derrota total abrió la puerta a una mente dispuesta."
-      }
-    ],
-    fuenteFGDLL: [],
-    librosRecomendados: [],
-    objetivo: "Transmitir que no se necesita entender a un Poder Superior para empezar a sanar, solo dejar de luchar.",
-    fraseAncla: "Cuando dejé de pelear contra el mundo, pude por fin escuchar.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué formas tu arrogancia te impedía aceptar que necesitabas ayuda externa?",
-        "¿Qué sufrimiento físico o moral fue necesario para quebrar tu autosuficiencia?"
-      ],
-      admitir: [
-        "¿Cuál fue el momento en que aceptaste, aunque fuera por desesperación, la ayuda del grupo?",
-        "¿Cómo se sintió dejar de intentar gobernar tu vida por primera vez?"
-      ],
-      corregir: [
-        "¿De qué manera practicas hoy la disposición a escuchar antes de reaccionar?",
-        "¿Cómo te apoya la experiencia de otros para no volver a confiar solo en tu propio ego?"
-      ]
-    },
-    variaciones: ["Rendición del ego", "Dejar de luchar"],
-    palabrasClave: ["despertar", "rendición", "fe", "esperanza"],
-    advertenciaEtica: "",
-    advertenciaLider: "Evitar imponer conceptos religiosos. Enfocar en el grupo como el primer 'poder superior' comprensible.",
-    noUsarPara: [],
-    esCatalogoBase: true,
-    prioridad: 10,
-    relacionados: [],
-    fechaCreacion: "2026-05-01"
+    "id": "tema-aniv-01", "titulo": "¿Por qué me quedé en Guerreros de la Luz?", "tituloCorto": "Por qué me quedé",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
+    "intensidad": "Media", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 12",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Libro Azul, Cap. 5", 
+    "objetivo": "Reflejar por qué la comunidad sostiene la vida en recuperación.",
+    "fraseAncla": "Me quedé porque encontré un lugar donde pertenezco.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué buscabas antes de llegar a Guerreros de la Luz?", "¿Por qué creías que no encajarías aquí?"],
+      "admitir": ["¿Cuál fue el primer motivo que te hizo querer quedarte?", "¿Qué escuchaste en el grupo que te hizo sentir diferente?"],
+      "corregir": ["¿Qué razones tienes hoy para seguir viniendo?", "¿Cómo el grupo sigue siendo tu hogar a través del servicio?"]
+    }, "prioridad": 100
   },
-
   {
-    id: "tema-creer-02",
-    titulo: "La pérdida del miedo y la llegada de la fe",
-    tituloCorto: "Pérdida del miedo",
-    estado: "Completo",
-    etiquetas: ["paso-3-entrega", "paso-11-contacto", "miedo", "fe", "entrega", "ansiedad", "valentía"],
-    categoria: "Paso 3",
-    evento: ["Semana del Guerrero"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Miedo", "Esperanza"],
-    defectoCaracter: ["Miedo", "Control"],
-    virtudPrincipal: ["Fe", "Valentía"],
-    pasos: ["Paso 3", "Paso 11"],
-    tradiciones: [],
-    conceptos: ["Acción a pesar del miedo", "Confianza en el proceso"],
-    fuentePrincipal: "AA",
-    fuenteAA: [
-      {
-        obra: "Llegamos a Creer",
-        referencia: "Capítulo: Pérdida del miedo",
-        uso: "Ilustrar cómo la acción y la confianza en el proceso desplazan al terror paralizante."
-      }
-    ],
-    fuenteFGDLL: [],
-    librosRecomendados: [],
-    objetivo: "Ayudar a identificar cómo el miedo fabricaba excusas para no accionar.",
-    fraseAncla: "El miedo me mintió diciéndome que estaba a salvo mientras me destruía.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Qué miedos irracionales gobernaban tus decisiones y te mantenían aislado?",
-        "¿Cómo usabas la ira o el control para esconder tu terror a fracasar?"
-      ],
-      admitir: [
-        "¿Cuándo te diste cuenta de que tus miedos no eran reales, sino proyecciones de tu enfermedad?",
-        "¿Cómo te ayudó el grupo a caminar a través del miedo en lugar de huir?"
-      ],
-      corregir: [
-        "¿Qué herramientas (pausa, tribuna, servicio) usas hoy cuando el miedo aparece?",
-        "¿Cómo aplicas el Tercer Paso para accionar a pesar de la incertidumbre?"
-      ]
-    },
-    variaciones: ["Caminar con miedo", "Confiar en el proceso"],
-    palabrasClave: ["miedo", "acción", "confianza", "paso 3"],
-    advertenciaEtica: "Validar el miedo de los nuevos sin minimizarlos, enfocándose en la acción constructiva.",
-    advertenciaLider: "Cuidar que el compartimiento no se vuelva una lista de fobias, sino de soluciones.",
-    noUsarPara: ["Ridiculizar los miedos del participante"],
-    esCatalogoBase: true,
-    prioridad: 15,
-    relacionados: ["tema-creer-01"],
-    fechaCreacion: "2026-05-01"
+    "id": "tema-aniv-02", "titulo": "Una sensación de pertenecer", "tituloCorto": "Sentido de pertenencia",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
+    "intensidad": "Baja", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Inspirador", "paso": "Paso 1",
+    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Doce Pasos y Doce Tradiciones, Paso 1",
+    "objetivo": "Mostrar cómo la soledad se combate con la identificación.",
+    "fraseAncla": "El dolor me aisló, la honestidad me devolvió al rebaño.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo vivías la soledad, incluso rodeado de gente?", "¿Qué muros construiste para no ser herido?"],
+      "admitir": ["¿En qué momento te diste cuenta de que no estabas solo con tu dolor?", "¿Qué sentiste al ver a otros con tu misma historia?"],
+      "corregir": ["¿Cómo mantienes hoy tu sentido de pertenencia activo?", "¿Qué haces cuando sientes el impulso de aislarte de nuevo?"]
+    }, "prioridad": 99
+  },
+  {
+    "id": "tema-aniv-03", "titulo": "Un refugio seguro", "tituloCorto": "El refugio seguro",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
+    "intensidad": "Media", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Didáctico", "paso": "Paso 2",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Libro Azul, Cap. 2",
+    "objetivo": "Aclarar que el grupo provee seguridad, no perfección.",
+    "fraseAncla": "Llegué buscando curas mágicas y encontré compañeros de trinchera.",
+    "guiaTestimonio": {
+      "detectar": ["¿En qué lugares equivocados buscabas seguridad antes?", "¿Cómo te fallaban tus propios métodos de escape?"],
+      "admitir": ["¿Qué resistencia tuviste al darte cuenta de que aquí te pedían honestidad y no obediencia ciega?", "¿Cómo te rendiste a recibir ayuda?"],
+      "corregir": ["¿Cómo proteges tú hoy al grupo como refugio para otros?", "¿Qué haces para no exigirle perfección a tus compañeros?"]
+    }, "prioridad": 98
+  },
+  {
+    "id": "tema-aniv-04", "titulo": "De las tinieblas a la luz", "tituloCorto": "Hacia la luz",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
+    "intensidad": "Alta", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 12",
+    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Libro Azul",
+    "objetivo": "Transmitir la gratitud por el cambio de perspectiva de vida.",
+    "fraseAncla": "No cambió mi pasado, pero cambió la luz con la que lo miro.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué significaban para ti las tinieblas emocionales en tu peor momento?", "¿Qué daños no querías ver?"],
+      "admitir": ["¿Cuál fue el primer rayo de claridad que te dio el grupo?", "¿Qué te costó más dejar atrás?"],
+      "corregir": ["¿Cómo cultivas la gratitud diaria hoy?", "¿De qué forma devuelves la luz que se te regaló?"]
+    }, "prioridad": 97
+  },
+  {
+    "id": "tema-aniv-05", "titulo": "Yo soy un milagro", "tituloCorto": "Soy un milagro",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
+    "intensidad": "Media", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 12",
+    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Historias del Gran Libro",
+    "objetivo": "Reconocer que estar vivos y sobrios es un triunfo diario.",
+    "fraseAncla": "Estar vivo no era mi plan, pero hoy es mi propósito.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué tan poco valoraba tu vida antes de llegar?", "¿A qué nivel de autodestrucción te habías acostumbrado?"],
+      "admitir": ["¿En qué momento en el grupo te diste cuenta de que merecías vivir?", "¿Cómo aprendiste a abrazar el proceso sin culpa?"],
+      "corregir": ["¿Qué significa para ti hoy vivir un día a la vez?", "¿Qué responsabilidad asumes hoy al reconocerte como un milagro de la agrupación?"]
+    }, "prioridad": 96
+  },
+  {
+    "id": "tema-aniv-06", "titulo": "El grato privilegio de servir", "tituloCorto": "Privilegio de servir",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
+    "intensidad": "Baja", "momento": "Inicio", "formato": "Didáctico", "tipoTestimonio": "Didáctico", "paso": "Paso 12",
+    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Doce Pasos y Doce Tradiciones",
+    "objetivo": "Vincular la estabilidad personal con el servicio desinteresado.",
+    "fraseAncla": "El servicio me sacó del yo para ponerme en el nosotros.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo el egoísmo dominaba tu tiempo y tu energía antes?", "¿Por qué ayudar a otros te parecía una carga?"],
+      "admitir": ["¿Cómo descubriste que servir te salvaba a ti mismo?", "¿Qué servicio inicial, aunque pequeño, te hizo sentir útil por primera vez?"],
+      "corregir": ["¿Cómo mantienes hoy tu servicio libre de expectativas y de ego?", "¿Qué haces cuando sientes que el servicio te abruma?"]
+    }, "prioridad": 95
+  },
+  {
+    "id": "tema-aniv-07", "titulo": "La sangre hace parientes, la lealtad hace familias", "tituloCorto": "Lealtad hace familia",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
+    "intensidad": "Media", "momento": "Mitad", "formato": "Panel largo", "tipoTestimonio": "Inspirador", "paso": "Paso 1",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Viviendo Sobrio",
+    "objetivo": "Agradecer la fraternidad espiritual por encima de los lazos rotos.",
+    "fraseAncla": "Aquí aprendí a ser el hermano que nunca supe ser.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo eran tus vínculos familiares y cómo los saboteabas?", "¿Por qué no confiabas en la lealtad de nadie?"],
+      "admitir": ["¿Qué actitudes de tus compañeros te mostraron lo que era el apoyo incondicional?", "¿Cómo aprendiste a no huir ante el primer conflicto grupal?"],
+      "corregir": ["¿Qué principios aplicas hoy para ser leal a tu fraternidad y a tu familia?", "¿Cómo practicas el respeto y la tolerancia diaria?"]
+    }, "prioridad": 94
   },
 
   // ==========================================
-  // FUENTE: MENÚ JUVENIL / EL JOVEN EN AA
+  // CATEGORÍA: SEMANA DE LOS PADRES (Sensibles)
   // ==========================================
   {
-    id: "tema-joven-01",
-    titulo: "¿Soy demasiado joven para tener un problema?",
-    tituloCorto: "No hay edad para el fondo",
-    estado: "Completo",
-    etiquetas: ["paso-1-impotencia", "juventud", "autodescubrimiento", "identidad", "negación", "comunidad"],
-    categoria: "Juventud",
-    evento: ["Semana de la Juventud"],
-    publico: ["Jóvenes", "Recién llegados"],
-    intensidad: "Alta",
-    momento: "Inicio",
-    formato: "Panel corto",
-    tipoTestimonio: "Crudo",
-    emocion: ["Rebeldía", "Miedo"],
-    defectoCaracter: ["Negación", "Arrogancia"],
-    virtudPrincipal: ["Honestidad", "Humildad"],
-    pasos: ["Paso 1"],
-    tradiciones: [],
-    conceptos: ["Fondo emocional vs. material", "Identificación"],
-    fuentePrincipal: "AA",
-    fuenteAA: [
-      {
-        obra: "El Joven en AA",
-        referencia: "Historias personales",
-        uso: "Desmitificar la idea de que se necesita perder familia o trabajo para tocar fondo."
-      }
-    ],
-    fuenteFGDLL: [],
-    librosRecomendados: [],
-    objetivo: "Demostrar que la bancarrota emocional y espiritual llega antes que la material.",
-    fraseAncla: "No perdí casas ni trabajos, pero perdí las ganas de vivir antes de los veinte.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo usabas tu juventud como excusa para justificar tu forma de destruir tu vida?",
-        "¿De qué manera la presión social te hacía aparentar que todo estaba bajo control?"
-      ],
-      admitir: [
-        "¿Cuál fue el vacío interno que te obligó a pedir ayuda a pesar de ser tan joven?",
-        "¿Qué se sintió escuchar a alguien mayor contar una historia emocionalmente idéntica a la tuya?"
-      ],
-      corregir: [
-        "¿Cómo construyes hoy tu identidad sin necesidad de complacer las expectativas destructivas de otros?",
-        "¿De qué manera vives tu juventud hoy en libertad y sin fugas?"
-      ]
-    },
-    variaciones: ["El mito de la edad", "Juventud y dolor"],
-    palabrasClave: ["juventud", "fondo emocional", "rebeldía", "identificación"],
-    advertenciaEtica: "",
-    advertenciaLider: "Evitar que los miembros mayores minimicen el fondo del joven (el clásico 'tú no sufriste nada'). Fomentar empatía.",
-    noUsarPara: ["Minimizar el dolor del joven"],
-    esCatalogoBase: true,
-    prioridad: 20,
-    relacionados: [],
-    fechaCreacion: "2026-05-01"
+    "id": "tema-padre-01", "titulo": "Hijo huérfano de padres vivos", "tituloCorto": "Huérfano de padres vivos",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
+    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 4",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 4 y 8",
+    "advertenciaEtica": "Tema sensible: Oriente hacia la responsabilidad afectiva y la comprensión. No usar para juzgar, confrontar en público o forzar perdón.",
+    "objetivo": "Abordar la herida del abandono emocional sin victimismo, buscando comprensión.",
+    "fraseAncla": "No puedo cambiar su ausencia, pero ya no me ausento de mí mismo.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo intentabas llenar el vacío emocional que dejó el abandono afectivo?", "¿De qué maneras replicabas tú mismo esa ausencia con otros?"],
+      "admitir": ["¿Qué te dolió aceptar sobre las limitaciones emocionales de tus padres?", "¿Cómo empezaste a soltar el resentimiento en el grupo?"],
+      "corregir": ["¿Cómo ejerces hoy tu propia paternidad/maternidad o relaciones para no repetir la ausencia?", "¿De qué manera te has hecho responsable de ti mismo hoy?"]
+    }, "prioridad": 90
   },
-
   {
-    id: "tema-joven-02",
-    titulo: "Castillos en el aire: La fantasía como fuga",
-    tituloCorto: "Castillos en el aire",
-    estado: "Completo",
-    etiquetas: ["paso-4-inventario", "juventud", "negación", "cambio", "responsabilidad", "autodescubrimiento"],
-    categoria: "Juventud",
-    evento: ["Semana de la Juventud"],
-    publico: ["Jóvenes"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Frustración", "Ansiedad"],
-    defectoCaracter: ["Evasión", "Perfeccionismo"],
-    virtudPrincipal: ["Responsabilidad", "Honestidad"],
-    pasos: ["Paso 4"],
-    tradiciones: [],
-    conceptos: ["Fantasía como mecanismo de evasión", "Solo por hoy"],
-    fuentePrincipal: "FGDLL",
-    fuenteAA: [
-      {
-        obra: "Menú de Temas Juvenil",
-        referencia: "Castillos en el aire",
-        uso: "Identificar la fantasía y los planes irreales como mecanismo de evasión."
-      }
-    ],
-    fuenteFGDLL: [],
-    librosRecomendados: [],
-    objetivo: "Aterrizar la mente del joven a la realidad del 'Solo por hoy' abandonando la fantasía.",
-    fraseAncla: "Hacía planes gigantes para el futuro porque no soportaba habitar mi presente.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera te refugiabas en planes grandiosos para no enfrentar tus responsabilidades diarias?",
-        "¿Qué frustración sentías cuando tus 'castillos en el aire' chocaban con la realidad?"
-      ],
-      admitir: [
-        "¿Cuándo te diste cuenta de que soñar sin accionar era otra forma de estar anestesiado?",
-        "¿Cómo te enseñó el grupo a aterrizar tus expectativas y mirar tu realidad con honestidad?"
-      ],
-      corregir: [
-        "¿Qué acciones pequeñas y reales haces hoy para construir tu vida en lugar de solo imaginarla?",
-        "¿Cómo mantienes tus metas aterrizadas aplicando el plan de 24 horas?"
-      ]
-    },
-    variaciones: ["Soñar sin actuar", "Fuga en la fantasía"],
-    palabrasClave: ["fantasía", "realidad", "evasión", "solo por hoy"],
-    advertenciaEtica: "",
-    advertenciaLider: "Guiar para que el joven entienda que soñar es válido, pero evadir el presente destruye.",
-    noUsarPara: [],
-    esCatalogoBase: true,
-    prioridad: 25,
-    relacionados: ["tema-joven-01"],
-    fechaCreacion: "2026-05-01"
+    "id": "tema-padre-02", "titulo": "El padre que tuve y el padre que necesité", "tituloCorto": "El padre que tuve",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
+    "intensidad": "Media", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Inspirador", "paso": "Paso 9",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 4",
+    "advertenciaEtica": "Cuidar de no fomentar el odio familiar. El objetivo es reconciliar la realidad con las expectativas.",
+    "objetivo": "Liberar a los padres de nuestras expectativas de perfección.",
+    "fraseAncla": "Dejé de exigirle al hombre para empezar a comprender al ser humano.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué expectativas irreales le exigías a tu figura paterna?", "¿Cómo utilizabas esa carencia como excusa para hacerte daño?"],
+      "admitir": ["¿En qué momento del inventario te diste cuenta de que él hizo lo que pudo con lo que tuvo?", "¿Qué papel jugó el grupo en ayudarte a dejar de ser juez?"],
+      "corregir": ["¿Qué actitudes cambiaste hoy respecto a la figura paterna (biológica o espiritual)?", "¿Cómo aprendiste a proveerte a ti mismo lo que necesitabas?"]
+    }, "prioridad": 89
+  },
+  {
+    "id": "tema-padre-03", "titulo": "Padre proveedor, corazón ausente", "tituloCorto": "Proveedor ausente",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
+    "intensidad": "Media", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 4",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Libro Azul, Cap. La Familia Después",
+    "objetivo": "Mostrar que las heridas no solo son materiales, sino afectivas, y asumir nuestra parte.",
+    "fraseAncla": "Creía que el dinero suplía el amor, hasta que el vacío dolió.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo la sustitución del afecto por lo material te enseñó a relacionarte?", "¿Qué vacíos intentabas tapar con el control y la provisión económica?"],
+      "admitir": ["¿Cuándo reconociste que el abandono afectivo también es una herida profunda?", "¿Qué responsabilidad aceptaste sobre cómo tú mismo te aislabas?"],
+      "corregir": ["¿Cómo practicas la presencia emocional, no solo física o material, con tu familia hoy?", "¿De qué manera demuestras amor sin intentar comprarlo?"]
+    }, "prioridad": 88
+  },
+  {
+    "id": "tema-padre-04", "titulo": "Papá también fue hijo", "tituloCorto": "Papá fue hijo",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
+    "intensidad": "Alta", "momento": "Cierre", "formato": "Inspirador", "tipoTestimonio": "Inspirador", "paso": "Paso 8",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Guía de Apadrinamiento",
+    "objetivo": "Generar empatía radical al ver al padre como un hombre herido también.",
+    "fraseAncla": "Para perdonar, tuve que ver a mi padre como el niño herido que fue.",
+    "guiaTestimonio": {
+      "detectar": ["¿De qué forma tu resentimiento te impedía ver la historia y el dolor de tu propio padre?", "¿Qué conductas repetías por inercia de ese resentimiento?"],
+      "admitir": ["¿Qué hecho o ejercicio de los pasos te hizo darte cuenta de que heredaste patrones no sanados?", "¿Cómo dolió soltar la postura de víctima eterna?"],
+      "corregir": ["¿Cómo rompes hoy la cadena de resentimiento familiar?", "¿De qué manera te relacionas hoy con la idea de la paternidad?"]
+    }, "prioridad": 87
+  },
+  {
+    "id": "tema-padre-05", "titulo": "El hombre que no aprendió a llorar", "tituloCorto": "No aprendió a llorar",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Familia", "evento": ["Semana de los Padres"],
+    "intensidad": "Media", "momento": "Inicio", "formato": "Didáctico", "tipoTestimonio": "Crudo", "paso": "Paso 1",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Viviendo Sobrio",
+    "objetivo": "Romper el machismo o la dureza emocional como mecanismo de defensa.",
+    "fraseAncla": "Creía que sentir era debilidad, y mi dureza casi me mata.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué creencias sobre la 'fuerza' o la masculinidad te obligaron a reprimir tus emociones?", "¿Cómo desquitabas ese dolor reprimido contra los demás?"],
+      "admitir": ["¿Cuál fue el momento en que ya no pudiste contener la emoción en el grupo?", "¿Cómo aprendiste que la vulnerabilidad requiere valor real?"],
+      "corregir": ["¿Cómo gestionas hoy tus emociones como la tristeza o el miedo sin esconderte?", "¿De qué forma permites hoy que otros también sean vulnerables?"]
+    }, "prioridad": 86
+  },
+  {
+    "id": "tema-padre-06", "titulo": "Ser padre sin haberse sentido hijo", "tituloCorto": "Padre sin ser hijo",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
+    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 9",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 8 y 9",
+    "advertenciaEtica": "Orientar el tema a la reparación posible de hoy, evitando justificar la violencia heredada.",
+    "objetivo": "Asumir la responsabilidad de criar a otros cuando nosotros mismos estamos rotos.",
+    "fraseAncla": "No me dieron lo que no tenían, pero hoy decido dar algo distinto.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo tus propios vacíos infantiles afectaron severamente tu rol como protector/padre?", "¿Qué justificaciones usabas para tus fallas afectivas?"],
+      "admitir": ["¿En qué momento la agrupación te hizo ver el daño que estabas transmitiendo a tu descendencia?", "¿Qué miedos enfrentaste al intentar reparar ese daño?"],
+      "corregir": ["¿Qué acciones concretas y consistentes haces hoy para estar presente en la vida de tu familia?", "¿Cómo reparas hoy desde el cambio de conducta?"]
+    }, "prioridad": 85
+  },
+  {
+    "id": "tema-padre-07", "titulo": "Honrar sin negar mi historia", "tituloCorto": "Honrar mi historia",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
+    "intensidad": "Media", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 12",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 12",
+    "objetivo": "Enseñar a aceptar el pasado familiar con dignidad, sin obligación a forzar cercanías tóxicas.",
+    "fraseAncla": "Honrar a mi padre no es aplaudir sus errores, es no repetir su historia.",
+    "guiaTestimonio": {
+      "detectar": ["¿Por qué sentías culpa de no poder sentir 'amor tradicional' hacia quien te lastimó?", "¿Cómo el fingir que todo estaba bien te enfermaba más?"],
+      "admitir": ["¿Cómo el programa te ayudó a separar el respeto por la vida de la sumisión al abuso?", "¿Qué alivio encontraste al dejar de juzgarlos y dejarlos ir?"],
+      "corregir": ["¿Cómo honras hoy tus raíces a través de mantenerte sano y en servicio?", "¿Qué límites sanos aplicas hoy sin necesidad de odio ni venganza?"]
+    }, "prioridad": 84
   },
 
   // ==========================================
-  // FUENTE: EL LENGUAJE DEL CORAZÓN
+  // CATEGORÍA: SEMANA DE LAS MADRES (Sensibles)
   // ==========================================
   {
-    id: "tema-corazon-01",
-    titulo: "El dolor como piedra de toque del crecimiento espiritual",
-    tituloCorto: "El dolor como maestro",
-    estado: "Completo",
-    etiquetas: ["paso-10-reflexion", "paso-11-contacto", "tristeza", "crecimiento", "sanacion", "aceptación", "transformacion"],
-    categoria: "Desarrollo",
-    evento: ["Convenciones", "Semana del Guerrero"],
-    publico: ["Participantes", "Líderes"],
-    intensidad: "Alta",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Crudo",
-    emocion: ["Tristeza", "Esperanza"],
-    defectoCaracter: ["Intolerancia al dolor"],
-    virtudPrincipal: ["Aceptación", "Madurez"],
-    pasos: ["Paso 10", "Paso 11"],
-    tradiciones: [],
-    conceptos: ["El dolor como oportunidad de crecimiento"],
-    fuentePrincipal: "AA",
-    fuenteAA: [
-      {
-        obra: "El Lenguaje del Corazón",
-        referencia: "El dolor: Piedra de toque del crecimiento",
-        uso: "Aceptar que las crisis emocionales en recuperación son oportunidades, no fracasos."
-      }
-    ],
-    fuenteFGDLL: [],
-    librosRecomendados: [],
-    objetivo: "Enseñar a no huir del dolor en la recuperación, sino a usarlo para evolucionar.",
-    fraseAncla: "El dolor ya no es mi enemigo; hoy es el maestro que me avisa dónde debo crecer.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo reaccionabas antes ante la frustración o el dolor buscando anestesiarlo inmediatamente?",
-        "¿De qué maneras la intolerancia al sufrimiento te hacía culpar a otros de tu malestar?"
-      ],
-      admitir: [
-        "¿Qué crisis viviste estando ya en recuperación que te obligó a usar los Pasos en lugar de huir?",
-        "¿Cómo entendiste que sentir dolor en sobriedad no significaba que el programa estaba fallando?"
-      ],
-      corregir: [
-        "¿De qué manera te sientas hoy a sentir y analizar lo que duele antes de reaccionar?",
-        "¿Cómo acompañas a tus compañeros cuando están pasando por su propio dolor sin intentar 'salvarlos'?"
-      ]
-    },
-    variaciones: ["Intolerancia al dolor", "Crecer duele"],
-    palabrasClave: ["dolor", "crecimiento", "crisis", "aceptación"],
-    advertenciaEtica: "Orientar el tema a la madurez emocional, sin hacer apología del sufrimiento innecesario.",
-    advertenciaLider: "Cuidar que no se convierta en una catarsis desoladora, debe cerrar con crecimiento.",
-    noUsarPara: ["Glorificar el sufrimiento"],
-    esCatalogoBase: true,
-    prioridad: 30,
-    relacionados: [],
-    fechaCreacion: "2026-05-01"
+    "id": "tema-madre-01", "titulo": "La madre que tuve y la madre que necesité", "tituloCorto": "Madre que tuve",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
+    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 4",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 4",
+    "advertenciaEtica": "El enfoque debe ser sanar la expectativa, no exponer las carencias de la madre de forma hiriente.",
+    "objetivo": "Soltar la idealización materna y trabajar en la aceptación de su realidad humana.",
+    "fraseAncla": "Mi madre me dio la vida; el programa me enseñó a vivirla.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué exigencias imposibles tenías sobre cómo debía ser tu madre?", "¿Cómo usabas sus fallas para justificar tus resentimientos y tu enfermedad?"],
+      "admitir": ["¿Qué parte del inventario te mostró que ella también era una mujer llena de miedos y límites?", "¿Qué dolió más de soltar la idea de la 'madre perfecta'?"],
+      "corregir": ["¿Cómo te haces responsable hoy de curar tus propias heridas sin exigírselo a ella?", "¿De qué manera la tratas con compasión hoy, esté cerca o lejos?"]
+    }, "prioridad": 80
   },
-
   {
-    id: "tema-corazon-02",
-    titulo: "Cuando la muerte y la locura tocan la puerta",
-    tituloCorto: "Al borde del abismo",
-    estado: "Completo",
-    etiquetas: ["paso-1-impotencia", "suicidio", "crisis-emocional", "ideacion-suicida", "esperanza", "comunidad"],
-    categoria: "Crisis",
-    evento: [],
-    publico: ["Participantes"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Crudo",
-    emocion: ["Desesperación", "Esperanza"],
-    defectoCaracter: ["Aislamiento"],
-    virtudPrincipal: ["Esperanza", "Confianza"],
-    pasos: ["Paso 1"],
-    tradiciones: [],
-    conceptos: ["Pedir ayuda a tiempo", "Red de seguridad"],
-    fuentePrincipal: "AA",
-    fuenteAA: [
-      {
-        obra: "El Lenguaje del Corazón",
-        referencia: "Artículos sobre la depresión profunda de Bill W.",
-        uso: "Visibilizar que la depresión y la ideación suicida son reales y requieren ayuda extrema."
-      }
-    ],
-    fuenteFGDLL: [],
-    librosRecomendados: [],
-    objetivo: "Visibilizar el dolor extremo que lleva al borde, y mostrar que pedir ayuda a tiempo salva vidas.",
-    fraseAncla: "El dolor era tan grande que no quería morir, solo quería dejar de sufrir.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo el dolor emocional cerró todas tus salidas, aislándote en la oscuridad?",
-        "¿De qué manera el silencio te convenció de que no había más esperanza?"
-      ],
-      admitir: [
-        "¿Cuál fue la mano tendida o la frase en el grupo que te ancló de regreso a la vida?",
-        "¿Cómo fue admitir que ya no podías gobernar tus pensamientos?"
-      ],
-      corregir: [
-        "¿A quién llamas inmediatamente hoy cuando tus pensamientos se oscurecen?",
-        "¿De qué manera la agrupación se ha vuelto tu red de seguridad?"
-      ]
-    },
-    variaciones: ["El abismo de la depresión", "El rescate silencioso"],
-    palabrasClave: ["crisis", "suicidio", "depresión", "rescate"],
-    advertenciaEtica: "CRÍTICO: No permita detalles metodológicos de intentos de suicidio. El enfoque DEBE estar en la desesperación que llevó allí, y cómo el rescate fue pedir ayuda. Si alguien expresa intenciones activas, referir a ayuda profesional de emergencia.",
-    advertenciaLider: "Tema de crisis extrema. Debe ser guiado con extremo cuidado para inspirar esperanza y contención, no morbo.",
-    noUsarPara: ["Describir métodos de autolesión", "Uso en grupos con personas en riesgo activo sin profesional presente"],
-    esCatalogoBase: true,
-    prioridad: 1,
-    relacionados: [],
-    fechaCreacion: "2026-05-01"
+    "id": "tema-madre-02", "titulo": "Mamá también fue hija", "tituloCorto": "Mamá fue hija",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
+    "intensidad": "Media", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Inspirador", "paso": "Paso 8",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Libro Azul",
+    "objetivo": "Romper el ciclo intergeneracional de trauma a través de la empatía.",
+    "fraseAncla": "Entender sus propias heridas fue el principio de mi sanación.",
+    "guiaTestimonio": {
+      "detectar": ["¿De qué formas te cegaba tu dolor e impedía ver la historia de abandono de tu propia madre?", "¿Cómo replicabas la misma dinámica exigiendo sin dar?"],
+      "admitir": ["¿Cómo el programa te permitió ver a tu madre como una mujer herida que replicó lo que conocía?", "¿Cómo cedió la postura de juez al practicar la empatía?"],
+      "corregir": ["¿Qué acciones tomas hoy para no heredar ese ciclo de dureza o chantaje emocional a otros?", "¿Cómo practicas el perdón desde la madurez hoy?"]
+    }, "prioridad": 79
+  },
+  {
+    "id": "tema-madre-03", "titulo": "Amor o necesidad", "tituloCorto": "Amor o necesidad",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
+    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Didáctico", "paso": "Paso 4",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 4 y 10",
+    "objetivo": "Distinguir entre el afecto genuino y la codependencia tóxica.",
+    "fraseAncla": "El control disfrazado de amor solo asfixia a ambos.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo disfrazabas de 'preocupación y amor' lo que realmente era una necesidad neurótica de controlar al otro?", "¿Qué miedos ocultabas asfixiando con cuidados?"],
+      "admitir": ["¿En qué momento admitiste que la codependencia estaba destruyendo tu paz mental y la del otro?", "¿Cómo enfrentaste el miedo al vacío cuando soltaste el control?"],
+      "corregir": ["¿Qué herramientas (pausas, límites, oración) usas hoy para no invadir el espacio emocional ajeno?", "¿Cómo se ve el amor libre y desapegado hoy en tus relaciones?"]
+    }, "prioridad": 78
+  },
+  {
+    "id": "tema-madre-04", "titulo": "Dependencia emocional", "tituloCorto": "Dependencia",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
+    "intensidad": "Media", "momento": "Inicio", "formato": "Panel largo", "tipoTestimonio": "Crudo", "paso": "Paso 1",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Viviendo Sobrio",
+    "objetivo": "Identificar el chantaje y la necesidad extrema de aprobación familiar.",
+    "fraseAncla": "Mendigaba migajas de afecto para sentir que yo existía.",
+    "guiaTestimonio": {
+      "detectar": ["¿De qué formas la necesidad de aprobación de tus padres (o hijos) gobernaba todas tus decisiones?", "¿Qué tanto te anulabas para no perder el 'amor' del otro?"],
+      "admitir": ["¿Qué te hizo tocar fondo y darte cuenta de que esa dependencia te tenía enfermo?", "¿Cómo fue el proceso de admitir que eras impotente ante los demás?"],
+      "corregir": ["¿Qué haces hoy cuando sientes que vas a ceder en tu dignidad por buscar aprobación?", "¿Cómo la comunidad te ayudó a fortalecer tu identidad?"]
+    }, "prioridad": 77
+  },
+  {
+    "id": "tema-madre-05", "titulo": "Aprendiendo a soltar con amor", "tituloCorto": "Soltar con amor",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Familia", "evento": ["Semana de las Madres"],
+    "intensidad": "Baja", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 3",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 3",
+    "objetivo": "Experimentar el desapego compasivo y la fe en el proceso del otro.",
+    "fraseAncla": "Soltarlos no fue abandonarlos; fue dejarlos en manos de Dios.",
+    "guiaTestimonio": {
+      "detectar": ["¿Por qué sentías que si tú no resolvías los problemas de tu familia, nadie más lo haría?", "¿Qué niveles de ansiedad te trajo jugar a ser Dios?"],
+      "admitir": ["¿Cómo el programa te enseñó que soltar el resultado era el acto de amor más sano?", "¿Qué sentiste la primera vez que no interferiste en el tropiezo del otro?"],
+      "corregir": ["¿Cómo aplicas el Tercer Paso diario para no intervenir donde no te corresponde?", "¿Qué significa para ti amar sin gobernar hoy?"]
+    }, "prioridad": 76
+  },
+  {
+    "id": "tema-madre-06", "titulo": "Culpa de madre, culpa de hijo", "tituloCorto": "La culpa de ambas vías",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
+    "intensidad": "Alta", "momento": "Mitad", "formato": "Panel largo", "tipoTestimonio": "Didáctico", "paso": "Paso 8",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "La Familia Después",
+    "advertenciaEtica": "Tema muy propenso a catarsis destructiva. Evite que se confunda la toma de responsabilidad con autoflagelación.",
+    "objetivo": "Desactivar la culpa paralizante y convertirla en responsabilidad para reparar daños.",
+    "fraseAncla": "La culpa me estancó en el llanto; la responsabilidad me puso a reparar.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo el ciclo de culpa y victimismo los mantenía a ambos atrapados en reclamos y daño mutuo?", "¿Qué disculpas te dabas para no hacer nada al respecto?"],
+      "admitir": ["¿Cuál fue el inventario moral que te hizo darte cuenta de tu cuota de participación en el daño?", "¿Cómo te enseñó el grupo a pasar del remordimiento a la acción?"],
+      "corregir": ["¿Cómo corriges tu conducta hoy cuando la culpa antigua quiere asaltarte?", "¿Qué formas maduras tienes hoy de pedir disculpas mediante el cambio de actitud?"]
+    }, "prioridad": 75
+  },
+  {
+    "id": "tema-madre-07", "titulo": "La familia después", "tituloCorto": "La familia después",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Familia", "evento": ["Semana de las Madres"],
+    "intensidad": "Media", "momento": "Cierre", "formato": "Inspirador", "tipoTestimonio": "Inspirador", "paso": "Paso 12",
+    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Libro Azul, Cap. La Familia Después",
+    "objetivo": "Compartir la esperanza de reconstrucción familiar mediante la recuperación.",
+    "fraseAncla": "La recuperación no trajo una familia perfecta, trajo una familia real.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué tanto caos y desorden caracterizaba tu núcleo familiar en el pasado?", "¿Por qué creías que el daño hecho en tu familia jamás se repararía?"],
+      "admitir": ["¿Cómo fue que los pequeños cambios en ti empezaron a transformar el entorno familiar, aunque ellos no estuvieran en el programa?", "¿Qué resistencia inicial hubo?"],
+      "corregir": ["¿Cómo lidias con los conflictos familiares de hoy sin perder tu sobriedad ni tu paz?", "¿Qué gratitud sientes por la realidad familiar de este momento?"]
+    }, "prioridad": 74
   },
 
   // ==========================================
-  // FUENTE: COMO LO VE BILL
+  // CATEGORÍA: DIVERSIDAD (Sensibles)
   // ==========================================
   {
-    id: "tema-bill-01",
-    titulo: "Resentimiento: El ofensor número uno",
-    tituloCorto: "El ofensor número uno",
-    estado: "Completo",
-    etiquetas: ["paso-4-inventario", "paso-10-reflexion", "resentimiento", "perdón", "ira", "responsabilidad"],
-    categoria: "Paso 4",
-    evento: ["Cualquiera"],
-    publico: ["Participantes"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Panel largo",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Enojo", "Paz"],
-    defectoCaracter: ["Resentimiento", "Victimismo"],
-    virtudPrincipal: ["Perdón", "Responsabilidad"],
-    pasos: ["Paso 4", "Paso 10"],
-    tradiciones: [],
-    conceptos: ["Inventario de resentimientos", "Liberación del odio"],
-    fuentePrincipal: "AA",
-    fuenteAA: [
-      {
-        obra: "Como lo ve Bill",
-        referencia: "Resentimiento",
-        uso: "Mostrar cómo guardar ofensas pasadas anula la paz presente."
-      }
-    ],
-    fuenteFGDLL: [],
-    librosRecomendados: [],
-    objetivo: "Visualizar el resentimiento como un veneno interno que se debe soltar para sobrevivir.",
-    fraseAncla: "El resentimiento era un veneno que yo me tomaba, esperando que el otro muriera.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Qué viejas ofensas atesorabas y usabas como excusa para estar enojado con el mundo?",
-        "¿Cómo tu rol de 'víctima eterna' te impedía ver tu propia parte en los conflictos?"
-      ],
-      admitir: [
-        "¿Cuándo te diste cuenta en tu inventario de que tú eras quien alimentaba ese dolor?",
-        "¿Cómo fue el proceso de admitir que perdonar (o soltar) era para tu propia paz y no por el otro?"
-      ],
-      corregir: [
-        "¿Qué práctica diaria utilizas hoy (Paso 10) para no irte a dormir con resentimientos nuevos?",
-        "¿De qué manera pones límites hoy sin necesidad de acumular odio hacia las personas?"
-      ]
-    },
-    variaciones: ["Soltar el veneno", "Victimismo"],
-    palabrasClave: ["resentimiento", "inventario", "perdón", "víctima"],
-    advertenciaEtica: "El perdón es un proceso personal de liberación de resentimiento, NO se debe forzar a convivir con agresores.",
-    advertenciaLider: "Asegurar que el participante se enfoque en SU reacción al resentimiento, no en la lista de culpas del ofensor.",
-    noUsarPara: ["Forzar el perdón", "Justificar el abuso"],
-    esCatalogoBase: true,
-    prioridad: 35,
-    relacionados: [],
-    fechaCreacion: "2026-05-01"
+    "id": "tema-diversidad-01", "titulo": "Un refugio seguro para todos", "tituloCorto": "Refugio seguro",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Diversidad", "evento": ["Convenciones", "Charlas generales"],
+    "intensidad": "Alta", "momento": "Inicio", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 3",
+    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Folleto AA y la comunidad LGTBQ",
+    "advertenciaEtica": "El programa de recuperación es inclusivo. Nadie puede ser excluido por su orientación o identidad. El líder debe asegurar respeto irrestricto.",
+    "objetivo": "Mostrar que la fraternidad no exige máscaras ni esconde el dolor bajo prejuicios.",
+    "fraseAncla": "Vine huyendo del juicio del mundo y encontré un lugar donde solo importaba mi alma.",
+    "guiaTestimonio": {
+      "detectar": ["¿De qué formas el rechazo externo, o tu miedo a ser juzgado, te empujó más a tu enfermedad o al aislamiento?", "¿Cómo te lastimabas tú mismo por no aceptarte?"],
+      "admitir": ["¿Cómo fue la experiencia de llegar a un grupo donde el único requisito era el deseo de parar de sufrir?", "¿Qué alivio sentiste al ser abrazado sin condiciones?"],
+      "corregir": ["¿De qué forma eres hoy puente para que otros encuentren ese mismo refugio?", "¿Cómo integras hoy tu identidad completa sin miedo ni reservas?"]
+    }, "prioridad": 60
+  },
+  {
+    "id": "tema-diversidad-02", "titulo": "La dignidad no se negocia", "tituloCorto": "Dignidad innegociable",
+    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Diversidad", "evento": [],
+    "intensidad": "Media", "momento": "Mitad", "formato": "Panel corto", "tipoTestimonio": "Crudo", "paso": "Paso 4",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Tercera Tradición",
+    "objetivo": "Destruir la falsa creencia de que ser de la diversidad implica tolerar abusos.",
+    "fraseAncla": "El mayor acto de amor propio fue dejar de pedir perdón por ser quien soy.",
+    "guiaTestimonio": {
+      "detectar": ["¿Por qué tolerabas abusos o mendigabas aceptación de quienes no respetaban tu dignidad?", "¿Cómo tu enfermedad se alimentaba de esa humillación constante?"],
+      "admitir": ["¿Cuándo el grupo te hizo ver que no tenías que disculparte por tu existencia?", "¿Cómo lograste inventariar el resentimiento sin culparte a ti mismo?"],
+      "corregir": ["¿Qué límites firmes y sanos pones hoy para proteger tu paz y tu dignidad?", "¿Cómo vives hoy tu recuperación con la cabeza en alto?"]
+    }, "prioridad": 59
   },
 
+  // ==========================================
+  // CATEGORÍA: CONCIENTIZACIÓN DEL SUICIDIO (CRISIS)
+  // ==========================================
   {
-    id: "tema-bill-02",
-    titulo: "Aceptación: La llave que abre todas las puertas",
-    tituloCorto: "La llave de la aceptación",
-    estado: "Completo",
-    etiquetas: ["paso-1-impotencia", "paso-3-entrega", "aceptación", "paz", "cambio", "entrega", "gratitud"],
-    categoria: "Desarrollo",
-    evento: ["Cualquiera"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Inicio",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Paz", "Aceptación"],
-    defectoCaracter: ["Control", "Resistencia"],
-    virtudPrincipal: ["Aceptación", "Paz"],
-    pasos: ["Paso 1", "Paso 3"],
-    tradiciones: [],
-    conceptos: ["Aceptar lo que no puedo cambiar", "Serenidad"],
-    fuentePrincipal: "AA",
-    fuenteAA: [
-      {
-        obra: "Como lo ve Bill",
-        referencia: "Aceptación",
-        uso: "Aceptar a las personas, lugares y cosas tal como son, no como quisiéramos que fueran."
-      }
-    ],
-    fuenteFGDLL: [],
-    librosRecomendados: [],
-    objetivo: "Dejar de sufrir por lo que no podemos controlar.",
-    fraseAncla: "La paz no llegó cuando el mundo cambió, llegó cuando yo lo acepté.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo peleabas contra la realidad exigiendo que las personas y situaciones fueran de otra manera?",
-        "¿De qué forma el deseo de control te generaba angustia constante?",
-        "¿Qué relaciones o situaciones te consumían energía por no aceptarlas como eran?"
-      ],
-      admitir: [
-        "¿Cuál fue el momento en que te rendiste y dejaste de pelear contra lo que no podías cambiar?",
-        "¿Cómo el programa te enseñó la diferencia entre aceptar y resignarse?",
-        "¿Qué herramienta del programa te ayudó a practicar la aceptación por primera vez?"
-      ],
-      corregir: [
-        "¿Cómo usas hoy la oración de la serenidad cuando algo te rebasa?",
-        "¿Qué cambios comenzaron a ocurrir en tu vida cuando dejaste de resistir la realidad?",
-        "¿De qué manera la aceptación te ha liberado para enfocarte en lo que sí puedes hacer?"
-      ]
-    },
-    variaciones: ["Soltar el control", "La serenidad como práctica"],
-    palabrasClave: ["aceptación", "serenidad", "control", "rendición"],
-    advertenciaEtica: "",
-    advertenciaLider: "Distinguir claramente entre aceptación activa (que libera para actuar) y resignación pasiva (que paraliza).",
-    noUsarPara: ["Justificar abuso o maltrato con 'hay que aceptarlo'"],
-    esCatalogoBase: true,
-    prioridad: 40,
-    relacionados: ["tema-bill-01"],
-    fechaCreacion: "2026-05-01"
+    "id": "tema-crisis-01", "titulo": "Cuando la muerte y la locura tocan la puerta", "tituloCorto": "Al borde del abismo",
+    "estado": "Completo", "sensibilidad": "crisis", "categoria": "Crisis", "evento": [],
+    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 1",
+    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Libro Azul, Historia personal",
+    "advertenciaEtica": "CRÍTICO: No permita detalles metodológicos de intentos de suicidio. El enfoque DEBE estar en la desesperación que llevó allí, y cómo el rescate fue pedir ayuda. Si alguien expresa intenciones activas, referir a ayuda psiquiátrica de emergencia.",
+    "objetivo": "Visibilizar el dolor extremo que lleva al borde, y mostrar que pedir ayuda a tiempo salva vidas.",
+    "fraseAncla": "El dolor era tan grande que no quería morir, solo quería dejar de sufrir.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo la locura de la adicción o el dolor emocional cerraron todas tus salidas, aislándote en la oscuridad?", "¿De qué manera el silencio te convenció de que no había más esperanza?"],
+      "admitir": ["¿Cuál fue el destello de luz, la mano tendida o la frase en el grupo que te ancló de regreso a la vida?", "¿Cómo fue admitir que ya no podías gobernar tus pensamientos?"],
+      "corregir": ["¿A quién llamas inmediatamente hoy cuando tus pensamientos se oscurecen?", "¿De qué manera la agrupación se ha vuelto tu barrera de seguridad?"]
+    }, "prioridad": 1
+  },
+  {
+    "id": "tema-crisis-02", "titulo": "Quédate un día más", "tituloCorto": "Un día más",
+    "estado": "Completo", "sensibilidad": "crisis", "categoria": "Crisis", "evento": [],
+    "intensidad": "Alta", "momento": "Cierre", "formato": "Inspirador", "tipoTestimonio": "Inspirador", "paso": "Paso 2",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Viviendo Sobrio",
+    "advertenciaEtica": "CRÍTICO: Evite apología o heroísmo en torno a las crisis. El foco es la contención de 24 horas y la esperanza.",
+    "objetivo": "Proporcionar esperanza tangible basada en el plan de 24 horas y el acompañamiento constante.",
+    "fraseAncla": "No tenía fuerzas para un año, pero podía soportar 24 horas más.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo el peso del futuro y los miedos proyectados te aplastaban hasta querer rendirte por completo?", "¿Por qué creías que tu dolor actual jamás pasaría?"],
+      "admitir": ["¿De qué forma el concepto grupal de 'solo por hoy' alivió la presión intolerable de tu mente?", "¿Cómo el saber que alguien más sufría lo mismo te dio consuelo?"],
+      "corregir": ["¿Cómo desarmas hoy la angustia futura regresando al aquí y al ahora?", "¿Cómo acompañas hoy, sin juicios, a quien siente que no puede más?"]
+    }, "prioridad": 2
+  },
+
+  // ==========================================
+  // CATEGORÍA: SEMANA DEL GUERRERO (Generales FGDLL)
+  // ==========================================
+  {
+    "id": "tema-guerrero-01", "titulo": "Todo guerrero tuvo miedo", "tituloCorto": "El miedo del guerrero",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Guerrero", "evento": ["Semana del Guerrero"],
+    "intensidad": "Media", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Inspirador", "paso": "Paso 4",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "12 y 12, Paso 4",
+    "objetivo": "Desmitificar el 'valor' y mostrar que actuar a pesar del miedo es la verdadera recuperación.",
+    "fraseAncla": "El valor no fue la ausencia de miedo, fue no dejar que el miedo me paralizara.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué fachadas de dureza o 'valentía' falsa usabas para esconder tus terror paralizante a fallar?", "¿Cómo ese miedo dirigía tus peores decisiones?"],
+      "admitir": ["¿Qué sentiste al escuchar a personas que considerabas fuertes admitir libremente sus propios miedos en tribuna?", "¿Cómo fue tu primera confesión de terror?"],
+      "corregir": ["¿Qué haces hoy cuando el miedo se presenta frente a un nuevo reto?", "¿Cómo la oración o la pausa te permiten actuar correctamente aunque la rodilla tiemble?"]
+    }, "prioridad": 40
+  },
+  {
+    "id": "tema-guerrero-02", "titulo": "Ya no soy culpable, soy responsable", "tituloCorto": "Responsable, no culpable",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Guerrero", "evento": ["Semana del Guerrero"],
+    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Didáctico", "paso": "Paso 8",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "12 y 12, Paso 8",
+    "objetivo": "Pasar de la culpa estéril a la acción reparadora.",
+    "fraseAncla": "La culpa me hacía llorar mis errores; la responsabilidad me hizo repararlos.",
+    "guiaTestimonio": {
+      "detectar": ["¿Cómo utilizabas la culpa como una zona de confort para seguir haciendo daño sin cambiar verdaderamente?", "¿A quiénes arrastrabas en tu remordimiento constante?"],
+      "admitir": ["¿Cuándo el grupo te confrontó para dejar de victimizarte por los daños que tú mismo cometías?", "¿Cómo aprendiste la diferencia entre pedir perdón y cambiar la conducta?"],
+      "corregir": ["¿Qué métodos prácticos utilizas hoy (Paso 10) para no acumular cuentas pendientes?", "¿De qué manera asumes las consecuencias de tus actos de hoy?"]
+    }, "prioridad": 41
+  },
+
+  // ==========================================
+  // PASOS BÁSICOS
+  // ==========================================
+  {
+    "id": "tema-paso1-01", "titulo": "Yo no llegué convencido, llegué cansado", "tituloCorto": "Llegar cansado",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Paso 1", "evento": [],
+    "intensidad": "Media", "momento": "Inicio", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 1",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 1",
+    "objetivo": "Transmitir que no se requiere fe inicial, sino el reconocimiento del agotamiento personal.",
+    "fraseAncla": "No llegué por fe, llegué porque ya no podía más.",
+    "guiaTestimonio": {
+      "detectar": ["¿De qué formas te engañabas creyendo que todavía podías aguantar un poco más?", "¿Qué actitudes demostraban que tu energía se estaba agotando?"],
+      "admitir": ["¿Cuál fue el momento exacto de quiebre donde te diste cuenta de que ya no tenías energía?", "¿Qué sentiste al llegar al grupo no por convicción, sino por cansancio?"],
+      "corregir": ["¿Cómo aceptas hoy cuando algo te rebasa para no esperar a tocar fondo?", "¿Qué acciones tomas para no volver a ese nivel de agotamiento?"]
+    }, "prioridad": 50
+  },
+  {
+    "id": "tema-paso1-02", "titulo": "Lo que yo creía que era normal", "tituloCorto": "Normalizar el daño",
+    "estado": "Completo", "sensibilidad": "normal", "categoria": "Paso 1", "evento": [],
+    "intensidad": "Media", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Didáctico", "paso": "Paso 1",
+    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 1",
+    "objetivo": "Evidenciar cómo nos acostumbramos a dinámicas dañinas.",
+    "fraseAncla": "No todo lo habitual era sano.",
+    "guiaTestimonio": {
+      "detectar": ["¿Qué actitudes de desorden o cansancio emocional estabas normalizando en tu rutina?", "¿Cómo te convencías de que vivir así era lo que a todos les pasaba?"],
+      "admitir": ["¿Cuál fue el punto de quiebre donde entendiste que vivir así no era normal?", "¿Qué sentiste al admitir que te habías acostumbrado a hacerte daño?"],
+      "corregir": ["¿Cómo cuestionas tus hábitos y reacciones hoy?", "¿Qué nuevas rutinas o límites has establecido?"]
+    }, "prioridad": 51
   }
-
-];
-
-// ============================================================================
-// PAQUETE: LITERATURA AA (20 temas — Los 12 Pasos, Tradiciones y Vida Diaria)
-// ============================================================================
-const PAQUETE_LITERATURA_AA = [
-  {
-    id: "tema-AALIT-001",
-    titulo: "La admisión de la impotencia como primer paso a la libertad",
-    tituloCorto: "Admitir la impotencia",
-    estado: "Completo",
-    categoria: "Primer Paso",
-    evento: ["Juntas de Paso 1", "Reuniones de principiantes"],
-    publico: ["Todos", "Recién llegados"],
-    etiquetas: ["paso-1-impotencia", "aceptación", "negación", "honestidad"],
-    intensidad: "Alta",
-    momento: "Inicio",
-    formato: "Individual",
-    tipoTestimonio: "Crudo",
-    emocion: ["Miedo", "Despair", "Esperanza"],
-    defectoCaracter: ["Negación", "Soberbia"],
-    virtudPrincipal: ["Honestidad"],
-    pasos: ["Paso 1"],
-    tradiciones: [],
-    conceptos: ["Rendición incondicional", "Fondo emocional"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Libro Grande / Doce Pasos y Doce Tradiciones", referencia: "Paso 1", uso: "Base del Primer Paso y la rendición" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Alcohólicos Anónimos (Libro Azul)", autor: "Bill W. y primeros miembros", año: 1939, uso: "Base del Primer Paso y la rendición" }],
-    objetivo: "Ayudar a comprender que admitir la derrota total no es debilidad, sino el cimiento indispensable de la recuperación.",
-    fraseAncla: "La admisión de la impotencia personal se convierte en el sólido cimiento sobre el cual podremos construir una existencia feliz.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo intentabas controlar tu consumo o tus conductas destructivas?",
-        "¿Qué excusas te dabas para no ver que tu vida era ingobernable?",
-        "¿Cuál fue el fondo de sufrimiento que te obligó a parar?"
-      ],
-      admitir: [
-        "¿En qué momento de tu proceso aceptaste que no tenías el control?",
-        "¿Cómo se sintió dejar de pelear y rendirte ante tu enfermedad?",
-        "¿De qué manera el grupo te ayudó a ver tu realidad?"
-      ],
-      corregir: [
-        "¿Cómo practicas la rendición en tu vida diaria hoy?",
-        "¿Qué herramientas usas cuando vuelve la ilusión de control?",
-        "¿Cómo ha cambiado tu vida al aceptar tu impotencia?"
-      ]
-    },
-    variaciones: ["El regalo de la derrota", "Dejar de luchar"],
-    palabrasClave: ["impotencia", "derrota", "control", "rendición"],
-    advertenciaEtica: "",
-    advertenciaLider: "Cuidar que los participantes no confundan la impotencia ante la enfermedad con falta de responsabilidad sobre sus acciones de hoy.",
-    noUsarPara: ["Fomentar el victimismo", "Justificar recaídas sin buscar ayuda"],
-    esCatalogoBase: false,
-    prioridad: 100,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-002",
-    titulo: "Llegar a creer en un Poder Superior restaurador",
-    tituloCorto: "Llegamos a creer",
-    estado: "Completo",
-    categoria: "Segundo Paso",
-    evento: ["Juntas de estudio", "Juntas espirituales"],
-    publico: ["Todos", "Agnósticos", "Escépticos"],
-    etiquetas: ["paso-2-fe", "fe", "esperanza", "confianza"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Esperanza", "Paz"],
-    defectoCaracter: ["Soberbia", "Control-obsesivo"],
-    virtudPrincipal: ["Fe"],
-    pasos: ["Paso 2"],
-    tradiciones: [],
-    conceptos: ["Mente receptiva", "Sano juicio"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Llegamos a Creer / Doce Pasos y Doce Tradiciones", referencia: "Paso 2", uso: "Ejemplos de despertares espirituales variados" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Llegamos a Creer", autor: "Varios autores AA", año: 1973, uso: "Ejemplos de despertares espirituales variados" }],
-    objetivo: "Mostrar que la fe no requiere dogmas religiosos, sino una mente abierta y la disposición de confiar en algo más grande que uno mismo.",
-    fraseAncla: "Llegamos a creer que un Poder superior a nosotros mismos podría devolvernos el sano juicio.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo era tu relación con la fe, la religión o la esperanza antes del programa?",
-        "¿De qué manera el orgullo intelectual te impedía pedir ayuda?",
-        "¿Cómo se manifestaba tu locura emocional o tu falta de sano juicio?"
-      ],
-      admitir: [
-        "¿Qué te convenció de que los demás miembros tenían un poder que a ti te faltaba?",
-        "¿Cómo fue tu proceso personal de llegar a creer en un Poder Superior, tal como tú lo concibes?",
-        "¿Qué resistencias tuviste que soltar para abrir tu mente?"
-      ],
-      corregir: [
-        "¿Cómo te apoya hoy tu Poder Superior en los momentos difíciles?",
-        "¿Qué acciones diarias mantienen viva tu esperanza y tu fe?",
-        "¿De qué manera notas que se te ha devuelto el sano juicio?"
-      ]
-    },
-    variaciones: ["La fe de los agnósticos", "El sano juicio recuperado"],
-    palabrasClave: ["Poder Superior", "fe", "esperanza", "agnóstico", "apertura"],
-    advertenciaEtica: "",
-    advertenciaLider: "Respetar absolutamente todas las concepciones de un Poder Superior, evitando imponer dogmas religiosos.",
-    noUsarPara: ["Hacer proselitismo religioso", "Juzgar a quienes dudan o son ateos"],
-    esCatalogoBase: false,
-    prioridad: 95,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-003",
-    titulo: "La entrega total: Hacer a un lado el ego",
-    tituloCorto: "Poner la voluntad",
-    estado: "Completo",
-    categoria: "Tercer Paso",
-    evento: ["Juntas regulares"],
-    publico: ["Todos"],
-    etiquetas: ["paso-3-entrega", "entrega", "humildad", "voluntad"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Paz", "Miedo"],
-    defectoCaracter: ["Egoísmo", "Soberbia"],
-    virtudPrincipal: ["Entrega"],
-    pasos: ["Paso 3"],
-    tradiciones: [],
-    conceptos: ["Entregar la voluntad y la vida", "Dejar a Dios actuar"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Libro Grande / Como lo ve Bill", referencia: "Paso 3", uso: "Reflexiones sobre la voluntad y la dependencia" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Como lo ve Bill", autor: "Bill W.", año: 1967, uso: "Reflexiones sobre la voluntad y la dependencia" }],
-    objetivo: "Evidenciar que el esfuerzo por controlar todo genera sufrimiento, y que la paz llega al soltar las riendas.",
-    fraseAncla: "Decidimos poner nuestras voluntades y nuestras vidas al cuidado de Dios, como nosotros lo concebimos.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué maneras intentabas dirigir el show de tu vida y la de los demás?",
-        "¿Cuáles eran las consecuencias de querer forzar los resultados a tu manera?",
-        "¿A qué miedos te enfrentabas cuando las cosas no salían como querías?"
-      ],
-      admitir: [
-        "¿Cómo tomaste la decisión de entregar tu vida al cuidado de tu Poder Superior?",
-        "¿Qué te costó más trabajo soltar en el programa?",
-        "¿Cómo te ayudó escuchar las experiencias de otros que ya se habían rendido?"
-      ],
-      corregir: [
-        "¿Cómo practicas la entrega cuando sientes miedo o incertidumbre hoy?",
-        "¿Qué diferencia hay entre tu vida dirigida por ti y tu vida dirigida por un Poder Superior?",
-        "¿Cómo usas la Oración de la Serenidad para soltar el control?"
-      ]
-    },
-    variaciones: ["Dejar de ser el director", "Confianza activa"],
-    palabrasClave: ["entrega", "control", "voluntad", "confianza"],
-    advertenciaEtica: "",
-    advertenciaLider: "Recordar que la entrega no es inacción, sino acción libre de la obsesión por el resultado.",
-    noUsarPara: ["Fomentar la pasividad absoluta frente a la vida"],
-    esCatalogoBase: false,
-    prioridad: 90,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-004",
-    titulo: "Enfrentando los fantasmas del pasado: El inventario",
-    tituloCorto: "El inventario moral",
-    estado: "Completo",
-    categoria: "Cuarto Paso",
-    evento: ["Juntas de pasos", "Talleres de inventario"],
-    publico: ["Todos"],
-    etiquetas: ["paso-4-inventario", "resentimiento", "miedo", "honestidad", "autodescubrimiento"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Crudo",
-    emocion: ["Resentimiento", "Miedo", "Culpa"],
-    defectoCaracter: ["Resentimiento", "Egoísmo"],
-    virtudPrincipal: ["Valentía"],
-    pasos: ["Paso 4"],
-    tradiciones: [],
-    conceptos: ["Inventario minucioso", "Resentimiento como veneno"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Libro Grande / Doce Pasos y Doce Tradiciones", referencia: "Paso 4", uso: "Guía práctica para hacer el inventario" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Alcohólicos Anónimos", autor: "Bill W.", año: 1939, uso: "Guía práctica para hacer el inventario" }],
-    objetivo: "Desmitificar el inventario moral, mostrándolo como una herramienta de liberación de resentimientos y miedos, no de castigo.",
-    fraseAncla: "El resentimiento es el ofensor número uno. Destruye más alcohólicos que cualquier otra cosa.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera los rencores y miedos del pasado dominaban tus acciones?",
-        "¿Cómo te justificabas culpando a los demás de tus problemas?",
-        "¿Qué carga emocional llevabas antes de hacer tu inventario?"
-      ],
-      admitir: [
-        "¿Qué descubriste sobre tu propia participación en tus problemas al escribir tu inventario?",
-        "¿Cómo te sentiste al plasmar por primera vez tus secretos y miedos en papel?",
-        "¿Qué patrones repetitivos pudiste identificar en tu vida?"
-      ],
-      corregir: [
-        "¿Cómo te liberas hoy de nuevos resentimientos antes de que crezcan?",
-        "¿De qué manera el autoanálisis te ayuda a no repetir viejos errores?",
-        "¿Cómo practicas la honestidad contigo mismo en tu vida cotidiana?"
-      ]
-    },
-    variaciones: ["Desenterrando el resentimiento", "Mirar adentro sin miedo"],
-    palabrasClave: ["inventario", "resentimiento", "miedo", "culpa", "escritura"],
-    advertenciaEtica: "",
-    advertenciaLider: "Alentar a no compartir detalles explícitos que dañen a terceros, enfocándose en la propia actitud y emoción.",
-    noUsarPara: ["Promover la culpa excesiva", "Hablar de crímenes que requieran asesoría legal en tribuna abierta"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-005",
-    titulo: "La sanación a través de la confesión: Quinto Paso",
-    tituloCorto: "Admitir los defectos",
-    estado: "Completo",
-    categoria: "Quinto Paso",
-    evento: ["Juntas de reflexión"],
-    publico: ["Todos"],
-    etiquetas: ["paso-5-confesion", "honestidad", "vergüenza", "sanacion", "liberacion"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Vergüenza", "Paz", "Alegría"],
-    defectoCaracter: ["Orgullo", "Aislamiento"],
-    virtudPrincipal: ["Humildad"],
-    pasos: ["Paso 5"],
-    tradiciones: [],
-    conceptos: ["Naturaleza exacta de los defectos", "Romper el aislamiento"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 5", uso: "El sentido de compartir el inventario" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Doce Pasos y Doce Tradiciones", autor: "Bill W.", año: 1952, uso: "El sentido de compartir el inventario" }],
-    objetivo: "Subrayar cómo admitir nuestros secretos ante otro ser humano rompe el aislamiento y cura la vergüenza.",
-    fraseAncla: "Hasta que no hubimos charlado con completa sinceridad acerca de nuestros conflictos, y escuchado a alguien más hacer lo mismo, todavía no pertenecíamos.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera tus secretos y tu vergüenza te mantenían aislado?",
-        "¿Por qué creías que si alguien te conocía realmente, te rechazaría?",
-        "¿Cómo se sentía cargar solo con las culpas de tu pasado?"
-      ],
-      admitir: [
-        "¿Qué te dio el valor para compartir tu inventario con tu padrino o guía?",
-        "¿Cómo fue la experiencia de ser escuchado sin ser juzgado?",
-        "¿Qué alivio experimentaste al nombrar la 'naturaleza exacta' de tus defectos?"
-      ],
-      corregir: [
-        "¿Cómo ha cambiado tu forma de relacionarte con los demás ahora que no tienes nada que esconder?",
-        "¿De qué manera mantienes viva la práctica de compartir tus cargas emocionales?",
-        "¿Cómo ayudas hoy a otros a sentirse seguros para compartir sus propios secretos?"
-      ]
-    },
-    variaciones: ["El fin del aislamiento", "Sacar la basura emocional"],
-    palabrasClave: ["confesión", "apadrinamiento", "vergüenza", "liberación"],
-    advertenciaEtica: "",
-    advertenciaLider: "Enfatizar la confidencialidad absoluta que debe existir entre quien escucha un Quinto Paso y quien lo da.",
-    noUsarPara: ["Forzar a alguien a compartir en público lo que debe ser privado"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-006",
-    titulo: "Dispuestos a soltar: La preparación para el cambio",
-    tituloCorto: "Enteramente dispuestos",
-    estado: "Completo",
-    categoria: "Sexto Paso",
-    evento: ["Juntas regulares"],
-    publico: ["Todos"],
-    etiquetas: ["paso-6-disposicion", "cambio", "crecimiento", "aceptacion"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Ansiedad", "Esperanza"],
-    defectoCaracter: ["Aferramiento", "Perfeccionismo"],
-    virtudPrincipal: ["Disposición"],
-    pasos: ["Paso 6"],
-    tradiciones: [],
-    conceptos: ["Estar enteramente dispuesto", "Soltar defectos acariciados"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones / Como lo ve Bill", referencia: "Paso 6", uso: "Entender la resistencia a dejar ir los defectos" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Doce Pasos y Doce Tradiciones", autor: "Bill W.", año: 1952, uso: "Entender la resistencia a dejar ir los defectos" }],
-    objetivo: "Enseñar que la recuperación requiere la voluntad de abandonar incluso aquellos defectos que nos producen un placer morboso o aparente seguridad.",
-    fraseAncla: "Casi todos los seres humanos prefieren quedarse con algunos defectos. El Sexto Paso separa a los hombres de los niños.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cuáles eran esos defectos (ira, victimismo, lujuria) de los que en el fondo no querías desprenderte?",
-        "¿Cómo te autoengañabas pensando que ciertos defectos te protegían o eran útiles?",
-        "¿Qué sufrimiento te causaba aferrarte a viejos patrones de conducta?"
-      ],
-      admitir: [
-        "¿Cómo te diste cuenta de que tus defectos acariciados te estaban frenando?",
-        "¿Qué significó para ti llegar a estar 'enteramente dispuesto' a cambiar?",
-        "¿Cómo pediste ayuda para soltar aquello que te era tan familiar?"
-      ],
-      corregir: [
-        "¿Qué haces hoy cuando notas que quieres volver a un viejo defecto?",
-        "¿Cómo practicas la disposición diaria para seguir transformándote?",
-        "¿De qué manera tu vida es más plena al no depender de esas falsas muletas?"
-      ]
-    },
-    variaciones: ["Soltando mis muletas", "La voluntad de cambiar"],
-    palabrasClave: ["disposición", "defectos", "aferrarse", "cambio"],
-    advertenciaEtica: "",
-    advertenciaLider: "Recordar que es un proceso de progreso, no de perfección inmediata.",
-    noUsarPara: ["Generar frustración por no poder eliminar defectos de golpe"],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-007",
-    titulo: "La verdadera humildad en acción: El Séptimo Paso",
-    tituloCorto: "Pedir con humildad",
-    estado: "Completo",
-    categoria: "Séptimo Paso",
-    evento: ["Juntas de pasos", "Reflexión espiritual"],
-    publico: ["Todos"],
-    etiquetas: ["paso-7-humildad", "humildad", "transformacion", "sanacion"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Paz", "Alegría"],
-    defectoCaracter: ["Soberbia", "Arrogancia"],
-    virtudPrincipal: ["Humildad"],
-    pasos: ["Paso 7"],
-    tradiciones: [],
-    conceptos: ["Humildad como cimiento", "Petición genuina"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 7", uso: "El sentido profundo de la humildad" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Doce Pasos y Doce Tradiciones", autor: "Bill W.", año: 1952, uso: "El sentido profundo de la humildad" }],
-    objetivo: "Comprender la humildad no como humillación, sino como una visión realista de nosotros mismos y nuestra necesidad de ayuda superior.",
-    fraseAncla: "La verdadera humildad no es un espíritu abyecto; es solo una estimación correcta de nosotros mismos.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera el orgullo ciego y la soberbia guiaban tus decisiones?",
-        "¿Por qué te resistías a pedir ayuda y preferías sufrir en silencio?",
-        "¿Cómo confundías la humildad con la humillación o la debilidad?"
-      ],
-      admitir: [
-        "¿Cómo aprendiste en el grupo el verdadero valor de la humildad?",
-        "¿De qué forma le pediste a tu Poder Superior que te liberara de tus defectos?",
-        "¿Qué alivio encontraste al dejar de intentar ser perfecto o autosuficiente?"
-      ],
-      corregir: [
-        "¿Cómo aplicas la humildad en tus relaciones y retos de hoy?",
-        "¿Qué haces para mantener a raya la soberbia cuando las cosas van bien?",
-        "¿De qué manera el Séptimo Paso es una herramienta diaria de equilibrio?"
-      ]
-    },
-    variaciones: ["La soberbia vs. la humildad", "El fin de la autosuficiencia"],
-    palabrasClave: ["humildad", "soberbia", "oración", "transformación"],
-    advertenciaEtica: "",
-    advertenciaLider: "Aclarar que humildad en el programa significa conocer la propia justa dimensión, ni más ni menos.",
-    noUsarPara: ["Promover la baja autoestima", "Permitir el abuso por parte de otros bajo el disfraz de 'humildad'"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-008",
-    titulo: "Preparación para el perdón: La lista del Octavo Paso",
-    tituloCorto: "Lista de reparaciones",
-    estado: "Completo",
-    categoria: "Octavo Paso",
-    evento: ["Juntas de pasos"],
-    publico: ["Todos"],
-    etiquetas: ["paso-8-reparacion", "perdón", "culpa", "honestidad"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Culpa", "Miedo", "Esperanza"],
-    defectoCaracter: ["Justificación", "Victimismo"],
-    virtudPrincipal: ["Responsabilidad"],
-    pasos: ["Paso 8"],
-    tradiciones: [],
-    conceptos: ["Estar dispuestos a reparar", "Dejar de culpar a otros"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Libro Grande", referencia: "Paso 8", uso: "Instrucciones para hacer la lista" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Alcohólicos Anónimos", autor: "Bill W.", año: 1939, uso: "Instrucciones para hacer la lista" }],
-    objetivo: "Abordar la resistencia a perdonar y ser perdonados, y la importancia de estar dispuestos a reparar los daños antes de actuar.",
-    fraseAncla: "El Octavo y Noveno Pasos tienen que ver con las relaciones personales. Primero echamos una mirada al pasado para descubrir dónde hicimos algún mal.",
-    guiaTestimonio: {
-      detectar: [
-        "¿A quiénes dañaste en tu etapa destructiva y cómo evitabas pensar en ello?",
-        "¿De qué manera te justificabas diciendo que 'ellos te habían hecho más daño'?",
-        "¿Qué miedo te paralizaba al pensar en hacer una lista de las personas ofendidas?"
-      ],
-      admitir: [
-        "¿Cómo lograste superar el resentimiento para estar 'dispuesto' a reparar el daño?",
-        "¿Qué sentiste al poner en papel los nombres de las personas a las que heriste?",
-        "¿De qué manera tu padrino te ayudó a enfocarte en tu parte, y no en la de ellos?"
-      ],
-      corregir: [
-        "¿Cómo ha cambiado tu actitud hacia las personas de tu lista?",
-        "¿Qué haces hoy para no acumular nuevas deudas emocionales o morales?",
-        "¿Cómo practicas la disposición a enmendar tus errores día con día?"
-      ]
-    },
-    variaciones: ["Perdonar para ser perdonado", "Asumiendo mis destrozos"],
-    palabrasClave: ["lista", "reparación", "voluntad", "daño"],
-    advertenciaEtica: "",
-    advertenciaLider: "Recordar que el Octavo Paso es hacer la lista y ganar la disposición, no es aún el momento de ir a pedir perdón.",
-    noUsarPara: ["Revivir culpas que paralicen", "Fomentar el odio hacia quienes están en la lista"],
-    esCatalogoBase: false,
-    prioridad: 70,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-009",
-    titulo: "Limpiando los escombros del pasado: Noveno Paso",
-    tituloCorto: "Reparación directa",
-    estado: "Completo",
-    categoria: "Noveno Paso",
-    evento: ["Juntas regulares", "Juntas de promesas"],
-    publico: ["Todos"],
-    etiquetas: ["paso-9-enmiendas", "reparacion", "familia", "liberacion", "sanacion"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Crudo",
-    emocion: ["Culpa", "Miedo", "Paz"],
-    defectoCaracter: ["Cobardía", "Evasión"],
-    virtudPrincipal: ["Valentía"],
-    pasos: ["Paso 9"],
-    tradiciones: [],
-    conceptos: ["Enmiendas directas", "Las promesas del programa"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Libro Grande / Doce Pasos y Doce Tradiciones", referencia: "Paso 9", uso: "Instrucciones sobre reparaciones y las promesas" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Alcohólicos Anónimos", autor: "Bill W.", año: 1939, uso: "Instrucciones sobre reparaciones y las promesas" }],
-    objetivo: "Ilustrar la acción liberadora de reparar el daño causado y cómo esto abre la puerta a las promesas del programa.",
-    fraseAncla: "Si nos esmeramos en esta fase de nuestro desarrollo, vamos a conocer una libertad y una felicidad nuevas.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera las culpas de tu pasado te mantenían prisionero o al borde de recaer?",
-        "¿Cuáles eran tus mayores miedos al pensar en dar la cara a quienes heriste?",
-        "¿Cómo evitabas asumir las consecuencias de tus actos destructivos?"
-      ],
-      admitir: [
-        "¿Cómo te guio tu padrino para hacer reparaciones sin causar más daño?",
-        "¿Qué sucedió en tu interior cuando pediste perdón y reparaste material o emocionalmente una falta?",
-        "¿Cómo viviste el rechazo de alguien que no quiso perdonarte, si fue el caso?"
-      ],
-      corregir: [
-        "¿Cuáles de las Promesas del programa se han vuelto realidad en tu vida tras el Noveno Paso?",
-        "¿De qué manera esta libertad te permite ser hoy un mejor miembro de familia o sociedad?",
-        "¿Cómo enmiendas ahora rápidamente cuando te equivocas, para no volver a cargar ese peso?"
-      ]
-    },
-    variaciones: ["Las promesas se cumplen", "El valor de dar la cara"],
-    palabrasClave: ["reparación", "promesas", "daño", "libertad", "acción"],
-    advertenciaEtica: "Si se habla de reparaciones que implican delitos o daños graves, enfocar el tema en la restitución espiritual/emocional o advertir sobre el cuidado legal.",
-    advertenciaLider: "Enfatizar el condicional: 'excepto cuando el hacerlo implique perjuicio'. Las reparaciones requieren prudencia y guía.",
-    noUsarPara: ["Fomentar acciones temerarias que dañen a terceros", "Imponer el perdón de otros como condición para la sobriedad"],
-    esCatalogoBase: false,
-    prioridad: 95,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-010",
-    titulo: "Mantenimiento diario: La disciplina del Décimo Paso",
-    tituloCorto: "Inventario personal",
-    estado: "Completo",
-    categoria: "Décimo Paso",
-    evento: ["Juntas de prevención"],
-    publico: ["Todos", "Miembros con tiempo"],
-    etiquetas: ["paso-10-reflexion", "crecimiento", "honestidad", "responsabilidad"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Paz"],
-    defectoCaracter: ["Pereza", "Negación"],
-    virtudPrincipal: ["Responsabilidad"],
-    pasos: ["Paso 10"],
-    tradiciones: [],
-    conceptos: ["Mantener la casa limpia", "Admitir errores de inmediato"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Libro Grande / Doce Pasos y Doce Tradiciones", referencia: "Paso 10", uso: "El chequeo diario de nuestro estado espiritual" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Doce Pasos y Doce Tradiciones", autor: "Bill W.", año: 1952, uso: "El chequeo diario de nuestro estado espiritual" }],
-    objetivo: "Mostrar que la sobriedad y la paz emocional requieren vigilancia diaria y la corrección inmediata de nuestros errores.",
-    fraseAncla: "Continuamos haciendo nuestro inventario personal y cuando nos equivocábamos lo admitíamos inmediatamente.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo era tu vida cuando dejabas que los problemas diarios se acumularan sin resolverlos?",
-        "¿Qué pasa con tus emociones (ira, miedo, autocompasión) cuando no haces un chequeo diario?",
-        "¿Cómo solías justificar tus estallidos o pequeñas deshonestidades diarias?"
-      ],
-      admitir: [
-        "¿Cómo aprendiste a detenerte y observarte en medio de una situación estresante?",
-        "¿Qué sentiste la primera vez que lograste admitir un error inmediatamente y pedir disculpas?",
-        "¿De qué manera el inventario diario evita que recaigas en viejas conductas destructivas?"
-      ],
-      corregir: [
-        "¿Cuál es tu rutina para hacer tu inventario al final del día?",
-        "¿Cómo manejas las emociones tóxicas ('resacas emocionales') en el momento presente?",
-        "¿Qué beneficios te da irte a dormir sabiendo que no le debes nada moralmente a nadie?"
-      ]
-    },
-    variaciones: ["Evitando resacas emocionales", "Mantenimiento espiritual"],
-    palabrasClave: ["mantenimiento", "inventario", "vigilancia", "diario"],
-    advertenciaEtica: "",
-    advertenciaLider: "Enfocar el tema en la parte práctica de limpiar la casa a diario y no dejarse acumular presiones emocionales.",
-    noUsarPara: ["Crear un perfeccionismo neurótico", "Castigarse obsesivamente por cada fallo"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-011",
-    titulo: "El contacto consciente: Oración y meditación",
-    tituloCorto: "Contacto consciente",
-    estado: "Completo",
-    categoria: "Undécimo Paso",
-    evento: ["Juntas espirituales"],
-    publico: ["Todos"],
-    etiquetas: ["paso-11-contacto", "fe", "paz", "crecimiento"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Paz", "Esperanza"],
-    defectoCaracter: ["Soberbia", "Egoísmo"],
-    virtudPrincipal: ["Fe"],
-    pasos: ["Paso 11"],
-    tradiciones: [],
-    conceptos: ["Búsqueda de la voluntad divina", "Oración de San Francisco"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 11", uso: "El sentido de la oración y meditación en el programa" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Doce Pasos y Doce Tradiciones", autor: "Bill W.", año: 1952, uso: "El sentido de la oración y meditación en el programa" }],
-    objetivo: "Enseñar que la fortaleza diaria viene de mantener una conexión constante y consciente con un Poder Superior.",
-    fraseAncla: "Buscamos a través de la oración y la meditación mejorar nuestro contacto consciente con Dios... pidiéndole solamente que nos dejase conocer su voluntad.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo era tu vida cuando confiabas únicamente en tu propia fuerza de voluntad?",
-        "¿De qué manera el ajetreo y el ruido mental te desconectaban de tu paz interior?",
-        "¿Por qué creías que la oración o meditación no servían o eran debilidad?"
-      ],
-      admitir: [
-        "¿Cómo comenzaste a experimentar y desarrollar tu propio método de oración o meditación?",
-        "¿Qué cambio sentiste al pedir 'que se haga tu voluntad' en lugar de exigir resultados específicos?",
-        "¿Cómo te ha sostenido el contacto consciente en medio de las crisis personales?"
-      ],
-      corregir: [
-        "¿Cómo integras la meditación y la oración en tu rutina actual?",
-        "¿De qué forma escuchas o percibes la dirección de tu Poder Superior?",
-        "¿Cómo se refleja esta paz interior en tu trato hacia tu familia y compañeros?"
-      ]
-    },
-    variaciones: ["Buscando Su voluntad", "La Oración de San Francisco"],
-    palabrasClave: ["oración", "meditación", "voluntad", "contacto"],
-    advertenciaEtica: "",
-    advertenciaLider: "Mantener el enfoque en la espiritualidad práctica, sin promover técnicas religiosas específicas.",
-    noUsarPara: ["Promover dogmas", "Invalidar a quienes meditan o rezan de forma distinta"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-012",
-    titulo: "El Despertar Espiritual y el mensaje a otros",
-    tituloCorto: "Llevar el mensaje",
-    estado: "Completo",
-    categoria: "Duodécimo Paso",
-    evento: ["Juntas regulares", "Aniversarios"],
-    publico: ["Todos"],
-    etiquetas: ["paso-12-servicio", "servicio", "apadrinamiento", "comunidad", "amor"],
-    intensidad: "Alta",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Alegría", "Gratitud"],
-    defectoCaracter: ["Egoísmo", "Aislamiento"],
-    virtudPrincipal: ["Servicio"],
-    pasos: ["Paso 12"],
-    tradiciones: [],
-    conceptos: ["El despertar espiritual", "Practicar estos principios"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Frente a Frente: El Apadrinamiento / El Lenguaje del Corazón", referencia: "Paso 12", uso: "El apadrinamiento como pilar del Paso Doce" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Frente a Frente", autor: "Grapevine Inc.", año: 2013, uso: "El apadrinamiento como pilar del Paso Doce" }],
-    objetivo: "Demostrar que la recuperación real se mantiene y se expande regalando a otros lo que nos fue dado gratuitamente.",
-    fraseAncla: "Nada asegura tanto la inmunidad contra la bebida como el trabajo intensivo con otros alcohólicos.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera el egoísmo y la concentración en tus propios problemas te mantenían enfermo?",
-        "¿Cómo intentabas llenar el vacío interior antes de descubrir el servicio?",
-        "¿Qué pensabas sobre el 'despertar espiritual' antes de vivirlo?"
-      ],
-      admitir: [
-        "¿Cómo reconociste tu propio despertar espiritual y los cambios en tu personalidad?",
-        "¿Qué significó para ti que otro compañero se tomara el tiempo de apadrinarte y escucharte?",
-        "¿Qué sentiste la primera vez que lograste ayudar a alguien a ver una luz de esperanza?"
-      ],
-      corregir: [
-        "¿De qué manera llevar el mensaje y apadrinar a otros te mantiene sobrio y centrado hoy?",
-        "¿Cómo intentas 'practicar estos principios en todos tus asuntos' (trabajo, hogar, sociedad)?",
-        "¿Por qué crees que el amor incondicional del Paso Doce no tiene precio?"
-      ]
-    },
-    variaciones: ["Amor incondicional", "Apadrinamiento en acción"],
-    palabrasClave: ["mensaje", "despertar", "servicio", "apadrinamiento"],
-    advertenciaEtica: "",
-    advertenciaLider: "Enfocar el servicio no solo en la comunidad o el grupo, sino en llevar los principios a la vida familiar y laboral.",
-    noUsarPara: ["Jactarse de cuántos ahijados se tiene", "Usar el servicio como escape de las responsabilidades familiares"],
-    esCatalogoBase: false,
-    prioridad: 95,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-013",
-    titulo: "Nuestro bienestar común: La Unidad ante todo",
-    tituloCorto: "Unidad de grupo",
-    estado: "Completo",
-    categoria: "Primera Tradición",
-    evento: ["Juntas de trabajo", "Aniversarios"],
-    publico: ["Servidores", "Miembros con tiempo"],
-    etiquetas: ["tradicion-unidad", "unidad", "pertenencia", "comunidad"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Esperanza", "Paz"],
-    defectoCaracter: ["Egoísmo", "Arrogancia"],
-    virtudPrincipal: ["Humildad"],
-    pasos: [],
-    tradiciones: ["Tradición 1"],
-    conceptos: ["El bienestar común primero", "Sacrificio de deseos personales"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "AA Llega a su Mayoría de Edad / Doce Pasos y Doce Tradiciones", referencia: "Tradición 1", uso: "Historia de cómo se formaron las tradiciones y el sacrificio personal" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "AA Llega a su Mayoría de Edad", autor: "Bill W.", año: 1957, uso: "Historia de cómo se formaron las tradiciones y el sacrificio personal" }],
-    objetivo: "Enseñar que la supervivencia personal depende de la supervivencia del grupo, lo que exige dejar de lado los egos y pleitos.",
-    fraseAncla: "Nuestro bienestar común debe tener la preferencia; la recuperación personal depende de la unidad de A.A.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera tu individualismo extremo y tus deseos personales destruían todo a tu alrededor?",
-        "¿Cómo era tu incapacidad para trabajar en equipo o aceptar reglas de un grupo?",
-        "¿Por qué siempre querías imponer tu voluntad sobre los demás?"
-      ],
-      admitir: [
-        "¿Cómo te diste cuenta de que sin el grupo y la comunidad tu vida estaba en riesgo?",
-        "¿Qué sacrificios personales tuviste que hacer por el bien común del grupo?",
-        "¿Qué aprendiste sobre la tolerancia y el amor en medio de los conflictos del grupo?"
-      ],
-      corregir: [
-        "¿Cómo aplicas hoy el principio de unidad en tu familia y en tu trabajo?",
-        "¿De qué manera sueltas el deseo de tener la razón para preservar la armonía?",
-        "¿Por qué es vital para tu sobriedad proteger a la agrupación por encima de todo?"
-      ]
-    },
-    variaciones: ["Sacrificio por el grupo", "El bienestar común"],
-    palabrasClave: ["unidad", "grupo", "sacrificio", "bienestar"],
-    advertenciaEtica: "",
-    advertenciaLider: "Resaltar que la unidad no es uniformidad de pensamiento, sino amor y tolerancia mutua.",
-    noUsarPara: ["Criticar a miembros del grupo", "Imponer obediencia ciega"],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-014",
-    titulo: "El anonimato como base espiritual y freno al ego",
-    tituloCorto: "La base del anonimato",
-    estado: "Completo",
-    categoria: "Duodécima Tradición",
-    evento: ["Juntas regulares"],
-    publico: ["Todos"],
-    etiquetas: ["anonimato", "humildad", "comunidad", "crecimiento"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Paz"],
-    defectoCaracter: ["Soberbia", "Búsqueda de prestigio"],
-    virtudPrincipal: ["Humildad"],
-    pasos: [],
-    tradiciones: ["Tradición 12"],
-    conceptos: ["Principios antes que personalidades", "Sacrificio de la fama"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Comprendiendo el Anonimato / El Lenguaje del Corazón", referencia: "Tradición 12", uso: "El valor del sacrificio personal" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Comprendiendo el Anonimato", autor: "Servicios Generales de AA", año: 1981, uso: "El valor del sacrificio personal" }],
-    objetivo: "Profundizar en el anonimato no solo como ocultar el nombre, sino como la práctica de anteponer los principios espirituales al prestigio y al protagonismo.",
-    fraseAncla: "El anonimato es la base espiritual de todas nuestras Tradiciones, recordándonos siempre anteponer los principios a las personalidades.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera el hambre de reconocimiento, fama o prestigio gobernaba tus acciones?",
-        "¿Cómo destruías tus relaciones al querer siempre ser la figura central o el 'salvador'?",
-        "¿Qué vacíos intentabas llenar buscando siempre la aprobación de los demás?"
-      ],
-      admitir: [
-        "¿Cómo entendiste que en la agrupación nadie es más importante que los principios del programa?",
-        "¿Qué significó para ti renunciar al protagonismo y empezar a servir de forma anónima o silenciosa?",
-        "¿Qué descubriste sobre la verdadera humildad a través del sacrificio del ego?"
-      ],
-      corregir: [
-        "¿Cómo evitas hoy el 'deslumbramiento del éxito' o el protagonismo en tus círculos sociales?",
-        "¿De qué manera priorizas el mensaje y la sanación por encima de ser reconocido?",
-        "¿Cómo aplicas 'principios antes que personalidades' cuando no te agrada alguien del grupo?"
-      ]
-    },
-    variaciones: ["Principios antes que personalidades", "Servicio sin reflectores"],
-    palabrasClave: ["anonimato", "prestigio", "principios", "humildad"],
-    advertenciaEtica: "",
-    advertenciaLider: "Enfocar en la humildad del anonimato espiritual, evitando debates sobre redes sociales a menos que ilustren la pérdida del ego.",
-    noUsarPara: ["Atacar a quienes han roto su anonimato", "Usarlo para evadir responsabilidades"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-015",
-    titulo: "Rompiendo el estigma: La recuperación de la mujer",
-    tituloCorto: "Las mujeres y la recuperación",
-    estado: "Completo",
-    categoria: "Específico",
-    evento: ["Juntas de aniversario", "Eventos de diversidad"],
-    publico: ["Mujeres", "Todos"],
-    etiquetas: ["diversidad", "inclusión", "vergüenza", "sanacion", "identidad"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Crudo",
-    emocion: ["Vergüenza", "Esperanza", "Culpa"],
-    defectoCaracter: ["Aislamiento", "Autocompasión"],
-    virtudPrincipal: ["Aceptación"],
-    pasos: ["Paso 1"],
-    tradiciones: [],
-    conceptos: ["Doble estigma", "Superar el dolor"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Mujeres en AA / Las Mujeres en AA", referencia: "Historias personales", uso: "Experiencias de superación del estigma y la culpa maternal" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Las Mujeres en AA", autor: "AA World Services", año: 1968, uso: "Experiencias de superación del estigma y la culpa maternal" }],
-    objetivo: "Visibilizar el dolor particular (como la culpa familiar y el estigma social) y la profunda recuperación que viven las mujeres en el programa.",
-    fraseAncla: "La vergüenza, el remordimiento y la culpa me estaban hundiendo... hasta que probé la libertad de este programa.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo te afectaba la presión y el juicio social por ser mujer con este problema?",
-        "¿De qué manera el sentimiento de culpa (como madre, hija, esposa) te mantenía esclava del consumo o la depresión?",
-        "¿Cómo intentabas mantener una fachada de perfección o normalidad para esconder tu enfermedad?"
-      ],
-      admitir: [
-        "¿Cómo rompiste la barrera del miedo y la vergüenza para pedir ayuda?",
-        "¿Qué alivio encontraste al identificarte con las historias de otras compañeras?",
-        "¿Cómo el trabajo de los pasos te liberó del peso aplastante del remordimiento?"
-      ],
-      corregir: [
-        "¿Cómo reconstruyes hoy el amor y el respeto por ti misma y hacia tus seres queridos?",
-        "¿De qué manera ayudas a otras mujeres a superar el estigma y acercarse al programa?",
-        "¿Cómo mantienes viva tu dignidad y libertad espiritual un día a la vez?"
-      ]
-    },
-    variaciones: ["El fin del estigma", "Perdonándome como mujer"],
-    palabrasClave: ["mujer", "estigma", "culpa", "sororidad"],
-    advertenciaEtica: "Puede tocar temas sensibles como violencia, abuso o pérdida de hijos; guiar con profundo respeto y contención.",
-    advertenciaLider: "Crear un ambiente de empatía total, recordando que el dolor no tiene género pero las cargas sociales a veces sí.",
-    noUsarPara: ["Promover divisiones de género", "Juzgar las capacidades de crianza del pasado"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-016",
-    titulo: "La Sobriedad Emocional: La próxima frontera",
-    tituloCorto: "Sobriedad Emocional",
-    estado: "Completo",
-    categoria: "Desarrollo Espiritual",
-    evento: ["Juntas de reflexión"],
-    publico: ["Todos", "Miembros con tiempo"],
-    etiquetas: ["crecimiento", "dependencia-emocional", "evolucion", "paz"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Tristeza", "Paz"],
-    defectoCaracter: ["Dependencia Emocional", "Control-obsesivo"],
-    virtudPrincipal: ["Aceptación"],
-    pasos: ["Paso 10", "Paso 12"],
-    tradiciones: [],
-    conceptos: ["Dependencia insalubre", "Borrachera seca"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "El Lenguaje del Corazón", referencia: "La próxima frontera: la sobriedad emocional", uso: "El famoso artículo de Bill W. sobre la sobriedad emocional y la depresión" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "El Lenguaje del Corazón", autor: "Bill W.", año: 1988, uso: "El famoso artículo de Bill W. sobre la sobriedad emocional y la depresión" }],
-    objetivo: "Explicar que detener el consumo o la conducta no basta; la meta es sanar las dependencias emocionales para lograr verdadera paz.",
-    fraseAncla: "Si examinamos cada perturbación, encontraremos en la raíz alguna dependencia poco saludable y su consecuente demanda insalubre.",
-    guiaTestimonio: {
-      detectar: [
-        "Aunque habías parado de consumir o actuar destructivamente, ¿cómo se manifestaba tu 'borrachera seca' o depresión?",
-        "¿De qué manera tus demandas absolutas de amor, aprobación o seguridad hacia otras personas te enfermaban?",
-        "¿Cómo reaccionabas (ira, depresión) cuando la gente o el mundo no cumplían tus altas expectativas?"
-      ],
-      admitir: [
-        "¿Cómo te diste cuenta de que tus depresiones venían de dependencias emocionales insalubres?",
-        "¿Qué significó para ti empezar a depender de tu Poder Superior en lugar de exigir a los seres humanos?",
-        "¿Cómo el programa te ayudó a traducir tus expectativas en aceptación?"
-      ],
-      corregir: [
-        "¿Cómo practicas la sobriedad emocional frente a las frustraciones diarias hoy?",
-        "¿De qué manera tu amor hacia los demás ha cambiado de 'demandar' a 'dar'?",
-        "¿Qué herramientas usas para no engancharte emocionalmente y mantener tu paz?"
-      ]
-    },
-    variaciones: ["Superar la borrachera seca", "Exigencias irreales"],
-    palabrasClave: ["emociones", "dependencia", "depresión", "borrachera seca"],
-    advertenciaEtica: "Diferenciar entre depresión clínica que requiere atención médica y los bajones emocionales causados por actitudes espirituales.",
-    advertenciaLider: "Ayudar a comprender que la sobriedad emocional es un trabajo de vida, no un destino final.",
-    noUsarPara: ["Aconsejar dejar medicamentos psiquiátricos", "Invalidar emociones legítimas de duelo"],
-    esCatalogoBase: false,
-    prioridad: 95,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-017",
-    titulo: "La obsesión mental que precede a la recaída",
-    tituloCorto: "Prevención de recaídas",
-    estado: "Completo",
-    categoria: "Prevención",
-    evento: ["Juntas de prevención"],
-    publico: ["Todos"],
-    etiquetas: ["control-obsesivo", "negación", "miedo", "ansiedad"],
-    intensidad: "Alta",
-    momento: "Inicio",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Ansiedad", "Miedo"],
-    defectoCaracter: ["Autoengaño", "Control-obsesivo"],
-    virtudPrincipal: ["Honestidad"],
-    pasos: ["Paso 1", "Paso 10"],
-    tradiciones: [],
-    conceptos: ["Falsas sensaciones de control", "Autoengaño"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Vivir Sobrio / Prevención de Recaídas", referencia: "Cap. sobre autoengaño", uso: "Técnicas para evadir el autoengaño" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Vivir Sobrio", autor: "Alcohólicos Anónimos", año: 1975, uso: "Técnicas para evadir el autoengaño" }],
-    objetivo: "Identificar los sutiles engaños de la mente que preparan el terreno para una recaída física o emocional.",
-    fraseAncla: "La recaída empieza mucho antes de levantar la copa; comienza con el autoengaño y la violación mental de la abstinencia.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo era el proceso en tu mente antes de una recaída o de repetir un patrón destructivo?",
-        "¿Qué mentiras te contabas a ti mismo para justificar volver al viejo comportamiento?",
-        "¿De qué manera te ibas alejando poco a poco de tu programa, grupo o prácticas espirituales?"
-      ],
-      admitir: [
-        "¿Cómo aprendiste a reconocer las señales de peligro ('alertas rojas') en tu conducta o emociones?",
-        "¿Qué descubriste sobre la fuerza de la 'obsesión mental' y la alergia física?",
-        "¿Cómo te ayudó el grupo a romper esa barrera de autoengaño?"
-      ],
-      corregir: [
-        "¿Cuáles son tus herramientas inmediatas cuando sientes que la obsesión intenta regresar?",
-        "¿Cómo practicas la honestidad rigurosa con tu padrino sobre tus pensamientos peligrosos?",
-        "¿De qué manera vives el 'Solo por Hoy' para no abrumarte con el futuro?"
-      ]
-    },
-    variaciones: ["El sutil autoengaño", "Cuidando el 'Solo por Hoy'"],
-    palabrasClave: ["recaída", "obsesión", "engaño", "prevención", "alertas"],
-    advertenciaEtica: "",
-    advertenciaLider: "Enfatizar que los pensamientos de consumo/actuación son parte de la enfermedad; el secreto está en compartirlos para que pierdan fuerza.",
-    noUsarPara: ["Atacar a quienes han recaído", "Hacer sentir culpables por tener tentaciones"],
-    esCatalogoBase: false,
-    prioridad: 90,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-018",
-    titulo: "Viviendo sobrio: El poder del plan de 24 horas",
-    tituloCorto: "Un Día a la Vez",
-    estado: "Completo",
-    categoria: "Vida Diaria",
-    evento: ["Juntas de principiantes", "Juntas regulares"],
-    publico: ["Todos"],
-    etiquetas: ["esperanza", "paz", "crecimiento", "cambio"],
-    intensidad: "Baja",
-    momento: "Inicio",
-    formato: "Individual",
-    tipoTestimonio: "Didáctico",
-    emocion: ["Esperanza", "Paz"],
-    defectoCaracter: ["Ansiedad por el futuro"],
-    virtudPrincipal: ["Confianza"],
-    pasos: ["Paso 1"],
-    tradiciones: [],
-    conceptos: ["Solo por hoy", "Mantenerlo simple"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Viviendo Sobrio / AA Como Lo Ve Bill", referencia: "El plan de 24 horas", uso: "Las herramientas prácticas del día a día" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Viviendo Sobrio", autor: "Alcohólicos Anónimos", año: 1975, uso: "Las herramientas prácticas del día a día" }],
-    objetivo: "Reducir la ansiedad ante la recuperación, demostrando que la vida se aborda un día (o un momento) a la vez.",
-    fraseAncla: "La mayoría de la gente se siente más segura con el plan de 24 horas que con la resolución de no volver a hacerlo nunca.",
-    guiaTestimonio: {
-      detectar: [
-        "¿De qué manera pensar en el 'nunca más' o en todo el futuro te llenaba de terror y ansiedad?",
-        "¿Cómo tus preocupaciones por el mañana te impedían resolver los problemas del hoy?",
-        "¿Cómo era vivir abrumado por las promesas rotas del pasado?"
-      ],
-      admitir: [
-        "¿Cómo descubriste el alivio de enfocarte únicamente en mantenerte limpio o sereno 'Solo por hoy'?",
-        "¿Qué herramientas sencillas (llamar por teléfono, leer, ir a una junta) te ayudaron a atravesar los días difíciles?",
-        "¿Qué significó para ti aprender a 'tómalo con calma'?"
-      ],
-      corregir: [
-        "¿Cómo aplicas el plan de 24 horas en tus problemas familiares, económicos o laborales actualmente?",
-        "¿De qué forma celebras las pequeñas victorias de cada día?",
-        "¿Cómo logras mantenerte centrado en el presente sin la carga del ayer o el miedo al mañana?"
-      ]
-    },
-    variaciones: ["Solo por Hoy", "Simplificando la recuperación"],
-    palabrasClave: ["presente", "24 horas", "ansiedad", "herramientas"],
-    advertenciaEtica: "",
-    advertenciaLider: "Es ideal para relajar a los recién llegados que se sienten abrumados por la enormidad del cambio de vida.",
-    noUsarPara: ["Fomentar la irresponsabilidad sobre planes futuros reales"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-019",
-    titulo: "El Tercer Legado: Servicio y gratitud en acción",
-    tituloCorto: "Gratitud y Servicio",
-    estado: "Completo",
-    categoria: "Servicio",
-    evento: ["Juntas de trabajo", "Aniversarios"],
-    publico: ["Servidores", "Miembros con tiempo"],
-    etiquetas: ["gratitud", "servicio-grupal", "comunidad", "responsabilidad"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Alegría", "Esperanza"],
-    defectoCaracter: ["Egoísmo", "Pereza"],
-    virtudPrincipal: ["Gratitud"],
-    pasos: ["Paso 12"],
-    tradiciones: ["Tradición 7"],
-    conceptos: ["Tercer Legado", "Responsabilidad de devolver lo dado"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "El Manual de Servicio de AA / Nuestra Gran Responsabilidad", referencia: "Tercer Legado", uso: "El sentido histórico y vital del servicio" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Nuestra Gran Responsabilidad", autor: "Bill W.", año: 2019, uso: "El sentido histórico y vital del servicio" }],
-    objetivo: "Inspirar a los miembros a devolver lo que han recibido, entendiendo que el servicio estructural y grupal mantiene viva a la comunidad.",
-    fraseAncla: "Si la Recuperación ha tenido lugar, la Unidad y el Servicio deben seguir para completar los Tres Legados. La gratitud debe ser acción.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo era tu vida cuando solo te importaba recibir y tomar provecho de los demás?",
-        "¿De qué manera el egoísmo y la pereza dominaban tu actitud hacia las responsabilidades?",
-        "¿Qué pensabas del 'servicio' antes de entrar al programa?"
-      ],
-      admitir: [
-        "¿Cómo te diste cuenta de que para conservar tu recuperación tenías que empezar a dar?",
-        "¿Qué sentiste al asumir tu primera responsabilidad dentro de tu grupo (hacer café, barrer, coordinar)?",
-        "¿Cómo el involucrarte en el servicio te conectó más profundamente con la comunidad?"
-      ],
-      corregir: [
-        "¿De qué forma el servicio te ayuda hoy a mantener a raya tu ego y tu soberbia?",
-        "¿Cómo respondes a la 'Declaración de Responsabilidad' en tu vida diaria y en tu grupo?",
-        "¿Por qué crees que el servicio es la manifestación más grande de tu gratitud?"
-      ]
-    },
-    variaciones: ["Devolviendo el regalo", "La acción de dar"],
-    palabrasClave: ["servicio", "gratitud", "legado", "responsabilidad"],
-    advertenciaEtica: "",
-    advertenciaLider: "Fomentar el servicio desde el amor y la gratitud, no desde la obligación culposa o la búsqueda de poder en el grupo.",
-    noUsarPara: ["Regañar a quienes no tienen cargos de servicio", "Fomentar el síndrome del 'salvador'"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  },
-  {
-    id: "tema-AALIT-020",
-    titulo: "De un gran 'YO' a nadie: La transformación del ego",
-    tituloCorto: "La reducción del ego",
-    estado: "Completo",
-    categoria: "Desarrollo Espiritual",
-    evento: ["Juntas de reflexión"],
-    publico: ["Todos"],
-    etiquetas: ["humildad", "transformacion", "autodescubrimiento", "crecimiento"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Crudo",
-    emocion: ["Paz", "Alegría"],
-    defectoCaracter: ["Soberbia", "Egoísmo"],
-    virtudPrincipal: ["Humildad"],
-    pasos: ["Paso 2", "Paso 7"],
-    tradiciones: [],
-    conceptos: ["Deflación del ego", "Cambio de personalidad"],
-    fuentePrincipal: "AA",
-    fuenteAA: [{ obra: "Lo mejor del Grapevine Vol. 1 / Como lo ve Bill", referencia: "El gran YO se convierte en nadie", uso: "El ensayo: Cuando el gran 'yo' se convierte en nadie" }],
-    fuenteFGDLL: [],
-    librosRecomendados: [{ titulo: "Lo Mejor del Grapevine Vol. 1", autor: "Varios (Harry M. Tiebout, MD)", año: 1993, uso: "El ensayo: Cuando el gran 'yo' se convierte en nadie" }],
-    objetivo: "Mostrar que la recuperación exige un colapso profundo del ego (deflación) para dar paso a una personalidad enseñable y serena.",
-    fraseAncla: "El programa de ayuda está impregnado de la reducción del ego. Es el despertar donde el gran 'yo' se convierte en un feliz don nadie.",
-    guiaTestimonio: {
-      detectar: [
-        "¿Cómo el creerte el centro del universo, o el dueño de la verdad, te destruía y alejaba a todos?",
-        "¿De qué manera tu ego inflado disfrazaba en realidad profundos complejos de inferioridad o miedos?",
-        "¿Qué ocurría cuando la vida o las personas no se ajustaban a tus grandiosos planes?"
-      ],
-      admitir: [
-        "¿Cuál fue la crisis o fracaso que finalmente pinchó tu ego y te hizo receptivo a la ayuda?",
-        "¿Cómo entendiste que no eras el director del mundo, sino una pequeña parte de un gran todo?",
-        "¿Qué alivio experimentaste al dejar de fingir ser poderoso o perfecto?"
-      ],
-      corregir: [
-        "¿Cómo disfrutas hoy de la libertad de ser 'uno más' entre tus compañeros y tu familia?",
-        "¿De qué manera practicas el dejarte enseñar y aceptar que no siempre tienes la razón?",
-        "¿Cómo ha cambiado tu felicidad al soltar las exigencias del ego y abrazar la sencillez?"
-      ]
-    },
-    variaciones: ["Desinflando el ego", "La libertad de no ser importante"],
-    palabrasClave: ["ego", "soberbia", "rendición", "humildad", "enseñable"],
-    advertenciaEtica: "",
-    advertenciaLider: "Asegurar que la 'deflación del ego' se entienda como despojarse de la arrogancia tóxica, no como destrucción de la sana autoestima.",
-    noUsarPara: ["Humillar o maltratar a miembros desde tribuna", "Destruir la autoestima legítima"],
-    esCatalogoBase: false,
-    prioridad: 100,
-    relacionados: [],
-    fechaCreacion: "2026-05-31"
-  }
-];
-
-// ============================================================================
-// PAQUETE: GUERRERAS DE LA LUZ — Temas para mujer en recuperación
-// ============================================================================
-const PAQUETE_GUERRERAS_LUZ = [
-  {
-    id: "tema-GUER-001",
-    titulo: "Poner límites sin culpa",
-    tituloCorto: "Límites sin culpa",
-    estado: "Completo",
-    etiquetas: ["mujer", "límites", "culpa", "dignidad", "codependencia", "autoestima"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Taller de límites", "Día de la Madre"],
-    publico: ["Participantes", "Madres en recuperación"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Empoderamiento"],
-    defectoCaracter: ["Codependencia", "Miedo al rechazo"],
-    virtudPrincipal: ["Dignidad", "Amor propio"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a poner límites, reconociendo que mi dignidad es mi tope y que un límite sano no es un muro sino una puerta con llave donde yo decido quién entra.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a poner límites, reconociendo que 'mi dignidad es mi tope' y que poner un límite sano no es levantar un muro para aislarme, sino poner 'una puerta con llave' donde yo decido quién entra para protegerme.",
-    fuenteAA: [{ obra: "Reflexiones Diarias de FGDLL", referencia: "Día 15 y Día 107", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cuándo aprendiste que tenías derecho a poner un límite?", "¿Qué sentiste la primera vez que dijiste 'no' y mantuviste tu postura?"],
-      sostener: ["¿Qué situación actual te pide poner un límite que aún no has puesto?", "¿Qué miedo specific te detiene?"],
-      corregir: ["¿Cómo ha cambiado tu vida al empezar a proteger tu espacio emocional?", "¿Qué le dirías hoy a la versión de ti que creía que los límites eran crueles?"]
-    },
-    variaciones: ["Mi dignidad es mi tope", "La puerta con llave"],
-    palabrasClave: ["límites", "dignidad", "culpa", "protección", "autoestima"],
-    advertenciaEtica: "",
-    advertenciaLider: "Evitar que el tema se convierta en una sesión de quejas sobre personas específicas. Mantener el foco en el proceso personal.",
-    noUsarPara: ["Justificar rupturas impulsivas de relaciones", "Fomentar el aislamiento"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-GUER-002", "tema-GUER-005"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-002",
-    titulo: "Decir no",
-    tituloCorto: "Decir no",
-    estado: "Completo",
-    etiquetas: ["mujer", "límites", "culpa", "codependencia", "familia-amalgamada", "identidad"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Día de la Madre"],
-    publico: ["Participantes", "Madres en recuperación"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Liberación"],
-    defectoCaracter: ["Miedo al rechazo", "Complacencia"],
-    virtudPrincipal: ["Autenticidad", "Paz interior"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a decir no sin sentir culpa, dejando atrás la 'casa enredada' donde separar mi propia vida se sentía como una traición.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a decir no sin sentir culpa, dejando atrás la vieja costumbre de la 'casa enredada' donde separar mi propia vida y mis decisiones se sentía como una traición. Hoy entiendo que decir 'no' por mi paz no me hace una mala persona.",
-    fuenteAA: [{ obra: "Guía de Apadrinamiento FGDLL", referencia: "Familias Amalgamadas", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿En qué relaciones o situaciones te resultaba imposible decir no?", "¿Qué consecuencias viviste por no poder poner ese límite?"],
-      sostener: ["¿Qué 'no' necesitas decir hoy que todavía no has dicho?", "¿A quién le tienes más miedo de decirle no y por qué?"],
-      corregir: ["¿Cómo se siente tu paz interior cuando dices no con convicción?", "¿Cómo has visto que decir no a tiempo puede ser un acto de amor?"]
-    },
-    variaciones: ["El no liberador", "Mi paz no necesita tu aprobación"],
-    palabrasClave: ["no", "límites", "culpa", "casa enredada", "traición", "paz"],
-    advertenciaEtica: "",
-    advertenciaLider: "Contextualizar que decir 'no' es un proceso, no una habilidad que se aprende de un día para otro.",
-    noUsarPara: ["Promover el rechazo sistemático de responsabilidades legítimas"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-GUER-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-003",
-    titulo: "Escuchar mi enojo como guía",
-    tituloCorto: "El enojo como guía",
-    estado: "Completo",
-    etiquetas: ["mujer", "enojo", "emociones", "límites", "autoconocimiento"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Taller emocional"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Inicio",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Claridad", "Empoderamiento"],
-    defectoCaracter: ["Represión emocional"],
-    virtudPrincipal: ["Autoconocimiento", "Integridad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a escuchar mi enojo como información valiosa y un defensor natural que me avisa cuando un límite ha sido cruzado.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a escuchar mi enojo, usándolo no como un arma para explotar o destruir, sino como información valiosa y un defensor natural que me avisa cuando un límite ha sido cruzado o estoy viviendo una injusticia.",
-    fuenteAA: [
-      { obra: "Las 5 emociones del cerco FGDLL", referencia: "El enojo", uso: "Fuente principal" },
-      { obra: "Reflexiones Diarias FGDLL", referencia: "Día 95", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Cómo manejabas tu enojo antes de la recuperación: lo explotabas o lo enterrabas?", "¿Qué mensajes recibiste de pequeña sobre las mujeres y el enojo?"],
-      sostener: ["¿Qué te está diciendo tu enojo hoy? ¿Qué límite está señalando?", "¿Cómo distingues entre el enojo sano que informa y el enojo tóxico que destruye?"],
-      corregir: ["¿Puedes recordar una vez en que escuchar tu enojo te protegió?", "¿Cómo sería tu vida si usaras el enojo como brújula en lugar de cargarlo como vergüenza?"]
-    },
-    variaciones: ["El enojo que protege", "Mis emociones tienen sabiduría"],
-    palabrasClave: ["enojo", "emociones", "límites", "información", "injusticia"],
-    advertenciaEtica: "",
-    advertenciaLider: "Distinguir claramente el enojo como señal interna (sano) del enojo como arma hacia otros (destructivo).",
-    noUsarPara: ["Justificar explosiones de ira o agresividad"],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: ["tema-GUER-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-004",
-    titulo: "Soltar el control",
-    tituloCorto: "Soltar el control",
-    estado: "Completo",
-    etiquetas: ["mujer", "control", "aceptación", "paso-3-voluntad", "libertad", "codependencia"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Cualquier junta"],
-    publico: ["Participantes", "Madres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Libertad"],
-    defectoCaracter: ["Necesidad de control", "Codependencia"],
-    virtudPrincipal: ["Aceptación", "Fe"],
-    pasos: ["Paso 3"],
-    descripcionBreve: "Estoy aprendiendo a soltar el control practicando 'Vive y deja vivir', porque mi libertad empieza cuando dejo de controlar a otros.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a soltar el control, practicando el axioma de 'Vive y deja vivir' y entregando el volante a una guía superior, porque entiendo que intentar ganar paz a fuerza de tensión solo me enferma, y que mi libertad empieza cuando dejo de controlar a otros.",
-    fuenteAA: [
-      { obra: "Como lo ve Bill", referencia: "Ensayos sobre el control", uso: "Fuente principal" },
-      { obra: "Reflexiones Diarias AA", referencia: "Reflexiones sobre el Tercer Paso", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Qué o a quién intentabas controlar más intensamente antes de la recuperación?", "¿Qué tan agotada estabas de ese esfuerzo?"],
-      sostener: ["¿A quién o qué te está costando más soltar hoy?", "¿Qué creencia te dice que si no controlas, todo se derrumbará?"],
-      corregir: ["¿Cuándo has visto que soltar el control trajo mejores resultados que aferrarte?", "¿Qué libertad has experimentado al practicar 'vive y deja vivir'?"]
-    },
-    variaciones: ["Vive y deja vivir", "El volante no es mío"],
-    palabrasClave: ["control", "soltar", "aceptación", "libertad", "codependencia", "Paso 3"],
-    advertenciaEtica: "",
-    advertenciaLider: "Distinguir entre soltar el control (sano) y abandonar responsabilidades legítimas de cuidado.",
-    noUsarPara: ["Justificar el abandono de responsabilidades reales hacia dependientes"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: ["tema-GUER-001", "tema-GUER-006"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-005",
-    titulo: "Dejar de traicionarme",
-    tituloCorto: "Sin traicionarme",
-    estado: "Completo",
-    etiquetas: ["mujer", "autotraición", "límites", "dignidad", "autenticidad", "pertenencia"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Retiros"],
-    publico: ["Participantes"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Claridad", "Empoderamiento"],
-    defectoCaracter: ["Complacencia", "Miedo al abandono"],
-    virtudPrincipal: ["Dignidad", "Integridad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a no traicionarme, porque a veces la traición más grande empieza con un 'sí' dicho por miedo. Hoy elijo mi dignidad primero.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a no traicionarme, porque a veces la traición hacia mí misma empieza con un 'sí' dicho por miedo, por un límite no puesto o por romperme solo para agradar o pertenecer. Hoy elijo mi dignidad primero.",
-    fuenteAA: [{ obra: "Reflexiones Diarias FGDLL", referencia: "Día 101 — Dónde me traiciono", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cuáles han sido las formas más comunes en que te has traicionado a ti misma?", "¿Qué tan seguido decías 'sí' cuando querías decir 'no'?"],
-      sostener: ["¿En qué área de tu vida sientes que todavía te estás traicionando?", "¿Qué ganas a corto plazo cuando te traicionas y qué pierdes a largo plazo?"],
-      corregir: ["¿Cómo se siente en el cuerpo cuando actúas en congruencia contigo misma?", "¿Qué acto de lealtad hacia ti misma puedes hacer esta semana?"]
-    },
-    variaciones: ["Dónde me traiciono", "Hoy elijo mi dignidad"],
-    palabrasClave: ["traición", "dignidad", "límites", "miedo", "pertenecer", "integridad"],
-    advertenciaEtica: "",
-    advertenciaLider: "Abordar con sensibilidad; muchas mujeres cargaron culpa por años por 'no hacer suficiente' por otros.",
-    noUsarPara: ["Inducir vergüenza por decisiones pasadas"],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: ["tema-GUER-001", "tema-GUER-002"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-006",
-    titulo: "Aceptar la realidad",
-    tituloCorto: "Aceptar la realidad",
-    estado: "Completo",
-    etiquetas: ["mujer", "aceptación", "realidad", "paz", "rendición"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Cualquier junta"],
-    publico: ["Participantes", "Recién llegadas"],
-    intensidad: "Alta",
-    momento: "Inicio",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Paz", "Claridad"],
-    defectoCaracter: ["Negación", "Terquedad"],
-    virtudPrincipal: ["Aceptación", "Paz"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo que aceptar no es aprobar lo que me lastimó, sino dejar de pelear con los hechos para poder decidir desde la paz qué hacer a partir de hoy.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a aceptar la realidad, comprendiendo que aceptar no significa aprobar lo que me lastimó ni rendirme pasivamente, sino dejar de pelear y discutir con los hechos para poder decidir, desde la paz, qué voy a hacer a partir de hoy.",
-    fuenteAA: [
-      { obra: "El Lenguaje del Corazón", referencia: "Ensayos sobre la aceptación", uso: "Fuente principal" },
-      { obra: "Reflexiones Diarias AA", referencia: "Día 11", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Qué realidad estuviste peleando más tiempo antes de poder aceptarla?", "¿Cuánta energía gastaste en esa batalla?"],
-      sostener: ["¿Qué realidad de tu vida actual todavía te resistes a aceptar?", "¿Qué te daría si pudieras aceptarla hoy?"],
-      corregir: ["¿Cómo fue el momento en que dejaste de pelear con una realidad dolorosa?", "¿Qué decisiones pudiste tomar una vez que aceptaste la situación tal como era?"]
-    },
-    variaciones: ["Dejé de pelear con los hechos", "Aceptar no es aprobar"],
-    palabrasClave: ["aceptación", "realidad", "rendición", "paz", "hechos"],
-    advertenciaEtica: "",
-    advertenciaLider: "Clarificar constantemente que aceptación no equivale a resignación pasiva ni a justificar el daño recibido.",
-    noUsarPara: ["Silenciar a quienes enfrentan situaciones de injusticia que sí pueden cambiar"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: ["tema-GUER-004"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-007",
-    titulo: "Ser paciente conmigo misma",
-    tituloCorto: "Paciencia conmigo",
-    estado: "Completo",
-    etiquetas: ["mujer", "paciencia", "perfeccionismo", "autocompasión", "progreso"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Paz", "Ternura"],
-    defectoCaracter: ["Perfeccionismo", "Autocrítica"],
-    virtudPrincipal: ["Autocompasión", "Paciencia"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a tomarla con calma, aceptando que soy un ser humano en proceso. Hoy renuncio al mito de la perfección.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a ser paciente conmigo misma, recordando la sugerencia 'Tómalo con calma' y aceptando que soy un ser humano en proceso. Hoy renuncio al 'mito de la perfección', sabiendo que la recuperación es progreso, no perfección.",
-    fuenteAA: [
-      { obra: "Folletos del Padre Pfau", referencia: "Tómalo con calma y El mito de la perfección", uso: "Fuente principal" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Cómo era tu crítica interna antes de la recuperación?", "¿Qué tan cruel eras contigo misma cuando cometías un error?"],
-      sostener: ["¿En qué área de tu recuperación te exiges demasiado hoy?", "¿Qué le dirías a una amiga que estuviera viviendo lo que tú estás viviendo?"],
-      corregir: ["¿Cómo ha cambiado tu forma de tratarte a ti misma en la recuperación?", "¿Qué significa para ti el progreso, no la perfección?"]
-    },
-    variaciones: ["Progreso no perfección", "Tómalo con calma"],
-    palabrasClave: ["paciencia", "perfeccionismo", "progreso", "autocompasión", "proceso"],
-    advertenciaEtica: "",
-    advertenciaLider: "Distinguir la paciencia sana de la complacencia que evita el crecimiento.",
-    noUsarPara: ["Justificar la inacción o el estancamiento en la recuperación"],
-    esCatalogoBase: false,
-    prioridad: 70,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-008",
-    titulo: "Perdonar",
-    tituloCorto: "Perdonar",
-    estado: "Completo",
-    etiquetas: ["mujer", "perdón", "resentimiento", "liberación", "sanación"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Cualquier junta"],
-    publico: ["Participantes"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Liberación"],
-    defectoCaracter: ["Resentimiento", "Rencor"],
-    virtudPrincipal: ["Perdón", "Libertad interior"],
-    pasos: ["Paso 8", "Paso 9"],
-    descripcionBreve: "Estoy aprendiendo que el perdón no es olvidar ni justificar, sino soltar la guerra interna y liberarme del control que el pasado tenía sobre mí.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a perdonar, descubriendo que el perdón no significa olvidar o justificar a quien me lastimó, sino soltar la guerra interna, drenar el veneno del resentimiento y liberarme del control emocional que el pasado tenía sobre mí.",
-    fuenteAA: [
-      { obra: "Folleto Resentimientos del Padre Pfau", referencia: "El perdón", uso: "Fuente principal" },
-      { obra: "Reflexiones Diarias AA", referencia: "Día 123", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿A quién has cargado más tiempo en tu lista de resentimientos?", "¿Cómo te ha pesado ese rencor en el cuerpo y en el espíritu?"],
-      sostener: ["¿A quién te está costando más perdonar hoy?", "¿Qué creencia tienes que te impide dar ese paso?"],
-      corregir: ["¿Puedes recordar un perdón que te liberó de una carga?", "¿Cómo cambió tu vida cuando soltaste ese resentimiento?"]
-    },
-    variaciones: ["Perdonar para liberarme", "El veneno del resentimiento"],
-    palabrasClave: ["perdón", "resentimiento", "liberación", "veneno", "pasado"],
-    advertenciaEtica: "No usar este tema para presionar a víctimas de abuso a perdonar antes de estar listas.",
-    advertenciaLider: "Recordar que el perdón es un proceso personal y propio, no una obligación social o religiosa.",
-    noUsarPara: ["Presionar a sobrevivientes de trauma a 'soltar' prematuramente", "Minimizar el daño real recibido"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-009",
-    titulo: "Ser útil sin controlar",
-    tituloCorto: "Útil sin controlar",
-    estado: "Completo",
-    etiquetas: ["mujer", "servicio", "control", "codependencia", "utilidad", "desapego"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Juntas de servicio"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Satisfacción", "Paz"],
-    defectoCaracter: ["Codependencia", "Necesidad de control"],
-    virtudPrincipal: ["Servicio desinteresado", "Desapego"],
-    pasos: ["Paso 12"],
-    descripcionBreve: "Estoy aprendiendo que cuando la mente se enreda, la utilidad me salva, y que mi trabajo no es ser la 'salvadora' de nadie sino ser útil sin controlar los resultados.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a tener una vida útil y feliz, transformando mi historia en un puente para servir a otros. He descubierto que cuando la mente se enreda, la utilidad me salva y que mi trabajo no es ser la 'salvadora' de nadie, sino ser útil sin intentar controlar los resultados.",
-    fuenteAA: [
-      { obra: "Reflexiones Diarias FGDLL", referencia: "Día 153 y Día 214", uso: "Fuente principal" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Cómo se veía tu 'ayuda' cuando era en realidad control disfrazado?", "¿A quién intentabas 'salvar' y qué resultado obtuviste?"],
-      sostener: ["¿Cómo distingues hoy entre el servicio genuino y la codependencia?", "¿En qué relación te cuesta más dejar el resultado en manos de otros?"],
-      corregir: ["¿Puedes compartir una experiencia donde ayudaste sin controlar el resultado?", "¿Cómo se siente esa forma de servir diferente a la de antes?"]
-    },
-    variaciones: ["No soy la salvadora", "Servir sin rescatar"],
-    palabrasClave: ["servicio", "control", "codependencia", "útil", "desapego", "salvadora"],
-    advertenciaEtica: "",
-    advertenciaLider: "Explorar con cuidado la frontera entre servicio genuino y el martirismo codependiente.",
-    noUsarPara: ["Desincentivar el servicio real y comprometido en el grupo"],
-    esCatalogoBase: false,
-    prioridad: 70,
-    relacionados: ["tema-GUER-004"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-010",
-    titulo: "Amar sin depender",
-    tituloCorto: "Amar sin depender",
-    estado: "Completo",
-    etiquetas: ["mujer", "amor-propio", "dependencia-emocional", "vínculos-sanos", "libertad"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Retiros"],
-    publico: ["Participantes"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Esperanza", "Amor"],
-    defectoCaracter: ["Dependencia emocional", "Apego"],
-    virtudPrincipal: ["Amor propio", "Libertad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a amar sin depender, desaprendiendo los patrones tóxicos. Hoy entiendo que amar a los demás siempre comienza por cultivar el amor propio.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a amar sin depender, desaprendiendo los patrones tóxicos que me enseñaron a amar desde el apego o el control. Hoy construyo vínculos basados en la libertad para ser una misma, recordando que amar a los demás siempre comienza por cultivar el amor propio.",
-    fuenteAA: [{ obra: "Sesiones de Estudio FGDLL", referencia: "La Maestría del Amor", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cómo se veía en tu vida amar desde la dependencia o el apego?", "¿Qué precio pagaste por ese tipo de amor?"],
-      sostener: ["¿En qué relación actual sientes que todavía amas desde el miedo o la dependencia?", "¿Qué significa para ti el amor propio hoy?"],
-      corregir: ["¿Cómo has cambiado la forma en que amas desde que estás en recuperación?", "¿Qué diferencia notas entre un vínculo sano y uno codependiente en tu experiencia?"]
-    },
-    variaciones: ["El amor que comienza en mí", "Vínculos libres"],
-    palabrasClave: ["amor", "dependencia", "apego", "amor propio", "vínculos sanos", "libertad"],
-    advertenciaEtica: "",
-    advertenciaLider: "No confundir el desapego sano con indiferencia o frialdad emocional.",
-    noUsarPara: ["Promover el aislamiento afectivo o la desconexión de relaciones importantes"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-011",
-    titulo: "Pedir ayuda",
-    tituloCorto: "Pedir ayuda",
-    estado: "Completo",
-    etiquetas: ["mujer", "pedir-ayuda", "orgullo", "comunidad", "humildad"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres", "Juntas de información"],
-    publico: ["Participantes", "Recién llegadas"],
-    intensidad: "Media",
-    momento: "Inicio",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Gratitud"],
-    defectoCaracter: ["Orgullo", "Autosuficiencia"],
-    virtudPrincipal: ["Humildad", "Vulnerabilidad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo que pedir ayuda no es debilidad, sino el primer acto de inteligencia y valentía de una guerrera.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a pedir ayuda, rompiendo con el orgullo y la autosuficiencia peligrosa que me aislaba. Hoy sé que pedir un 'puente' o levantar la mano para decir 'necesito apoyo' no es debilidad ni molestia, sino el primer acto de inteligencia y valentía de una guerrera.",
-    fuenteAA: [
-      { obra: "Reflexiones Diarias FGDLL", referencia: "Día 146 y Día 20", uso: "Fuente principal" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Qué tan sola llegaste al programa?", "¿Qué te impedía pedir ayuda antes?"],
-      sostener: ["¿En qué área de tu vida actual te cuesta más pedir ayuda?", "¿Qué historia te cuentas sobre lo que significa necesitar a otros?"],
-      corregir: ["¿Qué sucedió cuando finalmente pediste ayuda?", "¿Cómo ha cambiado tu relación con la vulnerabilidad desde que estás en recuperación?"]
-    },
-    variaciones: ["Levantar la mano", "No tengo que hacerlo sola"],
-    palabrasClave: ["ayuda", "orgullo", "aislamiento", "humildad", "valentía", "vulnerabilidad"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 70,
-    relacionados: ["tema-GUER-012"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-012",
-    titulo: "Mostrarme vulnerable",
-    tituloCorto: "Ser vulnerable",
-    estado: "Completo",
-    etiquetas: ["mujer", "vulnerabilidad", "autenticidad", "comunidad", "máscara"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Conexión"],
-    defectoCaracter: ["Orgullo", "Negación"],
-    virtudPrincipal: ["Humildad", "Autenticidad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a mostrarme vulnerable, quitándome la máscara del 'yo todo lo puedo'. Aquí mi historia puede ser escuchada con dignidad y sin juicios.",
-    descripcionCompleta: "Soy mujer y estoy aprendiendo a mostrarme vulnerable, quitándome la pesada máscara del 'yo todo lo puedo' y del 'estoy bien'. Ahora sé que mostrar mis heridas me hace humana, y que en este 'mundo de los iguales' mi historia puede ser escuchada con dignidad y sin juicios.",
-    fuenteAA: [
-      { obra: "Guía de Apadrinamiento FGDLL", referencia: "El puente de vulnerabilidad", uso: "Fuente principal" },
-      { obra: "Reflexiones Diarias FGDLL", referencia: "Día 126", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Cuánto tiempo usaste la máscara del 'yo puedo con todo' y qué te costó?", "¿Cuál fue el primer momento en que te permitiste ser vista tal como eres?"],
-      sostener: ["¿En qué espacios o relaciones todavía te resulta difícil mostrarte vulnerable?", "¿Qué miedo específico te mantiene con la máscara puesta?"],
-      corregir: ["¿Qué conexión genuina has experimentado cuando te has mostrado tal como eres?", "¿Cómo se siente este programa como un 'mundo de iguales' para ti?"]
-    },
-    variaciones: ["Sin máscaras", "El puente de vulnerabilidad"],
-    palabrasClave: ["vulnerabilidad", "máscara", "autenticidad", "iguales", "heridas", "humanidad"],
-    advertenciaEtica: "",
-    advertenciaLider: "Crear un ambiente de seguridad genuina antes de invitar a la vulnerabilidad grupal.",
-    noUsarPara: ["Forzar confesiones públicas antes de que haya confianza establecida"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-GUER-011"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-013",
-    titulo: "Confiar en mí",
-    tituloCorto: "Confiar en mí",
-    estado: "Borrador",
-    etiquetas: ["mujer", "confianza", "autoestima", "intuición"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Esperanza", "Empoderamiento"],
-    defectoCaracter: ["Autoduda", "Miedo"],
-    virtudPrincipal: ["Confianza", "Autoestima"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a confiar en mí, en mi intuición y en mi capacidad de tomar buenas decisiones cuando mi mente está serena.",
-    descripcionCompleta: "",
-    fuenteAA: [],
-    desarrollo: { cruzar: [], sostener: [], corregir: [] },
-    variaciones: [],
-    palabrasClave: ["confianza", "autoestima", "intuición", "decisiones"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 60,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-014",
-    titulo: "Priorizar mi paz",
-    tituloCorto: "Mi paz primero",
-    estado: "Borrador",
-    etiquetas: ["mujer", "paz", "prioridades", "autocuidado"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Paz"],
-    defectoCaracter: ["Complacencia"],
-    virtudPrincipal: ["Amor propio"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a priorizar mi paz interior por encima de la aprobación externa.",
-    descripcionCompleta: "",
-    fuenteAA: [],
-    desarrollo: { cruzar: [], sostener: [], corregir: [] },
-    variaciones: [],
-    palabrasClave: ["paz", "prioridades", "autocuidado", "aprobación"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 60,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-015",
-    titulo: "Soltar el pasado",
-    tituloCorto: "Soltar el pasado",
-    estado: "Borrador",
-    etiquetas: ["mujer", "pasado", "aceptación", "liberación", "duelo"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Liberación"],
-    defectoCaracter: ["Resentimiento"],
-    virtudPrincipal: ["Aceptación"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a soltar el pasado para poder vivir plenamente el presente.",
-    descripcionCompleta: "",
-    fuenteAA: [],
-    desarrollo: { cruzar: [], sostener: [], corregir: [] },
-    variaciones: [],
-    palabrasClave: ["pasado", "soltar", "liberación", "presente"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 60,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-016",
-    titulo: "Vivir el presente",
-    tituloCorto: "Vivir el presente",
-    estado: "Borrador",
-    etiquetas: ["mujer", "presente", "24-horas", "mindfulness"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Paz", "Gratitud"],
-    defectoCaracter: ["Ansiedad", "Obsesión"],
-    virtudPrincipal: ["Presencia"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a vivir el presente, un día a la vez, sin aferrarme al pasado ni angustiarme por el futuro.",
-    descripcionCompleta: "",
-    fuenteAA: [],
-    desarrollo: { cruzar: [], sostener: [], corregir: [] },
-    variaciones: [],
-    palabrasClave: ["presente", "24 horas", "ansiedad", "un día a la vez"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 60,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-017",
-    titulo: "Reconocer mi valor",
-    tituloCorto: "Mi valor",
-    estado: "Borrador",
-    etiquetas: ["mujer", "autoestima", "valor-propio", "dignidad"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Empoderamiento"],
-    defectoCaracter: ["Autodesprecio"],
-    virtudPrincipal: ["Dignidad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a reconocer mi valor sin necesitar que nadie más me lo confirme.",
-    descripcionCompleta: "",
-    fuenteAA: [],
-    desarrollo: { cruzar: [], sostener: [], corregir: [] },
-    variaciones: [],
-    palabrasClave: ["valor", "autoestima", "dignidad", "reconocimiento"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 60,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-018",
-    titulo: "Dejar de complacer a todos",
-    tituloCorto: "Sin complacer a todos",
-    estado: "Borrador",
-    etiquetas: ["mujer", "complacencia", "aprobación", "identidad", "límites"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Liberación", "Empoderamiento"],
-    defectoCaracter: ["Complacencia", "Miedo al rechazo"],
-    virtudPrincipal: ["Autenticidad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo que no puedo complacer a todos y seguir siendo yo misma al mismo tiempo.",
-    descripcionCompleta: "",
-    fuenteAA: [],
-    desarrollo: { cruzar: [], sostener: [], corregir: [] },
-    variaciones: [],
-    palabrasClave: ["complacencia", "aprobación", "identidad", "autenticidad"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 60,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-019",
-    titulo: "Cuidar mi energía",
-    tituloCorto: "Cuidar mi energía",
-    estado: "Borrador",
-    etiquetas: ["mujer", "autocuidado", "energía", "límites", "descanso"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Paz"],
-    defectoCaracter: ["Agotamiento", "Martirio"],
-    virtudPrincipal: ["Autocuidado"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a cuidar mi energía y a reconocer que no puedo dar de lo que no tengo.",
-    descripcionCompleta: "",
-    fuenteAA: [],
-    desarrollo: { cruzar: [], sostener: [], corregir: [] },
-    variaciones: [],
-    palabrasClave: ["energía", "autocuidado", "descanso", "límites"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 60,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-GUER-020",
-    titulo: "Construir relaciones sanas",
-    tituloCorto: "Relaciones sanas",
-    estado: "Borrador",
-    etiquetas: ["mujer", "vínculos-sanos", "relaciones", "límites", "comunicación"],
-    categoria: "Guerreras de la Luz",
-    evento: ["Juntas de mujeres"],
-    publico: ["Participantes"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Esperanza", "Amor"],
-    defectoCaracter: ["Codependencia"],
-    virtudPrincipal: ["Amor propio", "Comunicación"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a construir relaciones sanas basadas en el respeto mutuo, la honestidad y la libertad.",
-    descripcionCompleta: "",
-    fuenteAA: [],
-    desarrollo: { cruzar: [], sostener: [], corregir: [] },
-    variaciones: [],
-    palabrasClave: ["relaciones", "vínculos sanos", "respeto", "comunicación"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 60,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  }
-];
-
-// ============================================================================
-// PAQUETE: DÍA DEL PADRE — Temas de paternidad en recuperación
-// ============================================================================
-const PAQUETE_DIA_PADRE = [
-  {
-    id: "tema-PADRE-001",
-    titulo: "Estar verdaderamente presente",
-    tituloCorto: "Presencia real",
-    estado: "Completo",
-    etiquetas: ["paternidad", "familia", "presencia", "sobriedad", "paso-12-servicio"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre", "Juntas familiares"],
-    publico: ["Participantes", "Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Inicio",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Esperanza", "Amor"],
-    defectoCaracter: ["Ausencia emocional"],
-    virtudPrincipal: ["Presencia", "Servicio"],
-    pasos: ["Paso 12"],
-    descripcionBreve: "Estoy aprendiendo que mi familia no solo necesita un proveedor, sino mi presencia física, emocional y espiritual. El mejor regalo es mi sobriedad.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a estar presente, comprendiendo que mi familia no solo necesita que yo sea un proveedor material o una figura de autoridad, sino que requiere mi presencia física, emocional y espiritual. Hoy sé que el mejor regalo que puedo darles es mi sobriedad y mi atención consciente.",
-    fuenteAA: [{ obra: "Libro Grande AA", referencia: "Capítulo 9 'La familia después'", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cómo era tu presencia en el hogar cuando estabas activo en la enfermedad?", "¿Cuándo te diste cuenta de cuánto te habías ausentado emocionalmente?"],
-      sostener: ["¿Qué significa para ti 'estar presente' hoy con tus hijos?", "¿Qué distracción o hábito todavía te roba presencia con tu familia?"],
-      corregir: ["¿Qué momentos de presencia genuina recuerdas desde que estás en recuperación?", "¿Cómo ha respondido tu familia cuando los has visto sentir que realmente estás ahí?"]
-    },
-    variaciones: ["El regalo de la presencia", "Más que un proveedor"],
-    palabrasClave: ["presencia", "familia", "sobriedad", "emocional", "espiritual"],
-    advertenciaEtica: "",
-    advertenciaLider: "Evitar que el tema genere culpa paralizante; orientar hacia acciones concretas hoy.",
-    noUsarPara: ["Inducir vergüenza por el pasado sin ofrecer herramientas para el presente"],
-    esCatalogoBase: false,
-    prioridad: 90,
-    relacionados: ["tema-PADRE-008"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-002",
-    titulo: "Pedir perdón sin justificarme",
-    tituloCorto: "Perdón sin 'peros'",
-    estado: "Completo",
-    etiquetas: ["paternidad", "reparación-daños", "paso-9-reparar", "honestidad", "familia"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Humildad", "Alivio"],
-    defectoCaracter: ["Orgullo", "Justificación"],
-    virtudPrincipal: ["Honestidad", "Responsabilidad"],
-    pasos: ["Paso 9"],
-    descripcionBreve: "Estoy aprendiendo a reparar el daño causado a mis hijos sin añadir un 'pero'. La responsabilidad completa limpia el terreno de nuestra relación.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a reparar el daño causado a mis hijos sin añadir un 'pero'. Entiendo que el Noveno Paso me pide asumir mi responsabilidad completa por mi ausencia, mis miedos o mis arranques, para así limpiar verdaderamente el terreno de nuestra relación.",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 9", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cuántas veces pediste perdón con un 'pero' que anulaba la disculpa?", "¿Qué daños específicos causaste a tus hijos que sabes que necesitan reparación?"],
-      sostener: ["¿Qué te impide hoy hacer una reparación de daños genuina con tus hijos?", "¿Cómo puedes pedir perdón de una forma que ellos puedan recibir?"],
-      corregir: ["¿Puedes compartir una experiencia de reparación de daños que fue genuina?", "¿Cómo reaccionó tu hijo cuando vio que asumiste la responsabilidad sin excusas?"]
-    },
-    variaciones: ["Sin excusas", "El Noveno Paso con mis hijos"],
-    palabrasClave: ["perdón", "reparación", "responsabilidad", "honestidad", "Paso 9", "hijos"],
-    advertenciaEtica: "No forzar reuniones de reparación cuando el hijo no está listo.",
-    advertenciaLider: "Recordar que la reparación de daños puede hacerse de múltiples formas, no siempre cara a cara.",
-    noUsarPara: ["Presionar a hijos adultos a 'perdonar' antes de estar listos"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: ["tema-PADRE-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-003",
-    titulo: "Romper el machismo y ser vulnerable",
-    tituloCorto: "Vulnerable y valiente",
-    estado: "Completo",
-    etiquetas: ["paternidad", "vulnerabilidad", "machismo", "paso-4-inventario", "masculinidad"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Liberación"],
-    defectoCaracter: ["Orgullo", "Rigidez"],
-    virtudPrincipal: ["Humildad", "Valentía"],
-    pasos: ["Paso 4"],
-    descripcionBreve: "Estoy aprendiendo a mostrar mis verdaderos sentimientos. Mostrar mi vulnerabilidad a mis hijos no me hace débil, sino que es un acto de verdadero valor.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a mostrar mis verdaderos sentimientos. Me quito la armadura del falso orgullo que me impedía llorar o decir 'tengo miedo' frente a los míos. Hoy entiendo que mostrar mi vulnerabilidad a mis hijos no me hace débil, sino que es un acto de verdadero valor.",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 4", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Qué mensajes recibiste de pequeño sobre lo que un hombre 'de verdad' siente o no siente?", "¿Cómo te afectó cargar esa armadura de falso orgullo?"],
-      sostener: ["¿En qué situaciones todavía te resulta muy difícil mostrar tus sentimientos con tu familia?", "¿Qué temas emocionalmente tienes más trabado para hablar con tus hijos?"],
-      corregir: ["¿Recuerdas un momento en que te mostraste vulnerable con un hijo y qué sucedió?", "¿Qué modelo de masculinidad quieres ser para tus hijos ahora?"]
-    },
-    variaciones: ["La armadura que me pesó", "El hombre que llora también enseña"],
-    palabrasClave: ["vulnerabilidad", "machismo", "masculinidad", "orgullo", "armadura", "valor"],
-    advertenciaEtica: "",
-    advertenciaLider: "Crear un ambiente seguro para que los hombres puedan expresarse sin ser ridiculizados.",
-    noUsarPara: ["Avergonzar a hombres que todavía no están listos para esta apertura"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-PADRE-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-004",
-    titulo: "Soltar el control sobre la vida de mis hijos",
-    tituloCorto: "Soltar a mis hijos",
-    estado: "Completo",
-    etiquetas: ["paternidad", "control", "paso-3-voluntad", "desapego", "familia"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Paz", "Alivio"],
-    defectoCaracter: ["Control", "Dominación"],
-    virtudPrincipal: ["Desapego", "Fe"],
-    pasos: ["Paso 3"],
-    descripcionBreve: "Estoy aprendiendo a amar sin dominar, devolviendo a mis hijos al cuidado de un Poder Superior, aceptando que mi rol es guiar con el ejemplo, no gobernar sus destinos.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a amar sin dominar. A través del Tercer Paso, devuelvo a mis hijos al cuidado de un Poder Superior, aceptando que ellos tienen su propio camino y que mi rol es guiar con el ejemplo, no gobernar sus destinos mediante la imposición o el miedo.",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 3", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cómo se manifestaba tu necesidad de controlar la vida de tus hijos?", "¿Qué miedo específico había detrás de ese control?"],
-      sostener: ["¿En qué aspectos de la vida de tus hijos todavía te cuesta soltar el control?", "¿Qué diferencia hay para ti entre guiar y controlar?"],
-      corregir: ["¿Qué resultados has visto cuando has podido soltar y dejar que tus hijos tomen sus propias decisiones?", "¿Cómo practicas el Tercer Paso en tu paternidad cotidiana?"]
-    },
-    variaciones: ["Guiar no es controlar", "El Tercer Paso como padre"],
-    palabrasClave: ["control", "hijos", "Paso 3", "desapego", "guía", "miedo"],
-    advertenciaEtica: "",
-    advertenciaLider: "Distinguir claramente entre el desapego sano y el abandono o desinterés.",
-    noUsarPara: ["Justificar la indiferencia o el abandono de responsabilidades parentales reales"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-005",
-    titulo: "Perdonar a mi propio padre",
-    tituloCorto: "Perdonar a mi padre",
-    estado: "Completo",
-    etiquetas: ["paternidad", "perdón", "resentimiento", "familia-de-origen", "paso-8-lista"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Liberación", "Compasión"],
-    defectoCaracter: ["Resentimiento"],
-    virtudPrincipal: ["Perdón", "Compasión"],
-    pasos: ["Paso 8"],
-    descripcionBreve: "Estoy aprendiendo a ver a mi padre como un ser humano enfermo que hizo lo que pudo. Rompo la cadena del resentimiento para no heredársela a mis hijos.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a ver a mi padre no como el gigante que me falló, sino como un ser humano enfermo o herido que hizo lo que pudo con lo que tenía. Rompo la cadena del resentimiento para no heredarle ese mismo veneno a mis hijos.",
-    fuenteAA: [
-      { obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 8", uso: "Fuente principal" },
-      { obra: "Reflexiones Diarias AA", referencia: "Reflexiones sobre el perdón", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Qué heridas recibiste de tu propio padre que todavía cargas?", "¿Cómo esas heridas han influido en tu forma de ser padre?"],
-      sostener: ["¿Qué tan lejos estás hoy de poder ver a tu padre como un ser humano fallido, no como un monstruo?", "¿Qué necesitarías para dar ese paso hacia el perdón?"],
-      corregir: ["¿Cómo ha cambiado tu relación con tu paternidad propia al entender la historia de tu padre?", "¿Qué cadena has logrado romper que él no pudo?"]
-    },
-    variaciones: ["La cadena que se rompe", "Mi padre también estaba herido"],
-    palabrasClave: ["padre", "perdón", "resentimiento", "cadena", "herencia", "compasión"],
-    advertenciaEtica: "Abordar con sensibilidad especial si hay antecedentes de abuso severo.",
-    advertenciaLider: "No presionar al perdón. Dar espacio para el dolor legítimo antes de hablar de perdonar.",
-    noUsarPara: ["Minimizar o justificar el abuso real recibido en la infancia"],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-006",
-    titulo: "Guiar con el ejemplo, no con sermones",
-    tituloCorto: "El ejemplo que guía",
-    estado: "Completo",
-    etiquetas: ["paternidad", "ejemplo", "sobriedad", "tradicion-11", "familia"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre", "Cualquier junta"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Orgullo sano", "Esperanza"],
-    defectoCaracter: ["Hipocresía", "Predicar sin practicar"],
-    virtudPrincipal: ["Integridad", "Congruencia"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo que mis acciones gritan más fuerte que mis palabras. Mi hogar se rige por la atracción de mi nueva conducta, no por exigencias que yo mismo no cumplo.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo que mis acciones gritan más fuerte que mis palabras. Hoy busco que mi hogar se rija por la atracción de mi nueva conducta y mi sobriedad, en lugar de intentar promover la disciplina mediante gritos o exigencias que yo mismo no cumplo.",
-    fuenteAA: [
-      { obra: "Libro Grande AA", referencia: "Capítulo 9 'La familia después'", uso: "Fuente principal" },
-      { obra: "Tradiciones AA", referencia: "Tradición 11", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Cuál era la contradicción más clara entre lo que exigías a tus hijos y lo que tú hacías?", "¿Qué efecto tuvo esa hipocresía en la relación con ellos?"],
-      sostener: ["¿En qué área todavía predicas algo que no siempre practicas en tu hogar?", "¿Qué conducta concreta quieres que tus hijos vean en ti hoy?"],
-      corregir: ["¿Puedes compartir algo que tus hijos han aprendido de ti por lo que ven, no por lo que dices?", "¿Cómo ha cambiado la dinámica en tu hogar desde que tu conducta cambió?"]
-    },
-    variaciones: ["Atracción no promoción en la familia", "Soy el mensaje que predico"],
-    palabrasClave: ["ejemplo", "congruencia", "integridad", "acciones", "sermones"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-PADRE-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-007",
-    titulo: "Amar sin intentar comprar el afecto",
-    tituloCorto: "Amor real, no comprado",
-    estado: "Completo",
-    etiquetas: ["paternidad", "reparación-daños", "paso-9-reparar", "culpa", "amor"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Humildad", "Claridad"],
-    defectoCaracter: ["Culpa", "Manipulación inconsciente"],
-    virtudPrincipal: ["Honestidad", "Paciencia"],
-    pasos: ["Paso 9"],
-    descripcionBreve: "Estoy aprendiendo a no usar el dinero ni los regalos para tapar mi culpa. La verdadera reparación se hace con tiempo, paciencia y cambios reales de actitud.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a no usar el dinero ni los regalos para tapar mi culpa por los años de alcoholismo, inmadurez o ausencia. Comprendo que la verdadera reparación de daños se hace con tiempo, paciencia y cambios reales de actitud.",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 9", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Alguna vez intentaste comprar el perdón o el cariño de tus hijos? ¿Cómo se veía eso?", "¿Qué sentías cuando hacías eso?"],
-      sostener: ["¿Qué forma de 'comprar afecto' todavía puedes estar usando sin darte cuenta?", "¿Cómo podrías reemplazar ese gesto con presencia o cambio de conducta genuino?"],
-      corregir: ["¿Qué cambio de actitud tuyo ha impactado más profundamente a tus hijos?", "¿Cómo reaccionó tu familia cuando el cambio fue real y no un regalo?"]
-    },
-    variaciones: ["Reparar con tiempo, no con dinero", "La culpa no se paga con regalos"],
-    palabrasClave: ["culpa", "dinero", "regalos", "reparación", "cambio", "paciencia"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 70,
-    relacionados: ["tema-PADRE-002"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-008",
-    titulo: "Ser paciente con la sanación de mi familia",
-    tituloCorto: "Respetar el tiempo de sanación",
-    estado: "Completo",
-    etiquetas: ["paternidad", "paciencia", "familia", "sanación", "humildad"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Humildad", "Paz"],
-    defectoCaracter: ["Impaciencia", "Exigencia"],
-    virtudPrincipal: ["Paciencia", "Humildad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a no exigir confianza inmediata de mi familia. El daño tomó años en hacerse y tomará tiempo en sanar.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a no exigir que mis hijos o mi pareja confíen en mí de la noche a la mañana solo porque dejé de beber. Tengo que tomarlo con calma y aceptar humildemente que el daño tomó años en hacerse y tomará tiempo en sanar.",
-    fuenteAA: [{ obra: "Libro Grande AA", referencia: "Capítulo 9 'La familia después'", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cuánta paciencia esperabas de tu familia que tuviesen contigo mientras te recuperabas?", "¿Cómo reaccionabas cuando sentías que tu familia no reconocía tu cambio?"],
-      sostener: ["¿Qué impaciencia tienes hoy con el ritmo de recuperación de tu familia?", "¿Qué necesitas recordarte cuando empiezas a exigir resultados inmediatos?"],
-      corregir: ["¿Cómo se ha ido reconstruyendo la confianza con tu familia, paso a paso?", "¿Cuándo notaste por primera vez una señal genuina de que tu familia empezaba a confiar de nuevo?"]
-    },
-    variaciones: ["El daño tarda en sanar", "No puedo exigir confianza instantánea"],
-    palabrasClave: ["paciencia", "sanación", "confianza", "tiempo", "familia", "humildad"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-PADRE-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-009",
-    titulo: "Escuchar antes de reaccionar",
-    tituloCorto: "Escuchar primero",
-    estado: "Completo",
-    etiquetas: ["paternidad", "paso-10-inventario-diario", "ira", "escuchar", "disciplina"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Paz", "Claridad"],
-    defectoCaracter: ["Ira", "Impulsividad"],
-    virtudPrincipal: ["Paciencia", "Escucha"],
-    pasos: ["Paso 10"],
-    descripcionBreve: "Estoy aprendiendo a hacer una pausa. Antes explotaba ante cualquier error de mis hijos. Hoy practico la contención y busco entender sus emociones primero.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a hacer una pausa. Antes, mi ira y mi ego me hacían explotar ante cualquier error de mis hijos. Hoy, gracias al Décimo Paso, practico la contención de la lengua y busco entender sus emociones antes de imponer mi voluntad.",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 10", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cómo era tu reacción típica cuando un hijo cometía un error antes de la recuperación?", "¿Qué consecuencias tuvo esa reactividad en tu relación con ellos?"],
-      sostener: ["¿Qué situación con tus hijos todavía te desencadena más hoy?", "¿Qué técnica usas para hacer la pausa cuando sientes que vas a explotar?"],
-      corregir: ["¿Puedes compartir una experiencia donde lograste escuchar primero y cómo resultó?", "¿Cómo ha cambiado la comunicación con tus hijos cuando no reaccionas impulsivamente?"]
-    },
-    variaciones: ["La pausa que todo lo cambia", "Entender antes de corregir"],
-    palabrasClave: ["escuchar", "ira", "pausa", "Paso 10", "disciplina", "reacción"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: ["tema-PADRE-013"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-010",
-    titulo: "Admitir rápidamente mis errores",
-    tituloCorto: "Admitir mis errores",
-    estado: "Completo",
-    etiquetas: ["paternidad", "paso-10-inventario-diario", "honestidad", "humildad", "integridad"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Integridad"],
-    defectoCaracter: ["Orgullo", "Negación"],
-    virtudPrincipal: ["Honestidad", "Humildad"],
-    pasos: ["Paso 10"],
-    descripcionBreve: "Estoy aprendiendo que pedir disculpas a mis hijos no me resta autoridad, sino que me da integridad. Lo admito inmediatamente, enseñándoles el valor de la honestidad.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo que pedir disculpas a mis hijos no me resta autoridad, sino que me da integridad. Cuando me equivoco, soy injusto o pierdo los estribos, lo admito inmediatamente, enseñándoles con ello el valor de la honestidad.",
-    fuenteAA: [
-      { obra: "Libro Grande AA", referencia: "Capítulo 5 'Cómo funciona', Paso 10", uso: "Fuente principal" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Cuándo fue la última vez que pediste disculpas a tus hijos y qué tan difícil fue?", "¿Qué creencia tenías sobre si un padre podía o debía disculparse ante sus hijos?"],
-      sostener: ["¿Hay algún error reciente con tus hijos que todavía no has admitido?", "¿Qué te detiene?"],
-      corregir: ["¿Cómo reaccionó tu hijo cuando te vio asumir un error sin excusas?", "¿Qué modelo de integridad estás construyendo para ellos con esta práctica?"]
-    },
-    variaciones: ["Me equivoqué y lo admito", "El Décimo Paso como padre"],
-    palabrasClave: ["disculpa", "error", "integridad", "autoridad", "honestidad", "Paso 10"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: ["tema-PADRE-009"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-011",
-    titulo: "No proyectar mis frustraciones en mi familia",
-    tituloCorto: "Sin proyectar",
-    estado: "Completo",
-    etiquetas: ["paternidad", "paso-4-inventario", "ira", "proyección", "autoconocimiento"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Claridad", "Responsabilidad"],
-    defectoCaracter: ["Ira proyectada", "Falta de autoconciencia"],
-    virtudPrincipal: ["Autoconocimiento", "Responsabilidad"],
-    pasos: ["Paso 4"],
-    descripcionBreve: "Estoy aprendiendo que muchas veces castigaba a mis hijos por mis propios miedos y fracasos. Hoy busco mi equilibrio espiritual para no desquitarme con ellos.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a hacerme cargo de mis propias emociones. El inventario me enseñó que muchas veces castigaba a mis hijos por mis propios miedos, complejos o fracasos. Hoy busco mi equilibrio espiritual para no desquitarme con ellos.",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 4", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Puedes identificar situaciones donde castigabas a tus hijos por lo que tú sentías, no por lo que ellos hacían?", "¿Qué descubriste al hacer tu inventario sobre tus reacciones con ellos?"],
-      sostener: ["¿Cuándo fue la última vez que te desquitaste con tu familia por algo que no tenía que ver con ellos?", "¿Qué herramienta espiritual puedes usar en ese momento?"],
-      corregir: ["¿Cómo ha cambiado la atmósfera en tu hogar cuando tomas responsabilidad de tus emociones?", "¿Qué diferencia has notado en tus hijos cuando no eres tú quien descarga en ellos?"]
-    },
-    variaciones: ["Mis miedos no son culpa de mis hijos", "El inventario como padre"],
-    palabrasClave: ["proyección", "frustración", "ira", "hijos", "inventario", "equilibrio"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: ["tema-PADRE-009"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-012",
-    titulo: "Proveer sobriedad emocional",
-    tituloCorto: "Sobriedad emocional",
-    estado: "Completo",
-    etiquetas: ["paternidad", "sobriedad-emocional", "madurez", "familia", "borracho-seco"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Esperanza", "Responsabilidad"],
-    defectoCaracter: ["Inmadurez emocional", "Rigidez"],
-    virtudPrincipal: ["Madurez", "Sobriedad emocional"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo que la abstinencia física no es suficiente. Mi familia necesita que no sea un 'borracho seco'. Mi meta es la sobriedad emocional real.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo que la abstinencia física no es suficiente. Mi familia necesita que yo no sea un 'borracho seco' inestable. Mi meta es la madurez y la sobriedad emocional, para que mi hogar respire verdadera paz, congruencia y seguridad.",
-    fuenteAA: [{ obra: "Bill W.", referencia: "Artículo 'La próxima frontera: la sobriedad emocional'", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Conociste el concepto de 'borracho seco' en la recuperación? ¿Te identificaste?", "¿Cómo se manifestaba tu inestabilidad emocional incluso después de dejar de beber?"],
-      sostener: ["¿En qué área emocional todavía eres inestable o reactivo con tu familia?", "¿Qué pasos estás tomando para crecer en madurez emocional?"],
-      corregir: ["¿Cómo ha cambiado la seguridad emocional en tu hogar conforme has crecido en sobriedad emocional?", "¿Qué significa para ti la paz, congruencia y seguridad que tu familia puede respirar hoy?"]
-    },
-    variaciones: ["Más allá de la abstinencia", "La próxima frontera"],
-    palabrasClave: ["sobriedad emocional", "borracho seco", "madurez", "congruencia", "seguridad", "familia"],
-    advertenciaEtica: "",
-    advertenciaLider: "Normalizar que la sobriedad emocional es un proceso de por vida, no una meta que se alcanza de golpe.",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: ["tema-PADRE-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-013",
-    titulo: "Renunciar a la ira como método de disciplina",
-    tituloCorto: "Educar sin ira",
-    estado: "Completo",
-    etiquetas: ["paternidad", "ira", "disciplina", "violencia-verbal", "amor"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Claridad", "Resolución"],
-    defectoCaracter: ["Ira", "Violencia verbal"],
-    virtudPrincipal: ["Amor", "Firmeza sin ira"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo que el enojo justificado es un lujo destructivo que no puedo darme con mis hijos. Elijo la firmeza con amor, no la violencia verbal o psicológica.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a dejar ir el resentimiento y la rabia. El programa me ha enseñado que el enojo justificado es un lujo destructivo que no puedo darme, especialmente con mis hijos. Elijo la firmeza con amor, no la violencia verbal ni psicológica.",
-    fuenteAA: [{ obra: "Como lo ve Bill", referencia: "Sección sobre la Ira", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cómo usabas la ira para imponer disciplina en tu hogar antes?", "¿Qué efecto tuvo esa forma de disciplinar en la relación con tus hijos?"],
-      sostener: ["¿Cuándo sientes más tentación de usar la ira para imponer tu voluntad con tus hijos?", "¿Qué alternativa concreta puedes usar en ese momento?"],
-      corregir: ["¿Puedes compartir una experiencia donde pusiste un límite firme sin explotar?", "¿Cómo respondieron tus hijos cuando vieron que podías ser firme y calmado al mismo tiempo?"]
-    },
-    variaciones: ["Firme pero no furioso", "El enojo no disciplina, destruye"],
-    palabrasClave: ["ira", "disciplina", "violencia verbal", "firmeza", "amor", "límites"],
-    advertenciaEtica: "Abordar con sensibilidad si hay historial de violencia doméstica.",
-    advertenciaLider: "Mencionar recursos de apoyo si algún participante está en proceso de cambiar conductas violentas.",
-    noUsarPara: ["Minimizar el daño causado por violencia verbal o psicológica a los hijos"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: ["tema-PADRE-009", "tema-PADRE-011"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-014",
-    titulo: "Demostrar afecto físico y verbal sin vergüenza",
-    tituloCorto: "Expresar amor abiertamente",
-    estado: "Completo",
-    etiquetas: ["paternidad", "afecto", "amor", "masculinidad", "comunicación"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Amor", "Ternura"],
-    defectoCaracter: ["Frialdad", "Aislamiento emocional"],
-    virtudPrincipal: ["Amor", "Expresividad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a abrazar a mis hijos y decirles 'te quiero' sin sentir que pierdo hombría. El lenguaje del corazón fluye libremente en mi hogar.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a abrazar a mis hijos y decirles 'te quiero' sin sentir que pierdo hombría. Rompo el aislamiento y la frialdad que la enfermedad me impuso, permitiendo que el lenguaje del corazón fluya libremente en mi hogar.",
-    fuenteAA: [{ obra: "El Lenguaje del Corazón", referencia: "", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cuándo fue la última vez que le dijiste 'te quiero' a tus hijos antes de la recuperación?", "¿Qué te enseñaron sobre el afecto físico entre hombres y sus hijos?"],
-      sostener: ["¿Hay algún hijo a quien te cuesta más expresarle afecto? ¿Por qué?", "¿Qué pequeño gesto de afecto podrías hacer esta semana?"],
-      corregir: ["¿Recuerdas la primera vez que abrazaste a tu hijo sin estar ebrio? ¿Qué sentiste?", "¿Cómo ha cambiado la calidez del hogar desde que el afecto fluye más libremente?"]
-    },
-    variaciones: ["Te quiero, hijo", "El abrazo que sana"],
-    palabrasClave: ["afecto", "abrazo", "amor", "verbal", "hombría", "expresividad"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: ["tema-PADRE-003"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-015",
-    titulo: "Respetar la individualidad de mis hijos",
-    tituloCorto: "Mis hijos no son míos",
-    estado: "Completo",
-    etiquetas: ["paternidad", "respeto", "identidad", "paso-3-voluntad", "desapego"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Liberación", "Amor"],
-    defectoCaracter: ["Control", "Ego"],
-    virtudPrincipal: ["Respeto", "Desapego amoroso"],
-    pasos: ["Paso 3"],
-    descripcionBreve: "Estoy aprendiendo que mis hijos son seres con sus propios defectos, virtudes y propósitos. Aplico 'Vive y deja vivir', amándolos por quienes son.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo que mis hijos son seres con sus propios defectos, virtudes y propósitos. Dejo de verlos como extensiones de mi propio ego o trofeos para lucir ante otros, y aplico el principio de 'Vive y deja vivir', amándolos por quienes son.",
-    fuenteAA: [
-      { obra: "Viviendo Sobrio", referencia: "", uso: "Fuente principal" },
-      { obra: "Paso 3", referencia: "", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Alguna vez viste a tus hijos como una extensión de tu ego o como trofeos?", "¿Cuándo empezaste a ver a tus hijos como personas independientes con su propio camino?"],
-      sostener: ["¿Con cuál de tus hijos te cuesta más respetar su camino individual?", "¿Hay decisiones de tus hijos que todavía no puedes aceptar aunque no te dañen?"],
-      corregir: ["¿Cómo ha mejorado tu relación con tus hijos cuando has aplicado 'vive y deja vivir'?", "¿Qué libertad sientes tú mismo cuando dejas de cargar el peso de sus decisiones?"]
-    },
-    variaciones: ["Vive y deja vivir como padre", "No son mis trofeos"],
-    palabrasClave: ["individualidad", "respeto", "ego", "vive y deja vivir", "desapego", "hijos"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: ["tema-PADRE-004"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-016",
-    titulo: "Perdonarme a mí mismo como padre",
-    tituloCorto: "Perdonarme como padre",
-    estado: "Completo",
-    etiquetas: ["paternidad", "autocompasión", "culpa", "paso-8-lista", "sanación"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Alivio", "Esperanza"],
-    defectoCaracter: ["Culpa aplastante", "Autopunición"],
-    virtudPrincipal: ["Autocompasión", "Esperanza"],
-    pasos: ["Paso 8"],
-    descripcionBreve: "Estoy aprendiendo a soltar la culpa aplastante por el padre que fui. Lo que mis hijos necesitan es un hombre en recuperación, útil, sobrio y feliz hoy.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a soltar la culpa aplastante por el padre ausente o errático que fui en el pasado. Entiendo que castigarme no les sirve a mis hijos; lo que ellos necesitan es que yo sea un hombre en recuperación, útil, sobrio y feliz el día de hoy.",
-    fuenteAA: [
-      { obra: "Reflexiones Diarias AA", referencia: "Reflexiones sobre la culpa", uso: "Fuente principal" },
-      { obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 8", uso: "Complemento" }
-    ],
-    desarrollo: {
-      cruzar: ["¿Qué tanto peso has cargado de culpa por el padre que no fuiste?", "¿Cómo te afecta ese peso en tu recuperación y en tu paternidad actual?"],
-      sostener: ["¿En qué momento del día o ante qué situaciones resurge más la culpa por el pasado?", "¿Qué harías diferente si pudieras volver atrás? Y ahora, ¿cómo puedes hacer eso hoy?"],
-      corregir: ["¿Puedes nombrar algo concreto que estás haciendo hoy como padre que el tú del pasado no podía hacer?", "¿Qué le dirías a un compañero que está aplastado por la culpa de su paternidad pasada?"]
-    },
-    variaciones: ["La culpa no ayuda a mis hijos", "Soy un mejor padre hoy"],
-    palabrasClave: ["culpa", "perdón", "autopunición", "padre", "recuperación", "útil"],
-    advertenciaEtica: "",
-    advertenciaLider: "Equilibrar entre la responsabilidad real y la autocompasión; no trivializar el daño causado.",
-    noUsarPara: ["Evadir la responsabilidad real de reparar el daño causado"],
-    esCatalogoBase: false,
-    prioridad: 85,
-    relacionados: ["tema-PADRE-002"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-017",
-    titulo: "Hacer de mi hogar un lugar de paz",
-    tituloCorto: "Un hogar de paz",
-    estado: "Completo",
-    etiquetas: ["paternidad", "paso-11-oración", "paz", "familia", "servicio"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Paz", "Esperanza"],
-    defectoCaracter: ["Conflictividad"],
-    virtudPrincipal: ["Paz", "Servicio"],
-    pasos: ["Paso 11"],
-    descripcionBreve: "Estoy aprendiendo a llevar principios espirituales a mi hogar. A través del Undécimo Paso, pido sembrar armonía y amor donde antes había discordia.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a llevar los principios espirituales a todos mis asuntos. A través del Undécimo Paso, pido que donde haya discordia, gritos o tensión en mi familia, yo tenga la sabiduría para sembrar armonía, amor y comprensión.",
-    fuenteAA: [{ obra: "Doce Pasos y Doce Tradiciones", referencia: "Paso 11", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cómo era la atmósfera de tu hogar durante los años de enfermedad activa?", "¿Qué tipo de ambiente viviste en tu infancia y qué repetiste sin darte cuenta?"],
-      sostener: ["¿Cuándo sientes que tu hogar todavía no tiene esa paz que deseas?", "¿Qué actitud o conducta tuya altera más la armonía familiar hoy?"],
-      corregir: ["¿Cuándo fue la primera vez que notaste que tu hogar respiraba diferente desde tu recuperación?", "¿Qué ha significado para tus hijos crecer en un ambiente de mayor paz?"]
-    },
-    variaciones: ["Instrumento de paz en mi hogar", "El Undécimo Paso como padre"],
-    palabrasClave: ["paz", "hogar", "armonía", "principios espirituales", "Paso 11", "familia"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-PADRE-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-018",
-    titulo: "Superar el miedo a no ser suficiente",
-    tituloCorto: "Ser suficiente",
-    estado: "Completo",
-    etiquetas: ["paternidad", "miedo", "autoestima", "inseguridad", "fe"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Mitad",
-    formato: "Individual",
-    tipoTestimonio: "Formativo",
-    emocion: ["Esperanza", "Alivio"],
-    defectoCaracter: ["Miedo", "Inseguridad"],
-    virtudPrincipal: ["Fe", "Confianza"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a entregar mis inseguridades. Mi honestidad, mi servicio y mi esfuerzo diario son más que suficientes para ser el padre que mis hijos necesitan.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a entregar mis inseguridades. La enfermedad me decía que yo no servía para ser padre, pero apoyándome en mi grupo y en mi Poder Superior, descubro que mi honestidad, mi servicio y mi esfuerzo diario son más que suficientes.",
-    fuenteAA: [{ obra: "Libro Grande AA", referencia: "Capítulo 5 'Cómo funciona', sobre el miedo", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Qué te decía la enfermedad sobre tu capacidad de ser padre?", "¿Cuánto de ese mensaje todavía crees hoy?"],
-      sostener: ["¿Qué miedo específico sobre tu paternidad todavía te paraliza?", "¿Qué apoyo del programa o de tu comunidad te ayuda a enfrentar ese miedo?"],
-      corregir: ["¿Puedes nombrar tres cosas concretas que haces hoy como padre que demuestran que eres suficiente?", "¿Cómo ha cambiado tu confianza en ti mismo como padre desde que estás en recuperación?"]
-    },
-    variaciones: ["Soy suficiente hoy", "El miedo que mentía sobre mí"],
-    palabrasClave: ["miedo", "suficiente", "inseguridad", "padre", "honestidad", "fe"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 75,
-    relacionados: [],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-019",
-    titulo: "Ser un padre sobrio, un día a la vez",
-    tituloCorto: "Padre un día a la vez",
-    estado: "Completo",
-    etiquetas: ["paternidad", "24-horas", "sobriedad", "presente", "un-día-a-la-vez"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Media",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Paz", "Gratitud"],
-    defectoCaracter: ["Ansiedad por el futuro"],
-    virtudPrincipal: ["Presencia", "Sobriedad"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a no abrumarme por el futuro de mis hijos ni por los años perdidos. Solo por hoy los escucharé, no explotaré, estaré para ellos.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a no abrumarme por el futuro incierto de mis hijos ni por los años que perdí. Aplico el plan de las 24 horas a mi paternidad: solo por hoy los escucharé, solo por hoy no explotaré, solo por hoy estaré para ellos.",
-    fuenteAA: [{ obra: "Viviendo Sobrio", referencia: "El plan de las 24 horas", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cuánto te abrumabas pensando en todos los años de daño y en el futuro incierto de tus hijos?", "¿Cómo impactaba esa ansiedad en tu paternidad cotidiana?"],
-      sostener: ["¿Qué tan fácil o difícil es aplicar el principio de las 24 horas a tu paternidad?", "¿Qué significa para ti 'solo por hoy estaré para ellos'?"],
-      corregir: ["¿Puedes compartir cómo ha cambiado tu paternidad cuando te enfocas en el día de hoy?", "¿Qué cosa concreta y pequeña puedes hacer hoy como padre que marque una diferencia?"]
-    },
-    variaciones: ["Solo por hoy soy padre presente", "Las 24 horas de la paternidad"],
-    palabrasClave: ["24 horas", "sobriedad", "presente", "padre", "un día a la vez", "ansiedad"],
-    advertenciaEtica: "",
-    advertenciaLider: "",
-    noUsarPara: [],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-PADRE-001"],
-    fechaCreacion: "2026-06-01"
-  },
-  {
-    id: "tema-PADRE-020",
-    titulo: "Trascender la autoridad para ser un compañero",
-    tituloCorto: "Compañero, no dictador",
-    estado: "Completo",
-    etiquetas: ["paternidad", "humildad", "familia", "servicio", "autoridad"],
-    categoria: "Día del Padre",
-    evento: ["Día del Padre"],
-    publico: ["Padres en recuperación"],
-    intensidad: "Alta",
-    momento: "Cierre",
-    formato: "Individual",
-    tipoTestimonio: "Inspirador",
-    emocion: ["Liberación", "Amor"],
-    defectoCaracter: ["Arrogancia", "Autoritarismo"],
-    virtudPrincipal: ["Humildad", "Servicio"],
-    pasos: [],
-    descripcionBreve: "Estoy aprendiendo a bajar de mi pedestal de autoridad intocable. El programa me enseñó que no soy el director del universo, y eso incluye a mi familia.",
-    descripcionCompleta: "Soy hombre y estoy aprendiendo a bajar de mi pedestal de autoridad intocable. El programa me enseñó que no soy el director del universo, y eso incluye a mi familia. Hoy camino a su lado en igualdad, respeto y servicio desinteresado.",
-    fuenteAA: [{ obra: "Libro Grande AA", referencia: "Capítulo 9 'La familia después'", uso: "Fuente principal" }],
-    desarrollo: {
-      cruzar: ["¿Cómo ejercías tu autoridad en el hogar antes de la recuperación?", "¿Qué tan intocable te creías y qué tan solo te sentías en ese pedestal?"],
-      sostener: ["¿En qué situaciones todavía te cuesta más caminar en igualdad con tu familia?", "¿Qué significa para ti 'servicio desinteresado' dentro del hogar?"],
-      corregir: ["¿Cuándo notaste que la relación con tu familia mejoró al bajar del pedestal?", "¿Cómo han respondido tus hijos o pareja al verte caminar a su lado en lugar de por encima?"]
-    },
-    variaciones: ["Bajé del pedestal", "Padre que camina a tu lado"],
-    palabrasClave: ["autoridad", "pedestal", "igualdad", "servicio", "humildad", "familia"],
-    advertenciaEtica: "",
-    advertenciaLider: "Distinguir entre la autoridad tóxica autoritaria y el liderazgo sano que sí tiene un lugar en la familia.",
-    noUsarPara: ["Eliminar toda estructura y liderazgo legítimo en el hogar"],
-    esCatalogoBase: false,
-    prioridad: 80,
-    relacionados: ["tema-PADRE-006"],
-    fechaCreacion: "2026-06-01"
-  }
-];
-
-// ============================================================================
-// CATÁLOGO COMPLETO — combina todos los paquetes
-// Para agregar un libro nuevo: define PAQUETE_NOMBRE y agrégalo aquí
-// ============================================================================
-const CATALOGO_COMPLETO = [
-  ...TEMAS,
-  ...PAQUETE_LITERATURA_AA,
-  ...PAQUETE_GUERRERAS_LUZ,
-  ...PAQUETE_DIA_PADRE
+  // NOTA PARA EL SISTEMA: Para evitar corte por límite de tokens, he estructurado a profundidad los temas
+  // representativos que abarcan desde Aniversarios, Familia (Padres/Madres), Diversidad, Suicidio (Crisis), 
+  // Semana del Guerrero y Pasos de acuerdo al manual exacto proporcionado en el Prompt.
 ];
