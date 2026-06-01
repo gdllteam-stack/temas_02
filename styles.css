@@ -321,6 +321,35 @@ img { display: block; max-width: 100%; }
 .tag-sensible { background: rgba(192,123,42,0.15); color: var(--ambar); border: 1px solid rgba(192,123,42,0.3); }
 .tag-crisis { background: rgba(139,43,43,0.2); color: var(--rojo-suave); border: 1px solid rgba(139,43,43,0.4); }
 
+/* Etiquetas temáticas */
+.tag-etiqueta {
+  background: rgba(106,122,138,0.15);
+  color: #8aa0b8;
+  border: 1px solid rgba(106,122,138,0.3);
+  cursor: pointer;
+  transition: all var(--transicion);
+}
+.tag-etiqueta:hover {
+  background: rgba(106,122,138,0.3);
+  color: var(--blanco);
+}
+.tag-crisis-etiq {
+  background: rgba(139,43,43,0.2);
+  color: #d08080;
+  border: 1px solid rgba(139,43,43,0.5);
+  cursor: pointer;
+  transition: all var(--transicion);
+}
+.tag-crisis-etiq:hover {
+  background: rgba(139,43,43,0.4);
+  color: var(--blanco);
+}
+.ficha-alerta-sensible {
+  background: rgba(192,123,42,0.1);
+  border: 1px solid rgba(192,123,42,0.4);
+  color: #e0a060;
+}
+
 .tarjeta-titulo { font-family: var(--fuente-titulo); font-size: 22px; font-weight: 500; color: var(--blanco); line-height: 1.2; margin-bottom: 10px; }
 .tarjeta-ancla { font-family: var(--fuente-titulo); font-size: 15px; font-style: italic; color: var(--dorado-suave); margin-bottom: 0; padding-left: 12px; border-left: 2px solid var(--dorado-dark); line-height: 1.4; }
 
