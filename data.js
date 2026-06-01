@@ -1073,7 +1073,202 @@ const PAQUETE_VIVIR_SOBRIO = [
   })
 ];
 
+const ADVERTENCIA_PADRES = 'Tema de Semana de los Padres: no usar la tribuna para juzgar, atacar o exponer a progenitores, pareja o hijos. Orientar siempre hacia la propia parte, la ingobernabilidad personal y las virtudes necesarias para restaurar paz y orden familiar.';
+
+function crearTemaPadres(config) {
+  return {
+    estado: 'Completo',
+    categoria: 'Semana de los Padres',
+    evento: ['Semana de los Padres', 'Compartimiento familiar'],
+    publico: ['Padres', 'Hijos', 'Líderes', 'Participantes'],
+    fuentePrincipal: 'AA',
+    fuenteFGDLL: [],
+    librosRecomendados: [],
+    sensibilidad: 'sensible',
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Crudo',
+    esCatalogoBase: false,
+    relacionados: [],
+    autor: 'Paquete Semana de los Padres',
+    fechaCreacion: '2026-06-01',
+    advertenciaEtica: ADVERTENCIA_PADRES,
+    noUsarPara: ['Juzgar padres', 'Atacar a la pareja', 'Exponer hijos', 'Forzar perdón público'],
+    ...config,
+    advertenciaLider: `${ADVERTENCIA_PADRES} ${config.advertenciaLider || ''}`.trim()
+  };
+}
+
+const PAQUETE_SEMANA_PADRES = [
+  crearTemaPadres({
+    id: 'tema-padres-001',
+    titulo: 'El padre proveedor, corazón ausente',
+    tituloCorto: 'Corazón ausente',
+    etiquetas: ['padre', 'familia', 'responsabilidad', 'aislamiento', 'paso-1-impotencia', 'paso-10-reflexion'],
+    emocion: ['Culpa', 'Tristeza'],
+    defectoCaracter: ['Aislamiento', 'Orgullo', 'Control'],
+    virtudPrincipal: ['Responsabilidad', 'Presencia', 'Bondad'],
+    pasos: ['Paso 1', 'Paso 10'],
+    tradiciones: [],
+    conceptos: ['Presencia afectiva', 'Responsabilidad familiar', 'Bienestar espiritual antes que material'],
+    fuenteAA: [{ obra: 'Alcohólicos Anónimos', referencia: 'Capítulo 9: La familia después', uso: 'Ilustra cómo la seguridad económica no borra la ausencia afectiva ni los daños familiares' }],
+    objetivo: 'Detectar la justificación del abandono emocional mediante el cumplimiento material y aprender a proveer presencia afectiva.',
+    fraseAncla: 'Le di todo lo material para ocultar que no sabía dar mi corazón.',
+    guiaTestimonio: {
+      detectar: ['¿De qué manera utilizabas el trabajo o el dinero como escudo para no sentarte a escuchar los miedos de tus hijos?', '¿Cómo justificabas tu frialdad y tu mal humor diario bajo la excusa de “yo soy el que mantiene este hogar”?', '¿Qué vacíos de tu propia historia tapabas al creer que el respeto de tu familia se compraba con obediencia y bienes materiales?'],
+      admitir: ['¿Cuál fue la crisis familiar o el reclamo de tu hijo que te hizo ver que eras un extraño viviendo en tu propia casa?', '¿Cómo derrumbó el programa tu egomanía al obligarte a aceptar que el bienestar material nunca precede al espiritual?', '¿Qué resistencia tuviste al admitir que el dinero no te daba derecho a gobernar ni dirigir la vida de tus seres queridos?'],
+      corregir: ['¿Qué acciones específicas realizas hoy para sentarte a conversar con tus hijos sin imponer tu criterio?', '¿Cómo practicas la paciencia y el sano juicio cuando tus familiares no reaccionan de inmediato como tú lo deseas?', '¿De qué forma estás pidiendo a tu Poder Superior que te enseñe el camino de la bondad, el afecto y la presencia diaria en tu hogar?']
+    },
+    variaciones: ['Proveedor sin presencia', 'El dinero no abraza'],
+    palabrasClave: ['padre proveedor', 'ausencia emocional', 'familia', 'presencia'],
+    prioridad: 91
+  }),
+  crearTemaPadres({
+    id: 'tema-padres-002',
+    titulo: 'El padre que tuve y el padre que necesité',
+    tituloCorto: 'El padre que tuve',
+    etiquetas: ['padre', 'familia', 'resentimiento', 'perdón', 'responsabilidad', 'paso-4-inventario', 'paso-8-reparacion'],
+    emocion: ['Resentimiento', 'Culpa', 'Tristeza'],
+    defectoCaracter: ['Resentimiento', 'Orgullo', 'Victimismo'],
+    virtudPrincipal: ['Perdón', 'Responsabilidad', 'Compasión'],
+    pasos: ['Paso 4', 'Paso 8'],
+    tradiciones: [],
+    conceptos: ['Inventario familiar', 'Responsabilidad presente', 'Romper cadenas de resentimiento'],
+    fuenteAA: [{ obra: 'Doce Pasos y Doce Tradiciones', referencia: 'Paso Cuatro', uso: 'Explica cómo los miedos y frustraciones heredados retuercen las emociones hasta hacer inventario honesto' }],
+    objetivo: 'Romper la cadena del resentimiento hacia el origen familiar, asumiendo la propia responsabilidad del presente.',
+    fraseAncla: 'Culpaba a mi padre de mis errores para no hacerme cargo de mis propias decisiones.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo utilizabas los errores y maltratos del pasado de tu padre como justificación para dañar a tu familia actual?', '¿De qué manera tu orgullo invertido te hacía esclavo del resentimiento, repitiendo en secreto las mismas conductas que odiabas?', '¿Cómo saboteabas tu propia paz mental recreando episodios dolorosos de tu infancia?'],
+      admitir: ['¿Cómo descubriste, a través de tu inventario moral, que la amargura hacia tus padres era un obstáculo espiritual?', '¿De qué manera aceptaste que tu padre fue un ser humano limitado que hizo lo que pudo con las herramientas que tenía?', '¿Qué quiebre interno te obligó a cambiar la palabra “culpa” por “responsabilidad” en tu historia familiar?'],
+      corregir: ['¿Qué pasos concretos das hoy para perdonar tu origen y resarcir los daños que tú ocasionaste a tus hijos?', '¿Cómo compartes hoy con tu padre, esté presente o en tu memoria, desde respeto, afecto y tolerancia?', '¿De qué manera vigilas tu carácter para no actuar como verdugo o juez de los errores de tus antepasados?']
+    },
+    variaciones: ['Del resentimiento a la responsabilidad', 'El padre real'],
+    palabrasClave: ['padre', 'resentimiento', 'inventario', 'perdon'],
+    prioridad: 90
+  }),
+  crearTemaPadres({
+    id: 'tema-padres-003',
+    titulo: 'Ser padre sin haberse sentido hijo',
+    tituloCorto: 'Ser padre sin ser hijo',
+    etiquetas: ['padre', 'familia', 'humildad', 'confianza', 'perfeccionismo', 'paso-3-entrega', 'paso-7-humildad'],
+    emocion: ['Miedo', 'Ansiedad'],
+    defectoCaracter: ['Control obsesivo', 'Perfeccionismo', 'Orgullo'],
+    virtudPrincipal: ['Humildad', 'Confianza', 'Entrega'],
+    pasos: ['Paso 3', 'Paso 7'],
+    tradiciones: [],
+    conceptos: ['Dejar de jugar a ser Dios en el hogar', 'Pedir dirección', 'Aceptar guía'],
+    fuenteAA: [{ obra: 'Alcohólicos Anónimos', referencia: 'Capítulo 5: Cómo funciona', uso: 'Fundamenta la necesidad de aceptar un Director superior a nuestras fuerzas' }],
+    objetivo: 'Desarrollar la humildad necesaria para pedir dirección ante la incapacidad de guiar el hogar desde carencias del pasado.',
+    fraseAncla: 'No supe ser hijo, pero el programa me enseña a dejarme guiar para no destruir a los míos.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo se manifestaba tu control obsesivo en casa por miedo a que tus hijos vivieran el mismo desamparo que tú sufriste?', '¿De qué manera tu rigidez y exigencias desmesuradas creaban tensión en el hogar?', '¿Cómo te ocultabas detrás de una máscara de hombre infalible para no admitir que tenías miedo?'],
+      admitir: ['¿Qué evento doméstico te demostró que tu fuerza de voluntad no bastaba para gobernar tu vida?', '¿Cómo aceptaste ante tu padrino que no sabías relacionarte desde amor limpio, sino desde miedo al rechazo?', '¿Qué alivio sentiste cuando dejaste de fingir una perfección que te asfixiaba?'],
+      corregir: ['¿Cómo aplicas hoy el programa día a día en tu casa, permitiendo que tu Poder Superior ordene tus prioridades familiares?', '¿De qué forma pides orientación a servidores experimentados o profesionales cuando te encuentras rebasado en la crianza?', '¿Qué acciones cotidianas demuestran hoy que eres un compañero considerado y no un tirano que impone sus términos?']
+    },
+    variaciones: ['Padre guiado', 'Dejar de fingir perfección'],
+    palabrasClave: ['padre', 'hijo', 'humildad', 'control'],
+    prioridad: 89
+  }),
+  crearTemaPadres({
+    id: 'tema-padres-004',
+    titulo: 'Papá también fue hijo',
+    tituloCorto: 'Papá también fue hijo',
+    etiquetas: ['padre', 'hijos', 'compasión', 'tolerancia', 'ansiedad', 'paso-4-inventario', 'paso-6-disposicion'],
+    emocion: ['Ira', 'Ansiedad', 'Culpa'],
+    defectoCaracter: ['Impaciencia', 'Violencia verbal', 'Orgullo'],
+    virtudPrincipal: ['Compasión', 'Tolerancia', 'Humildad'],
+    pasos: ['Paso 4', 'Paso 6'],
+    tradiciones: [],
+    conceptos: ['Proyecciones hacia los hijos', 'Reconocer heridas infantiles', 'Paciencia familiar'],
+    fuenteAA: [{ obra: 'Como lo ve Bill', referencia: 'Los perturbadores pueden ser nuestros maestros', uso: 'Enseña que comportamientos difíciles alrededor pueden cultivar paciencia, tolerancia y humildad' }],
+    objetivo: 'Desarrollar compasión y deshacer proyecciones hostiles hacia los hijos mediante el reconocimiento de las propias heridas infantiles.',
+    fraseAncla: 'Le exigía a mi hijo la madurez que yo, siendo un adulto, no había logrado consolidar.',
+    guiaTestimonio: {
+      detectar: ['¿De qué manera agredías o descalificabas a tus hijos cuando reflejaban temores e inseguridades que tú cargabas desde niño?', '¿Cómo se traducía tu inmadurez en berrinches emocionales, gritos y exigencias irracionales dentro de la familia?', '¿De qué forma utilizabas violencia verbal o silencio punitivo para defenderte de la confrontación con tu propia debilidad?'],
+      admitir: ['¿Cómo te ayudó el autoanálisis a descubrir que tu enojo con tus hijos era eco del resentimiento hacia tu propio pasado?', '¿Qué quiebre relacional te hizo ver que el corazón de tus hijos se estaba rompiendo por tu ingobernabilidad?', '¿Cómo admitiste que debías desinflar tu ego ante tus hijos y tratarlos como mentes jóvenes y en formación?'],
+      corregir: ['¿Qué prácticas sencillas usas para frenar el impulso y escuchar a tus hijos antes de reaccionar?', '¿Cómo evitas hoy poner condiciones escondidas o facturas emocionales en el amor que les brindas?', '¿De qué forma estás abriéndoles tu corazón con honestidad, no con regalos, sino con acciones correctas?']
+    },
+    variaciones: ['Mis hijos como espejo', 'El padre también herido'],
+    palabrasClave: ['padre', 'hijos', 'compasion', 'proyeccion'],
+    prioridad: 88
+  }),
+  crearTemaPadres({
+    id: 'tema-padres-005',
+    titulo: 'El hombre que no aprendió a llorar',
+    tituloCorto: 'El hombre que no lloraba',
+    etiquetas: ['padre', 'miedo', 'orgullo', 'honestidad', 'crisis-emocional', 'paso-1-impotencia', 'paso-5-confesion'],
+    sensibilidad: 'crisis',
+    emocion: ['Miedo', 'Vergüenza', 'Ansiedad'],
+    defectoCaracter: ['Orgullo', 'Aislamiento', 'Autosuficiencia'],
+    virtudPrincipal: ['Honestidad', 'Valentía', 'Confianza'],
+    pasos: ['Paso 1', 'Paso 5'],
+    tradiciones: [],
+    conceptos: ['Admitir vulnerabilidad', 'Confesar miedo', 'Romper fachada de dureza'],
+    fuenteAA: [{ obra: 'Alcohólicos Anónimos', referencia: 'Apéndice II: La experiencia espiritual', uso: 'Destaca la sinceridad y honestidad respecto a los miedos como base de apertura espiritual' }],
+    objetivo: 'Identificar el miedo egocéntrico oculto detrás de la fachada de dureza y aprender a admitir la propia vulnerabilidad ante la red de apoyo.',
+    fraseAncla: 'Tragaba mis lágrimas con orgullo hasta que la angustia y el pánico paralizaron mi vida.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo reprimías tristeza, culpa y remordimiento bajo la idea de que “un hombre de verdad no pide ayuda”?', '¿De qué manera el pánico a perder control económico o prestigio social te mantenía asfixiado en soledad?', '¿Cómo se manifestaban tus crisis emocionales ocultas cuando estabas a solas?'],
+      admitir: ['¿Cuál fue el momento de impotencia en el que te diste cuenta de que ya no podías seguir sosteniendo tu fachada?', '¿Cómo lograste entrar a tu primera sesión o reunión aun temblando y con miedo?', '¿Qué experimentaste al admitir por primera vez ante otro ser humano que tenías miedo de fracasar y quedarte solo?'],
+      corregir: ['¿Qué haces hoy cuando la ansiedad o el descontento aparecen en tu día?', '¿De qué forma utilizas la comunicación honesta con tu padrino para vaciar tu interior sin reservas?', '¿Cómo estás aprendiendo a vivir en el presente, usando el programa de 24 horas?']
+    },
+    variaciones: ['Dureza que escondía miedo', 'Llorar sin derrumbarme'],
+    palabrasClave: ['padre', 'miedo', 'llorar', 'crisis emocional'],
+    advertenciaLider: 'Si el participante expresa riesgo actual, detener el formato de compartimiento y activar ayuda inmediata/profesional.',
+    noUsarPara: ['Ridiculizar la vulnerabilidad', 'Provocar catarsis sin contención', 'Sustituir atención profesional'],
+    prioridad: 87
+  }),
+  crearTemaPadres({
+    id: 'tema-padres-006',
+    titulo: 'Honrar sin negar mi historia',
+    tituloCorto: 'Honrar mi historia',
+    etiquetas: ['padre', 'familia', 'responsabilidad', 'reparacion', 'integridad', 'paso-8-reparacion', 'paso-9-enmiendas'],
+    emocion: ['Culpa', 'Esperanza'],
+    defectoCaracter: ['Soberbia', 'Evasión', 'Impaciencia'],
+    virtudPrincipal: ['Integridad', 'Responsabilidad', 'Paciencia'],
+    pasos: ['Paso 8', 'Paso 9'],
+    tradiciones: [],
+    conceptos: ['Enmienda constante', 'Reconstrucción familiar', 'Reparación con acciones'],
+    fuenteAA: [{ obra: 'Alcohólicos Anónimos', referencia: 'Capítulo 6: En acción', uso: 'Guía el proceso de reconstrucción familiar centrado en la propia enmienda espiritual' }],
+    objetivo: 'Aprender a encarar y rectificar los errores del pasado con la familia, asumiendo el rol parental desde la enmienda constante.',
+    fraseAncla: 'Musitar remordimientos no basta; hoy me siento con mi familia a enmendar el pasado con acciones vivas.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo pretendías borrar años de hostilidad, promesas rotas y desorden con un “lo siento” vacío?', '¿De qué manera tu soberbia te hacía enojarte cuando tu familia desconfiaba de tus primeros cambios?', '¿Cómo racionalizabas para evadir la realidad de que habías dañado emocionalmente a tus hijos?'],
+      admitir: ['¿Cómo te obligó el programa a sentarte con tus familiares a analizar francamente el pasado como lo ves ahora?', '¿De qué manera aceptaste que la desconfianza de ellos era normal y que la confianza tardaría en sanar?', '¿Qué resistencia tuviste que romper para admitir que tus hijos tenían derecho legítimo a estar resentidos contigo?'],
+      corregir: ['¿Qué acciones concretas realizas hoy para restaurar amor y respeto mediante el ejemplo vivo de tu sobriedad?', '¿Cómo reparas hoy el daño asumiendo de día en día tus obligaciones con la familia?', '¿De qué manera demuestras paciencia y tolerancia para convertirte en sostén moral del hogar?']
+    },
+    variaciones: ['Enmendar con acciones', 'Honrar reparando'],
+    palabrasClave: ['padre', 'reparacion', 'enmiendas', 'familia'],
+    prioridad: 86
+  }),
+  crearTemaPadres({
+    id: 'tema-padres-007',
+    titulo: 'El lugar de cada quien',
+    tituloCorto: 'El lugar de cada quien',
+    etiquetas: ['padre', 'familia', 'pareja', 'hijos', 'liderazgo', 'paso-3-entrega', 'paso-10-reflexion'],
+    emocion: ['Culpa', 'Ansiedad', 'Ira'],
+    defectoCaracter: ['Cobardía', 'Control', 'Irresponsabilidad'],
+    virtudPrincipal: ['Liderazgo', 'Humildad', 'Respeto'],
+    pasos: ['Paso 3', 'Paso 10'],
+    tradiciones: [],
+    conceptos: ['Restaurar roles familiares', 'Límites sanos', 'Mutuo entendimiento'],
+    fuenteAA: [{ obra: 'Alcohólicos Anónimos', referencia: 'Capítulo 9: La familia después', uso: 'Describe trastornos domésticos y orienta al mutuo entendimiento amistoso para restablecer orden' }],
+    objetivo: 'Detectar la confusión de roles paternos generada por el malestar emocional y aprender a asumir el lugar que corresponde en el hogar con firmeza y afecto.',
+    fraseAncla: 'Dejé los pantalones de la casa en manos de mi pareja y mis hijos; hoy regreso a ocupar mi lugar con humildad y orden.',
+    guiaTestimonio: {
+      detectar: ['¿De qué manera abandonaste tu rol parental, forzando a tu pareja a actuar como tu guardiana, protectora o mamá?', '¿Cómo permitías que tus hijos mandaran en casa mientras tú te comportabas como hermano menor o visitante lejano?', '¿Cómo se manifestaban tus exigencias o arranques de mal humor cuando intentabas recuperar control por la fuerza?'],
+      admitir: ['¿Cómo admitiste ante tu padrino que tu vida familiar era un desorden y una falta de fluidez?', '¿De qué manera el programa te hizo ver que debías desinflar tu ego de actor principal y dejar de arreglar la familia según tus caprichos?', '¿Qué resistencia tuviste al aceptar que tu pareja se acostumbró a dirigirlo todo porque tú estabas inhabilitado moralmente?'],
+      corregir: ['¿Qué límites sanos estás estableciendo hoy con tus hijos y tu pareja, asumiendo la responsabilidad del rol que te toca?', '¿Cómo resuelves hoy diferencias domésticas mediante conversación amistosa y cortés, sin gritar más que el otro?', '¿De qué manera trabajas diariamente con tu pareja para llegar a mutuo entendimiento, dándole su lugar y respetando fronteras personales?']
+    },
+    variaciones: ['Restaurar el orden', 'Mi lugar con humildad'],
+    palabrasClave: ['padre', 'roles', 'pareja', 'hijos', 'liderazgo'],
+    prioridad: 85
+  })
+];
+
 const CATALOGO_COMPLETO = [
   ...PAQUETE_BASE,
-  ...PAQUETE_VIVIR_SOBRIO
+  ...PAQUETE_VIVIR_SOBRIO,
+  ...PAQUETE_SEMANA_PADRES
 ];
