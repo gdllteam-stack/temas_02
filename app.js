@@ -1,151 +1,390 @@
-/* BIBLIOTECA DE TESTIMONIOS FGDLL — app.js */
 'use strict';
 
-const Estado = {
-  filtros: { texto: '', categoria: '', tipo: '', intensidad: '', momento: '', estado: '', sensibilidad: '' },
-  orden: 'prioridad', temaActivo: null
+const state = {
+  text: '',
+  filters: {
+    etiqueta: '',
+    categoria: '',
+    publico: '',
+    intensidad: '',
+    momento: '',
+    formato: '',
+    tipoTestimonio: ''
+  },
+  activeTopic: null
 };
 
-function normalizar(str) { return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
-function mostrarToast(msg) {
-  const toast = document.getElementById('toast');
-  if(!toast) return;
-  toast.textContent = msg; toast.classList.add('visible');
-  setTimeout(() => toast.classList.remove('visible'), 2500);
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+
+function normalize(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
 }
 
-function poblarSelectsDesdeData() {
-  const c = [...new Set(TEMAS.map(t => t.categoria).filter(Boolean))].sort();
-  const t = [...new Set(TEMAS.map(t => t.tipoTestimonio).filter(Boolean))].sort();
-  const i = [...new Set(TEMAS.map(t => t.intensidad).filter(Boolean))].sort();
-  const m = [...new Set(TEMAS.map(t => t.momento).filter(Boolean))].sort();
-  const llenar = (id, items) => {
-    const sel = document.getElementById(id); if (!sel) return;
-    items.forEach(it => { const opt = document.createElement('option'); opt.value = it; opt.textContent = it; sel.appendChild(opt); });
-  };
-  llenar('filtroCategoria', c); llenar('filtroTipo', t); llenar('filtroIntensidad', i); llenar('filtroMomento', m);
+function uniqueValues(items, getter) {
+  return [...new Set(items.flatMap((item) => {
+    const value = getter(item);
+    return Array.isArray(value) ? value : [value];
+  }).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
 }
 
-function filtrarTemas() {
-  const f = Estado.filtros; const txt = normalizar(f.texto);
-  return TEMAS.filter(t => {
-    if (txt) {
-      const haystack = normalizar([t.titulo, t.categoria, t.fraseAncla, t.paso, ...(t.guiaTestimonio?.detectar||[]), ...(t.guiaTestimonio?.admitir||[]), ...(t.guiaTestimonio?.corregir||[])].join(' '));
-      if (!haystack.includes(txt)) return false;
-    }
-    if (f.categoria && t.categoria !== f.categoria) return false;
-    if (f.tipo && t.tipoTestimonio !== f.tipo) return false;
-    if (f.intensidad && t.intensidad !== f.intensidad) return false;
-    if (f.momento && t.momento !== f.momento) return false;
-    if (f.estado && t.estado !== f.estado) return false;
-    if (f.sensibilidad && t.sensibilidad !== f.sensibilidad) return false;
-    if (f.catalogo === 'true' && !t.esCatalogoBase) return false;
-    return true;
+function isCrisis(topic) {
+  const tags = topic.etiquetas || [];
+  return tags.some((tag) => ETIQUETAS_CRISIS.includes(tag)) || topic.sensibilidad === 'crisis';
+}
+
+function isSensitive(topic) {
+  const tags = topic.etiquetas || [];
+  return isCrisis(topic) || topic.sensibilidad === 'sensible' || tags.some((tag) => ['abuso', 'duelo', 'abandono'].includes(tag));
+}
+
+function topicLevel(topic) {
+  if (isCrisis(topic)) return 'crisis';
+  if (isSensitive(topic)) return 'sensible';
+  return 'normal';
+}
+
+function fillSelect(id, values) {
+  const select = $(id);
+  if (!select) return;
+  values.forEach((value) => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    select.appendChild(option);
   });
 }
 
-function ordenarTemas(temas) {
-  const copia = [...temas]; const orden = Estado.orden;
-  if (orden === 'titulo') copia.sort((a, b) => a.titulo.localeCompare(b.titulo));
-  else if (orden === 'intensidad') { const o = {'Alta':0, 'Media':1, 'Baja':2}; copia.sort((a, b) => (o[a.intensidad]??1) - (o[b.intensidad]??1)); }
-  else copia.sort((a, b) => (a.prioridad || 99) - (b.prioridad || 99));
-  return copia;
+function setupFilters() {
+  fillSelect('#filterEtiqueta', uniqueValues(CATALOGO_COMPLETO, (topic) => topic.etiquetas));
+  fillSelect('#filterCategoria', uniqueValues(CATALOGO_COMPLETO, (topic) => topic.categoria));
+  fillSelect('#filterPublico', uniqueValues(CATALOGO_COMPLETO, (topic) => topic.publico));
+  fillSelect('#filterIntensidad', uniqueValues(CATALOGO_COMPLETO, (topic) => topic.intensidad));
+  fillSelect('#filterMomento', uniqueValues(CATALOGO_COMPLETO, (topic) => topic.momento));
+  fillSelect('#filterFormato', uniqueValues(CATALOGO_COMPLETO, (topic) => topic.formato));
+  fillSelect('#filterTipo', uniqueValues(CATALOGO_COMPLETO, (topic) => topic.tipoTestimonio));
 }
 
-function renderTarjetas() {
-  const grid = document.getElementById('tarjetasGrid');
-  const count = document.getElementById('tarjetasCount');
-  const filtrados = filtrarTemas(); const ordenados = ordenarTemas(filtrados);
-  count.textContent = `${ordenados.length} tema${ordenados.length !== 1 ? 's' : ''}`;
-  const badge = document.getElementById('filtrosBadge'); const activos = Object.values(Estado.filtros).filter(v => v !== '').length;
-  badge.style.display = activos > 0 ? 'flex' : 'none'; badge.textContent = activos;
+function searchableText(topic) {
+  return normalize([
+    topic.titulo,
+    topic.tituloCorto,
+    topic.categoria,
+    topic.fraseAncla,
+    topic.objetivo,
+    topic.fuentePrincipal,
+    ...(topic.etiquetas || []),
+    ...(topic.evento || []),
+    ...(topic.publico || []),
+    ...(topic.emocion || []),
+    ...(topic.defectoCaracter || []),
+    ...(topic.virtudPrincipal || []),
+    ...(topic.pasos || []),
+    ...(topic.tradiciones || []),
+    ...(topic.conceptos || []),
+    ...(topic.palabrasClave || []),
+    ...Object.values(topic.guiaTestimonio || {}).flat()
+  ].join(' '));
+}
+
+function getFilteredTopics() {
+  const text = normalize(state.text);
+  return CATALOGO_COMPLETO.filter((topic) => {
+    if (text && !searchableText(topic).includes(text)) return false;
+    if (state.filters.etiqueta && !(topic.etiquetas || []).includes(state.filters.etiqueta)) return false;
+    if (state.filters.categoria && topic.categoria !== state.filters.categoria) return false;
+    if (state.filters.publico && !(topic.publico || []).includes(state.filters.publico)) return false;
+    if (state.filters.intensidad && topic.intensidad !== state.filters.intensidad) return false;
+    if (state.filters.momento && topic.momento !== state.filters.momento) return false;
+    if (state.filters.formato && topic.formato !== state.filters.formato) return false;
+    if (state.filters.tipoTestimonio && topic.tipoTestimonio !== state.filters.tipoTestimonio) return false;
+    return true;
+  }).sort((a, b) => (b.prioridad || 0) - (a.prioridad || 0));
+}
+
+function tagButton(tag) {
+  return `<button class="tag" type="button" data-tag="${tag}">${tag}</button>`;
+}
+
+function renderCards() {
+  const topics = getFilteredTopics();
+  const grid = $('#cardGrid');
+  const empty = $('#emptyState');
+  $('#catalogCount').textContent = `${topics.length} de ${CATALOGO_COMPLETO.length} temas`;
   grid.innerHTML = '';
-  document.getElementById('sinResultados').style.display = ordenados.length === 0 ? 'block' : 'none';
-  ordenados.forEach((t, i) => grid.appendChild(crearTarjeta(t, i)));
+  empty.hidden = topics.length !== 0;
+
+  topics.forEach((topic) => {
+    const level = topicLevel(topic);
+    const card = document.createElement('article');
+    card.className = `topic-card ${level}`;
+    card.innerHTML = `
+      <div class="card-topline"></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span>${topic.categoria}</span>
+          <span>${topic.intensidad}</span>
+          <span>${topic.momento}</span>
+        </div>
+        <h3>${topic.titulo}</h3>
+        <p class="anchor">"${topic.fraseAncla || ''}"</p>
+        <div class="tag-list">${(topic.etiquetas || []).slice(0, 5).map(tagButton).join('')}</div>
+      </div>
+      <footer class="card-footer">
+        <span>${topic.formato} · ${topic.tipoTestimonio}</span>
+        <button class="open-topic" type="button" data-id="${topic.id}">Abrir ficha</button>
+      </footer>
+    `;
+    grid.appendChild(card);
+  });
+
+  renderActiveTags();
 }
 
-function crearTarjeta(tema, idx) {
-  const div = document.createElement('article'); div.className = 'tarjeta'; div.style.animationDelay = Math.min(idx * 0.04, 0.4) + 's';
-  let tags = `<span class="tag tag-categoria">${tema.categoria||'General'}</span>`;
-  if (tema.esCatalogoBase) tags += `<span class="tag tag-base">Base</span>`;
-  if (tema.sensibilidad !== 'normal') tags += `<span class="tag tag-${tema.sensibilidad}">${tema.sensibilidad}</span>`;
-  div.innerHTML = `
-    <div class="tarjeta-tope ${tema.sensibilidad}"></div>
-    <div class="tarjeta-cuerpo">
-      <div class="tarjeta-tags">${tags}</div>
-      <h3 class="tarjeta-titulo">${tema.titulo}</h3>
-      ${tema.fraseAncla ? `<p class="tarjeta-ancla">${tema.fraseAncla}</p>` : ''}
-    </div>
-    <div class="tarjeta-pie">
-      <button class="btn-ver" data-id="${tema.id}">Ver ficha completa</button>
-      <button class="btn-copiar-rapido" data-id="${tema.id}" title="Copiar guía">📋</button>
-    </div>
+function renderActiveTags() {
+  const active = $('#activeTags');
+  const chips = [];
+  if (state.text) chips.push(`Búsqueda: ${state.text}`);
+  Object.entries(state.filters).forEach(([key, value]) => {
+    if (value) chips.push(`${labelForFilter(key)}: ${value}`);
+  });
+  active.innerHTML = chips.map((chip) => `<span>${chip}</span>`).join('');
+}
+
+function labelForFilter(key) {
+  const labels = {
+    etiqueta: 'Etiqueta',
+    categoria: 'Categoría',
+    publico: 'Público',
+    intensidad: 'Intensidad',
+    momento: 'Momento',
+    formato: 'Formato',
+    tipoTestimonio: 'Tipo'
+  };
+  return labels[key] || key;
+}
+
+function renderMetrics() {
+  $('#metricTemas').textContent = CATALOGO_COMPLETO.length;
+  $('#metricEtiquetas').textContent = uniqueValues(CATALOGO_COMPLETO, (topic) => topic.etiquetas).length;
+}
+
+function sourceList(topic) {
+  const items = [];
+  (topic.fuenteAA || []).forEach((source) => items.push(`AA: ${source.obra}${source.referencia ? `, ${source.referencia}` : ''}`));
+  (topic.fuenteFGDLL || []).forEach((source) => items.push(`FGDLL: ${source.obra}${source.seccion ? `, ${source.seccion}` : ''}`));
+  (topic.librosRecomendados || []).forEach((book) => items.push(`${book.titulo}, ${book.autor}`));
+  return items.length ? items : [topic.fuentePrincipal || 'Fuente no especificada'];
+}
+
+function questionBlock(title, verb, questions) {
+  if (!questions?.length) return '';
+  return `
+    <section class="question-block">
+      <div class="question-heading">
+        <strong>${verb}</strong>
+        <span>${title}</span>
+      </div>
+      ${questions.map((question) => `<p>${question}</p>`).join('')}
+    </section>
   `;
-  div.querySelector('.btn-ver').addEventListener('click', e => { e.stopPropagation(); abrirModal(tema.id); });
-  div.querySelector('.btn-copiar-rapido').addEventListener('click', e => { e.stopPropagation(); copiarPreguntas(tema); mostrarToast('Copiado ✓'); });
-  return div;
 }
 
-function abrirModal(id) {
-  const tema = TEMAS.find(t => t.id === id); if (!tema) return;
-  Estado.temaActivo = tema;
-  const contenido = document.getElementById('modalContenido');
-  let alerta = '';
-  if (tema.sensibilidad === 'crisis') alerta = `<div class="ficha-alerta"><strong>Tema de crisis:</strong> Requiere acompañamiento profesional. Si un miembro expresa intenciones autolíticas, actuar con el manual de emergencia de FGDLL.</div>`;
-  else if (tema.sensibilidad === 'sensible') alerta = `<div class="ficha-alerta"><strong>Tema sensible:</strong> Evite juicios hacia familiares o minorías. Conduzca hacia la responsabilidad propia.</div>`;
-  
-  const g = tema.guiaTestimonio || {};
-  const bloque = (n, titulo, sub, p) => p?.length ? `<div class="guia-bloque guia-tiempo-${n}"><div class="guia-header"><span class="guia-num">0${n}</span><div class="guia-etiqueta"><span class="guia-etiqueta-titulo">${titulo}</span><span class="guia-etiqueta-sub">${sub}</span></div></div><div class="guia-preguntas">${p.map(x=>`<p class="guia-pregunta">${x}</p>`).join('')}</div></div>` : '';
+function openTopic(id) {
+  const topic = CATALOGO_COMPLETO.find((item) => item.id === id);
+  if (!topic) return;
+  state.activeTopic = topic;
+  const level = topicLevel(topic);
+  const guide = topic.guiaTestimonio || {};
+  const alert = getAlertMarkup(topic, level);
 
-  contenido.innerHTML = `
-    <div class="ficha-tope ${tema.sensibilidad}"></div>
-    <h2 class="ficha-titulo">${tema.titulo}</h2>
-    ${tema.fraseAncla ? `<div class="ficha-ancla">"${tema.fraseAncla}"</div>` : ''}
-    ${alerta}
-    <div class="ficha-seccion"><p class="ficha-seccion-titulo">Objetivo</p><p class="ficha-texto">${tema.objetivo}</p></div>
-    <div class="ficha-seccion"><p class="ficha-seccion-titulo">Fuente Doctrinal</p><p class="ficha-texto">${tema.fuentePrincipal}: ${tema.fuenteAA}</p></div>
-    <div class="ficha-seccion"><p class="ficha-seccion-titulo">Preguntas Guía - Tres Tiempos</p>
-      ${bloque(1, 'Antes del programa', 'Detectar', g.detectar)}
-      ${bloque(2, 'Al llegar a FGDLL', 'Admitir', g.admitir)}
-      ${bloque(3, 'Hoy con el programa', 'Corregir', g.corregir)}
-    </div>
+  $('#modalBody').innerHTML = `
+    <div class="modal-topline ${level}"></div>
+    <p class="modal-kicker">${topic.categoria} · ${topic.formato} · ${topic.tipoTestimonio}</p>
+    <h2 id="modalTitle">${topic.titulo}</h2>
+    <p class="modal-anchor">"${topic.fraseAncla || ''}"</p>
+    <div class="tag-list modal-tags">${(topic.etiquetas || []).map((tag) => `<span class="tag static">${tag}</span>`).join('')}</div>
+    ${alert}
+    <section class="detail-section">
+      <h3>Objetivo</h3>
+      <p>${topic.objetivo || 'Sin objetivo registrado.'}</p>
+    </section>
+    <section class="detail-section">
+      <h3>Fuentes</h3>
+      <ul>${sourceList(topic).map((source) => `<li>${source}</li>`).join('')}</ul>
+    </section>
+    <section class="detail-section">
+      <h3>Guía de compartimiento</h3>
+      ${questionBlock('Antes del programa', 'Detectar', guide.detectar)}
+      ${questionBlock('Al llegar y verme con honestidad', 'Admitir', guide.admitir)}
+      ${questionBlock('Hoy con el programa', 'Corregir', guide.corregir)}
+    </section>
+    ${topic.noUsarPara?.length ? `<section class="detail-section no-use"><h3>No usar para</h3><ul>${topic.noUsarPara.map((item) => `<li>${item}</li>`).join('')}</ul></section>` : ''}
   `;
-  document.getElementById('modalOverlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+
+  $('#modalOverlay').hidden = false;
+  document.body.classList.add('modal-open');
 }
 
-function cerrarModal() {
-  document.getElementById('modalOverlay').style.display = 'none';
-  document.body.style.overflow = ''; Estado.temaActivo = null;
+function getAlertMarkup(topic, level) {
+  if (level === 'crisis') {
+    return `
+      <div class="alert crisis-alert">
+        <strong>Tema de crisis.</strong>
+        ${topic.advertenciaEtica || 'Evitar detalles gráficos o metodologías. Si hay riesgo actual, activar ayuda inmediata y profesional.'}
+      </div>
+    `;
+  }
+  if (level === 'sensible') {
+    return `
+      <div class="alert sensitive-alert">
+        <strong>Tema sensible.</strong>
+        ${topic.advertenciaEtica || 'Cuidar el lenguaje, evitar juicios y proteger a terceros.'}
+      </div>
+    `;
+  }
+  return '';
 }
 
-function copiarPreguntas(tema) {
-  const g = tema.guiaTestimonio || {}; const p = [];
-  if (g.detectar) { p.push('1. DETECTAR'); g.detectar.forEach(q=>p.push(q)); p.push(''); }
-  if (g.admitir) { p.push('2. ADMITIR'); g.admitir.forEach(q=>p.push(q)); p.push(''); }
-  if (g.corregir) { p.push('3. CORREGIR'); g.corregir.forEach(q=>p.push(q)); }
-  navigator.clipboard.writeText(p.join('\n'));
+function closeModal() {
+  $('#modalOverlay').hidden = true;
+  document.body.classList.remove('modal-open');
+  state.activeTopic = null;
 }
 
-function descargarTxt(tema) {
-  const b = new Blob([`TEMA: ${tema.titulo}\n${tema.fraseAncla}\n\nFuente: ${tema.fuenteAA}\n\n=== GUIA ===\n(Ver preguntas copiadas)...`], { type: 'text/plain;charset=utf-8' });
-  const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = `Tema_${tema.id}.txt`; a.click(); URL.revokeObjectURL(a.href);
+function topicGuideText(topic) {
+  const guide = topic.guiaTestimonio || {};
+  const lines = [`${topic.titulo}`, topic.fraseAncla ? `"${topic.fraseAncla}"` : '', ''];
+  [
+    ['DETECTAR', guide.detectar],
+    ['ADMITIR', guide.admitir],
+    ['CORREGIR', guide.corregir]
+  ].forEach(([title, questions]) => {
+    if (!questions?.length) return;
+    lines.push(title);
+    questions.forEach((question) => lines.push(`- ${question}`));
+    lines.push('');
+  });
+  return lines.join('\n').trim();
+}
+
+function whatsappText(topic) {
+  return [
+    `*${topic.titulo}*`,
+    topic.fraseAncla ? `_${topic.fraseAncla}_` : '',
+    '',
+    `Categoría: ${topic.categoria}`,
+    `Etiquetas: ${(topic.etiquetas || []).join(', ')}`,
+    '',
+    'Guía:',
+    topicGuideText(topic)
+  ].join('\n').trim();
+}
+
+async function copyText(text, successMessage) {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      fallbackCopy(text);
+    }
+    showToast(successMessage);
+  } catch {
+    try {
+      fallbackCopy(text);
+      showToast(successMessage);
+    } catch {
+      showToast('No se pudo copiar desde este navegador');
+    }
+  }
+}
+
+function fallbackCopy(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+}
+
+function showToast(message) {
+  const toast = $('#toast');
+  toast.textContent = message;
+  toast.classList.add('visible');
+  window.setTimeout(() => toast.classList.remove('visible'), 2200);
+}
+
+function bindEvents() {
+  $('#searchInput').addEventListener('input', (event) => {
+    state.text = event.target.value;
+    renderCards();
+  });
+
+  [
+    ['#filterEtiqueta', 'etiqueta'],
+    ['#filterCategoria', 'categoria'],
+    ['#filterPublico', 'publico'],
+    ['#filterIntensidad', 'intensidad'],
+    ['#filterMomento', 'momento'],
+    ['#filterFormato', 'formato'],
+    ['#filterTipo', 'tipoTestimonio']
+  ].forEach(([selector, key]) => {
+    $(selector).addEventListener('change', (event) => {
+      state.filters[key] = event.target.value;
+      renderCards();
+    });
+  });
+
+  $('#clearFilters').addEventListener('click', () => {
+    state.text = '';
+    Object.keys(state.filters).forEach((key) => {
+      state.filters[key] = '';
+    });
+    $('#searchInput').value = '';
+    $$('.filters select').forEach((select) => {
+      select.value = '';
+    });
+    renderCards();
+  });
+
+  $('#cardGrid').addEventListener('click', (event) => {
+    const tag = event.target.closest('[data-tag]');
+    if (tag) {
+      state.filters.etiqueta = tag.dataset.tag;
+      $('#filterEtiqueta').value = tag.dataset.tag;
+      renderCards();
+      return;
+    }
+    const button = event.target.closest('[data-id]');
+    if (button) openTopic(button.dataset.id);
+  });
+
+  $('#modalClose').addEventListener('click', closeModal);
+  $('#modalOverlay').addEventListener('click', (event) => {
+    if (event.target.id === 'modalOverlay') closeModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !$('#modalOverlay').hidden) closeModal();
+  });
+  $('#copyGuide').addEventListener('click', () => {
+    if (state.activeTopic) copyText(topicGuideText(state.activeTopic), 'Guía copiada');
+  });
+  $('#copyWhatsapp').addEventListener('click', () => {
+    if (state.activeTopic) copyText(whatsappText(state.activeTopic), 'Texto para WhatsApp copiado');
+  });
+  $('#printTopic').addEventListener('click', () => window.print());
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  poblarSelectsDesdeData(); renderTarjetas();
-  const b = document.getElementById('buscador');
-  b?.addEventListener('input', e => { Estado.filtros.texto = e.target.value; renderTarjetas(); });
-  ['filtroCategoria','filtroTipo','filtroIntensidad','filtroMomento','filtroSensibilidad','ordenSelect'].forEach(id => {
-    document.getElementById(id)?.addEventListener('change', e => { 
-      if(id === 'ordenSelect') Estado.orden = e.target.value; else Estado.filtros[id.replace('filtro','').toLowerCase()] = e.target.value;
-      renderTarjetas(); 
-    });
-  });
-  document.getElementById('modalCerrar')?.addEventListener('click', cerrarModal);
-  document.getElementById('btnCopiarGuia')?.addEventListener('click', () => { copiarPreguntas(Estado.temaActivo); mostrarToast('Copiado ✓'); });
-  document.getElementById('btnCopiarWA')?.addEventListener('click', () => { navigator.clipboard.writeText(`*${Estado.temaActivo.titulo}*\n_${Estado.temaActivo.fraseAncla}_`); mostrarToast('WhatsApp copiado ✓'); });
-  document.getElementById('btnDescargarTxt')?.addEventListener('click', () => descargarTxt(Estado.temaActivo));
-  document.getElementById('btnImprimir')?.addEventListener('click', () => { window.print(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') cerrarModal(); });
+  setupFilters();
+  renderMetrics();
+  bindEvents();
+  renderCards();
 });

@@ -1,417 +1,1079 @@
-const TEMAS = [
-  // ==========================================
-  // CATEGORÍA: ANIVERSARIOS
-  // ==========================================
-  {
-    "id": "tema-aniv-01", "titulo": "¿Por qué me quedé en Guerreros de la Luz?", "tituloCorto": "Por qué me quedé",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
-    "intensidad": "Media", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 12",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Libro Azul, Cap. 5", 
-    "objetivo": "Reflejar por qué la comunidad sostiene la vida en recuperación.",
-    "fraseAncla": "Me quedé porque encontré un lugar donde pertenezco.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué buscabas antes de llegar a Guerreros de la Luz?", "¿Por qué creías que no encajarías aquí?"],
-      "admitir": ["¿Cuál fue el primer motivo que te hizo querer quedarte?", "¿Qué escuchaste en el grupo que te hizo sentir diferente?"],
-      "corregir": ["¿Qué razones tienes hoy para seguir viniendo?", "¿Cómo el grupo sigue siendo tu hogar a través del servicio?"]
-    }, "prioridad": 100
-  },
-  {
-    "id": "tema-aniv-02", "titulo": "Una sensación de pertenecer", "tituloCorto": "Sentido de pertenencia",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
-    "intensidad": "Baja", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Inspirador", "paso": "Paso 1",
-    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Doce Pasos y Doce Tradiciones, Paso 1",
-    "objetivo": "Mostrar cómo la soledad se combate con la identificación.",
-    "fraseAncla": "El dolor me aisló, la honestidad me devolvió al rebaño.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo vivías la soledad, incluso rodeado de gente?", "¿Qué muros construiste para no ser herido?"],
-      "admitir": ["¿En qué momento te diste cuenta de que no estabas solo con tu dolor?", "¿Qué sentiste al ver a otros con tu misma historia?"],
-      "corregir": ["¿Cómo mantienes hoy tu sentido de pertenencia activo?", "¿Qué haces cuando sientes el impulso de aislarte de nuevo?"]
-    }, "prioridad": 99
-  },
-  {
-    "id": "tema-aniv-03", "titulo": "Un refugio seguro", "tituloCorto": "El refugio seguro",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
-    "intensidad": "Media", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Didáctico", "paso": "Paso 2",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Libro Azul, Cap. 2",
-    "objetivo": "Aclarar que el grupo provee seguridad, no perfección.",
-    "fraseAncla": "Llegué buscando curas mágicas y encontré compañeros de trinchera.",
-    "guiaTestimonio": {
-      "detectar": ["¿En qué lugares equivocados buscabas seguridad antes?", "¿Cómo te fallaban tus propios métodos de escape?"],
-      "admitir": ["¿Qué resistencia tuviste al darte cuenta de que aquí te pedían honestidad y no obediencia ciega?", "¿Cómo te rendiste a recibir ayuda?"],
-      "corregir": ["¿Cómo proteges tú hoy al grupo como refugio para otros?", "¿Qué haces para no exigirle perfección a tus compañeros?"]
-    }, "prioridad": 98
-  },
-  {
-    "id": "tema-aniv-04", "titulo": "De las tinieblas a la luz", "tituloCorto": "Hacia la luz",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
-    "intensidad": "Alta", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 12",
-    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Libro Azul",
-    "objetivo": "Transmitir la gratitud por el cambio de perspectiva de vida.",
-    "fraseAncla": "No cambió mi pasado, pero cambió la luz con la que lo miro.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué significaban para ti las tinieblas emocionales en tu peor momento?", "¿Qué daños no querías ver?"],
-      "admitir": ["¿Cuál fue el primer rayo de claridad que te dio el grupo?", "¿Qué te costó más dejar atrás?"],
-      "corregir": ["¿Cómo cultivas la gratitud diaria hoy?", "¿De qué forma devuelves la luz que se te regaló?"]
-    }, "prioridad": 97
-  },
-  {
-    "id": "tema-aniv-05", "titulo": "Yo soy un milagro", "tituloCorto": "Soy un milagro",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
-    "intensidad": "Media", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 12",
-    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Historias del Gran Libro",
-    "objetivo": "Reconocer que estar vivos y sobrios es un triunfo diario.",
-    "fraseAncla": "Estar vivo no era mi plan, pero hoy es mi propósito.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué tan poco valoraba tu vida antes de llegar?", "¿A qué nivel de autodestrucción te habías acostumbrado?"],
-      "admitir": ["¿En qué momento en el grupo te diste cuenta de que merecías vivir?", "¿Cómo aprendiste a abrazar el proceso sin culpa?"],
-      "corregir": ["¿Qué significa para ti hoy vivir un día a la vez?", "¿Qué responsabilidad asumes hoy al reconocerte como un milagro de la agrupación?"]
-    }, "prioridad": 96
-  },
-  {
-    "id": "tema-aniv-06", "titulo": "El grato privilegio de servir", "tituloCorto": "Privilegio de servir",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
-    "intensidad": "Baja", "momento": "Inicio", "formato": "Didáctico", "tipoTestimonio": "Didáctico", "paso": "Paso 12",
-    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Doce Pasos y Doce Tradiciones",
-    "objetivo": "Vincular la estabilidad personal con el servicio desinteresado.",
-    "fraseAncla": "El servicio me sacó del yo para ponerme en el nosotros.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo el egoísmo dominaba tu tiempo y tu energía antes?", "¿Por qué ayudar a otros te parecía una carga?"],
-      "admitir": ["¿Cómo descubriste que servir te salvaba a ti mismo?", "¿Qué servicio inicial, aunque pequeño, te hizo sentir útil por primera vez?"],
-      "corregir": ["¿Cómo mantienes hoy tu servicio libre de expectativas y de ego?", "¿Qué haces cuando sientes que el servicio te abruma?"]
-    }, "prioridad": 95
-  },
-  {
-    "id": "tema-aniv-07", "titulo": "La sangre hace parientes, la lealtad hace familias", "tituloCorto": "Lealtad hace familia",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Aniversario", "evento": ["Aniversario de grupo"],
-    "intensidad": "Media", "momento": "Mitad", "formato": "Panel largo", "tipoTestimonio": "Inspirador", "paso": "Paso 1",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Viviendo Sobrio",
-    "objetivo": "Agradecer la fraternidad espiritual por encima de los lazos rotos.",
-    "fraseAncla": "Aquí aprendí a ser el hermano que nunca supe ser.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo eran tus vínculos familiares y cómo los saboteabas?", "¿Por qué no confiabas en la lealtad de nadie?"],
-      "admitir": ["¿Qué actitudes de tus compañeros te mostraron lo que era el apoyo incondicional?", "¿Cómo aprendiste a no huir ante el primer conflicto grupal?"],
-      "corregir": ["¿Qué principios aplicas hoy para ser leal a tu fraternidad y a tu familia?", "¿Cómo practicas el respeto y la tolerancia diaria?"]
-    }, "prioridad": 94
-  },
+'use strict';
 
-  // ==========================================
-  // CATEGORÍA: SEMANA DE LOS PADRES (Sensibles)
-  // ==========================================
-  {
-    "id": "tema-padre-01", "titulo": "Hijo huérfano de padres vivos", "tituloCorto": "Huérfano de padres vivos",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
-    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 4",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 4 y 8",
-    "advertenciaEtica": "Tema sensible: Oriente hacia la responsabilidad afectiva y la comprensión. No usar para juzgar, confrontar en público o forzar perdón.",
-    "objetivo": "Abordar la herida del abandono emocional sin victimismo, buscando comprensión.",
-    "fraseAncla": "No puedo cambiar su ausencia, pero ya no me ausento de mí mismo.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo intentabas llenar el vacío emocional que dejó el abandono afectivo?", "¿De qué maneras replicabas tú mismo esa ausencia con otros?"],
-      "admitir": ["¿Qué te dolió aceptar sobre las limitaciones emocionales de tus padres?", "¿Cómo empezaste a soltar el resentimiento en el grupo?"],
-      "corregir": ["¿Cómo ejerces hoy tu propia paternidad/maternidad o relaciones para no repetir la ausencia?", "¿De qué manera te has hecho responsable de ti mismo hoy?"]
-    }, "prioridad": 90
-  },
-  {
-    "id": "tema-padre-02", "titulo": "El padre que tuve y el padre que necesité", "tituloCorto": "El padre que tuve",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
-    "intensidad": "Media", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Inspirador", "paso": "Paso 9",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 4",
-    "advertenciaEtica": "Cuidar de no fomentar el odio familiar. El objetivo es reconciliar la realidad con las expectativas.",
-    "objetivo": "Liberar a los padres de nuestras expectativas de perfección.",
-    "fraseAncla": "Dejé de exigirle al hombre para empezar a comprender al ser humano.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué expectativas irreales le exigías a tu figura paterna?", "¿Cómo utilizabas esa carencia como excusa para hacerte daño?"],
-      "admitir": ["¿En qué momento del inventario te diste cuenta de que él hizo lo que pudo con lo que tuvo?", "¿Qué papel jugó el grupo en ayudarte a dejar de ser juez?"],
-      "corregir": ["¿Qué actitudes cambiaste hoy respecto a la figura paterna (biológica o espiritual)?", "¿Cómo aprendiste a proveerte a ti mismo lo que necesitabas?"]
-    }, "prioridad": 89
-  },
-  {
-    "id": "tema-padre-03", "titulo": "Padre proveedor, corazón ausente", "tituloCorto": "Proveedor ausente",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
-    "intensidad": "Media", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 4",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Libro Azul, Cap. La Familia Después",
-    "objetivo": "Mostrar que las heridas no solo son materiales, sino afectivas, y asumir nuestra parte.",
-    "fraseAncla": "Creía que el dinero suplía el amor, hasta que el vacío dolió.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo la sustitución del afecto por lo material te enseñó a relacionarte?", "¿Qué vacíos intentabas tapar con el control y la provisión económica?"],
-      "admitir": ["¿Cuándo reconociste que el abandono afectivo también es una herida profunda?", "¿Qué responsabilidad aceptaste sobre cómo tú mismo te aislabas?"],
-      "corregir": ["¿Cómo practicas la presencia emocional, no solo física o material, con tu familia hoy?", "¿De qué manera demuestras amor sin intentar comprarlo?"]
-    }, "prioridad": 88
-  },
-  {
-    "id": "tema-padre-04", "titulo": "Papá también fue hijo", "tituloCorto": "Papá fue hijo",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
-    "intensidad": "Alta", "momento": "Cierre", "formato": "Inspirador", "tipoTestimonio": "Inspirador", "paso": "Paso 8",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Guía de Apadrinamiento",
-    "objetivo": "Generar empatía radical al ver al padre como un hombre herido también.",
-    "fraseAncla": "Para perdonar, tuve que ver a mi padre como el niño herido que fue.",
-    "guiaTestimonio": {
-      "detectar": ["¿De qué forma tu resentimiento te impedía ver la historia y el dolor de tu propio padre?", "¿Qué conductas repetías por inercia de ese resentimiento?"],
-      "admitir": ["¿Qué hecho o ejercicio de los pasos te hizo darte cuenta de que heredaste patrones no sanados?", "¿Cómo dolió soltar la postura de víctima eterna?"],
-      "corregir": ["¿Cómo rompes hoy la cadena de resentimiento familiar?", "¿De qué manera te relacionas hoy con la idea de la paternidad?"]
-    }, "prioridad": 87
-  },
-  {
-    "id": "tema-padre-05", "titulo": "El hombre que no aprendió a llorar", "tituloCorto": "No aprendió a llorar",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Familia", "evento": ["Semana de los Padres"],
-    "intensidad": "Media", "momento": "Inicio", "formato": "Didáctico", "tipoTestimonio": "Crudo", "paso": "Paso 1",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Viviendo Sobrio",
-    "objetivo": "Romper el machismo o la dureza emocional como mecanismo de defensa.",
-    "fraseAncla": "Creía que sentir era debilidad, y mi dureza casi me mata.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué creencias sobre la 'fuerza' o la masculinidad te obligaron a reprimir tus emociones?", "¿Cómo desquitabas ese dolor reprimido contra los demás?"],
-      "admitir": ["¿Cuál fue el momento en que ya no pudiste contener la emoción en el grupo?", "¿Cómo aprendiste que la vulnerabilidad requiere valor real?"],
-      "corregir": ["¿Cómo gestionas hoy tus emociones como la tristeza o el miedo sin esconderte?", "¿De qué forma permites hoy que otros también sean vulnerables?"]
-    }, "prioridad": 86
-  },
-  {
-    "id": "tema-padre-06", "titulo": "Ser padre sin haberse sentido hijo", "tituloCorto": "Padre sin ser hijo",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
-    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 9",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 8 y 9",
-    "advertenciaEtica": "Orientar el tema a la reparación posible de hoy, evitando justificar la violencia heredada.",
-    "objetivo": "Asumir la responsabilidad de criar a otros cuando nosotros mismos estamos rotos.",
-    "fraseAncla": "No me dieron lo que no tenían, pero hoy decido dar algo distinto.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo tus propios vacíos infantiles afectaron severamente tu rol como protector/padre?", "¿Qué justificaciones usabas para tus fallas afectivas?"],
-      "admitir": ["¿En qué momento la agrupación te hizo ver el daño que estabas transmitiendo a tu descendencia?", "¿Qué miedos enfrentaste al intentar reparar ese daño?"],
-      "corregir": ["¿Qué acciones concretas y consistentes haces hoy para estar presente en la vida de tu familia?", "¿Cómo reparas hoy desde el cambio de conducta?"]
-    }, "prioridad": 85
-  },
-  {
-    "id": "tema-padre-07", "titulo": "Honrar sin negar mi historia", "tituloCorto": "Honrar mi historia",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de los Padres"],
-    "intensidad": "Media", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 12",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 12",
-    "objetivo": "Enseñar a aceptar el pasado familiar con dignidad, sin obligación a forzar cercanías tóxicas.",
-    "fraseAncla": "Honrar a mi padre no es aplaudir sus errores, es no repetir su historia.",
-    "guiaTestimonio": {
-      "detectar": ["¿Por qué sentías culpa de no poder sentir 'amor tradicional' hacia quien te lastimó?", "¿Cómo el fingir que todo estaba bien te enfermaba más?"],
-      "admitir": ["¿Cómo el programa te ayudó a separar el respeto por la vida de la sumisión al abuso?", "¿Qué alivio encontraste al dejar de juzgarlos y dejarlos ir?"],
-      "corregir": ["¿Cómo honras hoy tus raíces a través de mantenerte sano y en servicio?", "¿Qué límites sanos aplicas hoy sin necesidad de odio ni venganza?"]
-    }, "prioridad": 84
-  },
+const ETIQUETAS_CRISIS = [
+  'suicidio',
+  'ideacion-suicida',
+  'violencia',
+  'abuso-activo',
+  'abuso-infantil',
+  'crisis-emocional'
+];
 
-  // ==========================================
-  // CATEGORÍA: SEMANA DE LAS MADRES (Sensibles)
-  // ==========================================
+const PAQUETE_BASE = [
   {
-    "id": "tema-madre-01", "titulo": "La madre que tuve y la madre que necesité", "tituloCorto": "Madre que tuve",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
-    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 4",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 4",
-    "advertenciaEtica": "El enfoque debe ser sanar la expectativa, no exponer las carencias de la madre de forma hiriente.",
-    "objetivo": "Soltar la idealización materna y trabajar en la aceptación de su realidad humana.",
-    "fraseAncla": "Mi madre me dio la vida; el programa me enseñó a vivirla.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué exigencias imposibles tenías sobre cómo debía ser tu madre?", "¿Cómo usabas sus fallas para justificar tus resentimientos y tu enfermedad?"],
-      "admitir": ["¿Qué parte del inventario te mostró que ella también era una mujer llena de miedos y límites?", "¿Qué dolió más de soltar la idea de la 'madre perfecta'?"],
-      "corregir": ["¿Cómo te haces responsable hoy de curar tus propias heridas sin exigírselo a ella?", "¿De qué manera la tratas con compasión hoy, esté cerca o lejos?"]
-    }, "prioridad": 80
+    id: 'tema-vls-001',
+    titulo: 'La obsesión mental que precede al acto',
+    tituloCorto: 'Obsesión mental',
+    estado: 'Completo',
+    categoria: 'Prevención',
+    evento: ['Juntas de prevención'],
+    publico: ['Todos', 'Recién llegados'],
+    etiquetas: ['mente', 'control-obsesivo', 'obsesión', 'prevencion', 'paso-1-impotencia'],
+    intensidad: 'Media',
+    momento: 'Inicio',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Ansiedad', 'Miedo'],
+    defectoCaracter: ['Control obsesivo', 'Negación'],
+    virtudPrincipal: ['Aceptación', 'Honestidad'],
+    pasos: ['Paso 1', 'Paso 10'],
+    tradiciones: [],
+    conceptos: ['Obsesión mental previa a la acción'],
+    fuentePrincipal: 'Libro recomendado',
+    fuenteAA: [],
+    fuenteFGDLL: [],
+    librosRecomendados: [{ titulo: 'Vivir Sobrio', autor: 'Alcohólicos Anónimos', año: 1996, uso: 'Herramienta para identificar pensamientos previos a la recaída' }],
+    objetivo: 'Mostrar cómo la mente puede obsesionarse antes del acto físico y cómo reconocer ese inicio ayuda a detenerlo.',
+    fraseAncla: 'Mi mente dispara la obsesión mucho antes de que mi mano actúe.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo era el patrón de tu mente antes de beber, huir o actuar?', '¿Qué diálogos internos alimentaban la obsesión?', '¿Cómo pasabas de un pensamiento a una acción dañina?'],
+      admitir: ['¿Cuándo reconociste este patrón dentro del programa?', '¿Qué te ayudó a aceptar que no podías resolverlo solo?', '¿Qué escuchaste en el grupo que te hizo verte con claridad?'],
+      corregir: ['¿Cómo identificas hoy el comienzo de la obsesión?', '¿Qué haces para interrumpir ese ciclo?', '¿A quién llamas o qué herramienta usas antes de actuar?']
+    },
+    variaciones: ['El ciclo obsesivo', 'La mente antes de la acción'],
+    palabrasClave: ['obsesion', 'mente', 'prevencion', 'control'],
+    advertenciaEtica: '',
+    advertenciaLider: 'Enfatizar conciencia y prevención, no culpa ni exhibición.',
+    noUsarPara: ['Juzgar pensamientos del participante'],
+    esCatalogoBase: false,
+    prioridad: 80,
+    relacionados: [],
+    autor: 'Paquete inicial',
+    fechaCreacion: '2026-06-01'
   },
   {
-    "id": "tema-madre-02", "titulo": "Mamá también fue hija", "tituloCorto": "Mamá fue hija",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
-    "intensidad": "Media", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Inspirador", "paso": "Paso 8",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Libro Azul",
-    "objetivo": "Romper el ciclo intergeneracional de trauma a través de la empatía.",
-    "fraseAncla": "Entender sus propias heridas fue el principio de mi sanación.",
-    "guiaTestimonio": {
-      "detectar": ["¿De qué formas te cegaba tu dolor e impedía ver la historia de abandono de tu propia madre?", "¿Cómo replicabas la misma dinámica exigiendo sin dar?"],
-      "admitir": ["¿Cómo el programa te permitió ver a tu madre como una mujer herida que replicó lo que conocía?", "¿Cómo cedió la postura de juez al practicar la empatía?"],
-      "corregir": ["¿Qué acciones tomas hoy para no heredar ese ciclo de dureza o chantaje emocional a otros?", "¿Cómo practicas el perdón desde la madurez hoy?"]
-    }, "prioridad": 79
+    id: 'tema-vls-002',
+    titulo: 'Hambre, enojo, soledad y cansancio',
+    tituloCorto: 'HALT',
+    estado: 'Completo',
+    categoria: 'Autocuidado',
+    evento: ['Juntas de prevención', 'Manejo de crisis'],
+    publico: ['Todos'],
+    etiquetas: ['prevencion', 'autocuidado', 'ansiedad', 'responsabilidad', 'paz'],
+    intensidad: 'Baja',
+    momento: 'Inicio',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Ansiedad', 'Enojo', 'Tristeza'],
+    defectoCaracter: ['Negligencia con uno mismo'],
+    virtudPrincipal: ['Responsabilidad', 'Aceptación'],
+    pasos: ['Paso 10'],
+    tradiciones: [],
+    conceptos: ['Factores físicos y emocionales que elevan el riesgo'],
+    fuentePrincipal: 'Libro recomendado',
+    fuenteAA: [],
+    fuenteFGDLL: [],
+    librosRecomendados: [{ titulo: 'Vivir Sobrio', autor: 'Alcohólicos Anónimos', año: 1996, uso: 'Herramienta HALT aplicada al cuidado diario' }],
+    objetivo: 'Ayudar a reconocer estados básicos que pueden desordenar la conducta y la sobriedad emocional.',
+    fraseAncla: 'Cuando no atiendo mis necesidades básicas, mi serenidad queda en riesgo.',
+    guiaTestimonio: {
+      detectar: ['¿Cuál de estos estados te dispara más: hambre, enojo, soledad o cansancio?', '¿Cómo reaccionabas cuando ignorabas esas señales?', '¿Qué daño causabas por no detenerte a tiempo?'],
+      admitir: ['¿Cuándo aceptaste que tu cuerpo y tus emociones necesitaban cuidado?', '¿Qué te enseñó el grupo sobre pedir ayuda a tiempo?', '¿Qué resistencia tenías a atenderte sin culpa?'],
+      corregir: ['¿Qué haces hoy cuando notas HALT?', '¿Qué rutina sencilla protege tu estabilidad?', '¿Cómo pides apoyo antes de desbordarte?']
+    },
+    variaciones: ['Mis cuatro disparadores', 'Atenderme antes de caer'],
+    palabrasClave: ['halt', 'hambre', 'enojo', 'soledad', 'cansancio'],
+    advertenciaEtica: '',
+    advertenciaLider: 'Mantenerlo práctico y concreto, sin convertirlo en diagnóstico.',
+    noUsarPara: [],
+    esCatalogoBase: false,
+    prioridad: 78,
+    relacionados: ['tema-vls-001'],
+    autor: 'Paquete inicial',
+    fechaCreacion: '2026-06-01'
   },
   {
-    "id": "tema-madre-03", "titulo": "Amor o necesidad", "tituloCorto": "Amor o necesidad",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
-    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Didáctico", "paso": "Paso 4",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 4 y 10",
-    "objetivo": "Distinguir entre el afecto genuino y la codependencia tóxica.",
-    "fraseAncla": "El control disfrazado de amor solo asfixia a ambos.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo disfrazabas de 'preocupación y amor' lo que realmente era una necesidad neurótica de controlar al otro?", "¿Qué miedos ocultabas asfixiando con cuidados?"],
-      "admitir": ["¿En qué momento admitiste que la codependencia estaba destruyendo tu paz mental y la del otro?", "¿Cómo enfrentaste el miedo al vacío cuando soltaste el control?"],
-      "corregir": ["¿Qué herramientas (pausas, límites, oración) usas hoy para no invadir el espacio emocional ajeno?", "¿Cómo se ve el amor libre y desapegado hoy en tus relaciones?"]
-    }, "prioridad": 78
+    id: 'tema-fgdll-001',
+    titulo: '¿Por qué me quedé en Guerreros de la Luz?',
+    tituloCorto: 'Por qué me quedé',
+    estado: 'Completo',
+    categoria: 'Aniversario',
+    evento: ['Aniversario de grupo'],
+    publico: ['Participantes', 'Líderes', 'Familias'],
+    etiquetas: ['pertenencia', 'comunidad', 'gratitud', 'servicio', 'paso-12-servicio'],
+    intensidad: 'Media',
+    momento: 'Cierre',
+    formato: 'Individual',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Esperanza', 'Gratitud'],
+    defectoCaracter: ['Aislamiento', 'Desconfianza'],
+    virtudPrincipal: ['Gratitud', 'Servicio'],
+    pasos: ['Paso 12'],
+    tradiciones: ['Tradición Uno'],
+    conceptos: ['Pertenencia', 'Servicio'],
+    fuentePrincipal: 'FGDLL',
+    fuenteAA: [{ obra: 'Libro Azul', referencia: 'Capítulo 5', uso: 'Base para hablar de acción y recuperación compartida' }],
+    fuenteFGDLL: [{ obra: 'Guía de Apadrinamiento', seccion: 'Vida de grupo', uso: 'Orientar pertenencia y servicio' }],
+    librosRecomendados: [],
+    objetivo: 'Reflejar por qué la comunidad sostiene la vida en recuperación.',
+    fraseAncla: 'Me quedé porque encontré un lugar donde pertenezco.',
+    guiaTestimonio: {
+      detectar: ['¿Qué buscabas antes de llegar a Guerreros de la Luz?', '¿Por qué creías que no encajarías aquí?', '¿Qué soledad o desconfianza traías contigo?'],
+      admitir: ['¿Cuál fue el primer motivo que te hizo querer quedarte?', '¿Qué escuchaste en el grupo que te hizo sentir diferente?', '¿Qué tuviste que admitir para dejarte acompañar?'],
+      corregir: ['¿Qué razones tienes hoy para seguir viniendo?', '¿Cómo cuidas tu pertenencia a través del servicio?', '¿Qué puedes devolver al grupo que te recibió?']
+    },
+    variaciones: ['Mi lugar en el grupo', 'La casa que elegí cuidar'],
+    palabrasClave: ['pertenencia', 'grupo', 'servicio', 'gratitud'],
+    advertenciaEtica: '',
+    advertenciaLider: 'Cuidar que el mensaje apunte al servicio, no a idealizar personas.',
+    noUsarPara: ['Comparar grupos o líderes'],
+    esCatalogoBase: true,
+    prioridad: 95,
+    relacionados: [],
+    autor: 'Catálogo base FGDLL',
+    fechaCreacion: '2026-06-01'
   },
   {
-    "id": "tema-madre-04", "titulo": "Dependencia emocional", "tituloCorto": "Dependencia",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
-    "intensidad": "Media", "momento": "Inicio", "formato": "Panel largo", "tipoTestimonio": "Crudo", "paso": "Paso 1",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Viviendo Sobrio",
-    "objetivo": "Identificar el chantaje y la necesidad extrema de aprobación familiar.",
-    "fraseAncla": "Mendigaba migajas de afecto para sentir que yo existía.",
-    "guiaTestimonio": {
-      "detectar": ["¿De qué formas la necesidad de aprobación de tus padres (o hijos) gobernaba todas tus decisiones?", "¿Qué tanto te anulabas para no perder el 'amor' del otro?"],
-      "admitir": ["¿Qué te hizo tocar fondo y darte cuenta de que esa dependencia te tenía enfermo?", "¿Cómo fue el proceso de admitir que eras impotente ante los demás?"],
-      "corregir": ["¿Qué haces hoy cuando sientes que vas a ceder en tu dignidad por buscar aprobación?", "¿Cómo la comunidad te ayudó a fortalecer tu identidad?"]
-    }, "prioridad": 77
+    id: 'tema-familia-001',
+    titulo: 'Hijo huérfano de padres vivos',
+    tituloCorto: 'Huérfano de padres vivos',
+    estado: 'Completo',
+    categoria: 'Familia',
+    evento: ['Semana de los Padres', 'Compartimiento familiar'],
+    publico: ['Hijos', 'Padres', 'Participantes'],
+    etiquetas: ['familia', 'padre', 'abandono', 'duelo', 'responsabilidad', 'perdón'],
+    sensibilidad: 'sensible',
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Crudo',
+    emocion: ['Tristeza', 'Resentimiento', 'Culpa'],
+    defectoCaracter: ['Resentimiento', 'Victimismo'],
+    virtudPrincipal: ['Responsabilidad', 'Compasión'],
+    pasos: ['Paso 4', 'Paso 8'],
+    tradiciones: [],
+    conceptos: ['Inventario familiar', 'Responsabilidad afectiva'],
+    fuentePrincipal: 'FGDLL',
+    fuenteAA: [{ obra: 'Doce Pasos y Doce Tradiciones', referencia: 'Pasos 4 y 8', uso: 'Inventario y disposición a reparar' }],
+    fuenteFGDLL: [{ obra: 'Guía de Apadrinamiento', seccion: 'Familia', uso: 'Evitar exposición hiriente y orientar a responsabilidad propia' }],
+    librosRecomendados: [],
+    objetivo: 'Abordar la herida del abandono emocional sin victimismo y con responsabilidad presente.',
+    fraseAncla: 'No puedo cambiar su ausencia, pero ya no me ausento de mí mismo.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo intentabas llenar el vacío emocional del abandono?', '¿De qué maneras repetías tú esa ausencia con otros?', '¿Qué resentimiento gobernaba tus decisiones?'],
+      admitir: ['¿Qué te dolió aceptar sobre las limitaciones emocionales de tus padres?', '¿Cómo empezaste a soltar el juicio absoluto?', '¿Qué viste de ti mismo al trabajar este dolor en el grupo?'],
+      corregir: ['¿Cómo te haces responsable de ti mismo hoy?', '¿Qué límites sanos practicas sin odio?', '¿Cómo decides no repetir esa ausencia en tus relaciones?']
+    },
+    variaciones: ['Ausencia presente', 'Dejar de ausentarme de mí'],
+    palabrasClave: ['abandono', 'padres', 'familia', 'resentimiento'],
+    advertenciaEtica: 'Tema sensible: no usar para acusar, humillar familiares ni forzar perdón público.',
+    advertenciaLider: 'Orientar hacia responsabilidad propia y límites sanos. Evitar detalles íntimos que expongan a terceros.',
+    noUsarPara: ['Juzgar padres', 'Forzar reconciliación', 'Exponer secretos familiares'],
+    esCatalogoBase: true,
+    prioridad: 70,
+    relacionados: [],
+    autor: 'Catálogo base FGDLL',
+    fechaCreacion: '2026-06-01'
   },
   {
-    "id": "tema-madre-05", "titulo": "Aprendiendo a soltar con amor", "tituloCorto": "Soltar con amor",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Familia", "evento": ["Semana de las Madres"],
-    "intensidad": "Baja", "momento": "Cierre", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 3",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 3",
-    "objetivo": "Experimentar el desapego compasivo y la fe en el proceso del otro.",
-    "fraseAncla": "Soltarlos no fue abandonarlos; fue dejarlos en manos de Dios.",
-    "guiaTestimonio": {
-      "detectar": ["¿Por qué sentías que si tú no resolvías los problemas de tu familia, nadie más lo haría?", "¿Qué niveles de ansiedad te trajo jugar a ser Dios?"],
-      "admitir": ["¿Cómo el programa te enseñó que soltar el resultado era el acto de amor más sano?", "¿Qué sentiste la primera vez que no interferiste en el tropiezo del otro?"],
-      "corregir": ["¿Cómo aplicas el Tercer Paso diario para no intervenir donde no te corresponde?", "¿Qué significa para ti amar sin gobernar hoy?"]
-    }, "prioridad": 76
+    id: 'tema-servicio-001',
+    titulo: 'El grato privilegio de servir',
+    tituloCorto: 'Privilegio de servir',
+    estado: 'Completo',
+    categoria: 'Servicio',
+    evento: ['Aniversario de grupo', 'Reunión de servidores'],
+    publico: ['Líderes', 'Servidores', 'Participantes'],
+    etiquetas: ['servicio', 'humildad', 'comunidad', 'liderazgo', 'paso-12-servicio'],
+    intensidad: 'Baja',
+    momento: 'Cierre',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Gratitud', 'Paz'],
+    defectoCaracter: ['Egoísmo', 'Orgullo'],
+    virtudPrincipal: ['Humildad', 'Servicio'],
+    pasos: ['Paso 12'],
+    tradiciones: ['Tradición Dos'],
+    conceptos: ['Servicio desinteresado', 'Unidad'],
+    fuentePrincipal: 'AA',
+    fuenteAA: [{ obra: 'Doce Pasos y Doce Tradiciones', referencia: 'Paso 12', uso: 'Servicio como resultado espiritual' }],
+    fuenteFGDLL: [],
+    librosRecomendados: [],
+    objetivo: 'Vincular estabilidad personal con servicio desinteresado y cuidado del grupo.',
+    fraseAncla: 'El servicio me sacó del yo para ponerme en el nosotros.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo dominaba el egoísmo tu tiempo y energía?', '¿Por qué ayudar a otros te parecía una carga?', '¿Qué buscabas recibir cuando decías servir?'],
+      admitir: ['¿Cómo descubriste que servir también te ordenaba a ti?', '¿Qué servicio pequeño te hizo sentir útil?', '¿Qué te mostró el grupo sobre servir sin controlar?'],
+      corregir: ['¿Cómo mantienes tu servicio libre de expectativas?', '¿Qué haces cuando el servicio te abruma?', '¿Cómo cuidas la unidad mientras sirves?']
+    },
+    variaciones: ['Servir sin adueñarme', 'Del yo al nosotros'],
+    palabrasClave: ['servicio', 'liderazgo', 'humildad', 'unidad'],
+    advertenciaEtica: '',
+    advertenciaLider: 'No presentar el servicio como exigencia ni como medida de valor personal.',
+    noUsarPara: ['Presionar a recién llegados'],
+    esCatalogoBase: true,
+    prioridad: 88,
+    relacionados: ['tema-fgdll-001'],
+    autor: 'Catálogo base FGDLL',
+    fechaCreacion: '2026-06-01'
   },
   {
-    "id": "tema-madre-06", "titulo": "Culpa de madre, culpa de hijo", "tituloCorto": "La culpa de ambas vías",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Familia", "evento": ["Semana de las Madres"],
-    "intensidad": "Alta", "momento": "Mitad", "formato": "Panel largo", "tipoTestimonio": "Didáctico", "paso": "Paso 8",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "La Familia Después",
-    "advertenciaEtica": "Tema muy propenso a catarsis destructiva. Evite que se confunda la toma de responsabilidad con autoflagelación.",
-    "objetivo": "Desactivar la culpa paralizante y convertirla en responsabilidad para reparar daños.",
-    "fraseAncla": "La culpa me estancó en el llanto; la responsabilidad me puso a reparar.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo el ciclo de culpa y victimismo los mantenía a ambos atrapados en reclamos y daño mutuo?", "¿Qué disculpas te dabas para no hacer nada al respecto?"],
-      "admitir": ["¿Cuál fue el inventario moral que te hizo darte cuenta de tu cuota de participación en el daño?", "¿Cómo te enseñó el grupo a pasar del remordimiento a la acción?"],
-      "corregir": ["¿Cómo corriges tu conducta hoy cuando la culpa antigua quiere asaltarte?", "¿Qué formas maduras tienes hoy de pedir disculpas mediante el cambio de actitud?"]
-    }, "prioridad": 75
-  },
-  {
-    "id": "tema-madre-07", "titulo": "La familia después", "tituloCorto": "La familia después",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Familia", "evento": ["Semana de las Madres"],
-    "intensidad": "Media", "momento": "Cierre", "formato": "Inspirador", "tipoTestimonio": "Inspirador", "paso": "Paso 12",
-    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Libro Azul, Cap. La Familia Después",
-    "objetivo": "Compartir la esperanza de reconstrucción familiar mediante la recuperación.",
-    "fraseAncla": "La recuperación no trajo una familia perfecta, trajo una familia real.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué tanto caos y desorden caracterizaba tu núcleo familiar en el pasado?", "¿Por qué creías que el daño hecho en tu familia jamás se repararía?"],
-      "admitir": ["¿Cómo fue que los pequeños cambios en ti empezaron a transformar el entorno familiar, aunque ellos no estuvieran en el programa?", "¿Qué resistencia inicial hubo?"],
-      "corregir": ["¿Cómo lidias con los conflictos familiares de hoy sin perder tu sobriedad ni tu paz?", "¿Qué gratitud sientes por la realidad familiar de este momento?"]
-    }, "prioridad": 74
-  },
-
-  // ==========================================
-  // CATEGORÍA: DIVERSIDAD (Sensibles)
-  // ==========================================
-  {
-    "id": "tema-diversidad-01", "titulo": "Un refugio seguro para todos", "tituloCorto": "Refugio seguro",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Diversidad", "evento": ["Convenciones", "Charlas generales"],
-    "intensidad": "Alta", "momento": "Inicio", "formato": "Individual", "tipoTestimonio": "Inspirador", "paso": "Paso 3",
-    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Folleto AA y la comunidad LGTBQ",
-    "advertenciaEtica": "El programa de recuperación es inclusivo. Nadie puede ser excluido por su orientación o identidad. El líder debe asegurar respeto irrestricto.",
-    "objetivo": "Mostrar que la fraternidad no exige máscaras ni esconde el dolor bajo prejuicios.",
-    "fraseAncla": "Vine huyendo del juicio del mundo y encontré un lugar donde solo importaba mi alma.",
-    "guiaTestimonio": {
-      "detectar": ["¿De qué formas el rechazo externo, o tu miedo a ser juzgado, te empujó más a tu enfermedad o al aislamiento?", "¿Cómo te lastimabas tú mismo por no aceptarte?"],
-      "admitir": ["¿Cómo fue la experiencia de llegar a un grupo donde el único requisito era el deseo de parar de sufrir?", "¿Qué alivio sentiste al ser abrazado sin condiciones?"],
-      "corregir": ["¿De qué forma eres hoy puente para que otros encuentren ese mismo refugio?", "¿Cómo integras hoy tu identidad completa sin miedo ni reservas?"]
-    }, "prioridad": 60
-  },
-  {
-    "id": "tema-diversidad-02", "titulo": "La dignidad no se negocia", "tituloCorto": "Dignidad innegociable",
-    "estado": "Completo", "sensibilidad": "sensible", "categoria": "Diversidad", "evento": [],
-    "intensidad": "Media", "momento": "Mitad", "formato": "Panel corto", "tipoTestimonio": "Crudo", "paso": "Paso 4",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Tercera Tradición",
-    "objetivo": "Destruir la falsa creencia de que ser de la diversidad implica tolerar abusos.",
-    "fraseAncla": "El mayor acto de amor propio fue dejar de pedir perdón por ser quien soy.",
-    "guiaTestimonio": {
-      "detectar": ["¿Por qué tolerabas abusos o mendigabas aceptación de quienes no respetaban tu dignidad?", "¿Cómo tu enfermedad se alimentaba de esa humillación constante?"],
-      "admitir": ["¿Cuándo el grupo te hizo ver que no tenías que disculparte por tu existencia?", "¿Cómo lograste inventariar el resentimiento sin culparte a ti mismo?"],
-      "corregir": ["¿Qué límites firmes y sanos pones hoy para proteger tu paz y tu dignidad?", "¿Cómo vives hoy tu recuperación con la cabeza en alto?"]
-    }, "prioridad": 59
-  },
-
-  // ==========================================
-  // CATEGORÍA: CONCIENTIZACIÓN DEL SUICIDIO (CRISIS)
-  // ==========================================
-  {
-    "id": "tema-crisis-01", "titulo": "Cuando la muerte y la locura tocan la puerta", "tituloCorto": "Al borde del abismo",
-    "estado": "Completo", "sensibilidad": "crisis", "categoria": "Crisis", "evento": [],
-    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 1",
-    "esCatalogoBase": true, "fuentePrincipal": "AA", "fuenteAA": "Libro Azul, Historia personal",
-    "advertenciaEtica": "CRÍTICO: No permita detalles metodológicos de intentos de suicidio. El enfoque DEBE estar en la desesperación que llevó allí, y cómo el rescate fue pedir ayuda. Si alguien expresa intenciones activas, referir a ayuda psiquiátrica de emergencia.",
-    "objetivo": "Visibilizar el dolor extremo que lleva al borde, y mostrar que pedir ayuda a tiempo salva vidas.",
-    "fraseAncla": "El dolor era tan grande que no quería morir, solo quería dejar de sufrir.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo la locura de la adicción o el dolor emocional cerraron todas tus salidas, aislándote en la oscuridad?", "¿De qué manera el silencio te convenció de que no había más esperanza?"],
-      "admitir": ["¿Cuál fue el destello de luz, la mano tendida o la frase en el grupo que te ancló de regreso a la vida?", "¿Cómo fue admitir que ya no podías gobernar tus pensamientos?"],
-      "corregir": ["¿A quién llamas inmediatamente hoy cuando tus pensamientos se oscurecen?", "¿De qué manera la agrupación se ha vuelto tu barrera de seguridad?"]
-    }, "prioridad": 1
-  },
-  {
-    "id": "tema-crisis-02", "titulo": "Quédate un día más", "tituloCorto": "Un día más",
-    "estado": "Completo", "sensibilidad": "crisis", "categoria": "Crisis", "evento": [],
-    "intensidad": "Alta", "momento": "Cierre", "formato": "Inspirador", "tipoTestimonio": "Inspirador", "paso": "Paso 2",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Viviendo Sobrio",
-    "advertenciaEtica": "CRÍTICO: Evite apología o heroísmo en torno a las crisis. El foco es la contención de 24 horas y la esperanza.",
-    "objetivo": "Proporcionar esperanza tangible basada en el plan de 24 horas y el acompañamiento constante.",
-    "fraseAncla": "No tenía fuerzas para un año, pero podía soportar 24 horas más.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo el peso del futuro y los miedos proyectados te aplastaban hasta querer rendirte por completo?", "¿Por qué creías que tu dolor actual jamás pasaría?"],
-      "admitir": ["¿De qué forma el concepto grupal de 'solo por hoy' alivió la presión intolerable de tu mente?", "¿Cómo el saber que alguien más sufría lo mismo te dio consuelo?"],
-      "corregir": ["¿Cómo desarmas hoy la angustia futura regresando al aquí y al ahora?", "¿Cómo acompañas hoy, sin juicios, a quien siente que no puede más?"]
-    }, "prioridad": 2
-  },
-
-  // ==========================================
-  // CATEGORÍA: SEMANA DEL GUERRERO (Generales FGDLL)
-  // ==========================================
-  {
-    "id": "tema-guerrero-01", "titulo": "Todo guerrero tuvo miedo", "tituloCorto": "El miedo del guerrero",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Guerrero", "evento": ["Semana del Guerrero"],
-    "intensidad": "Media", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Inspirador", "paso": "Paso 4",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "12 y 12, Paso 4",
-    "objetivo": "Desmitificar el 'valor' y mostrar que actuar a pesar del miedo es la verdadera recuperación.",
-    "fraseAncla": "El valor no fue la ausencia de miedo, fue no dejar que el miedo me paralizara.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué fachadas de dureza o 'valentía' falsa usabas para esconder tus terror paralizante a fallar?", "¿Cómo ese miedo dirigía tus peores decisiones?"],
-      "admitir": ["¿Qué sentiste al escuchar a personas que considerabas fuertes admitir libremente sus propios miedos en tribuna?", "¿Cómo fue tu primera confesión de terror?"],
-      "corregir": ["¿Qué haces hoy cuando el miedo se presenta frente a un nuevo reto?", "¿Cómo la oración o la pausa te permiten actuar correctamente aunque la rodilla tiemble?"]
-    }, "prioridad": 40
-  },
-  {
-    "id": "tema-guerrero-02", "titulo": "Ya no soy culpable, soy responsable", "tituloCorto": "Responsable, no culpable",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Guerrero", "evento": ["Semana del Guerrero"],
-    "intensidad": "Alta", "momento": "Mitad", "formato": "Individual", "tipoTestimonio": "Didáctico", "paso": "Paso 8",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "12 y 12, Paso 8",
-    "objetivo": "Pasar de la culpa estéril a la acción reparadora.",
-    "fraseAncla": "La culpa me hacía llorar mis errores; la responsabilidad me hizo repararlos.",
-    "guiaTestimonio": {
-      "detectar": ["¿Cómo utilizabas la culpa como una zona de confort para seguir haciendo daño sin cambiar verdaderamente?", "¿A quiénes arrastrabas en tu remordimiento constante?"],
-      "admitir": ["¿Cuándo el grupo te confrontó para dejar de victimizarte por los daños que tú mismo cometías?", "¿Cómo aprendiste la diferencia entre pedir perdón y cambiar la conducta?"],
-      "corregir": ["¿Qué métodos prácticos utilizas hoy (Paso 10) para no acumular cuentas pendientes?", "¿De qué manera asumes las consecuencias de tus actos de hoy?"]
-    }, "prioridad": 41
-  },
-
-  // ==========================================
-  // PASOS BÁSICOS
-  // ==========================================
-  {
-    "id": "tema-paso1-01", "titulo": "Yo no llegué convencido, llegué cansado", "tituloCorto": "Llegar cansado",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Paso 1", "evento": [],
-    "intensidad": "Media", "momento": "Inicio", "formato": "Individual", "tipoTestimonio": "Crudo", "paso": "Paso 1",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 1",
-    "objetivo": "Transmitir que no se requiere fe inicial, sino el reconocimiento del agotamiento personal.",
-    "fraseAncla": "No llegué por fe, llegué porque ya no podía más.",
-    "guiaTestimonio": {
-      "detectar": ["¿De qué formas te engañabas creyendo que todavía podías aguantar un poco más?", "¿Qué actitudes demostraban que tu energía se estaba agotando?"],
-      "admitir": ["¿Cuál fue el momento exacto de quiebre donde te diste cuenta de que ya no tenías energía?", "¿Qué sentiste al llegar al grupo no por convicción, sino por cansancio?"],
-      "corregir": ["¿Cómo aceptas hoy cuando algo te rebasa para no esperar a tocar fondo?", "¿Qué acciones tomas para no volver a ese nivel de agotamiento?"]
-    }, "prioridad": 50
-  },
-  {
-    "id": "tema-paso1-02", "titulo": "Lo que yo creía que era normal", "tituloCorto": "Normalizar el daño",
-    "estado": "Completo", "sensibilidad": "normal", "categoria": "Paso 1", "evento": [],
-    "intensidad": "Media", "momento": "Inicio", "formato": "Panel corto", "tipoTestimonio": "Didáctico", "paso": "Paso 1",
-    "esCatalogoBase": true, "fuentePrincipal": "FGDLL", "fuenteAA": "Paso 1",
-    "objetivo": "Evidenciar cómo nos acostumbramos a dinámicas dañinas.",
-    "fraseAncla": "No todo lo habitual era sano.",
-    "guiaTestimonio": {
-      "detectar": ["¿Qué actitudes de desorden o cansancio emocional estabas normalizando en tu rutina?", "¿Cómo te convencías de que vivir así era lo que a todos les pasaba?"],
-      "admitir": ["¿Cuál fue el punto de quiebre donde entendiste que vivir así no era normal?", "¿Qué sentiste al admitir que te habías acostumbrado a hacerte daño?"],
-      "corregir": ["¿Cómo cuestionas tus hábitos y reacciones hoy?", "¿Qué nuevas rutinas o límites has establecido?"]
-    }, "prioridad": 51
+    id: 'tema-crisis-001',
+    titulo: 'Cuando ya no quería vivir',
+    tituloCorto: 'Elegir pedir ayuda',
+    estado: 'Completo',
+    categoria: 'Crisis emocional',
+    evento: ['Manejo de crisis', 'Junta de prevención'],
+    publico: ['Líderes', 'Participantes'],
+    etiquetas: ['suicidio', 'ideacion-suicida', 'crisis-emocional', 'esperanza', 'apadrinamiento', 'comunidad'],
+    sensibilidad: 'crisis',
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Crudo',
+    emocion: ['Desesperanza', 'Miedo', 'Tristeza'],
+    defectoCaracter: ['Aislamiento', 'Negación'],
+    virtudPrincipal: ['Valentía', 'Confianza'],
+    pasos: ['Paso 1', 'Paso 2'],
+    tradiciones: [],
+    conceptos: ['Pedir ayuda inmediata', 'No aislarse en crisis'],
+    fuentePrincipal: 'FGDLL',
+    fuenteAA: [{ obra: 'Libro Azul', referencia: 'Capítulo 2', uso: 'Esperanza a partir de la identificación' }],
+    fuenteFGDLL: [{ obra: 'Manual de emergencia FGDLL', seccion: 'Crisis', uso: 'Activar acompañamiento y recursos externos cuando hay riesgo' }],
+    librosRecomendados: [],
+    objetivo: 'Dar testimonio de pedir ayuda en crisis sin describir métodos, detalles o escenas que puedan dañar a otros.',
+    fraseAncla: 'Cuando no podía sostenerme solo, pedir ayuda fue mi primer acto de vida.',
+    guiaTestimonio: {
+      detectar: ['¿Qué señales de aislamiento y desesperanza estabas ignorando?', '¿Qué pensamientos te encerraban en la idea de no pedir ayuda?', '¿Qué cosas conviene nombrar sin entrar en detalles dañinos?'],
+      admitir: ['¿En qué momento aceptaste que necesitabas compañía inmediata?', '¿Quién fue una persona segura para pedir ayuda?', '¿Qué te mostró el grupo sobre no atravesar una crisis en soledad?'],
+      corregir: ['¿Qué plan de apoyo usas hoy cuando vuelve la desesperanza?', '¿A quién avisas antes de aislarte?', '¿Qué límites tienes para cuidar tu vida y la vida emocional del grupo?']
+    },
+    variaciones: ['No atravesar la noche solo', 'Pedir ayuda a tiempo'],
+    palabrasClave: ['crisis', 'suicidio', 'ayuda', 'esperanza', 'acompañamiento'],
+    advertenciaEtica: 'Tema de crisis: no describir métodos, planes, lugares ni detalles gráficos. Si alguien expresa riesgo actual, detener el formato de compartimiento y activar ayuda inmediata/profesional.',
+    advertenciaLider: 'Este tema requiere líder preparado. Priorizar seguridad, acompañamiento y recursos de emergencia sobre la dinámica de reunión.',
+    noUsarPara: ['Provocar catarsis', 'Narrar métodos', 'Sustituir atención profesional', 'Dejar solo a quien expresa riesgo actual'],
+    esCatalogoBase: false,
+    prioridad: 30,
+    relacionados: [],
+    autor: 'Paquete inicial',
+    fechaCreacion: '2026-06-01'
   }
-  // NOTA PARA EL SISTEMA: Para evitar corte por límite de tokens, he estructurado a profundidad los temas
-  // representativos que abarcan desde Aniversarios, Familia (Padres/Madres), Diversidad, Suicidio (Crisis), 
-  // Semana del Guerrero y Pasos de acuerdo al manual exacto proporcionado en el Prompt.
+];
+
+function crearTemaVLS(config) {
+  return {
+    estado: 'Completo',
+    evento: ['Juntas de prevención', 'Compartimiento de sobriedad'],
+    publico: ['Todos', 'Recién llegados'],
+    fuentePrincipal: 'AA',
+    fuenteAA: [{ obra: 'Viviendo Sobrio', referencia: config.referencia, uso: 'Método práctico de A.A. para vivir sin beber' }],
+    fuenteFGDLL: [],
+    librosRecomendados: [{ titulo: 'Viviendo Sobrio', autor: 'Alcohólicos Anónimos', año: 1975, uso: `Fuente del tema: ${config.referencia}` }],
+    tradiciones: [],
+    esCatalogoBase: false,
+    relacionados: [],
+    autor: 'Extraído de Viviendo Sobrio',
+    fechaCreacion: '2026-06-01',
+    noUsarPara: [],
+    advertenciaEtica: '',
+    ...config
+  };
+}
+
+const PAQUETE_VIVIR_SOBRIO = [
+  crearTemaVLS({
+    id: 'tema-vls-003',
+    titulo: 'Evitar el primer trago',
+    tituloCorto: 'Primer trago',
+    categoria: 'Prevención',
+    referencia: 'Evitar el primer trago',
+    etiquetas: ['paso-1-impotencia', 'prevencion', 'honestidad', 'negación', 'responsabilidad'],
+    intensidad: 'Alta',
+    momento: 'Inicio',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Miedo', 'Ansiedad'],
+    defectoCaracter: ['Negación', 'Control'],
+    virtudPrincipal: ['Honestidad', 'Responsabilidad'],
+    pasos: ['Paso 1'],
+    conceptos: ['La primera copa como inicio del ciclo'],
+    objetivo: 'Ayudar a enfocar la sobriedad en no tomar la primera copa, en lugar de negociar con cantidades.',
+    fraseAncla: 'Si cuido la primera decisión, cuido todo lo que viene después.',
+    guiaTestimonio: {
+      detectar: ['¿Qué mentira te decías antes del primer trago?', '¿Cómo justificabas que esta vez sería diferente?', '¿Qué pasaba después de cruzar esa primera línea?'],
+      admitir: ['¿Cuándo aceptaste que para ti el primer trago no era inofensivo?', '¿Qué experiencia del grupo te ayudó a verlo?', '¿Qué resistencia sentiste al dejar de negociar con el alcohol?'],
+      corregir: ['¿Qué haces hoy cuando aparece la idea del primer trago?', '¿A quién llamas antes de tomar una decisión peligrosa?', '¿Qué frase o acción te devuelve al día de hoy?']
+    },
+    variaciones: ['La línea que no cruzo', 'Cuidar la primera decisión'],
+    palabrasClave: ['primer trago', 'prevencion', 'impotencia', 'negacion'],
+    advertenciaLider: 'Evitar tonos de amenaza. Enfocar el tema en experiencia y prevención concreta.',
+    prioridad: 92
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-004',
+    titulo: 'Usar el plan de 24 horas',
+    tituloCorto: 'Solo por hoy',
+    categoria: 'Herramientas diarias',
+    referencia: 'Usar el plan de 24 horas',
+    etiquetas: ['prevencion', 'aceptación', 'responsabilidad', 'paz', 'paso-3-entrega'],
+    intensidad: 'Baja',
+    momento: 'Inicio',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Ansiedad', 'Esperanza'],
+    defectoCaracter: ['Impaciencia', 'Control'],
+    virtudPrincipal: ['Aceptación', 'Entrega'],
+    pasos: ['Paso 3', 'Paso 10'],
+    conceptos: ['Vivir la abstinencia en segmentos manejables'],
+    objetivo: 'Presentar el día de hoy como una medida práctica para permanecer sobrio sin promesas imposibles.',
+    fraseAncla: 'Hoy sí cabe en mis manos.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo te abrumaban las promesas de nunca volver a beber?', '¿Qué pasaba cuando pensabas demasiado lejos?', '¿Cómo usabas el futuro para rendirte hoy?'],
+      admitir: ['¿Cuándo entendiste que solo necesitabas cuidar este día?', '¿Qué alivio encontraste al practicar 24 horas?', '¿Cómo te ayudó el grupo a empezar de nuevo sin dramatizar?'],
+      corregir: ['¿Cómo aplicas hoy el plan de 24 horas?', '¿Qué haces cuando necesitas vivir cinco minutos a la vez?', '¿Cómo renuevas tu decisión sin prometer desde el orgullo?']
+    },
+    variaciones: ['Un día a la vez', 'Hoy me basta'],
+    palabrasClave: ['24 horas', 'solo por hoy', 'presente'],
+    advertenciaLider: 'Subrayar que es una práctica diaria, no una fórmula mágica.',
+    prioridad: 90
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-005',
+    titulo: 'Recordar que el alcoholismo es una enfermedad',
+    tituloCorto: 'Enfermedad',
+    categoria: 'Conciencia de enfermedad',
+    referencia: 'Recordar que el alcoholismo es una enfermedad incurable, progresiva y fatal',
+    etiquetas: ['paso-1-impotencia', 'aceptación', 'honestidad', 'responsabilidad', 'negación'],
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Miedo', 'Paz'],
+    defectoCaracter: ['Negación', 'Orgullo'],
+    virtudPrincipal: ['Aceptación', 'Honestidad'],
+    pasos: ['Paso 1'],
+    conceptos: ['Aceptar la condición para tratarla con acciones'],
+    objetivo: 'Ayudar a hablar de la enfermedad sin vergüenza y con responsabilidad práctica.',
+    fraseAncla: 'Aceptar mi condición me abrió la puerta al cuidado.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo negabas o minimizabas tu manera de beber?', '¿Qué consecuencias te mostraban progresión?', '¿Qué vergüenza te impedía pedir ayuda?'],
+      admitir: ['¿Qué cambió cuando nombraste la enfermedad con honestidad?', '¿Cómo te ayudó escuchar experiencias parecidas?', '¿Qué dejó de ser culpa y empezó a ser responsabilidad?'],
+      corregir: ['¿Qué acciones cuidan hoy tu condición?', '¿Cómo recuerdas la enfermedad sin vivir con miedo?', '¿Qué haces cuando la negación intenta volver?']
+    },
+    variaciones: ['Aceptar para cuidar', 'No es vergüenza, es responsabilidad'],
+    palabrasClave: ['enfermedad', 'aceptacion', 'progresiva', 'fatal'],
+    advertenciaLider: 'No sustituir información médica ni convertir el tema en diagnóstico grupal.',
+    prioridad: 89
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-006',
+    titulo: 'Vivir y dejar vivir',
+    tituloCorto: 'Dejar vivir',
+    categoria: 'Relaciones',
+    referencia: 'Vivir y dejar vivir',
+    etiquetas: ['aceptación', 'relaciones', 'paz', 'humildad', 'unidad'],
+    intensidad: 'Media',
+    momento: 'Mitad',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Ira', 'Paz'],
+    defectoCaracter: ['Control', 'Juicio'],
+    virtudPrincipal: ['Tolerancia', 'Humildad'],
+    pasos: ['Paso 10'],
+    conceptos: ['Soltar el control sobre la vida ajena'],
+    objetivo: 'Mostrar cómo soltar juicios y controles protege la serenidad y la convivencia.',
+    fraseAncla: 'Cuando dejé de gobernar a otros, empecé a vivir mi propia vida.',
+    guiaTestimonio: {
+      detectar: ['¿A quién intentabas controlar para sentirte seguro?', '¿Cómo te llenabas de juicio o comparación?', '¿Qué conflictos alimentaba tu necesidad de tener razón?'],
+      admitir: ['¿Qué te mostró el programa sobre tu propia vida desordenada?', '¿Cómo aprendiste a respetar procesos ajenos?', '¿Qué dolió al dejar de ser juez de otros?'],
+      corregir: ['¿Qué haces hoy para practicar tolerancia?', '¿Cómo pones límites sin controlar?', '¿Qué frase te recuerda volver a tu propio inventario?']
+    },
+    variaciones: ['Soltar el control ajeno', 'Volver a mi inventario'],
+    palabrasClave: ['vivir y dejar vivir', 'control', 'tolerancia'],
+    advertenciaLider: 'Cuidar que no se use para justificar indiferencia ante daño real.',
+    prioridad: 72
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-007',
+    titulo: 'Ponerse en actividad',
+    tituloCorto: 'Entrar en acción',
+    categoria: 'Acción',
+    referencia: 'Ponerse en actividad',
+    etiquetas: ['servicio', 'responsabilidad', 'cambio', 'crecimiento', 'prevencion'],
+    intensidad: 'Media',
+    momento: 'Inicio',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Ansiedad', 'Esperanza'],
+    defectoCaracter: ['Apatía', 'Aislamiento'],
+    virtudPrincipal: ['Responsabilidad', 'Servicio'],
+    pasos: ['Paso 12'],
+    conceptos: ['Ocupar la energía en acciones sobrias'],
+    objetivo: 'Enseñar cómo la acción sencilla corta la rumiación y fortalece la sobriedad diaria.',
+    fraseAncla: 'La acción sobria me sacó de mi cabeza.',
+    guiaTestimonio: {
+      detectar: ['¿Qué pasaba cuando te quedabas inmóvil con tus pensamientos?', '¿Cómo la apatía abría espacio a la obsesión?', '¿Qué actividades abandonaste por beber o aislarte?'],
+      admitir: ['¿Qué acción pequeña te ayudó a pasar una hora sin beber?', '¿Cómo descubriste que moverte cambiaba tu estado interno?', '¿Qué papel tuvo el servicio o la junta?'],
+      corregir: ['¿Qué lista de acciones sobrias usas hoy?', '¿Cómo eliges actividad antes que aislamiento?', '¿Qué haces cuando no tienes ganas pero necesitas cuidarte?']
+    },
+    variaciones: ['Moverme para cuidarme', 'Acción antes que obsesión'],
+    palabrasClave: ['actividad', 'accion', 'servicio', 'rutina'],
+    advertenciaLider: 'Evitar imponer hiperactividad. El punto es acción útil y sobria.',
+    prioridad: 70
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-008',
+    titulo: 'Usar la oración de la serenidad',
+    tituloCorto: 'Serenidad',
+    categoria: 'Espiritualidad práctica',
+    referencia: 'Usar la oración de la serenidad',
+    etiquetas: ['fe', 'aceptación', 'entrega', 'paz', 'paso-3-entrega'],
+    intensidad: 'Baja',
+    momento: 'Inicio',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Ansiedad', 'Paz'],
+    defectoCaracter: ['Control', 'Impaciencia'],
+    virtudPrincipal: ['Aceptación', 'Confianza'],
+    pasos: ['Paso 3', 'Paso 11'],
+    conceptos: ['Distinguir lo que puedo cambiar de lo que debo aceptar'],
+    objetivo: 'Usar la serenidad como herramienta breve para ordenar pensamientos y decisiones.',
+    fraseAncla: 'La serenidad empieza cuando dejo de pelear con lo que no controlo.',
+    guiaTestimonio: {
+      detectar: ['¿Qué situaciones querías controlar a cualquier costo?', '¿Cómo reaccionabas cuando la vida no obedecía tu voluntad?', '¿Qué decisiones tomabas desde ansiedad?'],
+      admitir: ['¿Cómo llegó a ti la oración o idea de serenidad?', '¿Qué parte te costó más practicar?', '¿Cuándo viste que aceptar no era rendirte al daño?'],
+      corregir: ['¿Cómo usas hoy una pausa de serenidad?', '¿Qué sí está en tus manos cambiar?', '¿Qué estás aprendiendo a entregar?']
+    },
+    variaciones: ['Aceptar, cambiar, distinguir', 'Una pausa antes de actuar'],
+    palabrasClave: ['serenidad', 'oracion', 'aceptacion', 'entrega'],
+    advertenciaLider: 'Presentar como herramienta espiritual abierta, sin imponer creencias religiosas.',
+    prioridad: 68
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-009',
+    titulo: 'Cambiar las antiguas rutinas',
+    tituloCorto: 'Nuevas rutinas',
+    categoria: 'Hábitos',
+    referencia: 'Cambiar las antiguas rutinas',
+    etiquetas: ['cambio', 'responsabilidad', 'prevencion', 'crecimiento', 'autodescubrimiento'],
+    intensidad: 'Media',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Ansiedad', 'Esperanza'],
+    defectoCaracter: ['Negligencia', 'Impulsividad'],
+    virtudPrincipal: ['Disciplina', 'Responsabilidad'],
+    pasos: ['Paso 10'],
+    conceptos: ['Reemplazar hábitos asociados a beber'],
+    objetivo: 'Identificar rutinas que empujaban a beber y reemplazarlas por prácticas sobrias.',
+    fraseAncla: 'No cambié mi vida de golpe; cambié la siguiente rutina.',
+    guiaTestimonio: {
+      detectar: ['¿Qué horarios, lugares o personas estaban unidos a tu forma de beber?', '¿Qué rutina parecía normal pero te llevaba al riesgo?', '¿Cómo defendías esos hábitos aunque te dañaran?'],
+      admitir: ['¿Cuándo viste que necesitabas cambiar el camino, no solo la intención?', '¿Qué rutina nueva te pareció incómoda al principio?', '¿Quién te ayudó a sostenerla?'],
+      corregir: ['¿Qué rutina sobria cuidas hoy?', '¿Qué señal te avisa que una costumbre vieja quiere volver?', '¿Cómo ajustas tu día para proteger tu recuperación?']
+    },
+    variaciones: ['Cambiar el camino', 'Hábitos que me sostienen'],
+    palabrasClave: ['rutinas', 'habitos', 'cambio', 'prevencion'],
+    advertenciaLider: 'Invitar a ejemplos concretos y breves, no a listas interminables.',
+    prioridad: 66
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-010',
+    titulo: 'Comer o beber algo dulce',
+    tituloCorto: 'Cuidar el cuerpo',
+    categoria: 'Autocuidado',
+    referencia: 'Comer o beber algo generalmente dulce',
+    etiquetas: ['autocuidado', 'prevencion', 'responsabilidad', 'ansiedad'],
+    intensidad: 'Baja',
+    momento: 'Inicio',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Ansiedad', 'Irritabilidad'],
+    defectoCaracter: ['Negligencia con uno mismo'],
+    virtudPrincipal: ['Responsabilidad', 'Prudencia'],
+    pasos: ['Paso 10'],
+    conceptos: ['Atender necesidades físicas inmediatas'],
+    objetivo: 'Mostrar cómo atender el cuerpo puede ayudar a atravesar urgencias y estados de riesgo.',
+    fraseAncla: 'A veces cuidar mi sobriedad empieza por cuidar mi cuerpo.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo confundías hambre, ansiedad o cansancio con deseo de beber?', '¿Qué pasaba cuando descuidabas tu cuerpo?', '¿Cómo se volvía más fuerte la urgencia?'],
+      admitir: ['¿Qué aprendiste sobre necesidades físicas simples?', '¿Cómo te costó aceptar herramientas sencillas?', '¿Qué experiencia te mostró que lo básico también protege?'],
+      corregir: ['¿Cómo atiendes hoy hambre o descompensación?', '¿Qué llevas contigo para emergencias sencillas?', '¿Cómo combinas autocuidado con pedir ayuda?']
+    },
+    variaciones: ['Lo básico también protege', 'Cuidar el cuerpo para cuidar la decisión'],
+    palabrasClave: ['dulce', 'hambre', 'autocuidado', 'cuerpo'],
+    advertenciaLider: 'No presentarlo como consejo médico ni dieta. Es experiencia práctica de apoyo.',
+    prioridad: 58
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-011',
+    titulo: 'Utilizar la terapia del teléfono',
+    tituloCorto: 'Llamar antes',
+    categoria: 'Apoyo',
+    referencia: 'Utilizar la terapia del teléfono',
+    etiquetas: ['apadrinamiento', 'comunidad', 'prevencion', 'confianza', 'aislamiento'],
+    intensidad: 'Media',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Vergüenza', 'Esperanza'],
+    defectoCaracter: ['Aislamiento', 'Orgullo'],
+    virtudPrincipal: ['Confianza', 'Humildad'],
+    pasos: ['Paso 1', 'Paso 12'],
+    conceptos: ['Pedir ayuda antes de actuar'],
+    objetivo: 'Animar a llamar y hablar con otro miembro antes de aislarse o tomar decisiones riesgosas.',
+    fraseAncla: 'Una llamada a tiempo interrumpió muchas caídas.',
+    guiaTestimonio: {
+      detectar: ['¿Qué te impedía llamar cuando estabas mal?', '¿Cómo usabas la vergüenza para aislarte?', '¿Qué consecuencias tuvo resolver solo?'],
+      admitir: ['¿Cuándo hiciste una llamada que cambió tu día?', '¿Qué escuchaste que necesitabas oír?', '¿Cómo aprendiste a pedir ayuda sin adornar la verdad?'],
+      corregir: ['¿A quién llamas hoy antes de aislarte?', '¿Qué dices cuando no sabes qué decir?', '¿Cómo respondes cuando otro te llama?']
+    },
+    variaciones: ['La llamada que me sostuvo', 'Antes de actuar, llamar'],
+    palabrasClave: ['telefono', 'llamada', 'apoyo', 'padrino'],
+    advertenciaLider: 'Recordar límites: apoyo entre miembros no sustituye emergencias ni atención profesional.',
+    prioridad: 82
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-012',
+    titulo: 'Conseguir un padrino',
+    tituloCorto: 'Padrino',
+    categoria: 'Apadrinamiento',
+    referencia: 'Conseguir un patrocinador o padrino',
+    etiquetas: ['apadrinamiento', 'confianza', 'humildad', 'comunidad', 'crecimiento'],
+    intensidad: 'Media',
+    momento: 'Inicio',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Miedo', 'Esperanza'],
+    defectoCaracter: ['Orgullo', 'Desconfianza'],
+    virtudPrincipal: ['Humildad', 'Confianza'],
+    pasos: ['Paso 5', 'Paso 12'],
+    conceptos: ['Acompañamiento de un miembro con experiencia'],
+    objetivo: 'Explicar desde experiencia por qué buscar padrino ayuda a no caminar solo.',
+    fraseAncla: 'Aceptar guía fue dejar de perderme solo.',
+    guiaTestimonio: {
+      detectar: ['¿Por qué te costaba dejarte guiar?', '¿Qué errores repetías por caminar solo?', '¿Qué idea falsa tenías sobre pedir padrino?'],
+      admitir: ['¿Cómo elegiste o aceptaste acompañamiento?', '¿Qué conversación te ayudó a confiar?', '¿Qué te mostró el padrino sobre honestidad práctica?'],
+      corregir: ['¿Cómo cuidas hoy la relación de apadrinamiento?', '¿Qué temas llevas a guía antes de decidir?', '¿Cómo evitas depender ciegamente y practicas responsabilidad?']
+    },
+    variaciones: ['No caminar solo', 'Aceptar guía'],
+    palabrasClave: ['padrino', 'patrocinador', 'guia', 'apadrinamiento'],
+    advertenciaLider: 'Aclarar que apadrinar no es controlar, mandar ni sustituir conciencia personal.',
+    prioridad: 81
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-013',
+    titulo: 'Descansar suficientemente',
+    tituloCorto: 'Descanso',
+    categoria: 'Autocuidado',
+    referencia: 'Descansar suficientemente',
+    etiquetas: ['autocuidado', 'responsabilidad', 'paz', 'ansiedad', 'prevencion'],
+    intensidad: 'Baja',
+    momento: 'Inicio',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Irritabilidad', 'Ansiedad'],
+    defectoCaracter: ['Negligencia', 'Autosuficiencia'],
+    virtudPrincipal: ['Responsabilidad', 'Prudencia'],
+    pasos: ['Paso 10'],
+    conceptos: ['El cansancio como factor de riesgo'],
+    objetivo: 'Mostrar que descansar también es una acción responsable dentro de la recuperación.',
+    fraseAncla: 'No todo se arregla pensando más; a veces necesito descansar.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo te afectaba el cansancio en tus decisiones?', '¿Qué justificabas cuando estabas agotado?', '¿Cómo confundías descanso con flojera?'],
+      admitir: ['¿Cuándo reconociste que necesitabas cuidar tus horas de sueño?', '¿Qué te enseñó el grupo sobre bajar el ritmo?', '¿Qué orgullo te impedía parar?'],
+      corregir: ['¿Qué haces hoy para descansar antes de quebrarte?', '¿Cómo reconoces tus señales de agotamiento?', '¿Qué límites pones para cuidar tu estabilidad?']
+    },
+    variaciones: ['Descansar para decidir mejor', 'Cansancio y riesgo'],
+    palabrasClave: ['descanso', 'cansancio', 'sueño', 'autocuidado'],
+    advertenciaLider: 'No convertirlo en consejo clínico; si hay insomnio grave, sugerir ayuda profesional.',
+    prioridad: 56
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-014',
+    titulo: 'Lo primero primero',
+    tituloCorto: 'Prioridades',
+    categoria: 'Orden personal',
+    referencia: 'Lo primero primero',
+    etiquetas: ['responsabilidad', 'paz', 'crecimiento', 'paso-10-reflexion'],
+    intensidad: 'Media',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Ansiedad', 'Paz'],
+    defectoCaracter: ['Desorden', 'Impaciencia'],
+    virtudPrincipal: ['Disciplina', 'Prudencia'],
+    pasos: ['Paso 10'],
+    conceptos: ['Ordenar prioridades para sostener sobriedad'],
+    objetivo: 'Ayudar a distinguir lo urgente de lo esencial en recuperación.',
+    fraseAncla: 'Cuando puse primero mi sobriedad, lo demás empezó a ordenarse.',
+    guiaTestimonio: {
+      detectar: ['¿Qué ponías antes que tu recuperación?', '¿Cómo el desorden te llevaba a actuar impulsivamente?', '¿Qué urgencias usabas para descuidarte?'],
+      admitir: ['¿Cuándo entendiste que sin sobriedad todo lo demás peligraba?', '¿Qué prioridad te costó reordenar?', '¿Qué apoyo te ayudó a simplificar?'],
+      corregir: ['¿Qué es lo primero que cuidas hoy?', '¿Cómo decides qué puede esperar?', '¿Qué práctica diaria mantiene tus prioridades claras?']
+    },
+    variaciones: ['Sobriedad primero', 'Ordenar lo esencial'],
+    palabrasClave: ['prioridades', 'orden', 'primero', 'sobriedad'],
+    advertenciaLider: 'Evitar usarlo para promover descuido familiar o laboral; se trata de ordenar, no evadir.',
+    prioridad: 64
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-015',
+    titulo: 'Evitar la soledad',
+    tituloCorto: 'No aislarme',
+    categoria: 'Comunidad',
+    referencia: 'Evitar la soledad',
+    etiquetas: ['aislamiento', 'comunidad', 'pertenencia', 'apadrinamiento', 'prevencion'],
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Crudo',
+    emocion: ['Tristeza', 'Vergüenza'],
+    defectoCaracter: ['Aislamiento', 'Orgullo'],
+    virtudPrincipal: ['Confianza', 'Humildad'],
+    pasos: ['Paso 1', 'Paso 12'],
+    conceptos: ['Aislamiento como riesgo para beber'],
+    objetivo: 'Nombrar la soledad peligrosa y convertir la conexión en una práctica de prevención.',
+    fraseAncla: 'Mi enfermedad crecía en secreto; mi recuperación necesita voz.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo se veía tu aislamiento antes de recaer o dañarte?', '¿Qué pensamientos se fortalecían cuando no hablabas?', '¿A quién alejabas para no ser visto?'],
+      admitir: ['¿Cuándo viste que la soledad era peligrosa para ti?', '¿Qué pasó la primera vez que te dejaste acompañar?', '¿Qué miedo tuviste al volver al grupo?'],
+      corregir: ['¿Qué haces hoy cuando aparece el impulso de aislarte?', '¿Qué personas forman tu red mínima?', '¿Cómo practicas pertenencia aun cuando no tienes ganas?']
+    },
+    variaciones: ['Salir del secreto', 'La voz contra el aislamiento'],
+    palabrasClave: ['soledad', 'aislamiento', 'grupo', 'pertenencia'],
+    advertenciaLider: 'Si la soledad incluye riesgo actual de daño, activar acompañamiento inmediato.',
+    prioridad: 76
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-016',
+    titulo: 'Vigilar la ira y los resentimientos',
+    tituloCorto: 'Ira y resentimiento',
+    categoria: 'Emociones',
+    referencia: 'Vigilar la ira y los resentimientos',
+    etiquetas: ['ira', 'resentimiento', 'paso-4-inventario', 'responsabilidad', 'paz'],
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Crudo',
+    emocion: ['Ira', 'Resentimiento'],
+    defectoCaracter: ['Orgullo', 'Venganza'],
+    virtudPrincipal: ['Humildad', 'Perdón'],
+    pasos: ['Paso 4', 'Paso 10'],
+    conceptos: ['Resentimiento como peligro para la sobriedad'],
+    objetivo: 'Ordenar el testimonio sobre enojo y resentimiento hacia inventario y responsabilidad.',
+    fraseAncla: 'Mi resentimiento me prometía justicia y me quitaba paz.',
+    guiaTestimonio: {
+      detectar: ['¿Qué resentimiento alimentabas una y otra vez?', '¿Cómo justificabas tu ira?', '¿Qué daño causaba tu reacción aunque dijeras tener razón?'],
+      admitir: ['¿Cuándo viste tu parte en el resentimiento?', '¿Qué te enseñó el inventario sobre esa herida?', '¿Cómo te ayudó hablarlo con alguien sobrio?'],
+      corregir: ['¿Qué haces hoy cuando la ira empieza a crecer?', '¿Cómo reparas si reaccionas mal?', '¿Qué práctica te ayuda a soltar sin negar el límite?']
+    },
+    variaciones: ['La ira que me gobierna', 'Soltar para tener paz'],
+    palabrasClave: ['ira', 'resentimiento', 'inventario', 'paz'],
+    advertenciaLider: 'Evitar que el compartimiento se vuelva acusación pública contra terceros.',
+    prioridad: 74
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-017',
+    titulo: 'Ser indulgente consigo mismo',
+    tituloCorto: 'Autocompasión sobria',
+    categoria: 'Crecimiento personal',
+    referencia: 'Ser indulgente consigo mismo',
+    etiquetas: ['autocompasión', 'aceptación', 'crecimiento', 'culpa', 'paz'],
+    intensidad: 'Media',
+    momento: 'Cierre',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Culpa', 'Vergüenza'],
+    defectoCaracter: ['Perfeccionismo', 'Autocastigo'],
+    virtudPrincipal: ['Compasión', 'Aceptación'],
+    pasos: ['Paso 6', 'Paso 7'],
+    conceptos: ['No usar la culpa como castigo permanente'],
+    objetivo: 'Distinguir responsabilidad de autocastigo para sostener cambio realista.',
+    fraseAncla: 'Tratarme con dignidad me ayudó a seguir corrigiendo.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo te castigabas por tus errores?', '¿Qué exigencia imposible te hacía abandonar el intento?', '¿Cómo confundías culpa con responsabilidad?'],
+      admitir: ['¿Cuándo entendiste que corregir requiere paciencia?', '¿Qué escuchaste que te ayudó a dejar el autocastigo?', '¿Cómo te costó aceptar progreso imperfecto?'],
+      corregir: ['¿Cómo practicas hoy responsabilidad sin destruirte?', '¿Qué haces cuando fallas en algo pequeño?', '¿Cómo vuelves al camino sin dramatizar?']
+    },
+    variaciones: ['Responsabilidad sin látigo', 'Progreso imperfecto'],
+    palabrasClave: ['autocompasion', 'culpa', 'verguenza', 'perfeccionismo'],
+    advertenciaLider: 'No usar para minimizar daños; la compasión debe acompañar reparación.',
+    prioridad: 62
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-018',
+    titulo: 'Vigilar las alegrías exageradas',
+    tituloCorto: 'Alegría con cuidado',
+    categoria: 'Emociones',
+    referencia: 'Vigilar las alegrías exageradas',
+    etiquetas: ['alegría', 'prevencion', 'responsabilidad', 'paso-10-reflexion'],
+    intensidad: 'Media',
+    momento: 'Mitad',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Alegría', 'Euforia'],
+    defectoCaracter: ['Impulsividad', 'Exceso'],
+    virtudPrincipal: ['Prudencia', 'Templanza'],
+    pasos: ['Paso 10'],
+    conceptos: ['La euforia también puede bajar la vigilancia'],
+    objetivo: 'Mostrar que no solo el dolor requiere cuidado; también la euforia puede desordenar.',
+    fraseAncla: 'También en la alegría necesito estar despierto.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo te llevaba la euforia a descuidarte?', '¿Qué celebraciones te ponían en riesgo?', '¿Cómo confundías alegría con permiso para excederte?'],
+      admitir: ['¿Cuándo viste que un buen momento también podía ser peligroso?', '¿Qué aprendiste de otros sobre celebraciones sobrias?', '¿Qué te costó aceptar sobre tus límites?'],
+      corregir: ['¿Cómo celebras hoy sin ponerte en riesgo?', '¿Qué límites usas en eventos?', '¿Cómo compartes alegría con sobriedad y gratitud?']
+    },
+    variaciones: ['Celebrar sobrio', 'Euforia y vigilancia'],
+    palabrasClave: ['alegria', 'euforia', 'celebracion', 'prevencion'],
+    advertenciaLider: 'Mantenerlo equilibrado: no se trata de apagar la alegría, sino de cuidarla.',
+    prioridad: 57
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-019',
+    titulo: 'Tómelo con calma',
+    tituloCorto: 'Con calma',
+    categoria: 'Serenidad',
+    referencia: 'Tómelo con calma',
+    etiquetas: ['paz', 'aceptación', 'ansiedad', 'humildad', 'crecimiento'],
+    intensidad: 'Baja',
+    momento: 'Cierre',
+    formato: 'Individual',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Ansiedad', 'Paz'],
+    defectoCaracter: ['Impaciencia', 'Control'],
+    virtudPrincipal: ['Paciencia', 'Humildad'],
+    pasos: ['Paso 3', 'Paso 11'],
+    conceptos: ['Bajar la velocidad para sostener recuperación'],
+    objetivo: 'Invitar a compartir cómo la calma ayuda a tomar mejores decisiones y no forzar el proceso.',
+    fraseAncla: 'La prisa me empujaba; la calma me permite elegir.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo la prisa te llevaba a errores o recaídas emocionales?', '¿Qué querías resolver de inmediato?', '¿Cómo reaccionabas cuando el proceso era lento?'],
+      admitir: ['¿Qué te enseñó el programa sobre ir paso a paso?', '¿Qué resistencia tenías a esperar?', '¿Cuándo descubriste que la calma también es acción?'],
+      corregir: ['¿Qué haces hoy para bajar la velocidad?', '¿Cómo decides sin correr?', '¿Qué práctica te devuelve al paso siguiente?']
+    },
+    variaciones: ['Paso a paso', 'La calma como herramienta'],
+    palabrasClave: ['calma', 'paciencia', 'ansiedad', 'proceso'],
+    advertenciaLider: 'No usar para pedir pasividad ante responsabilidades urgentes.',
+    prioridad: 55
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-020',
+    titulo: 'Evitar drogas y medicamentos peligrosos',
+    tituloCorto: 'Cuidar sustancias',
+    categoria: 'Prevención',
+    referencia: 'Evitar las drogas y medicamentos peligrosos',
+    etiquetas: ['prevencion', 'responsabilidad', 'honestidad', 'paso-1-impotencia'],
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Miedo', 'Ansiedad'],
+    defectoCaracter: ['Negación', 'Autosuficiencia'],
+    virtudPrincipal: ['Honestidad', 'Prudencia'],
+    pasos: ['Paso 1', 'Paso 10'],
+    conceptos: ['Cuidado con sustancias que alteran la mente'],
+    objetivo: 'Hablar de prudencia y honestidad frente a sustancias o medicamentos que puedan poner en riesgo la sobriedad.',
+    fraseAncla: 'Mi recuperación necesita honestidad con todo lo que altera mi juicio.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo buscabas sustituir una sustancia por otra?', '¿Qué ocultabas o minimizabas sobre medicamentos o drogas?', '¿Cómo justificabas lo que ponía en riesgo tu juicio?'],
+      admitir: ['¿Cuándo aceptaste que necesitabas honestidad completa?', '¿Cómo aprendiste a consultar antes de decidir solo?', '¿Qué vergüenza te impedía hablar claro?'],
+      corregir: ['¿Cómo manejas hoy tratamientos con responsabilidad?', '¿A quién informas cuando algo puede afectar tu sobriedad?', '¿Qué límites aplicas con sustancias peligrosas?']
+    },
+    variaciones: ['Honestidad con sustancias', 'No sustituir la enfermedad'],
+    palabrasClave: ['drogas', 'medicamentos', 'sustancias', 'prevencion'],
+    advertenciaEtica: 'No suspender ni iniciar medicamentos por consejo grupal. Consultar siempre con profesionales de salud.',
+    advertenciaLider: 'Este tema no debe convertirse en indicación médica ni juicio a tratamientos legítimos.',
+    noUsarPara: ['Dar consejos médicos', 'Avergonzar a quien está en tratamiento'],
+    prioridad: 86
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-021',
+    titulo: 'Eliminar la autocompasión',
+    tituloCorto: 'Salir de víctima',
+    categoria: 'Crecimiento personal',
+    referencia: 'Eliminar la autocompasión',
+    etiquetas: ['responsabilidad', 'autocompasión', 'crecimiento', 'honestidad', 'cambio'],
+    intensidad: 'Media',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Crudo',
+    emocion: ['Tristeza', 'Resentimiento'],
+    defectoCaracter: ['Victimismo', 'Resentimiento'],
+    virtudPrincipal: ['Responsabilidad', 'Gratitud'],
+    pasos: ['Paso 4', 'Paso 10'],
+    conceptos: ['Salir de la lástima improductiva'],
+    objetivo: 'Diferenciar dolor legítimo de autocompasión que paraliza y justifica beber.',
+    fraseAncla: 'Sentir dolor no me obliga a vivir como víctima.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo usabas la lástima por ti mismo para no cambiar?', '¿Qué historias repetías para justificarte?', '¿Cómo la autocompasión te aislaba?'],
+      admitir: ['¿Cuándo viste que el dolor no justificaba seguir dañándote?', '¿Qué inventario te devolvió responsabilidad?', '¿Cómo te ayudó la gratitud sin negar la herida?'],
+      corregir: ['¿Qué haces hoy cuando aparece la postura de víctima?', '¿Cómo nombras el dolor sin usarlo como permiso?', '¿Qué acción responsable tomas en lugar de quejarte?']
+    },
+    variaciones: ['Dolor sin victimismo', 'Responsabilidad ante mi historia'],
+    palabrasClave: ['autocompasion', 'victimismo', 'responsabilidad'],
+    advertenciaLider: 'Evitar invalidar dolores reales. El enfoque es salir de la parálisis, no negar heridas.',
+    prioridad: 61
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-022',
+    titulo: 'Buscar ayuda profesional',
+    tituloCorto: 'Ayuda profesional',
+    categoria: 'Cuidado responsable',
+    referencia: 'Buscar ayuda profesional',
+    etiquetas: ['responsabilidad', 'humildad', 'confianza', 'crisis-emocional', 'prevencion'],
+    sensibilidad: 'crisis',
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Miedo', 'Vergüenza'],
+    defectoCaracter: ['Autosuficiencia', 'Negación'],
+    virtudPrincipal: ['Humildad', 'Responsabilidad'],
+    pasos: ['Paso 1'],
+    conceptos: ['Reconocer cuándo se necesita ayuda externa'],
+    objetivo: 'Presentar la ayuda profesional como recurso responsable cuando la situación rebasa el apoyo grupal.',
+    fraseAncla: 'Pedir ayuda profesional también puede ser humildad en acción.',
+    guiaTestimonio: {
+      detectar: ['¿Qué señales indicaban que necesitabas más ayuda?', '¿Cómo te impedía la vergüenza buscar apoyo profesional?', '¿Qué intentabas resolver solo aunque te rebasaba?'],
+      admitir: ['¿Cuándo aceptaste que el grupo no sustituye atención profesional?', '¿Qué miedo tuviste al pedir esa ayuda?', '¿Cómo se complementó con tu recuperación espiritual y grupal?'],
+      corregir: ['¿Cómo decides hoy cuándo pedir ayuda externa?', '¿Qué recursos tienes ubicados para una crisis?', '¿Cómo acompañas a otro sin jugar al experto?']
+    },
+    variaciones: ['Humildad para pedir ayuda', 'Cuando el grupo no basta'],
+    palabrasClave: ['ayuda profesional', 'crisis', 'salud', 'responsabilidad'],
+    advertenciaEtica: 'Si hay riesgo actual de daño, crisis severa o síntomas médicos, activar ayuda inmediata/profesional.',
+    advertenciaLider: 'No diagnosticar ni sustituir profesionales. Facilitar acompañamiento y recursos seguros.',
+    noUsarPara: ['Dar diagnósticos', 'Reemplazar atención médica o psicológica'],
+    prioridad: 84
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-023',
+    titulo: 'Evitar enredos emocionales',
+    tituloCorto: 'Enredos emocionales',
+    categoria: 'Relaciones',
+    referencia: 'Evitar los enredos emocionales',
+    etiquetas: ['relaciones', 'dependencia-emocional', 'codependencia', 'responsabilidad', 'paz'],
+    intensidad: 'Alta',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Crudo',
+    emocion: ['Ansiedad', 'Culpa'],
+    defectoCaracter: ['Dependencia', 'Control'],
+    virtudPrincipal: ['Prudencia', 'Responsabilidad'],
+    pasos: ['Paso 4', 'Paso 10'],
+    conceptos: ['Relaciones intensas como riesgo temprano'],
+    objetivo: 'Ayudar a compartir cómo los vínculos desordenados pueden desestabilizar la recuperación.',
+    fraseAncla: 'No todo lo intenso es amor; a veces es una fuga.',
+    guiaTestimonio: {
+      detectar: ['¿Qué relación usabas para no mirarte?', '¿Cómo confundías intensidad con amor o salvación?', '¿Qué consecuencias tuvo mezclar necesidad con recuperación?'],
+      admitir: ['¿Cuándo viste que el enredo te quitaba paz?', '¿Qué te señaló el grupo o padrino sobre tus patrones?', '¿Qué miedo apareció al poner distancia?'],
+      corregir: ['¿Qué límites afectivos practicas hoy?', '¿Cómo cuidas tu recuperación antes de iniciar o sostener vínculos?', '¿Qué haces cuando la dependencia vuelve a disfrazarse de amor?']
+    },
+    variaciones: ['Intensidad no es amor', 'Relaciones que me desordenan'],
+    palabrasClave: ['enredos emocionales', 'relaciones', 'codependencia'],
+    advertenciaLider: 'Evitar exposición de parejas o terceros. Dirigir hacia patrones propios y límites.',
+    noUsarPara: ['Señalar públicamente a parejas o miembros'],
+    prioridad: 73
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-024',
+    titulo: 'Salir de la trampa del “hubiera”',
+    tituloCorto: 'Sin hubiera',
+    categoria: 'Aceptación',
+    referencia: 'Salirse de la trampa del subjuntivo',
+    etiquetas: ['aceptación', 'culpa', 'responsabilidad', 'paz', 'paso-10-reflexion'],
+    intensidad: 'Media',
+    momento: 'Cierre',
+    formato: 'Individual',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Culpa', 'Tristeza'],
+    defectoCaracter: ['Autocastigo', 'Evasión'],
+    virtudPrincipal: ['Aceptación', 'Responsabilidad'],
+    pasos: ['Paso 10'],
+    conceptos: ['Dejar de vivir atrapado en lo que pudo haber sido'],
+    objetivo: 'Convertir el arrepentimiento estancado en responsabilidad presente.',
+    fraseAncla: 'El hubiera me encierra; hoy todavía me permite actuar.',
+    guiaTestimonio: {
+      detectar: ['¿En qué “hubiera” vivías atrapado?', '¿Cómo usabas el pasado para no actuar hoy?', '¿Qué culpa repetías sin reparar nada?'],
+      admitir: ['¿Cuándo viste que pensar distinto el pasado no lo cambiaba?', '¿Qué te ayudó a aceptar sin justificar?', '¿Qué diferencia descubriste entre culpa y reparación?'],
+      corregir: ['¿Qué acción presente reemplaza hoy al hubiera?', '¿Cómo haces una reparación posible?', '¿Qué decisión sí puedes tomar ahora?']
+    },
+    variaciones: ['Del hubiera al hoy', 'Aceptar para actuar'],
+    palabrasClave: ['hubiera', 'culpa', 'aceptacion', 'reparacion'],
+    advertenciaLider: 'No forzar perdón ni reparaciones imprudentes; orientar a acciones sanas y posibles.',
+    prioridad: 60
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-025',
+    titulo: 'Permanecer alerta donde se consume alcohol',
+    tituloCorto: 'Alerta en eventos',
+    categoria: 'Prevención',
+    referencia: 'Permanecer alerta en las ocasiones en que se consume licor',
+    etiquetas: ['prevencion', 'responsabilidad', 'honestidad', 'paso-1-impotencia'],
+    intensidad: 'Alta',
+    momento: 'Inicio',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Miedo', 'Ansiedad'],
+    defectoCaracter: ['Negación', 'Autosuficiencia'],
+    virtudPrincipal: ['Prudencia', 'Honestidad'],
+    pasos: ['Paso 1', 'Paso 10'],
+    conceptos: ['Planear límites ante ambientes con alcohol'],
+    objetivo: 'Preparar un compartimiento sobre límites, salidas y apoyo en eventos donde hay alcohol.',
+    fraseAncla: 'No necesito probar mi fuerza quedándome donde pierdo claridad.',
+    guiaTestimonio: {
+      detectar: ['¿Qué eventos te ponían en riesgo aunque dijeras estar bien?', '¿Cómo confundías valentía con exponerte de más?', '¿Qué señales ignorabas por quedar bien?'],
+      admitir: ['¿Cuándo aceptaste que necesitabas plan antes de ir?', '¿Qué experiencia te enseñó a retirarte a tiempo?', '¿Cómo te ayudó hablarlo con padrino o grupo?'],
+      corregir: ['¿Qué plan usas hoy antes de un evento?', '¿Qué salida tienes preparada si te sientes incómodo?', '¿Cómo explicas tus límites sin justificarte demasiado?']
+    },
+    variaciones: ['Plan antes del evento', 'Retirarme a tiempo'],
+    palabrasClave: ['eventos', 'alcohol', 'alerta', 'limites'],
+    advertenciaLider: 'Evitar presumir exposición a riesgo. El foco es prudencia y honestidad.',
+    prioridad: 83
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-026',
+    titulo: 'Abandonar las ideas antiguas',
+    tituloCorto: 'Ideas antiguas',
+    categoria: 'Cambio de pensamiento',
+    referencia: 'Abandonar las ideas antiguas',
+    etiquetas: ['cambio', 'honestidad', 'humildad', 'crecimiento', 'negación'],
+    intensidad: 'Media',
+    momento: 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Miedo', 'Esperanza'],
+    defectoCaracter: ['Orgullo', 'Terquedad'],
+    virtudPrincipal: ['Humildad', 'Apertura'],
+    pasos: ['Paso 2', 'Paso 6'],
+    conceptos: ['Soltar pensamientos que sostenían la bebida'],
+    objetivo: 'Ayudar a identificar creencias viejas que bloqueaban la recuperación.',
+    fraseAncla: 'Para vivir distinto tuve que dejar de pensar igual.',
+    guiaTestimonio: {
+      detectar: ['¿Qué idea antigua defendías aunque te dañara?', '¿Cómo justificabas beber o aislarte con esa creencia?', '¿Qué frase repetías para no cambiar?'],
+      admitir: ['¿Qué idea nueva te costó aceptar en el programa?', '¿Cómo te ayudó escuchar a otros vivir distinto?', '¿Qué orgullo cayó cuando probaste otra forma?'],
+      corregir: ['¿Qué pensamiento corriges hoy cuando aparece?', '¿Cómo te mantienes abierto a aprender?', '¿Qué idea del programa practicas aunque antes la rechazabas?']
+    },
+    variaciones: ['Pensar distinto para vivir distinto', 'Soltar mi vieja lógica'],
+    palabrasClave: ['ideas antiguas', 'cambio', 'apertura', 'humildad'],
+    advertenciaLider: 'Permitir experiencias distintas sin convertir el tema en debate intelectual.',
+    prioridad: 59
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-027',
+    titulo: 'Leer el mensaje de A.A.',
+    tituloCorto: 'Leer el mensaje',
+    categoria: 'Literatura',
+    referencia: 'Leer el mensaje de A.A.',
+    etiquetas: ['honestidad', 'crecimiento', 'fe', 'paso-11-contacto', 'comunidad'],
+    intensidad: 'Baja',
+    momento: 'Inicio',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Esperanza', 'Paz'],
+    defectoCaracter: ['Desinterés', 'Orgullo'],
+    virtudPrincipal: ['Disciplina', 'Humildad'],
+    pasos: ['Paso 11', 'Paso 12'],
+    conceptos: ['Usar literatura como acompañamiento diario'],
+    objetivo: 'Mostrar cómo la lectura sobria ayuda a recordar el camino entre reuniones.',
+    fraseAncla: 'La literatura me habla cuando mi cabeza hace ruido.',
+    guiaTestimonio: {
+      detectar: ['¿Qué ideas ocupaban tu mente cuando no leías nada sano?', '¿Cómo rechazabas la literatura por orgullo o flojera?', '¿Qué buscabas leer o consumir que te desordenaba?'],
+      admitir: ['¿Qué lectura te hizo sentir identificado?', '¿Qué frase o capítulo te acompañó en un día difícil?', '¿Cómo cambió tu disposición al leer con otros?'],
+      corregir: ['¿Qué lugar tiene hoy la literatura en tu rutina?', '¿Cómo eliges una lectura cuando estás inquieto?', '¿Cómo compartes lo leído sin imponerlo?']
+    },
+    variaciones: ['Una lectura para volver', 'Literatura entre reuniones'],
+    palabrasClave: ['literatura', 'lectura', 'mensaje', 'AA'],
+    advertenciaLider: 'No usar para presumir conocimiento; llevarlo a práctica y experiencia.',
+    prioridad: 54
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-028',
+    titulo: 'Asistir a reuniones',
+    tituloCorto: 'Ir a junta',
+    categoria: 'Comunidad',
+    referencia: 'Asistir a las reuniones de A.A.',
+    etiquetas: ['comunidad', 'pertenencia', 'unidad', 'apadrinamiento', 'prevencion'],
+    intensidad: 'Media',
+    momento: 'Inicio',
+    formato: 'Individual',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Soledad', 'Esperanza'],
+    defectoCaracter: ['Aislamiento', 'Orgullo'],
+    virtudPrincipal: ['Humildad', 'Constancia'],
+    pasos: ['Paso 1', 'Paso 12'],
+    conceptos: ['La reunión como espacio de identificación y sostén'],
+    objetivo: 'Compartir cómo la asistencia constante ayuda a romper aislamiento y recordar la recuperación.',
+    fraseAncla: 'La junta me devuelve a la verdad cuando mi mente se aparta.',
+    guiaTestimonio: {
+      detectar: ['¿Qué pasaba cuando dejabas de asistir?', '¿Qué excusas usabas para alejarte?', '¿Cómo crecía tu enfermedad en aislamiento?'],
+      admitir: ['¿Qué junta te hizo sentir identificado?', '¿Qué escuchaste que te sostuvo?', '¿Cómo aceptaste que necesitabas constancia y no solo ganas?'],
+      corregir: ['¿Cómo cuidas hoy tu asistencia?', '¿Qué haces cuando no tienes deseo de ir?', '¿Cómo participas sin usar la reunión para esconderte del cambio?']
+    },
+    variaciones: ['Volver a la junta', 'Constancia que sostiene'],
+    palabrasClave: ['reuniones', 'junta', 'grupo', 'pertenencia'],
+    advertenciaLider: 'No usar asistencia como competencia moral; enfocarla como herramienta.',
+    prioridad: 79
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-029',
+    titulo: 'Practicar los Doce Pasos',
+    tituloCorto: 'Doce Pasos',
+    categoria: 'Programa',
+    referencia: 'Ensayar la práctica de los doce pasos',
+    etiquetas: ['paso-12-servicio', 'honestidad', 'humildad', 'reparacion', 'crecimiento'],
+    intensidad: 'Alta',
+    momento: 'Cierre',
+    formato: 'Individual',
+    tipoTestimonio: 'Didáctico',
+    emocion: ['Miedo', 'Esperanza'],
+    defectoCaracter: ['Orgullo', 'Evasión'],
+    virtudPrincipal: ['Humildad', 'Responsabilidad'],
+    pasos: ['Paso 1', 'Paso 4', 'Paso 5', 'Paso 9', 'Paso 12'],
+    conceptos: ['Pasar de escuchar el programa a practicarlo'],
+    objetivo: 'Invitar a compartir experiencia concreta de practicar pasos, no solo hablar de ellos.',
+    fraseAncla: 'El programa empezó a cambiarme cuando dejé de admirarlo y empecé a practicarlo.',
+    guiaTestimonio: {
+      detectar: ['¿Cómo hablabas del programa sin practicarlo?', '¿Qué paso evitabas y por qué?', '¿Qué consecuencias tenía quedarte solo en la teoría?'],
+      admitir: ['¿Qué paso te confrontó con más honestidad?', '¿Cómo te ayudó hacerlo acompañado?', '¿Qué cambió cuando pasaste a la acción?'],
+      corregir: ['¿Qué paso estás practicando hoy?', '¿Cómo revisas tus avances sin perfeccionismo?', '¿Cómo llevas lo aprendido al servicio?']
+    },
+    variaciones: ['Del discurso a la práctica', 'Pasos en acción'],
+    palabrasClave: ['doce pasos', 'programa', 'practica', 'reparacion'],
+    advertenciaLider: 'Evitar convertirlo en clase teórica. Pedir experiencia concreta y cuidado de anonimato.',
+    prioridad: 85
+  }),
+  crearTemaVLS({
+    id: 'tema-vls-030',
+    titulo: 'Encontrar la manera que se ajuste a mi personalidad',
+    tituloCorto: 'Mi manera sobria',
+    categoria: 'Proceso personal',
+    referencia: 'Encontrar la manera mejor que se ajuste a su personalidad',
+    etiquetas: ['autodescubrimiento', 'crecimiento', 'responsabilidad', 'humildad', 'aceptación'],
+    intensidad: 'Baja',
+    momento: 'Cierre',
+    formato: 'Panel corto',
+    tipoTestimonio: 'Inspirador',
+    emocion: ['Esperanza', 'Paz'],
+    defectoCaracter: ['Comparación', 'Perfeccionismo'],
+    virtudPrincipal: ['Aceptación', 'Honestidad'],
+    pasos: ['Paso 10', 'Paso 11'],
+    conceptos: ['Usar herramientas sobrias de manera personal y responsable'],
+    objetivo: 'Cerrar el paquete mostrando que cada persona puede practicar herramientas sobrias sin copiar apariencias.',
+    fraseAncla: 'No necesito imitar una recuperación; necesito practicar la mía con honestidad.',
+    guiaTestimonio: {
+      detectar: ['¿Con quién te comparabas dentro del programa?', '¿Cómo intentabas copiar formas sin practicar fondo?', '¿Qué parte de tu personalidad necesitaba ser entendida y ordenada?'],
+      admitir: ['¿Cuándo viste qué herramientas sí te servían?', '¿Qué aprendiste al respetar formas distintas de recuperación?', '¿Cómo dejaste de usar “así soy” como excusa?'],
+      corregir: ['¿Qué combinación de herramientas cuida hoy tu sobriedad?', '¿Cómo sigues abierto a probar nuevas prácticas?', '¿Cómo respetas tu proceso sin aislarte ni justificarte?']
+    },
+    variaciones: ['Mi caja de herramientas', 'Practicar sin comparar'],
+    palabrasClave: ['personalidad', 'herramientas', 'autodescubrimiento', 'proceso'],
+    advertenciaLider: 'Reforzar libertad con responsabilidad: adaptar no significa rechazar todo lo que incomoda.',
+    prioridad: 53
+  })
+];
+
+const CATALOGO_COMPLETO = [
+  ...PAQUETE_BASE,
+  ...PAQUETE_VIVIR_SOBRIO
 ];
