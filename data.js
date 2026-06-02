@@ -2282,10 +2282,246 @@ const PAQUETE_DIA_PADRE = [
   })
 ];
 
+const TITULOS_ANIVERSARIO = [
+  'La calidad de la fe',
+  'Caminar a través del miedo',
+  'Autosuficiencia',
+  'La verdadera humildad puede llevarnos a la fe',
+  'Heridas del alma',
+  'Un refugio seguro',
+  'Los raros designios de Dios',
+  'Tuve todo y no fui feliz',
+  'Cambio de actitudes',
+  'Un despertar espiritual',
+  'Autosabotaje',
+  'Principios ante las personas',
+  'Por fe y por obras',
+  'Honestidad: infierno y paraíso',
+  'Sobriedad emocional',
+  '2° paso',
+  'Celos: inseguridad y locura',
+  'Rendición del ego',
+  '3° paso',
+  'Mi oportunidad de vivir',
+  'Resentimiento',
+  'Manos que dan jamás quedan vacías',
+  'Una sensación de pertenecer',
+  'Lenguaje del corazón',
+  'Dios y mis defectos',
+  'Madurez emocional',
+  '5to. Paso: Necesidad de hablar',
+  'Y Dios ¿para qué?',
+  'Rompiendo cadenas',
+  'Hay una solución',
+  'Prueba de fe',
+  'Codependencia',
+  'Siendo agradecido',
+  'Servicio, refugio espiritual',
+  'En lo más profundo de mí mismo',
+  'De las tinieblas a la luz',
+  '11vo. Paso',
+  'Exigencias',
+  'En acción',
+  'Solo por la gracia de Dios',
+  'Llenar el vacío',
+  '5ta. Tradición',
+  'Cruz de la sobriedad',
+  'La magia del perdón',
+  '3ra. Tradición',
+  'Concédeme la serenidad',
+  'Cuando la muerte y la locura tocan la puerta',
+  'Tiempo, dinero y esfuerzo',
+  'La fe y el crecimiento',
+  'Resignificando',
+  'A las esposas',
+  'Servicio, don de Dios',
+  'Complejos',
+  'La razón por la que fuiste escogido',
+  'La fe que obra',
+  'Sufrimiento y apego',
+  'La familia después',
+  'Al servicio de Dios',
+  'Eres lo que haces',
+  'Una nueva oportunidad',
+  'Debilidades humanas',
+  'Una visión para ti',
+  'Tu voluntad, no la mía',
+  'Reencontrando mi esencia',
+  'Más acerca del alcoholismo',
+  'Encontrar una razón para creer',
+  'El dolor del crecimiento',
+  'Yo soy un milagro',
+  'Espiritualidad o religiosidad',
+  'Falsa humildad',
+  '5to. Capítulo',
+  'En manos de Dios',
+  'A prueba y error',
+  'Transmitir el mensaje',
+  'Aprendiendo a perder',
+  'Primero lo primero',
+  'Autoexamen',
+  'Ansiedad: La copa fatal',
+  'Autoestima',
+  '¿Abstinencia o sobriedad?',
+  'Amor o necesidad',
+  'Mercaderes del programa',
+  'Reservas mentales',
+  '1er. Paso',
+  'Castillos en el aire',
+  'Jóvenes adictos',
+  'La razón o la conciencia',
+  '2da. Tradición',
+  '¿Por qué me quedé en GDLL?',
+  '10mo. Paso',
+  'La sangre hace parientes, la lealtad hace familias',
+  'Un programa para vivir',
+  'Hijo huérfano de padres vivos',
+  '4to. Capítulo',
+  'Fijaciones',
+  'Sano juicio',
+  'El dolor es inevitable, el sufrimiento es opcional',
+  '8vo. Capítulo',
+  'Cerrando ciclos',
+  '3er. Capítulo',
+  'Aprendiendo a soltar',
+  'Algo tiene este café',
+  'Amar o depender',
+  'Prueba de ácido',
+  'Sentido de pertenencia',
+  'El grato privilegio de servir',
+  'Introyectos',
+  'Pláticas o practicas el programa',
+  'Resignificando mi historia',
+  'De joven adicto a líder',
+  'Inteligencia emocional',
+  '¿Amor o sueños románticos?',
+  'Ser agradecido',
+  'Un puerto seguro',
+  'A pesar de las adversidades',
+  '1ra. Tradición',
+  'Vida útil y feliz',
+  '5ta. Promesa',
+  'Límites y responsabilidades',
+  '4ta. Tradición',
+  'Duelo',
+  'Vive y deja vivir',
+  'Dependencia emocional',
+  'Poco a poco se va lejos',
+  'Escuadrón de la muerte',
+  'Ya no soy culpable, soy responsable',
+  'En todos nuestros asuntos'
+];
+
+function normalizarTextoDatos(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+function clasificarTemaAniversario(titulo) {
+  const normal = normalizarTextoDatos(titulo);
+  if (normal.includes('paso') || normal.includes('capitulo') || normal.includes('tradicion') || normal.includes('promesa') || normal.includes('programa') || normal.includes('mensaje') || normal.includes('accion')) {
+    return {
+      categoria: 'Programa',
+      etiquetas: ['programa', 'honestidad', 'responsabilidad', 'paso-12-servicio'],
+      pasos: normal.includes('1er') ? ['Paso 1'] : normal.includes('2') ? ['Paso 2'] : normal.includes('3') ? ['Paso 3'] : normal.includes('4') ? ['Paso 4'] : normal.includes('5') ? ['Paso 5'] : normal.includes('8') ? ['Paso 8'] : normal.includes('10') ? ['Paso 10'] : normal.includes('11') ? ['Paso 11'] : ['Paso 12'],
+      tradiciones: normal.includes('tradicion') ? ['Tradición relacionada'] : []
+    };
+  }
+  if (normal.includes('dios') || normal.includes('fe') || normal.includes('espiritual') || normal.includes('serenidad') || normal.includes('gracia') || normal.includes('voluntad')) {
+    return {
+      categoria: 'Espiritualidad',
+      etiquetas: ['fe', 'entrega', 'confianza', 'paso-3-entrega', 'paso-11-contacto'],
+      pasos: ['Paso 2', 'Paso 3', 'Paso 11'],
+      tradiciones: []
+    };
+  }
+  if (normal.includes('familia') || normal.includes('esposas') || normal.includes('padre') || normal.includes('madre') || normal.includes('amor') || normal.includes('dependencia') || normal.includes('codependencia') || normal.includes('pertenecer') || normal.includes('pertenencia')) {
+    return {
+      categoria: 'Relaciones y familia',
+      etiquetas: ['familia', 'relaciones', 'responsabilidad', 'perdón', 'pertenencia'],
+      pasos: ['Paso 4', 'Paso 8', 'Paso 9', 'Paso 10'],
+      tradiciones: []
+    };
+  }
+  if (normal.includes('miedo') || normal.includes('ansiedad') || normal.includes('resentimiento') || normal.includes('celos') || normal.includes('duelo') || normal.includes('dolor') || normal.includes('sufrimiento') || normal.includes('vacío') || normal.includes('vacio')) {
+    return {
+      categoria: 'Autodesarrollo',
+      etiquetas: ['miedo', 'ansiedad', 'resentimiento', 'autodescubrimiento', 'crecimiento'],
+      pasos: ['Paso 4', 'Paso 5', 'Paso 10'],
+      tradiciones: []
+    };
+  }
+  if (normal.includes('servicio') || normal.includes('manos que dan') || normal.includes('agradecido') || normal.includes('gratitud')) {
+    return {
+      categoria: 'Servicio',
+      etiquetas: ['servicio', 'gratitud', 'comunidad', 'paso-12-servicio'],
+      pasos: ['Paso 12'],
+      tradiciones: []
+    };
+  }
+  return {
+    categoria: 'Aniversario',
+    etiquetas: ['crecimiento', 'honestidad', 'responsabilidad', 'esperanza'],
+    pasos: ['Paso 10', 'Paso 12'],
+    tradiciones: []
+  };
+}
+
+function crearTemaAniversario(titulo, index) {
+  const meta = clasificarTemaAniversario(titulo);
+  const id = `tema-aniversario-pdf-${String(index + 1).padStart(3, '0')}`;
+  return {
+    id,
+    titulo,
+    tituloCorto: titulo.length > 34 ? `${titulo.slice(0, 31)}...` : titulo,
+    estado: 'Completo',
+    categoria: meta.categoria,
+    evento: ['Aniversario de grupo', 'Reunión temática', 'Compartimiento especial'],
+    publico: ['Participantes', 'Líderes', 'Servidores', 'Familias'],
+    etiquetas: ['aniversario', ...meta.etiquetas],
+    intensidad: meta.categoria === 'Autodesarrollo' ? 'Alta' : 'Media',
+    momento: meta.categoria === 'Espiritualidad' || meta.categoria === 'Servicio' ? 'Cierre' : 'Mitad',
+    formato: 'Individual',
+    tipoTestimonio: meta.categoria === 'Programa' ? 'Didáctico' : 'Inspirador',
+    emocion: meta.categoria === 'Autodesarrollo' ? ['Miedo', 'Esperanza'] : ['Gratitud', 'Esperanza'],
+    defectoCaracter: ['Orgullo', 'Negación'],
+    virtudPrincipal: meta.categoria === 'Servicio' ? ['Servicio', 'Gratitud'] : ['Honestidad', 'Responsabilidad'],
+    pasos: meta.pasos,
+    tradiciones: meta.tradiciones,
+    conceptos: [titulo, 'Testimonio de aniversario', 'Detectar, admitir y corregir'],
+    fuentePrincipal: 'FGDLL',
+    fuenteAA: [{ obra: 'Literatura de A.A.', referencia: 'Libro Azul, Doce Pasos y Tradiciones', uso: 'Base para ordenar experiencia, inventario, reparación y transmisión del mensaje' }],
+    fuenteFGDLL: [{ obra: 'Temas de Aniversarios FGDLL', seccion: meta.categoria, uso: 'Tema tomado del listado oficial de aniversarios' }],
+    librosRecomendados: [],
+    objetivo: `Preparar un compartimiento de aniversario sobre “${titulo}” desde experiencia personal, literatura y responsabilidad presente.`,
+    fraseAncla: `Mi experiencia con “${titulo}” me ayuda a detectar, admitir y aprender a corregir.`,
+    guiaTestimonio: {
+      detectar: [`¿Cómo se manifestaba “${titulo}” en mi vida antes del programa?`, '¿Qué defecto, miedo, herida o fuga alimentaba este tema?', '¿Qué daño causaba en mí, en mi familia o en mi grupo?'],
+      admitir: ['¿Qué escuché en Guerreros de la Luz o en la literatura que me ayudó a verme?', '¿Qué verdad tuve que admitir sin justificarme?', '¿Qué resistencia apareció cuando empecé a trabajar este tema?'],
+      corregir: ['¿Qué acción concreta estoy practicando hoy para corregir?', '¿Qué herramienta del programa me ayuda a sostener el cambio?', '¿Cómo puede servir mi experiencia a otro compañero en aniversario?']
+    },
+    variaciones: [titulo, `Mi experiencia con ${titulo}`],
+    palabrasClave: normalizarTextoDatos(titulo).split(/\s+/).filter(Boolean),
+    advertenciaEtica: meta.categoria === 'Autodesarrollo' ? 'Tema de alta intensidad: cuidar que el testimonio no derive en catarsis desordenada ni exposición de terceros.' : '',
+    advertenciaLider: 'Tema de aniversario: orientar el compartimiento hacia experiencia propia, literatura, gratitud y servicio; evitar ataques a terceros o discursos abstractos sin vivencia.',
+    noUsarPara: ['Juzgar a terceros', 'Improvisar catarsis', 'Presumir perfección'],
+    esCatalogoBase: false,
+    prioridad: 64 - Math.min(index, 40),
+    relacionados: [],
+    autor: 'Extraído de TEMAS DE ANIVERSARIOS.pdf',
+    fechaCreacion: '2026-06-02'
+  };
+}
+
+const PAQUETE_ANIVERSARIOS_PDF = TITULOS_ANIVERSARIO.map(crearTemaAniversario);
+
 const CATALOGO_COMPLETO = [
   ...PAQUETE_BASE,
   ...PAQUETE_VIVIR_SOBRIO,
   ...PAQUETE_SEMANA_PADRES,
   ...PAQUETE_PADRES_EXTRA,
-  ...PAQUETE_DIA_PADRE
+  ...PAQUETE_DIA_PADRE,
+  ...PAQUETE_ANIVERSARIOS_PDF
 ];
