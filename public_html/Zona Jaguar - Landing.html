@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es" data-direction="b" data-grain="on">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fraternidad Guerreros de la Luz A.C. · Experiencias 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <img class="brand-logo" src="assets/logo-gdll.png" alt="Guerreros de la Luz A.C." />
+    <span class="brand-txt">
+      <b>Guerreros de la Luz</b>
+      <span>Fraternidad · A.C.</span>
+    </span>
+  </a>
+  <div class="nav-right">
+    <nav class="links">
+      <a href="#proposito">Propósito</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#calendarios">Calendarios 2026</a>
+      <a href="#salas">Salas</a>
+      <a href="#directorio">Directorio</a>
+    </nav>
+    <a class="btn nav-cta" href="https://wa.me/529994130149" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      WhatsApp
+    </a>
+    <button class="nav-burger" id="nav-burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="m-menu" id="m-menu" aria-hidden="true">
+  <nav class="m-menu-links">
+    <a href="#proposito">Propósito</a>
+    <a href="#zonas">Zonas</a>
+    <a href="#calendarios">Calendarios 2026</a>
+    <a href="#salas">Salas</a>
+    <a href="#directorio">Directorio</a>
+    <a class="btn m-menu-cta" href="https://wa.me/529994130149" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  </nav>
+</div>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg">
+    <image-slot id="hero" placeholder="Foto de retiro / amanecer en la Hacienda (horizontal)"></image-slot>
+  </div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Fraternidad Guerreros de la Luz A.C.</span>
+      <h1><span class="l1">El año en que</span><span class="l2"><em>regresas a ti.</em></span></h1>
+      <p class="lead">Somos una fraternidad de seis zonas unidas por un mismo camino: sanar, perdonar y reencontrarnos. Las Experiencias 2026 son retiros donde nadie camina solo.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://wa.me/529994130149" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Pedir informes
+        </a>
+        <a class="btn ghost" href="#calendarios">Ver calendarios 2026</a>
+      </div>
+      <div class="hero-meta">
+        <div class="m"><b>6</b><span>Zonas</span></div>
+        <div class="m"><b>6</b><span>Salas de trabajo</span></div>
+        <div class="m"><b>18</b><span>Años de fraternidad</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROPÓSITO ============ -->
+<section class="proposito section-pad" id="proposito">
+  <div class="wrap prop-grid">
+    <div class="prop-text reveal">
+      <span class="eyebrow">La Fraternidad</span>
+      <h2>Un lugar para volver a encontrarte.</h2>
+      <p>Guerreros de la Luz es la familia que sostiene cada Experiencia. No venimos a cambiarte: venimos a acompañarte mientras recuerdas quién eres. Aquí caben el silencio, las lágrimas, la risa y el abrazo.</p>
+      <p>Cada experiencia es una invitación a sanar heridas, soltar lo que pesa y reencontrarte contigo y con los tuyos, en un espacio donde nadie camina solo.</p>
+      <p class="pull">"No se trata de ser perfectos. Se trata de volver a casa, a uno mismo."</p>
+    </div>
+    <div class="reveal">
+      <image-slot id="prop" shape="rounded" radius="4" placeholder="Foto: círculo / abrazo / momento de retiro"></image-slot>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ZONAS ============ -->
+<section class="zonas section-pad" id="zonas">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Nuestras zonas</span>
+      <h2>Una fraternidad, seis caminos.</h2>
+      <p>Guerreros de la Luz crece a través de seis zonas hermanas. Cada una lleva el nombre de un guardián y reúne a sus propios grupos. Elige la tuya y encuéntrala en el directorio.</p>
+    </div>
+    <div class="zonas-grid reveal">
+      <a class="zona-tile" href="#directorio" data-zona="Jaguar">
+        <span class="zd" aria-hidden="true"></span>
+        <span class="ze">Zona</span>
+        <h3>Jaguar</h3>
+      </a>
+      <a class="zona-tile" href="#directorio" data-zona="Tiburón">
+        <span class="zd" aria-hidden="true"></span>
+        <span class="ze">Zona</span>
+        <h3>Tiburón</h3>
+      </a>
+      <a class="zona-tile" href="#directorio" data-zona="Delfín">
+        <span class="zd" aria-hidden="true"></span>
+        <span class="ze">Zona</span>
+        <h3>Delfín</h3>
+      </a>
+      <a class="zona-tile" href="#directorio" data-zona="Colibrí">
+        <span class="zd" aria-hidden="true"></span>
+        <span class="ze">Zona</span>
+        <h3>Colibrí</h3>
+      </a>
+      <a class="zona-tile" href="#directorio" data-zona="Águila">
+        <span class="zd" aria-hidden="true"></span>
+        <span class="ze">Zona</span>
+        <h3>Águila</h3>
+      </a>
+      <a class="zona-tile" href="#directorio" data-zona="Teocalli">
+        <span class="zd" aria-hidden="true"></span>
+        <span class="ze">Zona</span>
+        <h3>Teocalli</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider-rule" />
+
+<!-- ============ CALENDARIOS ============ -->
+<section class="section-pad" id="calendarios">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Experiencias 2026</span>
+      <h2>Calendarios por sede</h2>
+      <p>A lo largo del año abrimos las puertas en nuestras tres sedes. Elige la que te quede en el corazón —o en el camino— y reserva tu lugar con tiempo.</p>
+    </div>
+
+    <div class="cal-tabs reveal" role="tablist">
+      <button class="cal-tab active" data-cal="merida">Mérida</button>
+      <button class="cal-tab" data-cal="playa">Playa del Carmen</button>
+      <button class="cal-tab" data-cal="hacienda">Hacienda La Amada</button>
+    </div>
+
+    <!-- MÉRIDA -->
+    <div class="cal-panel active" id="cal-merida">
+      <div class="cal-layout">
+        <div class="cal-side reveal">
+          <image-slot id="sede-merida" shape="rounded" radius="4" placeholder="Foto sede Mérida"></image-slot>
+          <span class="place">Mérida, Yucatán</span>
+          <h3>La casa en la ciudad</h3>
+          <p>Nuestro corazón en la capital yucateca: cercano, accesible y siempre con las puertas abiertas para quien busca empezar.</p>
+        </div>
+        <div class="event-list reveal">
+          <div class="event"><div class="date"><b>14</b><span>Feb</span></div><div class="info"><h4>Experiencia · Heridas del Alma</h4><p>Fin de semana de sanación emocional · Vie a Dom</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>11</b><span>Abr</span></div><div class="info"><h4>Experiencia · El Perdón</h4><p>Retiro de tres días · cupo limitado</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>20</b><span>Jun</span></div><div class="info"><h4>Experiencia · Jóvenes</h4><p>Encuentro para nuevas generaciones</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>05</b><span>Sep</span></div><div class="info"><h4>Experiencia · Adultos</h4><p>Reencuentro personal y familiar</p></div><span class="tag">Experiencia</span></div>
+        </div>
+      </div>
+      <p class="cal-note">* Fechas de ejemplo — se sincronizarán con tu Google Calendar (eventos con la palabra "Experiencia").</p>
+    </div>
+
+    <!-- PLAYA -->
+    <div class="cal-panel" id="cal-playa">
+      <div class="cal-layout">
+        <div class="cal-side reveal">
+          <image-slot id="sede-playa" shape="rounded" radius="4" placeholder="Foto sede Playa del Carmen"></image-slot>
+          <span class="place">Playa del Carmen, Q. Roo</span>
+          <h3>Frente al mar</h3>
+          <p>El Caribe como aliado. Un entorno donde el agua, la brisa y la luz acompañan cada proceso de soltar y renacer.</p>
+        </div>
+        <div class="event-list reveal">
+          <div class="event"><div class="date"><b>07</b><span>Mar</span></div><div class="info"><h4>Experiencia · Diversidad</h4><p>Un espacio para todas las personas</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>16</b><span>May</span></div><div class="info"><h4>Experiencia · Heridas del Alma</h4><p>Retiro frente al mar · Vie a Dom</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>25</b><span>Jul</span></div><div class="info"><h4>Experiencia · Primera (Internos)</h4><p>Tu primer encuentro con la fraternidad</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>14</b><span>Nov</span></div><div class="info"><h4>Experiencia · El Perdón</h4><p>Cierre de año · soltar para avanzar</p></div><span class="tag">Experiencia</span></div>
+        </div>
+      </div>
+      <p class="cal-note">* Fechas de ejemplo — se sincronizarán con tu Google Calendar (eventos con la palabra "Experiencia").</p>
+    </div>
+
+    <!-- HACIENDA -->
+    <div class="cal-panel" id="cal-hacienda">
+      <div class="cal-layout">
+        <div class="cal-side reveal">
+          <image-slot id="sede-hacienda" shape="rounded" radius="4" placeholder="Foto Hacienda La Amada, Molas"></image-slot>
+          <span class="place">Hacienda La Amada · Molas, Yuc.</span>
+          <h3>El refugio</h3>
+          <p>Entre piedra antigua y naturaleza, La Amada es el lugar de los retiros más profundos: días enteros dedicados a ti, lejos del ruido.</p>
+        </div>
+        <div class="event-list reveal">
+          <div class="event"><div class="date"><b>31</b><span>Ene</span></div><div class="info"><h4>Experiencia · Primera (Internos)</h4><p>Retiro de inmersión · 3 días, 2 noches</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>18</b><span>Abr</span></div><div class="info"><h4>Experiencia · Adultos</h4><p>Inmersión profunda en la hacienda</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>22</b><span>Ago</span></div><div class="info"><h4>Experiencia · El Perdón</h4><p>Retiro completo · cupo muy limitado</p></div><span class="tag">Experiencia</span></div>
+          <div class="event"><div class="date"><b>17</b><span>Oct</span></div><div class="info"><h4>Experiencia · 18º Aniversario</h4><p>Celebración mayor de la fraternidad</p></div><span class="tag">Aniversario</span></div>
+        </div>
+      </div>
+      <p class="cal-note">* Fechas de ejemplo — se sincronizarán con tu Google Calendar (eventos con la palabra "Experiencia").</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SALAS ============ -->
+<section class="salas section-pad" id="salas">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Nuestras salas</span>
+      <h2>Un camino para cada corazón.</h2>
+      <p>No todos llegamos en el mismo momento de la vida. Por eso trabajamos en salas: espacios pensados para acompañarte según quién eres y lo que vienes a sanar.</p>
+    </div>
+    <div class="salas-grid reveal">
+      <div class="sala"><div class="num">01</div><h3>Primera · Internos</h3><p>Tu primer encuentro con la fraternidad. La puerta de entrada a la experiencia.</p></div>
+      <div class="sala"><div class="num">02</div><h3>Jóvenes</h3><p>Un espacio para las nuevas generaciones, sus búsquedas y sus preguntas.</p></div>
+      <div class="sala"><div class="num">03</div><h3>Adultos</h3><p>Reencuentro personal y familiar para quienes cargan años y caminos.</p></div>
+      <div class="sala"><div class="num">04</div><h3>Diversidad</h3><p>Un lugar donde todas las personas son recibidas tal y como son.</p></div>
+      <div class="sala"><div class="num">05</div><h3>Heridas del Alma</h3><p>Trabajo profundo para acompañar el dolor que aún no encuentra palabras.</p></div>
+      <div class="sala"><div class="num">06</div><h3>El Perdón</h3><p>El espacio para soltar, perdonar y perdonarte, y volver a caminar ligero.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANIVERSARIO ============ -->
+<section class="aniv" id="aniversario">
+  <div class="bg-slot"><image-slot id="aniv-bg" placeholder="Foto de comunidad / celebración (horizontal)"></image-slot></div>
+  <div class="wrap reveal">
+    <span class="eyebrow">Octubre 2026</span>
+    <div class="big">18<small>º</small></div>
+    <h2>Aniversario de la Fraternidad</h2>
+    <p>Dieciocho años caminando juntos. En octubre nos reunimos a celebrar la fraternidad, a honrar a quienes nos formaron y a recordar por qué seguimos sirviendo.</p>
+    <a class="btn" href="https://wa.me/529994130149" target="_blank" rel="noopener">Quiero acompañar el aniversario</a>
+  </div>
+</section>
+
+<!-- ============ GALERÍA ============ -->
+<section class="section-pad" id="galeria">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <span class="eyebrow">Galería</span>
+      <h2>Momentos que se quedan.</h2>
+    </div>
+    <div class="gal-grid reveal">
+      <image-slot id="g1" class="tall" shape="rounded" radius="4" placeholder="Foto vertical"></image-slot>
+      <image-slot id="g2" class="wide" shape="rounded" radius="4" placeholder="Foto horizontal"></image-slot>
+      <image-slot id="g3" shape="rounded" radius="4" placeholder="Foto"></image-slot>
+      <image-slot id="g4" shape="rounded" radius="4" placeholder="Foto"></image-slot>
+      <image-slot id="g5" class="wide" shape="rounded" radius="4" placeholder="Foto horizontal"></image-slot>
+      <image-slot id="g6" shape="rounded" radius="4" placeholder="Foto"></image-slot>
+      <image-slot id="g7" shape="rounded" radius="4" placeholder="Foto"></image-slot>
+    </div>
+  </div>
+</section>
+
+<hr class="divider-rule" />
+
+<!-- ============ DIRECTORIO ============ -->
+<section class="directorio section-pad" id="directorio">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Directorio digital</span>
+      <h2>Encuentra tu grupo.</h2>
+      <p>Cada grupo de la fraternidad tiene su casa y su gente. Busca el más cercano, escribe directo por WhatsApp o llega a su dirección. La red sigue creciendo.</p>
+    </div>
+    <div class="dir-filter reveal" id="dir-filter"></div>
+    <div class="dir-grid reveal" id="dir-grid"></div>
+  </div>
+</section>
+
+<!-- ============ CIERRE / CONTACTO ============ -->
+<section class="cierre" id="contacto">
+  <div class="wrap">
+    <span class="rosette" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="1.2"><circle cx="24" cy="24" r="6"/><circle cx="11" cy="14" r="3"/><circle cx="37" cy="14" r="3"/><circle cx="11" cy="34" r="3"/><circle cx="37" cy="34" r="3"/><circle cx="24" cy="8" r="2.2"/><circle cx="24" cy="40" r="2.2"/></svg>
+    </span>
+    <h2>Hay un lugar para ti en <em>2026.</em></h2>
+    <p>Escríbenos sin compromiso. Con gusto te contamos las fechas, las sedes y la experiencia que mejor te acompaña hoy.</p>
+    <div class="contact-row">
+      <a class="btn" href="https://wa.me/529994130149" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        +52 999 413 0149
+      </a>
+    </div>
+    <div class="social">
+      <a href="https://www.facebook.com/FGDLL" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+      </a>
+      <a href="https://youtube.com/fgdll01" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Fraternidad Guerreros de la Luz A.C. · Zona Jaguar · © 2026</span>
+    <span>El honor de servir · Mérida · Playa del Carmen · Molas</span>
+  </div>
+</footer>
+
+<!-- sticky mobile CTA -->
+<a class="m-cta-bar" href="https://wa.me/529994130149" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  Pedir informes por WhatsApp
+</a>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="image-slot.js"></script>
+<script>
+  // nav scroll state
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+
+  // mobile drawer
+  const burger = document.getElementById('nav-burger');
+  const mMenu = document.getElementById('m-menu');
+  const setMenu = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    mMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+  };
+  burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+  // calendar tabs
+  document.querySelectorAll('.cal-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.cal-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.cal-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('cal-' + tab.dataset.cal).classList.add('active');
+    });
+  });
+
+  // ===== Directorio digital =====
+  // Las 6 zonas de la fraternidad (orden de los filtros).
+  const ZONAS = ["Jaguar", "Tiburón", "Delfín", "Colibrí", "Águila", "Teocalli"];
+
+  // Para agregar un grupo, copia un objeto y pega los datos del formulario.
+  const GRUPOS = [
+    {
+      zona: "Jaguar",
+      ciudad: "Mérida",
+      estado: "Yucatán",
+      lider: "Ruby D.",
+      whatsapp: "9994130149",          // 10 dígitos (sin +52)
+      facebook: "https://www.facebook.com/lacunagdll",
+      direccion: "C. 60 729, Centro, 97000 Mérida, Yuc.",
+      mapa: "https://maps.app.goo.gl/jJGWGDzpSczXv2kW6"
+    }
+  ];
+
+  const ICON = {
+    pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    wa: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.413c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207z"/></svg>',
+    fb: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>',
+    map: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>'
+  };
+  const fmtTel = (n) => { const d=(n||'').replace(/\D/g,''); return d.length===10 ? d.replace(/(\d{3})(\d{3})(\d{4})/,'$1 $2 $3') : n; };
+
+  const cardHTML = (g) => {
+    const tel = (g.whatsapp||'').replace(/\D/g,'');
+    const wa = tel ? 'https://wa.me/52' + tel : null;
+    return `<article class="dir-card">
+      <span class="zona-badge"><i></i>Zona ${g.zona}</span>
+      <h3>${g.ciudad}</h3>
+      <div class="loc">${g.estado}</div>
+      ${g.lider ? `<div class="leader"><span>Persona de contacto</span>${g.lider}</div>` : ''}
+      <div class="rows">
+        ${g.direccion ? `<div class="row">${ICON.pin}<span>${g.direccion}</span></div>` : ''}
+        ${tel ? `<div class="row">${ICON.wa}<span>WhatsApp +52 ${fmtTel(tel)}</span></div>` : ''}
+      </div>
+      <div class="actions">
+        ${wa ? `<a class="wa" href="${wa}" target="_blank" rel="noopener">${ICON.wa} Escribir</a>` : ''}
+        ${g.mapa ? `<a href="${g.mapa}" target="_blank" rel="noopener">${ICON.map} Cómo llegar</a>` : ''}
+        ${g.facebook ? `<a href="${g.facebook}" target="_blank" rel="noopener">${ICON.fb} Facebook</a>` : ''}
+      </div>
+    </article>`;
+  };
+
+  const grid = document.getElementById('dir-grid');
+  const filter = document.getElementById('dir-filter');
+  let activeZona = "Todas";
+
+  const renderGrid = () => {
+    const list = activeZona === "Todas" ? GRUPOS : GRUPOS.filter(g => g.zona === activeZona);
+    grid.innerHTML = list.length
+      ? list.map(cardHTML).join('')
+      : `<div class="dir-empty">Aún no hay grupos registrados en Zona ${activeZona}. Pronto sumaremos más casas a la red.</div>`;
+  };
+
+  const renderFilter = () => {
+    const count = (z) => GRUPOS.filter(g => g.zona === z).length;
+    filter.innerHTML = ["Todas", ...ZONAS].map(z => {
+      const n = z === "Todas" ? GRUPOS.length : count(z);
+      const cls = z === activeZona ? 'chip active' : 'chip';
+      return `<button class="${cls}" data-zona="${z}">${z}${n ? `<i>${n}</i>` : ''}</button>`;
+    }).join('');
+    filter.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+      activeZona = c.dataset.zona; renderFilter(); renderGrid();
+    }));
+  };
+
+  if (grid && filter){
+    renderFilter();
+    renderGrid();
+    document.querySelectorAll('.zona-tile[data-zona]').forEach(t => t.addEventListener('click', () => {
+      activeZona = t.dataset.zona; renderFilter(); renderGrid();
+    }));
+  }
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+<!-- ============ TWEAKS ============ -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<div id="tweaks-root"></div>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "direction": "Selva Nocturna",
+  "accent": "Automático",
+  "grain": true
+}/*EDITMODE-END*/;
+
+const DIR_CODE = {
+  "Selva Nocturna": "a",
+  "Templo de Oro":  "b",
+  "Bruma de Piedra":"c"
+};
+const ACCENTS = {
+  "Automático": null,
+  "Oro":   "#d4a945",
+  "Jade":  "#5aa183",
+  "Cobre": "#c2763e",
+  "Hueso": "#d9cdb0"
+};
+
+function TweaksApp(){
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    const root = document.documentElement;
+    root.setAttribute('data-direction', DIR_CODE[t.direction] || 'a');
+    root.setAttribute('data-grain', t.grain ? 'on' : 'off');
+    const hex = ACCENTS[t.accent];
+    if (hex){
+      root.style.setProperty('--accent', hex);
+      root.style.setProperty('--line', hex + '3a');
+    } else {
+      root.style.removeProperty('--accent');
+      root.style.removeProperty('--line');
+    }
+  }, [t.direction, t.accent, t.grain]);
+
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Dirección visual" />
+      <TweakSelect label="Atmósfera" value={t.direction}
+        options={Object.keys(DIR_CODE)}
+        onChange={(v) => setTweak('direction', v)} />
+      <TweakSection label="Acento" />
+      <TweakSelect label="Color de acento" value={t.accent}
+        options={Object.keys(ACCENTS)}
+        onChange={(v) => setTweak('accent', v)} />
+      <TweakSection label="Textura" />
+      <TweakToggle label="Grano de película" value={t.grain}
+        onChange={(v) => setTweak('grain', v)} />
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksApp />);
+</script>
+
+<style id="__om-edit-overrides"></style>
+</body>
+</html>
